@@ -10,7 +10,7 @@ $name = '';
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
     $name = $row['name'];
     $image = $row['image'];
-echo "<article data-category='$name' class='lp-categories__item'>
+echo "<article class='lp-categories__item'>
         <img class='lp-categories__img' src='$image' alt=''>
         <div class='lp-categories__title'>$name</div>
       </article>";

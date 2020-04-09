@@ -13,9 +13,9 @@
 <body>
     <section class="lp-hero">
         <div class="scroller">
-            <img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1080" alt="">
-            <img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1050" alt="">
-            <img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1020" alt="">
+            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1080" alt=""></div>
+            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1050" alt=""></div>
+            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1020" alt=""></div>
         </div>
         <div class="lp-hero__btn-wrap">
             <h1 class="lp-hero__title">Summer Flavours</h1>
