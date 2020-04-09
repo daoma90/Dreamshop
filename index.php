@@ -38,17 +38,46 @@
     <section class="lp-categories">
         <!-- RENDER CATEGORIES FROM DATABASE -->
         <article class="lp-categories__item">
-            <img class="lp-categories__img" src="" alt="">
+            <img class="lp-categories__img" src="https://source.unsplash.com/random/800x502" alt="">
             <div class="lp-categories__title">RUNNING</div>
+        </article>
+        <article class="lp-categories__item">
+            <img class="lp-categories__img" src="https://source.unsplash.com/random/800x522" alt="">
+            <div class="lp-categories__title">SNEAKERS</div>
         </article>
          <!-- RENDER CATEGORIES FROM DATABASE -->
     </section>
 
     <section class="lp-products">
-        <article class="lp-products__product">
-            <img class="lp-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-            <div class="lp-products__product-title">1800kr</div>
-            <div class="lp-products__price">1800kr</div>
+        <article class="feature-products__product">
+            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
+            <div class="feature-products__product-title">Nike AirMax</div>
+            <div class="feature-products__price">1800kr</div> 
+        </article>
+        <article class="feature-products__product">
+            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
+            <div class="feature-products__product-title">Nike AirMax</div>
+            <div class="feature-products__price">1800kr</div> 
+        </article>
+        <article class="feature-products__product">
+            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
+            <div class="feature-products__product-title">Nike AirMax</div>
+            <div class="feature-products__price">1800kr</div> 
+        </article>
+        <article class="feature-products__product">
+            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
+            <div class="feature-products__product-title">Nike AirMax</div>
+            <div class="feature-products__price">1800kr</div> 
+        </article>
+        <article class="feature-products__product">
+            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
+            <div class="feature-products__product-title">Nike AirMax</div>
+            <div class="feature-products__price">1800kr</div> 
+        </article>
+        <article class="feature-products__product">
+            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
+            <div class="feature-products__product-title">Nike AirMax</div>
+            <div class="feature-products__price">1800kr</div> 
         </article>
     </section>
 

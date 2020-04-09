@@ -16,6 +16,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    @include desktop {
+      min-height: 50vh;
+    }
+
     &--first {
       background-image: url(https://source.unsplash.com/random/800x500);
     }
