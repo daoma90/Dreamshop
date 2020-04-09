@@ -1,4 +1,10 @@
 .lp-products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  padding: 80px 0;
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  &__current-category {
+    text-align: center;
+  }
 }

@@ -10,10 +10,15 @@
   &__product {
     display: grid;
     grid-template-rows: 1fr repeat(2, min-content);
+    justify-items: center;
+    padding: 1rem;
   }
   &__title {
     text-align: center;
     margin: 1.5rem 0;
+  }
+  &__img-wrap {
+    max-width: 500px;
   }
   &__img {
     height: 100%;

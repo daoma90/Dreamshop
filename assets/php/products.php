@@ -1,10 +1,20 @@
 <?php 
-
-
+    
 require 'db.php';
 
-$stmt = $db->prepare($sql);
-$stmt->execute();
+if (isset($_GET['category'])){
+    $sql = "SELECT * FROM category, products WHERE category.ID = products.cat_id AND category.name = :catName";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':catName', $_GET['category']);
+    $stmt->execute();
+}
+else {
+    if (!$sql) {
+        $sql = "SELECT * FROM products";
+    }
+    $stmt = $db->prepare($sql);
+    $stmt->execute();    
+}
 
 $name = '';
 

@@ -42,17 +42,21 @@
 
     <section class="lp-categories">
         <?php 
-        require './assets/php/categories.php'; 
+        require './assets/php/categories.php';
         ?>
     </section>
 
     <section class="lp-products">
-        <?php 
-        $sql = "SELECT * FROM products";
-        require './assets/php/products.php'; 
-        ?>
+        <h2 class="lp-products__current-category">All shoes</h2>
+        <div class="lp-products__wrap">
+            <?php 
+            $sql = "SELECT * FROM products";
+            require './assets/php/products.php';
+            ?>
+        </div>
     </section>
 
     <script src="./assets/js/hero-scroller.js"></script>
+    <script src="./assets/js/ajax-categories.js"></script>
 </body>
 </html>
