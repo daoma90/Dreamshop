@@ -1,0 +1,77 @@
+@import "mixins";
+@import "variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: $color__white;
+  background-color: $color__black;
+  padding: $spacing__s;
+  align-items: center;
+
+  &__nav {
+    display: flex;
+    place-content: center space-evenly;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    color: #94ffd9;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      transition: all 200ms;
+      width: 40px;
+      border-radius: 2px;
+      color: #94ffd9;
+      background-color: #94ffd9;
+      position: absolute;
+    }
+
+    &::before {
+      top: 10px;
+    }
+
+    &::after {
+      bottom: 10px;
+    }
+  }
+
+  &__nav-line {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    height: 1px;
+    transition: all 200ms;
+    width: 40px;
+    border-radius: 1px;
+    background: #94ffd9;
+  }
+}
+
+.header__nav--active {
+  & > span {
+    transform: scale(0);
+    transition: all 200ms;
+  }
+
+  &::after,
+  &::before {
+    top: 0px;
+    left: 0;
+    width: 34px;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
+  &::before {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+}
