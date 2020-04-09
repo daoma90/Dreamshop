@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontendprojekt</title>
     <link rel="stylesheet" href="./assets/style/main.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 </head>
 <body>
+    <section class="lp-hero">
+        <div class="scroller">
+            <img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1080" alt="">
+            <img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1050" alt="">
+            <img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1020" alt="">
+        </div>
+        <div class="lp-hero__btn-wrap">
+            <h1 class="lp-hero__title">Summer Flavours</h1>
+        </div>
+        <button id="left"><i class="fa fa-arrow-left"></i></button>
+        <button id="right"><i class="fa fa-arrow-right"></i></button>
+
+
+    </section>
     <section class="feature-cards">
         <article class="feature-cards__card feature-cards__card--first"><div class="feature-cards__title">Inspirational quote</div></article>
         <article class="feature-cards__card feature-cards__card--second"><div class="feature-cards__title">Inspirational quote</div></article>
@@ -81,5 +99,6 @@
         </article>
     </section>
 
+    <script src="./assets/js/hero-scroller.js"></script>
 </body>
 </html>
