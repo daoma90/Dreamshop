@@ -33,70 +33,24 @@
     <section class="feature-products">
         <h2 class="feature-products__title">Featured</h2>
         <div class="feature-products__product-wrap">
-        <!-- RENDER PRODUCTS FROM DATABASE -->
-            <article class="feature-products__product">
-                <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-                <div class="feature-products__product-title">Nike AirMax</div>
-                <div class="feature-products__price">1800kr</div> 
-            </article>
-            <article class="feature-products__product">
-                <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-                <div class="feature-products__product-title">Nike AirMax</div>
-                <div class="feature-products__price">1800kr</div> 
-            </article>
-            <article class="feature-products__product">
-                <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-                <div class="feature-products__product-title">Nike AirMax</div>
-                <div class="feature-products__price">1800kr</div> 
-            </article>
-        <!-- RENDER PRODUCTS FROM DATABASE -->
+        <?php 
+        $sql = "SELECT * FROM products WHERE featured = 1";
+        require './assets/php/products.php'; 
+        ?>
         </div>
     </section>
 
     <section class="lp-categories">
-        <!-- RENDER CATEGORIES FROM DATABASE -->
-        <article class="lp-categories__item">
-            <img class="lp-categories__img" src="https://source.unsplash.com/random/800x502" alt="">
-            <div class="lp-categories__title">RUNNING</div>
-        </article>
-        <article class="lp-categories__item">
-            <img class="lp-categories__img" src="https://source.unsplash.com/random/800x522" alt="">
-            <div class="lp-categories__title">SNEAKERS</div>
-        </article>
-         <!-- RENDER CATEGORIES FROM DATABASE -->
+        <?php 
+        require './assets/php/categories.php'; 
+        ?>
     </section>
 
     <section class="lp-products">
-        <article class="feature-products__product">
-            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-            <div class="feature-products__product-title">Nike AirMax</div>
-            <div class="feature-products__price">1800kr</div> 
-        </article>
-        <article class="feature-products__product">
-            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-            <div class="feature-products__product-title">Nike AirMax</div>
-            <div class="feature-products__price">1800kr</div> 
-        </article>
-        <article class="feature-products__product">
-            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-            <div class="feature-products__product-title">Nike AirMax</div>
-            <div class="feature-products__price">1800kr</div> 
-        </article>
-        <article class="feature-products__product">
-            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-            <div class="feature-products__product-title">Nike AirMax</div>
-            <div class="feature-products__price">1800kr</div> 
-        </article>
-        <article class="feature-products__product">
-            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-            <div class="feature-products__product-title">Nike AirMax</div>
-            <div class="feature-products__price">1800kr</div> 
-        </article>
-        <article class="feature-products__product">
-            <img class="feature-products__img" src="./assets/media/placeholder-shoe.jpg" alt="">
-            <div class="feature-products__product-title">Nike AirMax</div>
-            <div class="feature-products__price">1800kr</div> 
-        </article>
+        <?php 
+        $sql = "SELECT * FROM products";
+        require './assets/php/products.php'; 
+        ?>
     </section>
 
     <script src="./assets/js/hero-scroller.js"></script>
