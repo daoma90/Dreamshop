@@ -372,9 +372,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 999;
 }
 
@@ -578,8 +579,15 @@
   right: 0;
   z-index: 98;
   background: #292929;
-  max-height: 100vh;
+  height: calc(100vh - 72px);
   overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .cart-fixed__cart-items {
@@ -588,6 +596,16 @@
 
 .cart-fixed__total-qty {
   padding: 0.5rem;
+}
+
+.cart-fixed__qty {
+  padding: 0.35rem;
+  width: 45px;
+}
+
+.cart-fixed input[type='number']::-webkit-inner-spin-button,
+.cart-fixed input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
 }
 
 .cart-fixed__item {
@@ -602,6 +620,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.cart-fixed__item-total {
+  font-weight: bold;
 }
 
 .cart-fixed__remove-btn {
@@ -673,6 +695,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: auto;
 }
 
 .cart-fixed__completion-btns > * {
@@ -705,30 +728,30 @@
 
 @-webkit-keyframes sweepUp {
   0% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   100% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
 }
 
 @keyframes sweepUp {
   0% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   100% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
 }
 
 @-webkit-keyframes sweepDown {
   0% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
   100% {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -738,8 +761,8 @@
 
 @keyframes sweepDown {
   0% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
   100% {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

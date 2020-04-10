@@ -120,7 +120,9 @@ const renderCart = () => {
 
                             <div class="cart-fixed__text-wrap">
                                 <div class="cart-fixed__name">${item.name}</div>
-                                <div>${item.price * item.quantity} kr</div>
+                                <div class="cart-fixed__item-total">${
+                                  item.price * item.quantity
+                                } kr</div>
                                 <input type="number" value="${
                                   item.quantity
                                 }" class="cart-fixed__qty">

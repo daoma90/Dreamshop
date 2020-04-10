@@ -4,8 +4,10 @@
   right: 0;
   z-index: 98;
   background: rgb(41, 41, 41);
-  max-height: 100vh;
+  height: calc(100vh - 72px);
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 
   &__cart-items {
     list-style-type: none;
@@ -13,6 +15,16 @@
 
   &__total-qty {
     padding: 0.5rem;
+  }
+
+  &__qty {
+    padding: 0.35rem;
+    width: 45px;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    opacity: 1;
   }
 
   &__item {
@@ -23,6 +35,10 @@
     display: grid;
     grid-template-columns: 1fr 2fr 0.5fr;
     align-items: center;
+  }
+
+  &__item-total {
+    font-weight: bold;
   }
 
   &__remove-btn {
@@ -75,6 +91,7 @@
   &__completion-btns {
     display: flex;
     flex-direction: column;
+    margin-top: auto;
 
     & > * {
       text-align: center;
@@ -102,15 +119,15 @@
 
 @keyframes sweepUp {
   0% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   100% {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
 }
 @keyframes sweepDown {
   0% {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
   100% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

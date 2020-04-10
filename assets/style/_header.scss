@@ -8,8 +8,10 @@
   background-color: $color__accent;
   padding: $spacing__s;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 999;
 
   &__cart-toggle {
