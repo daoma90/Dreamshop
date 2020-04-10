@@ -114,12 +114,20 @@ const renderCart = () => {
   items.innerHTML = '';
   cart.products.forEach((item) => {
     items.innerHTML += `<li class="cart-fixed__item">
-                            <div class="cart-fixed__name">${item.name}</div>
-                            <input type="number" value="${
-                              item.quantity
-                            }" class="cart-fixed__qty">
-                            <div>${item.price * item.quantity} kr</div>
-                            <span class="cart-fixed__remove-btn">remove</span>
+                            <div class="cart-fixed__img-wrap"><img class="cart-fixed__img" src="${
+                              item.image
+                            }"/></div>
+
+                            <div class="cart-fixed__text-wrap">
+                                <div class="cart-fixed__name">${item.name}</div>
+                                <div>${item.price * item.quantity} kr</div>
+                                <input type="number" value="${
+                                  item.quantity
+                                }" class="cart-fixed__qty">
+                            </div>
+                            <span class="cart-fixed__remove-btn">-</span>
+
+
                           </li>`;
   });
 
@@ -167,9 +175,32 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.cart-fixed__clear')) {
     const purchaseBtn = document.querySelector('.cart-fixed__checkout');
     const clearBtn = document.querySelector('.cart-fixed__clear');
+    const cartToggle_header = document.querySelector('.header__cart-toggle');
+    const cart = document.querySelector('.cart-fixed');
+    // must change in _cart.scss aswell
+    const animDuration = 200;
 
     purchaseBtn.addEventListener('click', renderCheckout);
     clearBtn.addEventListener('click', clearCart);
+
+    cartToggle_header.addEventListener('click', function () {
+      if (
+        cart.className.includes('hide-animation') ||
+        cart.className.includes('hidden')
+      ) {
+        cart.classList.remove('hidden');
+        cart.classList.add('show-animation');
+        setTimeout(() => {
+          cart.classList.remove('show-animation');
+        }, animDuration);
+      } else {
+        cart.classList.add('hide-animation');
+        setTimeout(() => {
+          cart.classList.remove('hide-animation');
+          cart.classList.add('hidden');
+        }, animDuration);
+      }
+    });
     renderCart();
   }
 });

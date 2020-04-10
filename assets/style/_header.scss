@@ -8,6 +8,16 @@
   background-color: $color__accent;
   padding: $spacing__s;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  &__cart-toggle {
+    cursor: pointer;
+    img {
+      max-height: 32px;
+    }
+  }
 
   &__search {
     width: 100%;
