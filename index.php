@@ -56,6 +56,8 @@
             ?>
         </div>
     </section>
+
+    <script src="./assets/js/cart.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/hero-scroller.js"></script>
     <script src="./assets/js/ajax-categories.js"></script>

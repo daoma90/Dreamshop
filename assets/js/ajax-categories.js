@@ -8,22 +8,21 @@ document.addEventListener('click', function (e) {
   }
 });
 
-function getProducts(category) {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      const categoryTitle = document.querySelector(
-        '.lp-products__current-category'
-      );
+async function getProducts(category) {
+  const response = await fetch(
+    `./assets/php/products.php?category=${category}`,
+    { method: 'post' }
+  );
+  const data = await response.text();
 
-      document.querySelector(
-        '.lp-products__wrap'
-      ).innerHTML = this.responseText;
+  if (data) {
+    const categoryTitle = document.querySelector(
+      '.lp-products__current-category'
+    );
 
-      categoryTitle.textContent = category;
-      categoryTitle.scrollIntoView();
-    }
-  };
-  xmlhttp.open('POST', `./assets/php/products.php?category=${category}`, true);
-  xmlhttp.send();
+    document.querySelector('.lp-products__wrap').innerHTML = data;
+
+    categoryTitle.textContent = category;
+    categoryTitle.scrollIntoView();
+  }
 }

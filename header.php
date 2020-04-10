@@ -27,5 +27,18 @@
     <span class="header__nav-line"></span>
   </div>
   <h2 class="header__headline">Dreamshop</h2>
-  <p class="header__cart">Cart</p>
+  <p class="header__cart">
+  <section class="cart-fixed foldedXY">
+        <div class="cart-fixed__total-qty cart-fixed__qty-notif"></div>
+        <div class="cart-fixed__name-total-wrap">
+          <div class="cart-fixed__total-qty"></div>
+        </div>
+        <ol class="cart-fixed__cart-items"></ol>
+        <div class="cart-fixed__total">0</div>
+        <a class="cart-fixed__checkout" href="confirmation.html">Checkout</a>
+        <button class="cart-fixed__clear" href="confirmation.html">
+          Clear Cart
+        </button>
+      </section>
+  </p>
 </header>
