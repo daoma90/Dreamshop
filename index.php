@@ -11,6 +11,7 @@
     />
 </head>
 <body>
+    <?php require_once 'header.php';?>
     <section class="lp-hero">
         <div class="scroller">
             <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1080" alt=""></div>
@@ -55,7 +56,7 @@
             ?>
         </div>
     </section>
-
+    <script src="./assets/js/header.js"></script>
     <script src="./assets/js/hero-scroller.js"></script>
     <script src="./assets/js/ajax-categories.js"></script>
 </body>

@@ -226,6 +226,139 @@
   .lp-hero #right {
     right: 4rem;
   }
+}
+
+.feature-cards {
+  min-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.feature-cards__title {
+  color: white;
+  font-size: 20px;
+}
+
+.feature-cards__card {
+  min-height: 25vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 1024px) {
+  .feature-cards__card {
+    min-height: 50vh;
+  }
+}
+
+.feature-cards__card--first {
+  background-image: url(https://source.unsplash.com/random/800x500);
+}
+
+.feature-cards__card--second {
+  background-image: url(https://source.unsplash.com/random/800x501);
+}
+
+.feature-products {
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+.feature-products__product-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+
+.feature-products__product {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr (min-content)[2];
+      grid-template-rows: 1fr repeat(2, -webkit-min-content);
+      grid-template-rows: 1fr repeat(2, min-content);
+  justify-items: center;
+  padding: 1rem;
+}
+
+.feature-products__title {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.feature-products__img-wrap {
+  max-width: 500px;
+}
+
+.feature-products__img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.lp-categories {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.lp-categories__item {
+  position: relative;
+  height: 300px;
+  cursor: pointer;
+  -webkit-transition-duration: 80ms;
+          transition-duration: 80ms;
+}
+
+.lp-categories__item:hover {
+  opacity: 0.7;
+}
+
+.lp-categories__title {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  color: white;
+  font-size: 34px;
+}
+
+.lp-categories__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.lp-products {
+  padding: 80px 0;
+}
+
+.lp-products__wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.lp-products__current-category {
+  text-align: center;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -234,7 +367,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: #ffffff;
-  background-color: green;
+  background-color: #82cf82;
   padding: 1em;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -320,12 +453,13 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: red;
+  background: #ffffff;
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
   -webkit-clip-path: circle(13.9% at 0 0);
           clip-path: circle(13.9% at 0 0);
   visibility: hidden;
+  z-index: 99;
 }
 
 .header__list {
@@ -339,7 +473,7 @@
 
 .header__item-link {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
 }
 
 .header__nav {
@@ -360,14 +494,14 @@
 }
 
 .header__nav::before, .header__nav::after {
-  content: "";
+  content: '';
   height: 1px;
   -webkit-transition: all 200ms;
   transition: all 200ms;
   width: 40px;
   border-radius: 2px;
-  color: red;
-  background-color: red;
+  color: #d37474;
+  background-color: #d37474;
   position: absolute;
 }
 
@@ -394,7 +528,11 @@
   transition: all 200ms;
   width: 40px;
   border-radius: 1px;
-  background: red;
+  background: #d37474;
+}
+
+.header__nav--active {
+  z-index: 999;
 }
 
 .header__nav--active > span {

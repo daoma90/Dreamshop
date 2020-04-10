@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@import 'mixins';
+@import 'variables';
 
 .header {
   display: flex;
@@ -54,10 +54,11 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: $color__prim;
+    background: $color__white;
     transition: all 500ms ease-in-out;
     clip-path: circle(13.9% at 0 0);
     visibility: hidden;
+    z-index: 99;
   }
 
   &__list {
@@ -71,7 +72,7 @@
 
   &__item-link {
     text-decoration: none;
-    color: $color__white;
+    color: $color__black;
   }
 
   &__nav {
@@ -87,7 +88,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       height: 1px;
       transition: all 200ms;
       width: 40px;
@@ -120,6 +121,7 @@
 }
 
 .header__nav--active {
+  z-index: 999;
   & > span {
     transform: scale(0);
     transition: all 200ms;
