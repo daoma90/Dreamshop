@@ -25,4 +25,8 @@
     width: 100%;
     object-fit: contain;
   }
+  &__add {
+    @include btn-primary;
+    margin-top: 0.5rem;
+  }
 }

@@ -1,14 +1,21 @@
 .lp-categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   &__item {
     position: relative;
-    height: 300px;
+    height: calc(25vh - (#{$header__height} / 4));
     cursor: pointer;
     transition-duration: 80ms;
     &:hover {
       opacity: 0.7;
+    }
+
+    @include desktop {
+      height: 50vh;
     }
   }
   &__title {

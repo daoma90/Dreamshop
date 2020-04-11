@@ -27,8 +27,8 @@
 
     </section>
     <section class="feature-cards">
-        <article class="feature-cards__card feature-cards__card--first"><div class="feature-cards__title">Inspirational quote</div></article>
-        <article class="feature-cards__card feature-cards__card--second"><div class="feature-cards__title">Inspirational quote</div></article>
+        <article class="feature-cards__card feature-cards__card--first"><div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--left">- "Well done is better than well said."</span></div></article>
+        <article class="feature-cards__card feature-cards__card--second"><div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right">- "The secret of getting ahead is getting started."</span></div></article>
     </section>
 
     <section class="feature-products">

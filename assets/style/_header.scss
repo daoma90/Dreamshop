@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   color: $color__white;
-  background-color: $color__accent;
+  background-color: rgba(0, 0, 0, 0.459);
   padding: $spacing__s;
   align-items: center;
   position: fixed;
@@ -15,7 +15,9 @@
   z-index: 999;
 
   &__cart-toggle {
+    margin-right: 2rem;
     cursor: pointer;
+    position: relative;
     img {
       max-height: 32px;
     }

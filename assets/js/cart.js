@@ -69,7 +69,7 @@ const handleCartQty = (e) => {
   ).textContent;
   const inputQty = e.target.parentElement.querySelector('.cart-fixed__qty');
   const productInCart = HappyLib.findProduct(clickedProduct, cart);
-  if (inputQty.value > productInCart.stock) {
+  if (productInCart !== undefined && inputQty.value > productInCart.stock) {
     productInCart.quantity = productInCart.stock;
     HappyLib.updateLocalStorage(cart.key, renderCart);
     alert('Stock limit reached');
@@ -108,6 +108,7 @@ const renderCart = () => {
   const items = document.querySelector('.cart-fixed__cart-items');
   const totalPrice = document.querySelector('.cart-fixed__total');
   const totalQty = document.querySelector('.cart-fixed__total-qty');
+  const totalQtyIconNotif = document.querySelector('.icon-notif');
   const price = HappyLib.getTotalPrice(cart.products);
   const qty = HappyLib.getTotalQty(cart.products);
 
@@ -122,7 +123,7 @@ const renderCart = () => {
                                 <div class="cart-fixed__name">${item.name}</div>
                                 <div class="cart-fixed__item-total">${
                                   item.price * item.quantity
-                                } kr</div>
+                                } SEK</div>
                                 <input type="number" value="${
                                   item.quantity
                                 }" class="cart-fixed__qty">
@@ -140,17 +141,21 @@ const renderCart = () => {
   HappyLib.addEvents(qtyInput, changeQuantity, 'change');
   HappyLib.addEvents(qtyInput, handleCartQty, 'change');
 
-  totalPrice.textContent = `${price} kr`;
+  totalPrice.textContent = `${price} SEK`;
   totalQty.textContent = `${qty} Items`;
+  totalQtyIconNotif.textContent = `${qty}`;
 };
 
 const clearCart = () => {
   const items = document.querySelector('.cart-fixed__cart-items');
   const totalPrice = document.querySelector('.cart-fixed__total');
   const totalProductQty = document.querySelector('.cart-fixed__total-qty');
+  const totalQtyIconNotif = document.querySelector('.icon-notif');
+
   items.innerHTML = '';
-  totalProductQty.textContent = '0';
-  totalPrice.textContent = '0 kr';
+  totalProductQty.textContent = '0 Items';
+  totalQtyIconNotif.textContent = '0';
+  totalPrice.textContent = '0 SEK';
   cart.products = [];
   localStorage.clear();
 };

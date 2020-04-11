@@ -25,6 +25,7 @@
           align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 @media (min-width: 1024px) {
@@ -39,6 +40,23 @@
 
 .feature-cards__card--second {
   background-image: url(https://source.unsplash.com/random/800x501);
+}
+
+.feature-cards__text {
+  font-size: 1.25rem;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.486);
+  padding: 1rem;
+}
+
+.feature-cards__text--left {
+  left: 10%;
+  top: 15%;
+}
+
+.feature-cards__text--right {
+  right: 5%;
+  bottom: 15%;
 }
 
 .feature-products {
@@ -80,16 +98,36 @@
      object-fit: contain;
 }
 
+.feature-products__add {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  background: #738fee;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.feature-products__add:hover {
+  cursor: pointer;
+  background: #5f7cda;
+}
+
 .lp-categories {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+@media (min-width: 1024px) {
+  .lp-categories {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .lp-categories__item {
   position: relative;
-  height: 300px;
+  height: calc(25vh - (72px / 4));
   cursor: pointer;
   -webkit-transition-duration: 80ms;
           transition-duration: 80ms;
@@ -97,6 +135,12 @@
 
 .lp-categories__item:hover {
   opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+  .lp-categories__item {
+    height: 50vh;
+  }
 }
 
 .lp-categories__title {
@@ -255,6 +299,7 @@
           align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 @media (min-width: 1024px) {
@@ -269,6 +314,23 @@
 
 .feature-cards__card--second {
   background-image: url(https://source.unsplash.com/random/800x501);
+}
+
+.feature-cards__text {
+  font-size: 1.25rem;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.486);
+  padding: 1rem;
+}
+
+.feature-cards__text--left {
+  left: 10%;
+  top: 15%;
+}
+
+.feature-cards__text--right {
+  right: 5%;
+  bottom: 15%;
 }
 
 .feature-products {
@@ -310,16 +372,36 @@
      object-fit: contain;
 }
 
+.feature-products__add {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  background: #738fee;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.feature-products__add:hover {
+  cursor: pointer;
+  background: #5f7cda;
+}
+
 .lp-categories {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+@media (min-width: 1024px) {
+  .lp-categories {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .lp-categories__item {
   position: relative;
-  height: 300px;
+  height: calc(25vh - (72px / 4));
   cursor: pointer;
   -webkit-transition-duration: 80ms;
           transition-duration: 80ms;
@@ -327,6 +409,12 @@
 
 .lp-categories__item:hover {
   opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+  .lp-categories__item {
+    height: 50vh;
+  }
 }
 
 .lp-categories__title {
@@ -367,7 +455,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: #ffffff;
-  background-color: #82cf82;
+  background-color: rgba(0, 0, 0, 0.459);
   padding: 1em;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -380,7 +468,9 @@
 }
 
 .header__cart-toggle {
+  margin-right: 2rem;
   cursor: pointer;
+  position: relative;
 }
 
 .header__cart-toggle img {
@@ -706,6 +796,27 @@
 .cart-fixed__completion-btns a {
   text-decoration: none;
   color: white;
+}
+
+.icon-notif {
+  position: absolute;
+  top: -11px;
+  right: -15px;
+  background: #fbe576;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
 }
 
 .hidden {

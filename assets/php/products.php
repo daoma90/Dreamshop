@@ -28,8 +28,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
 echo "<article class='feature-products__product' data-id=$id>
         <div class='feature-products__img-wrap'><img class='feature-products__img' src='$image' alt=''></div>
         <div class='feature-products__product-title'>$name</div>
-        <div class='feature-products__price'>$price kr</div> 
-        <button class='feature-products__add'>Add to cart</button>
+        <div class='feature-products__price'>$price SEK</div> 
+        <button class='feature-products__add'>ADD TO CART</button>
       </article>";
 endwhile;
 

@@ -4,7 +4,7 @@
   right: 0;
   z-index: 98;
   background: rgb(41, 41, 41);
-  height: calc(100vh - 72px);
+  height: calc(100vh - #{$header__height});
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -102,6 +102,20 @@
       color: white;
     }
   }
+}
+.icon-notif {
+  position: absolute;
+  top: -11px;
+  right: -15px;
+  background: #fbe576;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
 }
 .hidden {
   display: none;
