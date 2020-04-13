@@ -6,7 +6,7 @@ $stmt->execute();
 
 $button = "<button class='createbtn'>";
 $button .= "<a href='create.php?'>
-  Create a Post</a> ";
+  Create Categorie</a> ";
 echo $button .= "</button>";
 
 
