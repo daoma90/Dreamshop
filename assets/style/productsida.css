@@ -100,10 +100,10 @@ nav .fa-align-justify {
 .subWrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (0.4fr)[5];
-      grid-template-columns: repeat(5, 0.4fr);
-  -ms-grid-rows: (0.5fr)[1];
-      grid-template-rows: repeat(1, 0.5fr);
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[1];
+      grid-template-rows: repeat(1, 1fr);
 }
 
 .subImgDiv {
