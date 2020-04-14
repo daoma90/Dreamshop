@@ -187,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const clearBtn = document.querySelector('.cart-fixed__clear');
     const cartToggle_header = document.querySelector('.header__cart-toggle');
     const cart = document.querySelector('.cart-fixed');
+    const cartOverlay = document.querySelector('.bg-overlay');
     // must change in _cart.scss aswell
     const animDuration = 200;
 
@@ -209,16 +210,30 @@ document.addEventListener('DOMContentLoaded', function () {
       ) {
         cart.classList.remove('hidden');
         cart.classList.add('show-animation');
+        cartOverlay.classList.remove('hidden');
         setTimeout(() => {
           cart.classList.remove('show-animation');
         }, animDuration);
       } else {
         cart.classList.add('hide-animation');
+        cartOverlay.classList.add('hide-overlay');
         setTimeout(() => {
+          cartOverlay.classList.remove('hide-overlay');
           cart.classList.remove('hide-animation');
           cart.classList.add('hidden');
+          cartOverlay.classList.add('hidden');
         }, animDuration);
       }
+    });
+    cartOverlay.addEventListener('click', function () {
+      cart.classList.add('hide-animation');
+      cartOverlay.classList.add('hide-overlay');
+      setTimeout(() => {
+        cartOverlay.classList.remove('hide-overlay');
+        cart.classList.remove('hide-animation');
+        cart.classList.add('hidden');
+        cartOverlay.classList.add('hidden');
+      }, animDuration);
     });
     renderCart();
   }

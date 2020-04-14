@@ -103,6 +103,37 @@
     }
   }
 }
+.bg-overlay {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.623);
+  height: 100vh;
+  width: 100vw;
+  animation: fadeIn 200ms forwards;
+  z-index: -1;
+}
+.hide-overlay {
+  animation: fadeOut 200ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .icon-notif {
   position: absolute;
   top: -11px;
@@ -123,27 +154,27 @@
 
 // Must change value in cart.js timeouts aswell
 .hide-animation {
-  animation: sweepUp 200ms;
+  animation: sweepUp 200ms ease;
   animation-fill-mode: forwards;
 }
 .show-animation {
-  animation: sweepDown 200ms;
+  animation: sweepDown 200ms ease;
   animation-fill-mode: forwards;
 }
 
 @keyframes sweepUp {
   0% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: translateX(0px);
   }
   100% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transform: translateX(450px);
   }
 }
 @keyframes sweepDown {
   0% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transform: translateX(450px);
   }
   100% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transform: translateX(0px);
   }
 }
