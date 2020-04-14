@@ -677,6 +677,18 @@
   top: 20px;
 }
 
+.burger-visible {
+  visibility: visible;
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+}
+
+.burger-hidden {
+  visibility: hidden;
+  -webkit-clip-path: circle(13.9% at 0 0);
+          clip-path: circle(13.9% at 0 0);
+}
+
 .cart-fixed {
   position: absolute;
   top: 72px;

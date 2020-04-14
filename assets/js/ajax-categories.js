@@ -6,6 +6,11 @@ document.addEventListener('click', function (e) {
 
     getProducts(category);
   }
+  if (e.target.className.includes('catsort-header')) {
+    const category = e.target.textContent;
+    getProducts(category);
+    menu.classList.remove('burger-visible');
+  }
 });
 
 async function getProducts(category) {

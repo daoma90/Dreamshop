@@ -156,3 +156,11 @@
     top: 20px;
   }
 }
+.burger-visible {
+  visibility: visible;
+  clip-path: circle(100%);
+}
+.burger-hidden {
+  visibility: hidden;
+  clip-path: circle(13.9% at 0 0);
+}
