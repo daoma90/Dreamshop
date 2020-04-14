@@ -77,18 +77,37 @@
 
   &__list {
     list-style: none;
+    margin-top: 2rem;
   }
 
   &__list-item {
-    margin: $spacing__s;
     font-size: 24px;
     color: black;
     cursor: pointer;
+    text-align: center;
+    transition-duration: 80ms;
+    padding: $spacing__s;
+
+    &:first-of-type {
+      padding: 0;
+    }
+
+    &:hover {
+      background: black;
+      color: white;
+    }
+    &:hover .header__item-link {
+      color: white;
+    }
   }
 
   &__item-link {
     text-decoration: none;
     color: $color__black;
+    transition-duration: 80ms;
+    width: 100%;
+    display: block;
+    padding: $spacing__s;
   }
 
   &__nav {

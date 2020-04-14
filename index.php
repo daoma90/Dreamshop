@@ -35,8 +35,7 @@
         <h2 class="feature-products__title">Featured</h2>
         <div class="feature-products__product-wrap">
         <?php 
-        $sql = "SELECT * FROM products WHERE featured = 1";
-        require './assets/php/products.php'; 
+        require './assets/php/featured-products.php'; 
         ?>
         </div>
     </section>
@@ -48,10 +47,20 @@
     </section>
 
     <section class="lp-products">
-        <h2 class="lp-products__current-category">All shoes</h2>
+        <h2 id="category" class="lp-products__current-category"><?= isset($_GET['category']) ? $_GET['category'] : "All shoes";?></h2>
         <div class="lp-products__wrap">
             <?php 
-            $sql = "SELECT * FROM products";
+            if (isset($_GET['category'])){
+                $sql = "SELECT * FROM category, products WHERE category.ID = products.cat_id AND category.name = :catName";
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':catName', $_GET['category']);
+                $stmt->execute();
+            }
+            else {
+                $sql = "SELECT * FROM products";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+            }
             require './assets/php/products.php';
             ?>
         </div>

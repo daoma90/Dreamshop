@@ -91,12 +91,7 @@
             <span class="productpage__price"><?= $price ?> SEK</span>
             <small class="productpage__category"><?= $category ?></small>
           </div>
-          <p class="productpage__desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
-            distinctio totam modi odit doloremque ea similique rerum aliquam
-            laborum alias. Commodi id, vero numquam nostrum nihil soluta
-            repellat doloremque pariatur?
-          </p>
+          <p class="productpage__desc"><?= $desc ?></p>
           <div class="productpage__input-wrap">
             <div class="productpage__qty-wrap">
               <button class="productpage__qty-down"><i class="fa fa-minus"></i></button>
@@ -114,6 +109,7 @@
       </section>
     </main>
     <script src="./assets/js/happyLib.js"></script>
+    <script src="./assets/js/ajax-categories.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/cart.js"></script>
   </body>

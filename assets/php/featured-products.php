@@ -2,18 +2,9 @@
     
 require 'db.php';
 
-if (!isset($sql)) {
-    $sql = "SELECT * FROM products";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-}
-if (isset($_GET['category'])){
-    $sql = "SELECT * FROM category, products WHERE category.ID = products.cat_id AND category.name = :catName";
-    $stmt = $db->prepare($sql);
-    $stmt->bindParam(':catName', $_GET['category']);
-    $stmt->execute();
-}
-
+$sql = "SELECT * FROM products WHERE featured = 1";
+$stmt = $db->prepare($sql);
+$stmt->execute();
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
     $id = $row['ID'];

@@ -606,18 +606,40 @@
 
 .header__list {
   list-style: none;
+  margin-top: 2rem;
 }
 
 .header__list-item {
-  margin: 1em;
   font-size: 24px;
   color: black;
   cursor: pointer;
+  text-align: center;
+  -webkit-transition-duration: 80ms;
+          transition-duration: 80ms;
+  padding: 1em;
+}
+
+.header__list-item:first-of-type {
+  padding: 0;
+}
+
+.header__list-item:hover {
+  background: black;
+  color: white;
+}
+
+.header__list-item:hover .header__item-link {
+  color: white;
 }
 
 .header__item-link {
   text-decoration: none;
   color: #000000;
+  -webkit-transition-duration: 80ms;
+          transition-duration: 80ms;
+  width: 100%;
+  display: block;
+  padding: 1em;
 }
 
 .header__nav {
