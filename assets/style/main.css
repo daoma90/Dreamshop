@@ -586,6 +586,8 @@
 .header__list-item {
   margin: 1em;
   font-size: 24px;
+  color: black;
+  cursor: pointer;
 }
 
 .header__item-link {
@@ -685,8 +687,8 @@
 
 .burger-hidden {
   visibility: hidden;
-  -webkit-clip-path: circle(13.9% at 0 0);
-          clip-path: circle(13.9% at 0 0);
+  -webkit-clip-path: circle(0% at 0 0);
+          clip-path: circle(0% at 0 0);
 }
 
 .cart-fixed {

@@ -10,6 +10,7 @@ document.addEventListener('click', function (e) {
     const category = e.target.textContent;
     getProducts(category);
     menu.classList.remove('burger-visible');
+    burger.classList.remove('header__nav--active');
   }
 });
 

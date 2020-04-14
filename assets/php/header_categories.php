@@ -11,9 +11,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
     $name = $row['name'];
 
     # Insert category
-echo "<li class='header__list-item catsort-header'>
-        <a href='#' class='header__item-link'>$name</a>
-      </li>";
+echo "<li class='header__list-item catsort-header'>$name</li>";
 endwhile;
 
 ?>
