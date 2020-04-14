@@ -25,32 +25,47 @@ function deleteProduct($pdo)
 
 function createProduct($pdo)
 {
-
+  //  and !empty($fileName)
   if (isset($_POST['addProduct'])) {
+
+    $targetDir = "../images";
+    $fileName = $_FILES["file"]["name"];
+    $temp_name  = $_FILES['file']['tmp_name'];
+    $targetFilePath = $targetDir . $fileName;
+
+
     $name = trim($_POST['name']);
     $description = trim($_POST['description']);
     $price = trim($_POST['price']);
-    $image = trim($_POST['image']);
     $cat_id = trim($_POST['cat_id']);
+    $featured = trim($_POST['featured']);
+    $in_stock = trim($_POST['in_stock']);
 
+    if (isset($fileName) and !empty($fileName)) {
 
+      if (move_uploaded_file($temp_name, $targetFilePath)) {
 
-    if (empty($name) || empty($description) || empty($price) || empty($image) || empty($cat_id)) {
-      echo 'error msg'; //not finalize
+        $sql = "INSERT INTO users(name,description,price,image,featured,in_stock,cat_id) VALUES(:name,:email,:description,:price,:fileName,:featured,:in_stock,:cat_id)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+          ':name' => $name,
+          ':description' => $description,
+          ':price' => $price,
+          ':fileName' => $fileName,
+          ':featured' => $featured,
+          ':in_stock' => $in_stock,
+          ':cat_id' => $cat_id,
+
+        ]);
+        header('Location:index.php');
+      } else {
+        echo  "Sorry, there was an error uploading your file.";
+      }
     } else {
-
-      $sql = "INSERT INTO users(name,description,price,image,cat_id) VALUES(:name,:email,:description,:price,:image,:cat_id)";
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute([
-        ':name' => $name,
-        ':description' => $description,
-        ':price' => $price,
-        ':image' => $image,
-        ':cat_id' => $cat_id,
-
-      ]);
-      header('Location:index.php');
+      echo 'You should select a file to upload !!';
     }
+  } else {
+    echo 'You cant leave field empty';
   }
 }
 
