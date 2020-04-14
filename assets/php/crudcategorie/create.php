@@ -1,8 +1,8 @@
 <?php
 
 require_once 'db.php';
-require_once 'header.php';
-require_once 'index.php';
+
+
 
 $statusMsg = '';
 
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_FILES["file"]["name"])) {
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
 
       $sql = "INSERT INTO categorie(name, image) VALUES (:titel, :fileName)";
-    //   echo $fileName;
+      echo $fileName;
       $stmt = $db->prepare($sql);
       $stmt->bindParam(':titel',  $name);
       $stmt->bindParam(':fileName',  $fileName);
