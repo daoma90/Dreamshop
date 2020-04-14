@@ -195,6 +195,7 @@
   overflow-y: hidden;
   height: 100%;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .lp-hero .scroller::-webkit-scrollbar {
