@@ -7,7 +7,7 @@
       placeholder="Search Product"
     />
     <ul class="header__list">
-      <li class="header__list-item "><a href="#" class="header__item-link"
+      <li class="header__list-item "><a href="./" class="header__item-link"
         >Home</a></li>
       <?php require_once './assets/php/header_categories.php'; ?>
     </ul>

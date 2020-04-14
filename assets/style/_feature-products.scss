@@ -13,6 +13,14 @@
     justify-items: center;
     padding: 1rem;
   }
+  &__link-wrap {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-auto-rows: min-content;
+    justify-items: center;
+    text-decoration: none;
+    color: black;
+  }
   &__title {
     text-align: center;
     margin: 1.5rem 0;

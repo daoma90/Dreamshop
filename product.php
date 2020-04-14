@@ -1,3 +1,26 @@
+<?php 
+    require_once './assets/php/db.php';
+
+
+    if (isset($_GET['id'])){
+        $sql = "SELECT products.*, category.name AS category FROM products, category WHERE products.ID = :id AND category.ID = products.cat_id";
+        #$sql = "SELECT * FROM products JOIN category ON (products.cat_id = category.ID) WHERE products.ID = :id";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id', $_GET['id']);
+        $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
+        $name = $row['name'];
+        $desc = $row['description'];
+        $price = $row['price'];
+        $image = $row['image'];
+        $category = $row['category'];
+
+    endwhile;
+    $product = $name;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,7 +42,7 @@
           <div class="productpage__primary-img-wrap">
             <img
               class="productpage__img productpage__img--large"
-              src="./assets/media/placeholder-shoe.jpg"
+              src="<?= $image?>"
               alt=""
             />
           </div>
@@ -64,9 +87,9 @@
 
         <div class="productpage__col-right">
           <div class="productpage__heading-wrap">
-            <h1 class="productpage__name">Shoe Name</h1>
-            <span class="productpage__price">999 SEK</span>
-            <small class="productpage__category">Running</small>
+            <h1 class="productpage__name"><?= $product ?></h1>
+            <span class="productpage__price"><?= $price ?> SEK</span>
+            <small class="productpage__category"><?= $category ?></small>
           </div>
           <p class="productpage__desc">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
@@ -75,8 +98,17 @@
             repellat doloremque pariatur?
           </p>
           <div class="productpage__input-wrap">
-            <input class="productpage__qty" type="number" value="1" />
-            <button class="productpage__add">ADD TO CART</button>
+            <div class="productpage__qty-wrap">
+              <button class="productpage__qty-down"><i class="fa fa-minus"></i></button>
+              <input
+                class="productpage__qty"
+                type="number"
+                value="1"
+                readonly
+              />
+              <button class="productpage__qty-up"><i class="fa fa-plus"></i></button>
+            </div>
+            <button class="productpage__add" data-id=<?= $_GET['id'] ?>>ADD TO CART</button>
           </div>
         </div>
       </section>
