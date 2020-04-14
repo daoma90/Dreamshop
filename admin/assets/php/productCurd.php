@@ -23,6 +23,7 @@ function deleteProduct($pdo)
   }
 }
 
+
 function createProduct($pdo)
 {
   //  and !empty($fileName)
@@ -68,6 +69,10 @@ function createProduct($pdo)
     echo 'You cant leave field empty';
   }
 }
+
+
+
+
 
 function fillingEditForm($pdo)
 {
