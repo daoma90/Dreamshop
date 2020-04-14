@@ -56,6 +56,7 @@
             ?>
         </div>
     </section>
+    <?php require_once 'footer.php';?>
 
     <script src="./assets/js/happyLib.js"></script>
     <script src="./assets/js/header.js"></script>
