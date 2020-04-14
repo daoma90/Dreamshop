@@ -7,10 +7,11 @@
 }
 
 main {
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 800px) {
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
 
 }
@@ -40,15 +41,15 @@ nav {
 .wrapper {
 
 
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 800px) {
+        padding: 50px 200px;
 
-
-        padding: 50px 150px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         grid-template-areas: "bild txt"
             " bild2 txt";
+
 
         .imgDiv {
             grid-area: bild;
@@ -56,21 +57,18 @@ nav {
 
         .subWrapper {
             grid-area: bild2;
-
-
         }
 
         .productInfo {
+
             grid-area: txt;
             display: flex;
             justify-content: center;
             align-items: center;
+            //text-align: center;
 
-            // text-align: center;
 
         }
-
-
     }
 
 
@@ -134,7 +132,6 @@ nav {
 
 .buyBtn {
     background-color: white;
-    /* Green */
     border: none;
     color: black;
     padding: 15px 32px;
@@ -143,11 +140,6 @@ nav {
     display: inline-block;
     font-size: 16px;
     margin-left: auto;
-
-    // @media screen and (min-width: 5500px) {
-    //     margin-top: auto;
-    // }
-
 }
 
 .btns {
@@ -158,9 +150,5 @@ nav {
         width: 30px;
         height: 20px;
     }
-
-    // @media screen and (min-width: 5500px) {
-    //     margin-top: auto;
-    // }
 
 }

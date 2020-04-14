@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
   main {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -45,9 +45,9 @@ nav .fa-align-justify {
   padding: 10px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
   .wrapper {
-    padding: 50px 150px;
+    padding: 50px 200px;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -144,7 +144,6 @@ nav .fa-align-justify {
 
 .buyBtn {
   background-color: white;
-  /* Green */
   border: none;
   color: black;
   padding: 15px 32px;
