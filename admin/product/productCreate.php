@@ -1,6 +1,6 @@
 <?php 
 
-  require_once "./assets/php/db.php";
+  require_once "./inclues/db.php";
 
 
   //  and !empty($fileName)
@@ -44,4 +44,3 @@
   } else {
     echo 'You cant leave field empty';
   }
-?>

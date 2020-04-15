@@ -1,14 +1,14 @@
 <?php
 
-require "./assets/php/db.php";
+require "../includes/db.php";
 
 
 function readAll($pdo)
 {
-  $sql = 'SELECT * FROM products';
-  $stmt = $pdo->prepare($sql);
-  $stmt->execute();
-  return $stmt;
+    $sql = 'SELECT * FROM products';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt;
 }
 
 //Draws each product based on arr from db

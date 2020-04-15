@@ -9,14 +9,14 @@ include 'productGlobal.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontendprojekt</title>
-    <link rel="stylesheet" href="./assets/style/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-    <?php require_once "header.php"; ?>
+    <?php require_once "../includes/header.php"; ?>
     <main>
-    
+
         <!-- Handles add and update post -->
         <section class="f-container">
             <form class='f-container__form' method='POST' action="productCreate.php" enctype='multipart/form-data'>
@@ -52,7 +52,9 @@ include 'productGlobal.php';
         </section>
 
     </main>
-    <script src="./assets/js/admin-products.js"></script>
-    <script src="./assets/js/header.js"></script>
+    <script src="../js/editCategory.js"></script>
+    <script src="../js/admin-products.js"></script>
+    <script src="../js/header.js"></script>
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 <?php
-require_once './assets/php/db.php';
+require_once '../includes/db.php';
 
 if(isset($_GET['ID'])){
     $ID = htmlspecialchars($_GET['ID']);
@@ -9,4 +9,3 @@ if(isset($_GET['ID'])){
   $stmt->execute();
   header('Location:index.php');
 }
-?>
