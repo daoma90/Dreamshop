@@ -1,10 +1,13 @@
 document.addEventListener('click', function (e) {
-  if (e.target.className.includes('feature-products__add')) {
-    const product_id = e.target.parentElement.dataset.id;
+  if (
+    e.target.className.includes('feature-products__add') ||
+    e.target.className.includes('productpage__add')
+  ) {
+    const product_id = e.target.dataset.id;
     addToCart(product_id);
   }
 });
-
+let inputQty;
 const cart = {
   // Key should be randomized in a real project. Used as reference point and unique identifier
   key: 'qwerqwerqwerqwerqwerqwer',
@@ -19,7 +22,7 @@ async function addToCart(id) {
     name: product[0].name,
     price: product[0].price,
     image: product[0].image,
-    quantity: 1,
+    quantity: inputQty ? parseInt(inputQty.value) : 1,
     stock: 5,
   };
 
@@ -28,7 +31,11 @@ async function addToCart(id) {
   if (!productInCart) {
     cart.products.push(tempObj);
   } else {
-    productInCart.quantity += 1;
+    if (inputQty) {
+      productInCart.quantity += parseInt(inputQty.value);
+    } else {
+      productInCart.quantity++;
+    }
     // If quantity is raised above the current stock quantity the value will be set to the max stock quantity
     if (tempObj.stock < productInCart.quantity) {
       productInCart.quantity = tempObj.stock;
@@ -39,14 +46,12 @@ async function addToCart(id) {
 }
 
 const increaseQty = (e) => {
-  const inputQty = e.target.parentElement.querySelector('.product-card__qty');
   let realValue = parseInt(inputQty.value);
   realValue += 1;
   inputQty.value = realValue;
 };
 
 const decreaseQty = (e) => {
-  const inputQty = e.target.parentElement.querySelector('.product-card__qty');
   let realValue = parseInt(inputQty.value);
 
   if (realValue > 1) {
@@ -56,8 +61,6 @@ const decreaseQty = (e) => {
 };
 
 const handleQty = (e) => {
-  const inputQty = e.target.parentElement.querySelector('.product-card__qty');
-
   if (inputQty.value <= 0) {
     inputQty.value = 1;
   }
@@ -184,8 +187,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const clearBtn = document.querySelector('.cart-fixed__clear');
     const cartToggle_header = document.querySelector('.header__cart-toggle');
     const cart = document.querySelector('.cart-fixed');
+    const cartOverlay = document.querySelector('.bg-overlay');
     // must change in _cart.scss aswell
     const animDuration = 200;
+
+    if (document.querySelector('.productpage')) {
+      const qtyUp = document.querySelector('.productpage__qty-up');
+      const qtyDown = document.querySelector('.productpage__qty-down');
+      inputQty = document.querySelector('.productpage__qty');
+
+      qtyUp.addEventListener('click', increaseQty);
+      qtyDown.addEventListener('click', decreaseQty);
+    }
 
     purchaseBtn.addEventListener('click', renderCheckout);
     clearBtn.addEventListener('click', clearCart);
@@ -197,16 +210,30 @@ document.addEventListener('DOMContentLoaded', function () {
       ) {
         cart.classList.remove('hidden');
         cart.classList.add('show-animation');
+        cartOverlay.classList.remove('hidden');
         setTimeout(() => {
           cart.classList.remove('show-animation');
         }, animDuration);
       } else {
         cart.classList.add('hide-animation');
+        cartOverlay.classList.add('hide-overlay');
         setTimeout(() => {
+          cartOverlay.classList.remove('hide-overlay');
           cart.classList.remove('hide-animation');
           cart.classList.add('hidden');
+          cartOverlay.classList.add('hidden');
         }, animDuration);
       }
+    });
+    cartOverlay.addEventListener('click', function () {
+      cart.classList.add('hide-animation');
+      cartOverlay.classList.add('hide-overlay');
+      setTimeout(() => {
+        cartOverlay.classList.remove('hide-overlay');
+        cart.classList.remove('hide-animation');
+        cart.classList.add('hidden');
+        cartOverlay.classList.add('hidden');
+      }, animDuration);
     });
     renderCart();
   }

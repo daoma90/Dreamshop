@@ -8,6 +8,11 @@ document.addEventListener('click', function (e) {
   }
   if (e.target.className.includes('catsort-header')) {
     const category = e.target.textContent;
+    console.log('hs');
+    if (document.querySelector('.productpage')) {
+      window.location = './?category=' + category;
+      window.location.hash = '#category';
+    }
     getProducts(category);
     menu.classList.remove('burger-visible');
     burger.classList.remove('header__nav--active');

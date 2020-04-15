@@ -1,4 +1,5 @@
 <div class="header__cart-toggle"><img src="./assets/media/smart-cart.png" alt=""><span class="icon-notif"></span></div>
+<div class="bg-overlay hidden"></div>
 <section class="cart-fixed hidden">
         <div class="cart-fixed__total-qty cart-fixed__qty-notif"></div>
         <div class="cart-fixed__name-total-wrap">
