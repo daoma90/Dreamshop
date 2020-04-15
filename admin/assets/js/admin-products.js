@@ -4,7 +4,7 @@ const deleteView = (id) => {
 	const formData = new FormData();
 	formData.append('ID', id);
 	event.preventDefault();
-	fetch("deleteproduct.php", {
+	fetch("productDelete.php", {
 			method: 'POST',
 			body: formData
 		})
@@ -23,8 +23,9 @@ const deleteView = (id) => {
 
 //Populate all data from DOM to form and change to updateproduct.php
 const populateFields = (id) => {
+	console.log("hej");
 	const element = document.querySelector(`#product_${id}`);
-	const form = document.querySelector(`.form-container__form`);
+	const form = document.querySelector(`.f-container__form`);
 	Array.from(form.elements).forEach(item => {
 		switch (item.name) {
 			case "image":
@@ -46,7 +47,7 @@ const populateFields = (id) => {
 				break;
 
 			case "featured":
-				//item.value = element.querySelector(".featured").innerText;
+				item.value = element.querySelector(".featured").innerText;
 				break;
 			default:
 				break;
@@ -56,9 +57,9 @@ const populateFields = (id) => {
 		}
 	});
 
-	form.setAttribute("action", "updateproduct.php");
+	form.setAttribute("action", "productUpdate.php");
 	form.querySelector("button").setAttribute("name", "updateProduct");
 	document.querySelector("#upID").setAttribute("value", id);
-	document.querySelector(".form-container__form-header").textContent = "Update product";
+	document.querySelector(".f-container__form-header").textContent = "Update product";
 	//set some edit styling to indicate in edit..
 }

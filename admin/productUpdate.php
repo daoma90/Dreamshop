@@ -1,5 +1,7 @@
 <?php
-require_once 'db.php';
+
+require "./assets/php/db.php";
+
 
 if (isset($_POST['updateProduct'])) {
     $id = $_POST['update-id']; //getting id for update
@@ -12,9 +14,9 @@ if (isset($_POST['updateProduct'])) {
     // $image = trim($_POST['image']);
     $cat_id = trim($_POST['cat_id']);
 
-    if (empty($name) || empty($description) || empty($price) || empty($image) || empty($cat_id)) {
-      echo 'error msg'; //not finalize
-    } else {
+    // if (empty($name) || empty($description) || empty($price) || empty($image) || empty($cat_id)) {
+    //   echo var_dump($_POST);
+    // } else {
       $sql = 'UPDATE products 
       SET name=:name,description=:description,price=:price,image=:image, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
       $stmt = $pdo->prepare($sql);
@@ -31,5 +33,5 @@ if (isset($_POST['updateProduct'])) {
       ]);
       header('Location:products.php');
     }
-  }
+  // }
 ?>

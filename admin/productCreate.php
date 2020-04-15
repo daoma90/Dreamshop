@@ -1,6 +1,7 @@
 <?php 
 
-    include 'db.php';
+  require_once "./assets/php/db.php";
+
 
   //  and !empty($fileName)
   if (isset($_POST['addProduct'])) {

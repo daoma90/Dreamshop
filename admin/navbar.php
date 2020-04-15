@@ -2,7 +2,7 @@
     <nav class="header__hidden-burgernav">
         <ul class="header__list">
             <a href="" class="header__item-link"><li class="header__list-item">Kategorier</li></a>
-            <li class="header__list-item" id="products">Produkter</li>
+            <a href="products.php"><li class="header__list-item" id="products">Produkter</li></a>
             <ul class="header__sub-list header__sub-list--hidden" id="sub-products">
                <a href="" class="header__sub-item-link"><li class="header__sub-list-item">Kategori 1</li></a>
                <a href="" class="header__sub-item-link"><li class="header__sub-list-item">Kategori 2</li></a>

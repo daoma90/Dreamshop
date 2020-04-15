@@ -4,17 +4,19 @@
 main {
     display: flex;
     flex-direction: row;
-
+    width:100vw;
 }
 .section-main {
     display: flex;
+    justify-content: flex-start;
+    align-content: start;
     flex-wrap: wrap;
     width: 100%;
-    overflow-y: scroll;
+    height: 100vh;
     background:white;
     @media (max-width:768px) {
         justify-content: center;
-        
+        overflow-y: scroll;
     }
 }
 
@@ -27,7 +29,7 @@ main {
     position: relative;
     top: 120px;
     margin-left: 5vw;
-
+    margin-bottom: 5vh;
 
     &__left-info {
         display: inherit;
@@ -87,7 +89,7 @@ main {
     }   
 }
 
-.form-container {
+.f-container {
     display: flex;
     justify-content: center;
     background-color: #FFF0CC;
@@ -98,7 +100,6 @@ main {
     z-index: 100;
 
     @media(min-width:760px) {
-
         position: relative;
         order:0;
         height: 100vh;
@@ -135,6 +136,7 @@ main {
             outline: none;
             color: white;
             line-height: 140%;
+            height: 30px;
             cursor: pointer;
             &:hover {
                 background: darken(#8DB0F8, 5); 
