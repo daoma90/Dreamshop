@@ -14,9 +14,9 @@
     <?php require_once 'header.php';?>
     <section class="lp-hero">
         <div class="scroller">
-            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1080" alt=""></div>
-            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1050" alt=""></div>
-            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://source.unsplash.com/random/1920x1020" alt=""></div>
+            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""></div>
+            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://images.unsplash.com/photo-1517466121016-3f7e7107c756?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt=""></div>
+            <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""></div>
         </div>
         <div class="lp-hero__btn-wrap">
             <h1 class="lp-hero__title">Summer Flavours</h1>

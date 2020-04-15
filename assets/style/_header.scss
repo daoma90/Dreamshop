@@ -128,8 +128,8 @@
       transition: all 200ms;
       width: 40px;
       border-radius: 2px;
-      color: $color__prim;
-      background-color: $color__prim;
+      color: $color__white;
+      background-color: $color__white;
       position: absolute;
     }
 
@@ -151,7 +151,7 @@
     transition: all 200ms;
     width: 40px;
     border-radius: 1px;
-    background: $color__prim;
+    background: $color__white;
   }
 }
 
@@ -167,6 +167,8 @@
     top: 0px;
     left: 0;
     width: 34px;
+    color: $color__black;
+    background-color: $color__black;
   }
   &::after {
     transform: rotate(-45deg);
@@ -175,6 +177,9 @@
   &::before {
     transform: rotate(45deg);
     top: 20px;
+  }
+  .header__nav-line {
+    background: $color__black;
   }
 }
 .burger-visible {

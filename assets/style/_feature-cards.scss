@@ -22,10 +22,11 @@
     }
 
     &--first {
-      background-image: url(https://source.unsplash.com/random/800x500);
+      background-image: url(https://images.unsplash.com/photo-1472591651607-70e2d88ae3c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1256&q=80);
+      background-position: bottom;
     }
     &--second {
-      background-image: url(https://source.unsplash.com/random/800x501);
+      background-image: url(https://images.unsplash.com/photo-1499202977705-65f436dac18a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
     }
   }
   &__text {

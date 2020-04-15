@@ -6,12 +6,20 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.5rem;
+    justify-items: center;
   }
   &__product {
     display: grid;
     grid-template-rows: 1fr repeat(2, min-content);
     justify-items: center;
     padding: 1rem;
+    border: thin inset transparent;
+    background: white;
+    transition-duration: 100ms;
+    max-width: 400px;
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
   &__link-wrap {
     display: grid;

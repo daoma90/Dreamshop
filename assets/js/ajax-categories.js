@@ -35,5 +35,6 @@ async function getProducts(category) {
 
     categoryTitle.textContent = category;
     categoryTitle.scrollIntoView();
+    window.scrollBy(0, -72);
   }
 }
