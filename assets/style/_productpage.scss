@@ -1,0 +1,115 @@
+.productpage-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: url(https://images.unsplash.com/photo-1499321889027-736489e2f5a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.productpage {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: #fff0f0;
+  height: min-content;
+  margin-top: $header__height;
+
+  @include tablet {
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-rows: auto;
+    margin-top: calc(#{$header__height} * 2);
+  }
+
+  @include desktop {
+    max-width: 80vw;
+  }
+
+  &__col-right {
+    padding: 1.5rem;
+    display: grid;
+  }
+  &__col-left {
+    background: white;
+  }
+
+  &__image-bar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__img-wrap {
+    flex: 1 1;
+  }
+  &__primary-img-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  &__name,
+  &__category {
+    color: #707070;
+  }
+  &__name {
+    font-size: 2rem;
+  }
+  &__price {
+    color: rgb(22, 20, 20);
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  &__category {
+    display: block;
+  }
+  &__img {
+    width: 100%;
+    &--large {
+      max-width: 500px;
+    }
+  }
+  &__desc {
+    margin: 1rem 0;
+    align-self: center;
+  }
+  &__input-wrap {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+  }
+  &__qty-wrap {
+    align-self: center;
+    display: flex;
+  }
+  &__qty {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    width: 80px;
+    text-align: center;
+    border-radius: 50px;
+    border: 1px solid gray;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__qty-up,
+  &__qty-down {
+    background: #5f7cda;
+    color: white;
+    width: 43px;
+    height: 43px;
+    display: block;
+    border-radius: 105px;
+    border: none;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__add {
+    @include btn-primary;
+    margin-top: 1rem;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
