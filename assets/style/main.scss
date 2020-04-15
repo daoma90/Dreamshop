@@ -1,0 +1,24 @@
+@import 'mixins';
+@import 'variables';
+@import 'feature-cards';
+@import 'feature-products';
+@import 'lp-category';
+@import 'lp-products';
+@import 'lp-hero';
+@import 'feature-cards';
+@import 'feature-products';
+@import 'lp-category';
+@import 'lp-products';
+@import 'header';
+@import 'footer';
+@import 'cart';
+@import 'productpage';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $base__fontFamily;
+}
