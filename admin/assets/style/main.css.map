@@ -10,7 +10,8 @@
         "_mixins.scss",
         "_variables.scss",
         "_content.scss",
-        "_products-admin.scss"
+        "_products-admin.scss",
+        "_categories.scss"
     ],
     "names": [],
     "file": "main.css"
