@@ -29,11 +29,24 @@
     min-width: 100%;
     width: 100%;
     height: 100%;
+    position: relative;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      overflow: hidden;
+    }
   }
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: auto;
+    }
   }
   &__btn-wrap {
     position: absolute;

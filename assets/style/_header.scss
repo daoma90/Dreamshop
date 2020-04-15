@@ -14,8 +14,15 @@
   left: 0;
   z-index: 999;
 
+  &__headline {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
   &__cart-toggle {
-    margin-right: 2rem;
+    margin-left: auto;
     cursor: pointer;
     position: relative;
     img {
@@ -112,7 +119,8 @@
 
   &__nav {
     display: flex;
-    place-content: center space-evenly;
+    align-content: center;
+    justify-content: center;
     flex-direction: column;
     cursor: pointer;
     position: relative;
@@ -120,6 +128,7 @@
     z-index: 2;
     width: 40px;
     height: 40px;
+    margin-right: auto;
 
     &::before,
     &::after {

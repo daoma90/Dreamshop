@@ -27,10 +27,20 @@
 
   &__col-right {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    /* autoprefixer: off */
     display: grid;
+    -ms-grid-rows: 1fr 1fr 1fr;
+    -ms-grid-column: 2;
   }
   &__col-left {
     background: white;
+    width: 100%;
+    -ms-grid-column: 1;
   }
 
   &__image-bar {
@@ -47,6 +57,10 @@
   &__name,
   &__category {
     color: #707070;
+  }
+  &__heading-wrap {
+    align-self: flex-start;
+    -ms-grid-row: 1;
   }
   &__name {
     font-size: 2rem;
@@ -68,11 +82,14 @@
   &__desc {
     margin: 1rem 0;
     align-self: center;
+    width: 100%;
+    -ms-grid-row: 2;
   }
   &__input-wrap {
     display: flex;
     flex-direction: column;
-    align-self: end;
+    align-self: flex-start;
+    -ms-grid-row: 3;
   }
   &__qty-wrap {
     align-self: center;
