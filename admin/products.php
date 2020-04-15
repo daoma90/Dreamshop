@@ -17,6 +17,7 @@ include 'productCurd.php';
 <body>
     <?php require_once "header.php"; ?>
     <main>
+    
         <!-- Handles add and update post -->
         <section class="form-container">
             <form class='form-container__form' method='POST' action="createproduct.php" enctype='multipart/form-data'>
@@ -45,12 +46,12 @@ include 'productCurd.php';
                 <button class='form-container__form-submit' type='submit' name="addProduct">Save post</button>
             </form>
         </section>
+
         <!-- Draws all products-->
         <section class="section-main">
             <?php drawProducts($pdo); ?>
         </section>
 
-   
     </main>
     <script src="./assets/js/admin-products.js"></script>
     <script src="./assets/js/header.js"></script>
