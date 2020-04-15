@@ -1,7 +1,7 @@
 const burger = document.querySelector('.header__nav');
 const menu = document.querySelector('.header__hidden-burgernav');
 
-burger.addEventListener('click', () => {
+burger.addEventListener('click', function () {
   if (burger.className.indexOf('active') === -1) {
     burger.classList.add('header__nav--active');
     menu.classList.add('burger-visible');

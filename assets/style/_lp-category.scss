@@ -1,4 +1,6 @@
 .lp-categories {
+  display: flex;
+  /* autoprefixer: off */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
@@ -10,6 +12,7 @@
   }
 
   &__item {
+    flex: 1;
     position: relative;
     height: calc(25vh - (#{$header__height} / 4));
     cursor: pointer;

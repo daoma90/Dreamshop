@@ -33,7 +33,9 @@ window.addEventListener('resize', function () {
 function refactorProjScrollWidth() {
   startWidth = document.documentElement.clientWidth;
 
-  width = document.querySelector('.scroller').scrollLeft;
-  scroller.scrollTo(Math.floor(width / startWidth) * startWidth, 0);
-  width = 0;
+  if (!window.document.documentMode) {
+    width = document.querySelector('.scroller').scrollLeft;
+    scroller.scrollTo(Math.floor(width / startWidth) * startWidth, 0);
+    width = 0;
+  }
 }

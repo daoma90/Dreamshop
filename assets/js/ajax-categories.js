@@ -19,22 +19,40 @@ document.addEventListener('click', function (e) {
   }
 });
 
-async function getProducts(category) {
-  const response = await fetch(
-    `./assets/php/products.php?category=${category}`,
-    { method: 'post' }
-  );
-  const data = await response.text();
+// async function getProducts(category) {
+//   const response = await fetch(
+//     `./assets/php/products.php?category=${category}`,
+//     { method: 'post' }
+//   );
+//   const data = await response.text();
 
-  if (data) {
-    const categoryTitle = document.querySelector(
-      '.lp-products__current-category'
-    );
+//   if (data) {
+//     const categoryTitle = document.querySelector(
+//       '.lp-products__current-category'
+//     );
 
-    document.querySelector('.lp-products__wrap').innerHTML = data;
+//     document.querySelector('.lp-products__wrap').innerHTML = data;
 
-    categoryTitle.textContent = category;
-    categoryTitle.scrollIntoView();
-    window.scrollBy(0, -72);
-  }
+//     categoryTitle.textContent = category;
+//     categoryTitle.scrollIntoView();
+//     window.scrollBy(0, -72);
+//   }
+// }
+function getProducts(category) {
+  let request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const categoryTitle = document.querySelector(
+        '.lp-products__current-category'
+      );
+      document.querySelector(
+        '.lp-products__wrap'
+      ).innerHTML = this.responseText;
+      categoryTitle.textContent = category;
+      categoryTitle.scrollIntoView();
+      window.scrollBy(0, -72);
+    }
+  };
+  request.open('POST', './assets/php/products.php?category=' + category, true);
+  request.send();
 }

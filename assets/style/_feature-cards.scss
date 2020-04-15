@@ -1,5 +1,7 @@
 .feature-cards {
   min-width: 100%;
+  display: flex;
+  /* autoprefixer: off */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
@@ -16,9 +18,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-
+    background: linear-gradient(blue, black);
     @include desktop {
       min-height: 50vh;
+      min-width: 50%;
     }
 
     &--first {
