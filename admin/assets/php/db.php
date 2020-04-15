@@ -1,10 +1,15 @@
 <?php
-
-$dsn = "mysql:host=localhost;dbname=webshop_cms";
-try {
-  $pdo = new PDO($dsn, 'ramy', 'test12345');
-  //username & password should change accordingly
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  echo $e->getMessage();
-}
+    $db_server = "localhost";
+    $db_database = "frontendproject";
+    $db_username = "root";
+    $db_password = '';
+    try{
+    $db = new PDO("mysql:host=$db_server;dbname=$db_database;charset=utf8"
+    ,
+    $db_username, $db_password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch(PDOException $e){
+    echo $e-> getMessage();
+    }
+?>

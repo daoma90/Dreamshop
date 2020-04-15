@@ -8,17 +8,15 @@
   background-color: $color__accent;
   padding: $spacing__s;
   align-items: center;
+  text-align: center;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 999;
 
-  &__cart-toggle {
-    cursor: pointer;
-    img {
-      max-height: 32px;
-    }
+  @include desktop {
+    text-align: left;
   }
 
   &__hidden-burgernav {

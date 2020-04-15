@@ -29,6 +29,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   position: fixed;
   top: 0;
   right: 0;
@@ -36,12 +37,10 @@ body {
   z-index: 999;
 }
 
-.header__cart-toggle {
-  cursor: pointer;
-}
-
-.header__cart-toggle img {
-  max-height: 32px;
+@media (min-width: 1024px) {
+  .header {
+    text-align: left;
+  }
 }
 
 .header__hidden-burgernav {
@@ -215,18 +214,204 @@ body {
   width: 40px;
 }
 
-.content {
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.categories {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-top: 72px;
   width: 100%;
-  height: 100vh;
-  background-color: #500909;
+}
+
+@media screen and (min-width: 538px) {
+  .categories {
+    grid-gap: 10px;
+    width: 80%;
+    margin-top: 15%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .categories {
+    margin-top: 10%;
+  }
+}
+
+.cat-container {
+  height: 300px;
+}
+
+@media screen and (min-width: 934px) {
+  .cat-container {
+    height: 400px;
+  }
+}
+
+.cat-container__img-container {
+  height: calc(100% - 50px);
+}
+
+.cat-container__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cat-container__text {
+  position: relative;
+  bottom: 50px;
+  text-align: center;
+}
+
+.cat-container__buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 50px;
+  text-align: center;
+}
+
+.cat-container__button {
+  width: 50%;
+  border: none;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+}
+
+.form-container {
+  height: 300px;
+  grid-column: span 2;
+}
+
+@media screen and (min-width: 700px) {
+  .form-container {
+    grid-column: span 1;
+  }
+}
+
+@media screen and (min-width: 719px) {
+  .form-container {
+    grid-column: span 1;
+    height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    height: 400px;
+  }
+}
+
+.form-container__headline-container {
+  background-color: #faaf4d;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-container__headline {
+  margin-top: 0 auto;
+}
+
+.form-container__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
   position: relative;
 }
 
-.content-here {
-  font-size: 200px;
+.form-container__label {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.form-container__title {
+  width: 50%;
+  height: 30px;
+  margin-left: 0 auto;
+}
+
+@media screen and (min-width: 719px) {
+  .form-container__title {
+    width: 90%;
+  }
+}
+
+.form-container__img-file {
+  width: 50%;
+}
+
+@media screen and (min-width: 719px) {
+  .form-container__img-file {
+    width: 90%;
+  }
+}
+
+.form-container__submit-container {
+  background-color: #faaf4d;
   position: absolute;
-  left: 20%;
-  top: 50%;
-  color: white;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-container__submit {
+  width: 50%;
+  height: 70%;
+  border: none;
+  background-color: blue;
+}
+
+#edit {
+  background-color: #446ffa;
+}
+
+#edit:hover {
+  background-color: #2b5cfd;
+}
+
+#delete {
+  background-color: #ff4646;
+}
+
+#delete:hover {
+  background-color: #c42121;
 }
 /*# sourceMappingURL=main.css.map */
