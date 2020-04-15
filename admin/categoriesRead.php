@@ -21,23 +21,19 @@
                 $name = strtoupper($name);
                 
                 $categories .= "
-                    <div class='cat-container'>
+                    <div class='cat-container' id='cat-{$ID}'>
                         <div class='cat-container__img-container'>
-                            <img src='{$image}' class='cat-container__img'>
+                            <img src='./assets/media/{$image}' class='cat-container__img'>
                             <h2 class='cat-container__text'>{$name}</h2>
                         </div>
-                        <form class='cat-container__buttons' method='POST' enctype='multipart/form-data'>
-                            <a href='categoriesDelete.php?ID={$ID}' class='cat-container__button' id='edit'>REDIGERA</a>
+                        <div class='cat-container__buttons' method='POST'>
+                            <button class='cat-container__button' onclick='populateForm({$ID})' id='edit'>REDIGERA</button>
                             <a href='categoriesDelete.php?ID={$ID}' class='cat-container__button' id='delete'>RADERA</a>
-                        </form>
+                        </div>
                     </div>
                     ";
             } 
             echo $categories;
             ?>  
-
-        <script src="./assets/js/header.js"></script>
-    </body>
-</html>
 
         
