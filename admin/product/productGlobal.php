@@ -23,6 +23,7 @@ function drawProducts($pdo)
                     <div class='product__btn-wrapper'>
                      <button class='product__btn product__btn--edit' onclick='populateFields(" . $row["ID"] .  ")'>Edit</button>
                      <button class='product__btn product__btn--del' onclick='deleteView(" . $row["ID"] .  ")'>Delete</button>
+                     <label class='product__tag'></label>
                     </div>
                 </div>
         <div class='product__right-info'>
@@ -37,6 +38,25 @@ function drawProducts($pdo)
         }
     }
 }
+
+//Draws dropdownlist with all categorys
+function getCategory($pdo)
+{
+    $sql = 'SELECT cat_id FROM products WHERE id:=id';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $resp = $stmt->fetch(PDO::FETCH_ASSOC);
+    echo $resp["cat_id"];
+    // if ($stmt->rowCount() > 0) {
+    //     echo "<select name='cat_id'>";
+    //     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    //         echo "<option value=" . $row["ID"] . ">" . $row["name"] . "</option>";
+    //     }
+    //     echo "</select>";
+    // }
+}
+
+
 //Draws dropdownlist with all categorys
 function getCatList($pdo)
 {
