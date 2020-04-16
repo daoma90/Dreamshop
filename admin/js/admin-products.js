@@ -1,5 +1,5 @@
 //Deletes element in DOM and database
-const deleteView = (id) => {
+function deleteView(id) {
 	const element = document.querySelector(`#product_${id}`)
 	const formData = new FormData();
 	formData.append('ID', id);
@@ -8,7 +8,7 @@ const deleteView = (id) => {
 			method: 'POST',
 			body: formData
 		})
-		.then(response => {
+		.then(function(response) {
 			if (response.ok) {
 				if (confirm("Säker på att du vill ta bort?"))
 					setTimeout(() => {
@@ -21,12 +21,20 @@ const deleteView = (id) => {
 		});
 }
 
+
+//To show tags
+const addCategoryTag = () => {
+	const tags = document.querySelectorAll(".category-tag");
+	tags.forEach(tag => {
+		//tag.innerText = "some value from dom?";
+	});
+}
+
 //Populate all data from DOM to form and change to updateproduct.php
-const populateFields = (id) => {
-	console.log("hej");
+function populateFields (id) {
 	const element = document.querySelector(`#product_${id}`);
 	const form = document.querySelector(`.f-container__form`);
-	Array.from(form.elements).forEach(item => {
+	Array.from(form.elements).forEach(function(item) {
 		switch (item.name) {
 			case "image":
 				item.setAttribute("src", element.querySelector("img").getAttribute("src"));
@@ -58,7 +66,6 @@ const populateFields = (id) => {
 	});
 
 	form.setAttribute("action", "productUpdate.php");
-	// form.setAttribute("enctype", "multipart/form-data");
 	form.querySelector("button").setAttribute("name", "updateProduct");
 	document.querySelector("#upID").setAttribute("value", id);
 	document.querySelector(".f-container__form-header").textContent = "Update product";

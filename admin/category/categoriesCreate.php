@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $imageName = $_FILES['image']['name'];
     $imageError = $_FILES['image']['error'];
     $imageTemp = $_FILES['image']['tmp_name'];
-    $imagePath = "../images/";
+    $imagePath = "./images/";
 
     if (is_uploaded_file($imageTemp)) {
         move_uploaded_file($imageTemp, $imagePath . $imageName);
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':image', $image);
 
     $stmt->execute();
-    header('Location:index.php');
+    header('Location:./index.php');
 }
 ?>
 
@@ -47,8 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 
 </section>
-<!-- <script src="./assets/js/editCategory.js"></script>
-<script src="./assets/js/header.js"></script>
+<script src="./js/editCategory.js"></script>
+<script src="./js/header.js"></script>
 </body>
 
-</html> -->
+</html>

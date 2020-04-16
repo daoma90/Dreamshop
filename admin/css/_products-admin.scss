@@ -57,6 +57,9 @@ main {
         justify-content: flex-start;
         width: 120px;
         padding:10px;
+        h3, p {
+            border-bottom: 1px solid lightgray;
+        }
       }
 
     &__btn {
