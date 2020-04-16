@@ -24,7 +24,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: #ffffff;
-  background-color: green;
+  background-color: #363636;
   padding: 1em;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -275,7 +275,7 @@ main {
   position: relative;
   top: 120px;
   margin-left: 5vw;
-  margin-bottom: 5vh;
+  margin-bottom: 8vh;
   border: 1px solid white;
 }
 
@@ -329,6 +329,11 @@ main {
 
 .product__right-info h3, .product__right-info p {
   border-bottom: 1px solid lightgray;
+  font-size: 0.9rem;
+}
+
+.product__right-info p {
+  font-size: 0.8rem;
 }
 
 .product__btn {
@@ -353,12 +358,9 @@ main {
 }
 
 .product__tag {
+  position: absolute;
+  right: 0;
   font-size: 10px;
-  text-align: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  padding: 10px;
 }
 
 .product:hover {
