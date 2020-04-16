@@ -1,0 +1,50 @@
+.feature-cards {
+  min-width: 100%;
+  display: flex;
+  /* autoprefixer: off */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  &__title {
+    color: white;
+    font-size: 20px;
+  }
+  &__card {
+    min-height: 25vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background: linear-gradient(blue, black);
+    @include desktop {
+      min-height: 50vh;
+      min-width: 50%;
+    }
+
+    &--first {
+      background-image: url(https://images.unsplash.com/photo-1472591651607-70e2d88ae3c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1256&q=80);
+      background-position: bottom;
+    }
+    &--second {
+      background-image: url(https://images.unsplash.com/photo-1499202977705-65f436dac18a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
+    }
+  }
+  &__text {
+    font-size: 1.25rem;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.486);
+    padding: 1rem;
+
+    &--left {
+      left: 10%;
+      top: 15%;
+    }
+    &--right {
+      right: 5%;
+      bottom: 15%;
+    }
+  }
+}

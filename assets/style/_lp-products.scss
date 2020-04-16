@@ -1,0 +1,15 @@
+.lp-products {
+  padding: 80px 0;
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* autoprefixer: off */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
+  }
+  &__current-category {
+    text-align: center;
+  }
+}

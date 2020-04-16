@@ -5,15 +5,30 @@ $spacing__l: 2.5em;
 $spacing__xl: 3em;
 
 // FONT
+<<<<<<< HEAD
 $base__fontFamily: "open_sansregular", "Open Sans", "Helvetica Neue", Helvetica,
+=======
+$base__fontFamily: 'open_sansregular', 'Open Sans', 'Helvetica Neue', Helvetica,
+>>>>>>> e1b95cedb464082af073bf5dd7eb3383e6079d65
   Arial, sans-serif;
 $base__fontSize: 14px;
 $base__lineHeight: 1.6;
 $headline__fontSize: 2rem;
 
 //COLORS
+<<<<<<< HEAD
 $color__prim: red;
 $color__sec: blue;
 $color__accent: green;
 $color__black: #000000;
 $color__white: #ffffff;
+=======
+$color__prim: rgb(211, 116, 116);
+$color__sec: rgb(116, 116, 214);
+$color__accent: rgb(130, 207, 130);
+$color__black: #000000;
+$color__white: #ffffff;
+$color__product: #f9cd74;
+
+$header__height: 72px;
+>>>>>>> e1b95cedb464082af073bf5dd7eb3383e6079d65
