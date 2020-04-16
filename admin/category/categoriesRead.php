@@ -1,6 +1,6 @@
 <body>
     <?php
-    require "../includes/db.php";
+    require "./includes/db.php";
     ?>
 
     <section class="categories">
