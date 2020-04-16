@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO category (name, image)
             VALUES (:name, :image) ";
 
-    $stmt = $db->prepare($sql);
+    $stmt = $pdo->prepare($sql);
 
     $name = htmlspecialchars($_POST['name']);
     $image = htmlspecialchars($imageName);

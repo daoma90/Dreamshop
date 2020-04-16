@@ -1,13 +1,19 @@
 
     <body>
-        <?php require_once "navbar.php";?>
+        <?php require_once "navbar.php";
+          require "./assets/php/db.php";
+        ?>
+
+
+
+
 
         <section class="categories">
             
             <?php
             
             $sql = "SELECT * FROM category";
-            $stmt = $db->prepare($sql);
+            $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $categories = "";
             echo $categories;
