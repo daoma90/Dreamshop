@@ -42,7 +42,7 @@
           <div class="productpage__primary-img-wrap">
             <img
               class="productpage__img productpage__img--large"
-              src="<?= $image?>"
+              src="<?= "./admin/images/$image"?>"
               alt=""
             />
           </div>

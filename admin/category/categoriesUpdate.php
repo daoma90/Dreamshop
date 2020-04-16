@@ -36,7 +36,7 @@ if (isset($_POST['updateCat'])) {
     } else if(!empty($name)) {
         $sql = 'UPDATE category 
         SET name=:name WHERE id=:id';
-        $stmt = $db->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':id' => $id,
             ':name' => $name

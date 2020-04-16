@@ -20,7 +20,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
         "name"=>$row['name'],
         "description"=>$row['description'],
         "price"=>$row['price'],
-        "image"=>$row['image']
+        "image"=>$row['image'],
+        "stock"=>$row['in_stock']
     );
 
     $productObj[] = $product;

@@ -24,7 +24,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
 
 echo "<article class='feature-products__product'>
         <a class='feature-products__link-wrap' href='./product.php?id=$id'>
-        <div class='feature-products__img-wrap'><img class='feature-products__img' src='$image' alt=''></div>
+        <div class='feature-products__img-wrap'><img class='feature-products__img' src='./admin/images/$image' alt=''></div>
         <div class='feature-products__product-title'>$name</div>
         <div class='feature-products__price'>$price SEK</div> 
         </a>
