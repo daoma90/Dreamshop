@@ -19,7 +19,7 @@ if (isset($_POST['updateCat'])) {
     if (!empty($name) && !empty($imageName)) {
         $sql = 'UPDATE category 
         SET image=:image, name=:name WHERE id=:id';
-        $stmt = $db->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute([
           ':id' => $id,
           ':name' => $name,
@@ -42,5 +42,5 @@ if (isset($_POST['updateCat'])) {
             ':name' => $name
         ]);
     }
-    header('Location:Index.php');
+    header('Location:../index.php');
   }

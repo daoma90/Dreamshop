@@ -1,6 +1,6 @@
 <body>
     <?php
-    require "./includes/db.php";
+    require "includes/db.php";
     ?>
 
     <section class="categories">
@@ -28,8 +28,8 @@
                             <h2 class='cat-container__text'>{$name}</h2>
                         </div>
                         <div class='cat-container__buttons' method='POST'>
-                            <button class='cat-container__button' onclick='populateForm({$ID})' id='edit'>REDIGERA</button>
-                            <a href='categoriesDelete.php?ID={$ID}' class='cat-container__button' id='delete'>RADERA</a>
+                            <button class='cat-container__button' onclick='populateCategoryForm({$ID})' id='edit'>REDIGERA</button>
+                            <a href='./category/categoriesDelete.php?ID={$ID}' class='cat-container__button' id='delete'>RADERA</a>
                         </div>
                     </div>
                     ";

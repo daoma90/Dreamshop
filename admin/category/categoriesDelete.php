@@ -7,5 +7,5 @@ if(isset($_GET['ID'])){
   $stmt = $pdo->prepare($sql);
   $stmt->bindParam(':ID', $ID);
   $stmt->execute();
-  header('Location:index.php');
+  header('Location:../index.php');
 }
