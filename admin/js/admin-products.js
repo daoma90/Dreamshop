@@ -58,6 +58,7 @@ const populateFields = (id) => {
 	});
 
 	form.setAttribute("action", "productUpdate.php");
+	// form.setAttribute("enctype", "multipart/form-data");
 	form.querySelector("button").setAttribute("name", "updateProduct");
 	document.querySelector("#upID").setAttribute("value", id);
 	document.querySelector(".f-container__form-header").textContent = "Update product";
