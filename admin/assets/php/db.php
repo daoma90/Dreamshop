@@ -1,6 +1,6 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=frontend_project";
+$dsn = "mysql:host=localhost;dbname=frontendproject";
 try {
   $pdo = new PDO($dsn, 'root', '');
   //username & password should change accordingly
