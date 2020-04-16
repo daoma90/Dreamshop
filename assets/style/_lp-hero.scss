@@ -3,6 +3,8 @@
   width: 100%;
   background-size: cover;
   position: relative;
+  box-shadow: 0 10px 10px #00000061;
+  z-index: 1;
 
   .scroller {
     display: flex;
