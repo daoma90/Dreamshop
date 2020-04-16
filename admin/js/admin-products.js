@@ -21,15 +21,6 @@ function deleteView(id) {
 		});
 }
 
-//To show tags
-const addCategoryTag = () => {
-	const tags = document.querySelectorAll(".category-tag");
-	tags.forEach(tag => {
-		//tag.innerText = "some value from dom?";
-	});
-}
-
-
 //Populate all data from DOM to form and change to updateproduct.php
 function populateFields (id) {
 	const element = document.querySelector(`#product_${id}`);
@@ -58,9 +49,6 @@ function populateFields (id) {
 				break;
 			default:
 				break;
-		}
-		if(item.type === "submit") {
-			item.innerText = "Update post";
 		}
 	});
 	toggleMode(form,id);
