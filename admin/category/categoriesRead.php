@@ -3,10 +3,6 @@
     require "./includes/db.php";
     ?>
 
-
-
-
-
     <section class="categories">
 
         <?php

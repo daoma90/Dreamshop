@@ -318,6 +318,10 @@ main {
   padding: 10px;
 }
 
+.product__right-info h3, .product__right-info p {
+  border-bottom: 1px solid lightgray;
+}
+
 .product__btn {
   cursor: pointer;
   outline: none;

@@ -1,6 +1,7 @@
 <?php
 //session_start();
 include 'productGlobal.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,6 @@
 <?php 
 
-  require_once "./inclues/db.php";
+  require_once "../includes/db.php";
 
 
   //  and !empty($fileName)

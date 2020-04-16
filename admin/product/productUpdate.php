@@ -1,7 +1,6 @@
 <?php
 
-require "./assets/php/db.php";
-
+require "../includes/db.php";
 
 if (isset($_POST['updateProduct'])) {
     $id = $_POST['update-id']; //getting id for update

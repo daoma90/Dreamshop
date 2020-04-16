@@ -27,7 +27,7 @@ function drawProducts($pdo)
                 </div>
         <div class='product__right-info'>
             <h3 class='name'>" . $row["name"] . "</h3>
-            <p class='desc'>" . $row["description"] . " </p>
+            <p class='desc' style='display:none'>" . $row["description"] . " </p>
             <p class='price'>" . $row["price"] . " </p>
             <p class='in_stock'>" . $row["in_stock"] . " </p>
             <p class='featured' style='display:none;'>" . $row["featured"] . " </p>

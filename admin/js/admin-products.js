@@ -21,6 +21,14 @@ const deleteView = (id) => {
 		});
 }
 
+//To show tags
+const addCategoryTag = () => {
+	const tags = document.querySelectorAll(".category-tag");
+	tags.forEach(tag => {
+		//tag.innerText = "some value from dom?";
+	});
+}
+
 //Populate all data from DOM to form and change to updateproduct.php
 const populateFields = (id) => {
 	console.log("hej");

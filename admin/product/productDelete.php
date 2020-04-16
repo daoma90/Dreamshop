@@ -1,5 +1,5 @@
 <?php 
-    require_once "./assets/php/db.php";
+    require_once "../includes/db.php";
 
     $id = $_POST['ID'];
     $sql = 'DELETE FROM products WHERE id=:id';

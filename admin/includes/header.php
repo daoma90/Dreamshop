@@ -1,7 +1,7 @@
 <header class="header">
     <nav class="header__hidden-burgernav">
         <ul class="header__list">
-            <a href="/admin/index.php" class="header__item-link">
+            <a href="../index.php" class="header__item-link">
                 <li class="header__list-item">Kategorier</li>
             </a>
             <a href="product/products.php">
