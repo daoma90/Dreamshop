@@ -24,6 +24,9 @@
         <li class="footer__list-item">
           <a href="#" class="footer__link">Terms and Conditions</a>
         </li>
+        <li class="footer__list-item">
+          <a href="./admin" class="footer__link">Terms and Conditions</a>
+        </li>
       </ul>
     </div>
   </div>
