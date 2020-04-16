@@ -19,7 +19,7 @@ function drawProducts($pdo)
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<article class='product' id='product_" . $row["ID"] . "'>
                 <div class='product__left-info'>
-                    <div class='product__left-info-image'><img src='../images" . $row["image"] . "' alt=''></div>
+                    <div class='product__left-info-image'><img src='../images/" . $row["image"] . "' alt=''></div>
                     <div class='product__btn-wrapper'>
                      <button class='product__btn product__btn--edit' onclick='populateFields(" . $row["ID"] .  ")'>Edit</button>
                      <button class='product__btn product__btn--del' onclick='deleteView(" . $row["ID"] .  ")'>Delete</button>

@@ -1,5 +1,5 @@
 <?php
-require_once "../includes/db.php";
+require_once "./includes/db.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':image', $image);
 
     $stmt->execute();
-    header('Location:./index.php');
+    //header('Location: index.php');
 }
 ?>
 
