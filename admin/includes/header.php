@@ -2,14 +2,17 @@
 
 $catPath  = "";
 $prodPath = "";
+$homePath = "";
 $currentPath =  $_SERVER['REQUEST_URI'];
 if (strpos($currentPath, 'product')) {
         $catPath  = "./../index.php"; 
-        $prodPath = "products.php";   
+        $prodPath = "products.php";
+        $homePath = "../../index.php";
 }
 else {
-        $catPath  = "./index.php";
+        $catPath  = "./";
         $prodPath = "./product/products.php";
+        $homePath = "../index.php";
   }
 
 ?>
@@ -38,7 +41,7 @@ else {
                     <li class="header__sub-list-item">Slutförda</li>
                 </a>
             </ul>
-            <a href="<?= $catPath ?>" class="header__item-link">
+            <a href="<?= $homePath ?>" class="header__item-link">
                 <li class="header__list-item">Webbshoppen</li>
             </a>
         </ul>
