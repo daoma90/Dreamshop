@@ -143,7 +143,7 @@ body {
 }
 
 .header__nav::before, .header__nav::after {
-  content: "";
+  content: '';
   height: 1px;
   -webkit-transition: all 200ms;
   transition: all 200ms;
@@ -212,6 +212,18 @@ body {
 .nav-filler {
   height: 40px;
   width: 40px;
+}
+
+.burger-visible {
+  visibility: visible;
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+}
+
+.burger-hidden {
+  visibility: hidden;
+  -webkit-clip-path: circle(0% at 0 0);
+          clip-path: circle(0% at 0 0);
 }
 
 main {

@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@import 'mixins';
+@import 'variables';
 
 .header {
   display: flex;
@@ -98,7 +98,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       height: 1px;
       transition: all 200ms;
       width: 40px;
@@ -156,4 +156,12 @@
 .nav-filler {
   height: 40px;
   width: 40px;
+}
+.burger-visible {
+  visibility: visible;
+  clip-path: circle(100%);
+}
+.burger-hidden {
+  visibility: hidden;
+  clip-path: circle(0% at 0 0);
 }
