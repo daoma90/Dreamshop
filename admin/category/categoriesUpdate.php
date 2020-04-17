@@ -1,5 +1,5 @@
 <?php
-require_once './includes/db.php';
+require_once '../includes/db.php';
 
 if (isset($_POST["updateCat"])) {
     //Save if new image is uploaded
@@ -43,5 +43,5 @@ if (isset($_POST["updateCat"])) {
             ':name' => $name
         ]);
     }
-    //header('Location:../index.php');
+    header('Location:../index.php');
   }

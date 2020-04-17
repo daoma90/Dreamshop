@@ -86,7 +86,7 @@ function populateCategoryForm(id) {
     }
   });
 
-  form.setAttribute("action", "categoriesUpdate.php");
+  form.setAttribute("action", "./category/categoriesUpdate.php");
   form
     .querySelector(".form-container__submit")
     .setAttribute("name", "updateCat");

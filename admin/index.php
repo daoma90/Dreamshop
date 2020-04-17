@@ -1,6 +1,5 @@
 <?php 
 include './category/categoriesCreate.php';
-include './category/categoriesUpdate.php';
 ?>
 
 <!DOCTYPE html>
