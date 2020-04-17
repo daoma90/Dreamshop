@@ -1,7 +1,7 @@
 const burger = document.querySelector(".header__nav");
 const menu = document.querySelector(".header__hidden-burgernav");
 
-burger.addEventListener("click", () => {
+burger.addEventListener("click", function () {
   if (burger.className.indexOf("active") === -1) {
     burger.classList.add("header__nav--active");
     menu.style.visibility = "visible";
@@ -16,7 +16,7 @@ burger.addEventListener("click", () => {
 const order = document.querySelector("#order");
 const orderSubMenu = document.querySelector("#sub-order");
 
-order.addEventListener("click", () => {
+order.addEventListener("click", function () {
   if (orderSubMenu.classList.contains("header__sub-list--hidden")) {
     orderSubMenu.classList.remove("header__sub-list--hidden");
     orderSubMenu.classList.add("header__sub-list--show");
@@ -29,7 +29,7 @@ order.addEventListener("click", () => {
 const products = document.querySelector("#products");
 const productsSubMenu = document.querySelector("#sub-products");
 
-products.addEventListener("click", () => {
+products.addEventListener("click", function () {
   if (productsSubMenu.classList.contains("header__sub-list--hidden")) {
     productsSubMenu.classList.remove("header__sub-list--hidden");
     productsSubMenu.classList.add("header__sub-list--show");

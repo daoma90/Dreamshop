@@ -1,11 +1,11 @@
 <?php
-require_once './assets/php/db.php';
+require_once '../includes/db.php';
 if (isset($_POST['updateCat'])) {
     //Save if new image is uploaded
     $imageName = $_FILES['image']['name'];
     $imageError = $_FILES['image']['error'];
     $imageTemp = $_FILES['image']['tmp_name'];
-    $imagePath = "./assets/media/";
+    $imagePath = "../images/";
 
     if(is_uploaded_file($imageTemp)) {
         move_uploaded_file($imageTemp, $imagePath . $imageName);
@@ -42,6 +42,5 @@ if (isset($_POST['updateCat'])) {
             ':name' => $name
         ]);
     }
-    header('Location:Index.php');
+    header('Location:../index.php');
   }
-?>

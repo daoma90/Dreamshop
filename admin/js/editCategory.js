@@ -1,8 +1,8 @@
-const populateForm = (id) => {
-  const category = document.querySelector(`#cat-${id}`);
+function populateForm(id) {
+  const category = document.querySelector("#cat-" + id);
   const form = document.querySelector(`.form-container__form`);
   console.log(form.elements);
-  Array.from(form.elements).forEach((item) => {
+  Array.from(form.elements).forEach(function (item) {
     switch (item.name) {
       case "name":
         item.value = category.querySelector(".cat-container__text").innerText;
@@ -25,4 +25,4 @@ const populateForm = (id) => {
   document.querySelector(".form-container__headline").textContent =
     "Uppdatera Kategori";
   document.querySelector("#cat-id").setAttribute("value", id);
-};
+}
