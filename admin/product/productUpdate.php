@@ -6,11 +6,11 @@ if (isset($_POST['updateProduct'])) {
   $name = trim($_POST['name']);
   $description = trim($_POST['description']);
   $price = trim($_POST['price']);
-
   $in_stock =  trim($_POST['in_stock']);  
   $featured =  trim($_POST['featured']);
   $cat_id = trim($_POST['cat_id']);
 
+  
   $imageName = $_FILES['image']['name'];
   $imageError = $_FILES['image']['error'];
   $imageTemp = $_FILES['image']['tmp_name'];

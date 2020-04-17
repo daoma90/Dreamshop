@@ -1,3 +1,5 @@
+<?php include './category/categoriesCreate.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +14,6 @@
 
 require_once './includes/header.php';
 require_once './category/categoriesRead.php';
-require_once './category/categoriesCreate.php';
+require_once './category/categoriesForm.php';
 require_once './includes/footer.php';
 ?>
