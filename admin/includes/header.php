@@ -4,7 +4,7 @@ $catPath  = "";
 $prodPath = "";
 $currentPath =  $_SERVER['REQUEST_URI'];
 if (strpos($currentPath, 'product')) {
-        $catPath  = "./../index.php"; 
+        $catPath  = "../../index.php"; 
         $prodPath = "products.php";   
 } else {
         $catPath  = "index.php";
