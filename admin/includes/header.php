@@ -6,8 +6,9 @@ $currentPath =  $_SERVER['REQUEST_URI'];
 if (strpos($currentPath, 'product')) {
         $catPath  = "./../index.php"; 
         $prodPath = "products.php";   
-} else {
-        $catPath  = "index.php";
+}
+else {
+        $catPath  = "./index.php";
         $prodPath = "./product/products.php";
   }
 
@@ -37,7 +38,7 @@ if (strpos($currentPath, 'product')) {
                     <li class="header__sub-list-item">Slutförda</li>
                 </a>
             </ul>
-            <a href="../../index.php" class="header__item-link">
+            <a href="<?= $catPath ?>" class="header__item-link">
                 <li class="header__list-item">Webbshoppen</li>
             </a>
         </ul>
