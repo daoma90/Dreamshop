@@ -1,6 +1,7 @@
 <?php
-require_once '../includes/db.php';
-if (isset($_POST['updateCat'])) {
+require_once './includes/db.php';
+
+if (isset($_POST["updateCat"])) {
     //Save if new image is uploaded
     $imageName = $_FILES['image']['name'];
     $imageError = $_FILES['image']['error'];
@@ -42,5 +43,5 @@ if (isset($_POST['updateCat'])) {
             ':name' => $name
         ]);
     }
-    header('Location:../index.php');
+    //header('Location:../index.php');
   }

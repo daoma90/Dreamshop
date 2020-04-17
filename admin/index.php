@@ -1,4 +1,7 @@
-<?php include './category/categoriesCreate.php';?>
+<?php 
+include './category/categoriesCreate.php';
+include './category/categoriesUpdate.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
