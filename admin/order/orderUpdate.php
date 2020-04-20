@@ -2,10 +2,11 @@
 
 require '../includes/db.php';
 
-$id = htmlspecialchars($_GET['id']);
-$status = htmlspecialchars($_POST['status']);
+$id = $_GET['id'];
+$status = $_GET['status'];
 
-$sql = 'UPDATE orders SET status=:status WHERE ID=:id';
+//$sql = "UPDATE orders SET status ('$stat') WHERE ID ('$id')";
+$sql = "UPDATE orders SET status=:status WHERE ID=:id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':id', $id);
 $stmt->bindParam(':status', $status);

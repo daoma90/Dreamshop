@@ -18,7 +18,6 @@
             <th>Order ID</th>
             <th>Status</th> 
             <th>Date</th>
-            <th>Action</th>
         </tr>
         <?php
 
@@ -33,7 +32,7 @@
             $status = htmlspecialchars($row["status"]);
             $date = htmlspecialchars($row['date']);
 
-            $selected = "<select name='status'>
+            $selected = "<select onchange='updateOrder($orderID, event)'>
                             <option " . ($status == "new" ? "selected" : NULL) . " value='new'>New</option>
                             <option " . ($status == "processing" ? "selected" : NULL) . " value='processing'>Processing</option>
                             <option " . ($status == "complete" ? "selected" : NULL) . " value='complete'>Complete</option>
@@ -41,12 +40,10 @@
 
             $orders .= "
                         <tr>
-                            <form method='POST' action='orderUpdate.php?id=$orderID'>
                             <td>$orderID</td>
+                            <input type='hidden' name='id' value='$orderID'>
                             <td>$selected</td>
                             <td>$date</td>
-                            <td><button type='submit'>Update</button></td>
-                            </form>
                         </tr>
                     ";
         }
@@ -54,14 +51,12 @@
         echo $orders;
         ?>
 
-
     <h2 class="order-wrap__heading secondary">Completed orders:</h2>
     <table class="orders">
             <tr>
                 <th>Order ID</th>
                 <th>Status</th> 
                 <th>Date</th>
-                <th>Action</th>
             </tr>
             <?php
 
@@ -69,27 +64,25 @@
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $orders = "";
-
+    
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
+    
                 $orderID = htmlspecialchars($row["ID"]);
                 $status = htmlspecialchars($row["status"]);
                 $date = htmlspecialchars($row['date']);
-
-                $selected = "<select name='status'>
+    
+                $selected = "<select onchange='updateOrder($orderID, event)'>
                                 <option " . ($status == "new" ? "selected" : NULL) . " value='new'>New</option>
                                 <option " . ($status == "processing" ? "selected" : NULL) . " value='processing'>Processing</option>
                                 <option " . ($status == "complete" ? "selected" : NULL) . " value='complete'>Complete</option>
-                            </select>";
-
+                             </select>";
+    
                 $orders .= "
                             <tr>
-                                <form method='POST' action='orderUpdate.php?id=$orderID'>
                                 <td>$orderID</td>
+                                <input type='hidden' name='id' value='$orderID'>
                                 <td>$selected</td>
                                 <td>$date</td>
-                                <td><button type='submit'>Update</button></td>
-                                </form>
                             </tr>
                         ";
             }
@@ -99,4 +92,5 @@
         </section>
 
     <script src="../js/header.js"></script>
+    <script src="../js/ajax-orders.js"></script>
    </body>
