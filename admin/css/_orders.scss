@@ -1,0 +1,24 @@
+.order-wrap {
+  margin-top: 150px;
+
+  &__heading {
+    margin: 1rem 0;
+  }
+  .secondary {
+    margin-top: 50px;
+  }
+}
+.orders {
+  border-collapse: collapse;
+  width: 100%;
+
+  th {
+    text-align: left;
+  }
+  th,
+  td {
+    padding: 1rem;
+    margin-bottom: 0.25rem;
+    border: 1px solid lightgray;
+  }
+}

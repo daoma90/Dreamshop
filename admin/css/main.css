@@ -673,4 +673,32 @@ body {
 #delete:hover {
   background-color: #c42121;
 }
+
+.order-wrap {
+  margin-top: 150px;
+}
+
+.order-wrap__heading {
+  margin: 1rem 0;
+}
+
+.order-wrap .secondary {
+  margin-top: 50px;
+}
+
+.orders {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.orders th {
+  text-align: left;
+}
+
+.orders th,
+.orders td {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+  border: 1px solid lightgray;
+}
 /*# sourceMappingURL=main.css.map */
