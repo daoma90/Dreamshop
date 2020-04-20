@@ -1,19 +1,18 @@
-<?php 
+<?php
 
 $catPath  = "";
 $prodPath = "";
 $homePath = "";
 $currentPath =  $_SERVER['REQUEST_URI'];
 if (strpos($currentPath, 'product')) {
-        $catPath  = "./../index.php"; 
-        $prodPath = "products.php";
-        $homePath = "../../index.php";
+    $catPath  = "./../index.php";
+    $prodPath = "products.php";
+    $homePath = "../../index.php";
+} else {
+    $catPath  = "./";
+    $prodPath = "./product/products.php";
+    $homePath = "../index.php";
 }
-else {
-        $catPath  = "./";
-        $prodPath = "./product/products.php";
-        $homePath = "../index.php";
-  }
 
 ?>
 <header class="header">
@@ -29,7 +28,7 @@ else {
                 <a href="" class="header__sub-item-link" style="display:none">
                     <li class="header__sub-list-item">Kategori 1</li>
                 </a>
-             </ul>
+            </ul>
             <a href="./order/orders.php">
                 <li class="header__list-item" id="order">Beställningar</li>
             </a>
@@ -51,4 +50,5 @@ else {
     </div>
     <h2 class="header__headline">Dreamshop admin</h2>
     <div class="nav-filler"></div>
+
 </header>

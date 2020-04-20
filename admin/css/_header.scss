@@ -1,5 +1,5 @@
-@import 'mixins';
-@import 'variables';
+@import "mixins";
+@import "variables";
 
 .header {
   display: flex;
@@ -98,7 +98,7 @@
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       height: 1px;
       transition: all 200ms;
       width: 40px;
@@ -127,6 +127,12 @@
     width: 40px;
     border-radius: 1px;
     background: $color__prim;
+  }
+  &__search {
+    display: flex;
+    &input {
+      background-color: red;
+    }
   }
 }
 
