@@ -21,36 +21,37 @@
           <div class="products__container"></div>
           <div class="products__completion-btns">
             <div class="products__total-wrap">
+              <div class="products__total-text">SHIPPING:</div>
+              <div class="products__total">0</div>
+            </div>
+            <div class="products__total-wrap">
               <div class="products__total-text">TOTAL:</div>
               <div class="products__total">0</div>
             </div>
-            <button class="products__clear">
-              CLEAR
-            </button>
-            <a class="products__checkout" href="confirmation.html">ORDER</a>
           </div>
         </div>
-        <div class="form-container">
-          <form action="#" class="orderform">
-            <label for="name" class="orderform__name-label">Name</label>
-            <input type="text" name="name" class="orderform__input-name" />
+        <div class="form-wrapper">
+          <h2 class="form-wrapper__headline">Shipping</h2>
+          <form action="#" class="form-wrapper__form">
+            <label for="name" class="form-wrapper__name-label">Name</label>
+            <input type="text" name="name" class="form-wrapper__input" />
 
-            <label for="e-mail" class="orderform__name-label">E-Mail</label>
-            <input type="text" name="e-mail" class="orderform__input-mail" />
+            <label for="e-mail" class="form-wrapper__name-label">E-Mail</label>
+            <input type="text" name="e-mail" class="form-wrapper__input" />
 
-            <label for="phone" class="orderform__name-label">Phone</label>
-            <input type="text" name="phone" class="orderform__input-phone" />
+            <label for="phone" class="form-wrapper__name-label">Phone</label>
+            <input type="text" name="phone" class="form-wrapper__input" />
 
-            <label for="adress" class="orderform__name-label">Adress</label>
-            <input type="text" name="adress" class="orderform__input-adress" />
+            <label for="adress" class="form-wrapper__name-label">Adress</label>
+            <input type="text" name="adress" class="form-wrapper__input" />
 
-            <label for="zip" class="orderform__name-label">Zip</label>
-            <input type="text" name="zip" class="orderform__input-zip" />
+            <label for="zip" class="form-wrapper__name-label">Zip</label>
+            <input type="text" name="zip" class="form-wrapper__input" />
 
-            <label for="city" class="orderform__name-label">City</label>
-            <input type="text" name="city" class="orderform__input-city" />
+            <label for="city" class="form-wrapper__name-label">City</label>
+            <input type="text" name="city" class="form-wrapper__input" />
 
-            <input type="submit" value="Order" />
+            <a class="form-wrapper__checkout" href="confirmation.html">ORDER</a>
           </form>
         </div>
       </div>
