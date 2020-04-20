@@ -1,11 +1,30 @@
+main {
+  background-color: blanchedalmond;
+}
+
 .cont {
   margin: 0 auto;
   display: grid;
   margin-top: 72px;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 1000px;
+    min-height: 100vh;
+    align-items: center;
+    padding: $spacing__m;
+  }
 }
 
 .products {
   padding: $spacing__s;
+  background-color: white;
+
+  @include tablet {
+    grid-column: 2;
+  }
+
   &__headline {
     text-align: center;
   }
@@ -35,6 +54,10 @@
     align-items: center;
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       height: 120px;
+    }
+
+    @include tablet {
+      margin-left: $spacing__s;
     }
   }
 
@@ -88,6 +111,12 @@
   background-color: #f9cd74;
   color: $color__white;
   padding: $spacing__m;
+
+  @include tablet {
+    grid-column: 1;
+    grid-row: 1;
+    margin-right: -$spacing__s;
+  }
 
   &__headline {
     text-align: center;
