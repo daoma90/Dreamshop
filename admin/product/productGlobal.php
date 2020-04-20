@@ -24,6 +24,7 @@ function drawProducts($pdo)
                      <button class='product__btn product__btn--edit' onclick='populateFields(" . $row["ID"] .  ")'>Edit</button>
                      <button class='product__btn product__btn--del' onclick='deleteView(" . $row["ID"] .  ")'>Delete</button>
                      <label class='product__tag'>" .  getCategoryLabel($pdo, $row["cat_id"]) . "</label>
+                    ".isFeatured($row["featured"])."
                     </div>
                 </div>
         <div class='product__right-info'>
@@ -31,7 +32,7 @@ function drawProducts($pdo)
             <p class='desc' style='display:none'>" . $row["description"] . " </p>
             <p class='price'>" . $row["price"] . " </p>
             <p class='in_stock'>" . $row["in_stock"] . " </p>
-            <p class='featured'>" . $row["featured"] . " </p>
+            <p class='featured'>" . $row["featured"]. " </p>
             <p style='display:none;'>" . $row["cat_id"] . " '</p>
         </div>
     </article>";
@@ -48,6 +49,14 @@ function getCategoryLabel($pdo, $cat)
     $stmt->execute();
     $resp = $stmt->fetch(PDO::FETCH_ASSOC);
     return $resp["name"];
+}
+
+
+//Determines featured
+function isFeatured($feat) {
+    if($feat === "1") {
+        return "<div class='product__featured'>Featured</div>";        
+    }
 }
 
 //Draws dropdownlist with all categorys

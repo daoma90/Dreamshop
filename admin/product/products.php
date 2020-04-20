@@ -39,11 +39,15 @@ include 'productGlobal.php';
                 <label for='cat_id'><span class="f-container__form-label">Category</span>
                     <!-- Draws all available categorys -->
                     <?php getCatList($pdo); ?></label>
-                    <!-- Draws all available categorys -->
+                <!-- Draws all available categorys -->
                 <label for='in_stock'><span class="f-container__form-label">Instock</span>
                     <input name='in_stock' type='text'></label>
-                <label for='featured'><span class="f-container__form-label">Featured</span>
-                    <input name='featured' type='text'></label>
+                <label for='feat'><span class="f-container__form-label">Featured</span>
+                    <select name="featured" id="feat">
+                        <option name="featured" value="0">No</option>
+                        <option name="featured" value="1">Yes</option>
+                    </select>
+                </label>
                 <input type="hidden" id="upID" name="update-id">
                 <button class='f-container__form-submit' type='submit' name="addProduct">Save post</button>
                 <i class="fa fa-times-circle" id="form-toggle" aria-hidden="true"></i>
@@ -54,7 +58,7 @@ include 'productGlobal.php';
         <section class="section-products">
             <?php drawProducts($pdo); ?>
         </section>
-        
+
 
     </main>
     <script src="../js/admin-products.js"></script>
