@@ -51,7 +51,6 @@
     transition: all 250ms ease-in-out;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    text-align: center;
     &::placeholder {
       color: color(#575756 a(0.8));
       text-transform: uppercase;
