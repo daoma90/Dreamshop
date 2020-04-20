@@ -1,6 +1,6 @@
 <?php
     $db_server = "localhost";
-    $db_database = "jlwvfkou_wp888";
+    $db_database = "frontendproject";
     $db_username = "jlwvfkou_wp888";
     $db_password = 'JSU8Sp83[!';
     try{
