@@ -1,0 +1,72 @@
+.orders-bg {
+  background: url(https://source.unsplash.com/1600x900/?mountains);
+  background: linear-gradient(to top, #fad0c483 0%, #ffd1ffc9 100%),
+    url(https://source.unsplash.com/1600x900/?mountains);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+}
+.order-wrap {
+  font-family: 'open_sansregular', 'Open Sans', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  min-width: 100%;
+  align-self: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    min-width: 60vw;
+    justify-content: center;
+  }
+  &__heading {
+    margin: 1rem 0;
+    color: white;
+    font-size: 2rem;
+    margin-left: 1rem;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.253);
+  }
+
+  .secondary {
+    margin-top: 30px;
+  }
+}
+.orders {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 0.75rem;
+  padding: 1rem 0;
+
+  @include desktop {
+    border-radius: 1rem;
+    font-size: initial;
+  }
+
+  th {
+    text-align: left;
+  }
+  tr {
+    border-bottom: 1px solid lightgray;
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  th,
+  td {
+    padding: 1rem 0;
+    margin-bottom: 0.25rem;
+
+    &:first-of-type {
+      padding-left: 0.5rem;
+      @include desktop {
+        padding: 1.5rem;
+      }
+    }
+
+    @include desktop {
+      padding: 1.5rem;
+    }
+  }
+}

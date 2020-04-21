@@ -46,31 +46,12 @@
         ?>
     </section>
 
-    <section class="lp-products">
-        <h2 id="category" class="lp-products__current-category"><?= isset($_GET['category']) ? $_GET['category'] : "All shoes";?></h2>
-        <div class="lp-products__wrap">
-            <?php 
-            if (isset($_GET['category'])){
-                $sql = "SELECT * FROM category, products WHERE category.ID = products.cat_id AND category.name = :catName";
-                $stmt = $db->prepare($sql);
-                $stmt->bindParam(':catName', $_GET['category']);
-                $stmt->execute();
-            }
-            else {
-                $sql = "SELECT * FROM products";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-            }
-            require './assets/php/products.php';
-            ?>
-        </div>
-    </section>
+
     <?php require_once 'footer.php';?>
 
     <script src="./assets/js/happyLib.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/cart.js"></script>
     <script src="./assets/js/hero-scroller.js"></script>
-    <script src="./assets/js/ajax-categories.js"></script>
 </body>
 </html>

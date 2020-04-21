@@ -3,19 +3,29 @@
 $catPath  = "";
 $prodPath = "";
 $homePath = "";
+$orderPath = "";
 $currentPath =  $_SERVER['REQUEST_URI'];
 $header = "";
 if (strpos($currentPath, 'product')) {
-    $catPath  = "./../index.php";
-    $prodPath = "products.php";
-    $homePath = "../../index.php";
-    $header = "Productbank";
-} else {
-    $catPath  = "./";
-    $prodPath = "./product/products.php";
-    $homePath = "../index.php";
-    $header = "Categories";
+        $catPath  = "./../index.php"; 
+        $prodPath = "products.php";
+        $homePath = "../../index.php";
+        $orderPath = "./../order/orders.php";
+        $header = "Productbank";
 }
+elseif (strpos($currentPath, 'orders')){
+    $catPath  = "./../index.php"; 
+    $prodPath = "./../product/products.php";
+    $homePath = "../../index.php";
+    $orderPath = "orders.php";
+    $header = "Orders";
+}
+else {
+        $catPath  = "./";
+        $prodPath = "./product/products.php";
+        $homePath = "../index.php";
+        $orderPath = "./order/orders.php";
+  }
 
 ?>
 <header class="header">
@@ -33,6 +43,8 @@ if (strpos($currentPath, 'product')) {
                 </a>
             </ul>
             <a href="./order/orders.php">
+             </ul>
+            <a href="<?= $orderPath ?>">
                 <li class="header__list-item" id="order">Beställningar</li>
             </a>
             <ul class="header__sub-list header__sub-list--hidden" id="sub-order">

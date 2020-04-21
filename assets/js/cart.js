@@ -116,19 +116,6 @@ function handleQty() {
   }
 }
 
-function handleCartQty(e) {
-  const clickedProduct = e.target.parentElement.querySelector(
-    '.cart-fixed__name'
-  ).textContent;
-  const inputQty = e.target.parentElement.querySelector('.cart-fixed__qty');
-  const productInCart = HappyLib.findProduct(clickedProduct, cart);
-  if (productInCart !== undefined && inputQty.value > productInCart.stock) {
-    productInCart.quantity = productInCart.stock;
-    HappyLib.updateLocalStorage(cart.key, renderCart);
-    alert('Stock limit reached');
-  }
-}
-
 function removeItem(e) {
   const item = e.target.parentElement.querySelector('.cart-fixed__name')
     .textContent;
@@ -154,6 +141,15 @@ function changeQuantity(e) {
       return item.name !== productInCart.name;
     });
   }
+  if (
+    productInCart !== undefined &&
+    parseInt(val.value) > productInCart.stock
+  ) {
+    productInCart.quantity = productInCart.stock;
+    HappyLib.updateLocalStorage(cart.key, renderCart);
+    alert('Stock limit reached');
+  }
+
   HappyLib.updateLocalStorage(cart.key, renderCart);
 }
 
@@ -211,7 +207,6 @@ function renderCart() {
 
   HappyLib.addEvents(removeBtn, removeItem, 'click');
   HappyLib.addEvents(qtyInput, changeQuantity, 'change');
-  HappyLib.addEvents(qtyInput, handleCartQty, 'change');
 
   totalPrice.textContent = price + ' SEK';
   totalQty.textContent = qty + ' Items';
