@@ -1541,7 +1541,6 @@ main {
 
 .products__completion-btns > * {
   text-align: center;
-  cursor: pointer;
 }
 
 .products__completion-btns a {
