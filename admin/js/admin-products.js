@@ -22,7 +22,7 @@ if (!Array.from) {
     };
 
     // The length property of the from method is 1.
-    return function from(arrayLike /*, mapFn, thisArg */) {
+    return function from(arrayLike /*, mapFn, thisArg */ ) {
       // 1. Let C be the this value.
       var C = this;
 
@@ -72,9 +72,9 @@ if (!Array.from) {
         kValue = items[k];
         if (mapFn) {
           A[k] =
-            typeof T === "undefined"
-              ? mapFn(kValue, k)
-              : mapFn.call(T, kValue, k);
+            typeof T === "undefined" ?
+            mapFn(kValue, k) :
+            mapFn.call(T, kValue, k);
         } else {
           A[k] = kValue;
         }
@@ -107,42 +107,69 @@ function deleteView(id) {
 }
 
 //Populate all data from DOM to form and change to updateproduct.php
+//const form = document.querySelector(".f-container__form");
 const toggle = document.querySelector("#form-toggle");
-const form = document.querySelector(`.f-container__form`);
+const productForm = document.querySelector(".product-form-main");
 
 function populateFields(id) {
-  const form = document.querySelector(".f-container__form");
+  //const form = document.querySelector(".f-container__form");
   const product = document.querySelector("#product_" + id);
   const children = product.children[1].children;
-  Array.from(form.elements).forEach(function (input) {
+  //Goes throuh DOM products, (validation needed here?)
+  Array.from(productForm.elements).forEach(function (input) {
     Array.from(children).forEach(function (row) {
       if (input.name === row.className) {
         if (input.name !== "image") {
           input.value = row.textContent;
         }
-        if(input.name === "featured") {
+        if (input.name === "featured") {
           input.selectedIndex = parseInt(row.textContent);
         }
       }
     });
+    //Sets preview image
+    if (input.name = "image") {
+      document.querySelector(".product-form-main__left-img img").
+      setAttribute("src", product.firstElementChild.children[0].firstElementChild.
+      getAttribute("src"));
+    }
   });
-  //Set form to update mode
-  form.setAttribute("action", "productUpdate.php");
-  form.querySelector("button").setAttribute("name", "updateProduct");
+
+  product.style.zIndex = "900";
+  product.style.display = "flex";
+  productForm.setAttribute("action", "productUpdate.php");
+  productForm.querySelector("button").setAttribute("name", "updateProduct");
   document.querySelector("#upID").setAttribute("value", id);
-  document.querySelector(".f-container__form-header").textContent =
-    "Update product";
-  document.querySelector(".f-container__form-submit").textContent = "Update";
   toggle.style.display = "block";
+  product.appendChild(productForm);
+
+  //Hides all products and reset width except current one, 
+  const allProducts = document.querySelectorAll(".product");
+  allProducts.forEach(function (p) {
+    let isCurrent = p.id == "product_" + id;
+    if (!isCurrent) {
+      p.style.opacity = "0.5";
+      p.style.minwidth = "550px";
+    } else {
+      p.style.opacity = "1";
+      p.style.minwidth = "450px";
+    }
+  });
 }
 
 //Resets form back to create mode
 toggle.addEventListener("click", function (e) {
   toggle.style.display = "none";
-  form.setAttribute("action", "productCreate.php");
-  form.querySelector("button").setAttribute("name", "addProduct");
-  document.querySelector(".f-container__form-header").textContent =
-    "Create product";
-  document.querySelector(".f-container__form-submit").textContent = "Create";
-  form.reset();
+  productForm.setAttribute("action", "productCreate.php");
+  productForm.querySelector("button").setAttribute("name", "addProduct");
+  productForm.reset();
+});
+
+//Opens create form
+const add = document.querySelector(".section-add-imgwrap");
+add.addEventListener("click", function (e) {
+  productForm.setAttribute("action", "productCreate.php");
+  productForm.querySelector("button").setAttribute("name", "addProduct");
+  productForm.querySelector("h2").textContent = "Create product";
+  productForm.parentElement.style.display = "flex";
 });

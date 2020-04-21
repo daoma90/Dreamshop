@@ -1,6 +1,6 @@
 <?php
 
-require_once "../includes/db.php";
+require "../includes/db.php";
 
 
 function readAll($pdo)
@@ -10,6 +10,36 @@ function readAll($pdo)
     $stmt->execute();
     return $stmt;
 }
+
+
+// function drawProducts($pdo)
+// {
+//     $stmt = readAll($pdo);
+//     if ($stmt->rowCount() > 0) {
+//         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+//             echo "<article class='product' id='product_" . $row["ID"] . "'>
+//                 <div class='product__left-info'>
+//                     <div class='product__left-info-image'><img src='../images/" . $row["image"] . "' alt=''></div>
+//                     <div class='product__btn-wrapper'>
+//                      <button class='product__btn product__btn--edit' onclick='populateFields(" . $row["ID"] .  ")'>Edit</button>
+//                      <button class='product__btn product__btn--del' onclick='deleteView(" . $row["ID"] .  ")'>Delete</button>
+//                      <label class='product__tag'>" .  getCategoryLabel($pdo, $row["cat_id"]) . "</label>
+//                     ".isFeatured($row["featured"])."
+//                     </div>
+//                 </div>
+//         <div class='product__right-info'>
+//             <h3 class='name'>" . $row["name"] . "</h3>
+//             <p class='desc' style='display:none'>" . $row["description"] . " </p>
+//             <p class='price'>" . $row["price"] . " </p>
+//             <p class='in_stock'>" . $row["in_stock"] . " </p>
+//             <p class='featured'>" . $row["featured"]. " </p>
+//             <p style='display:none;'>" . $row["cat_id"] . " '</p>
+//         </div>
+//     </article>";
+//         }
+//     }
+// }
+
 
 //Draws each product based on arr from db
 function drawProducts($pdo)
@@ -21,24 +51,27 @@ function drawProducts($pdo)
                 <div class='product__left-info'>
                     <div class='product__left-info-image'><img src='../images/" . $row["image"] . "' alt=''></div>
                     <div class='product__btn-wrapper'>
-                     <button class='product__btn product__btn--edit' onclick='populateFields(" . $row["ID"] .  ")'>Edit</button>
-                     <button class='product__btn product__btn--del' onclick='deleteView(" . $row["ID"] .  ")'>Delete</button>
-                     <label class='product__tag'>" .  getCategoryLabel($pdo, $row["cat_id"]) . "</label>
+                     <button class='btn btn--edit' onclick='populateFields(" . $row["ID"] .  ")'></button>
+                     <button class='btn btn--del' onclick='deleteView(" . $row["ID"] .  ")'></button>
                     ".isFeatured($row["featured"])."
                     </div>
                 </div>
         <div class='product__right-info'>
+            <div></div>
             <h3 class='name'>" . $row["name"] . "</h3>
-            <p class='desc' style='display:none'>" . $row["description"] . " </p>
+            <p class='description'>" . $row["description"] . " </p>
             <p class='price'>" . $row["price"] . " </p>
             <p class='in_stock'>" . $row["in_stock"] . " </p>
-            <p class='featured'>" . $row["featured"]. " </p>
+            <label class='product__tag'>" .  getCategoryLabel($pdo, $row["cat_id"]) . "</label>
+            <p class='featured'style='display:none;'>" . $row["featured"]. " </p>
             <p style='display:none;'>" . $row["cat_id"] . " '</p>
         </div>
     </article>";
         }
     }
 }
+
+
 
 //Shows current category foreach product
 function getCategoryLabel($pdo, $cat)
