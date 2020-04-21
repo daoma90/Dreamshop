@@ -11,6 +11,24 @@ function removeItem(e) {
   HappyLib.updateLocalStorage(cart.key, renderProducts);
 }
 
+function clearCart() {
+  const items = document.querySelector(".cart-fixed__cart-items");
+  const totalPrice = document.querySelector(".cart-fixed__total");
+  const totalProductQty = document.querySelector(".cart-fixed__total-qty");
+  const totalQtyIconNotif = document.querySelector(".icon-notif");
+
+  totalQtyIconNotif.addEventListener("change", function () {
+    renderProducts();
+  });
+
+  items.innerHTML = "";
+  totalProductQty.textContent = "0 Items";
+  totalQtyIconNotif.textContent = "0";
+  totalPrice.textContent = "0 SEK";
+  cart.products = [];
+  localStorage.clear();
+}
+
 function changeQuantity(e) {
   const val = e.target.parentElement.querySelector(".products__qty");
   const item = e.target.parentElement.querySelector(".products__name")

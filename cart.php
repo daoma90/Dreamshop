@@ -18,7 +18,7 @@
       <button class="cart-fixed__clear">
         CLEAR
       </button>
-      <a class="cart-fixed__checkout" href="confirmation.html">ORDER</a>
+      <a class="cart-fixed__checkout" href="./order.php">ORDER</a>
     </div>
   </div>
 </section>
