@@ -5,8 +5,8 @@
   grid-auto-flow: dense;
   justify-content: center;
   align-items: flex-start;
-  grid-gap: 20px;
-  margin: 20px;
+  grid-gap: 30px;
+  margin-top: 30px;
   overflow: hidden;
 }
 .searchProd {
@@ -14,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid #7d8080;
+  border: 1px solid #7d8080;
   width: 100%;
   height: 100%;
   &__image {

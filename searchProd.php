@@ -24,15 +24,20 @@
       ]);
       if ($stmt->rowCount()) {
         while ($row = $stmt->fetch()) {
-
-          echo "<article class='searchProd' >
+          $id = $row['ID'];
+          $image = $row["image"];
+          $name = $row["name"];
+          $price = $row["price"];
+          echo "<article >
+                <a class='searchProd'  href='./product.php?id=$id'>
                 <div class='searchProd__image'>
-                  <img src='./admin/images/" . $row["image"] . "' alt=''>
+                  <img src='./admin/images/$image' alt=''>
                  </div>
                 <div class='searchProd__detail'>
-                    <h3 class='searchProd__detail-name'>" . $row["name"] . "</h3>
-                    <p class='searchProd__detail-name-price'>" . $row["price"] . " </p>
+                    <h3 class='searchProd__detail-name'>$name</h3>
+                    <p class='searchProd__detail-name-price'>$price</p>
                 </div>
+                </a>
                  </article>";
         }
       } else {
