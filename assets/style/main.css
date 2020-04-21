@@ -1549,6 +1549,12 @@ main {
   color: white;
 }
 
+@media (min-width: 724px) {
+  .products__completion-btns {
+    margin-left: 1em;
+  }
+}
+
 .form-wrapper {
   background-color: #f9cd74;
   color: #ffffff;

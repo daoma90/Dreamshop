@@ -21,8 +21,8 @@
           <div class="products__container"></div>
           <div class="products__completion-btns">
             <div class="products__total-wrap">
-              <div class="products__total-text">SHIPPING:</div>
-              <div class="products__total">0</div>
+              <div class="products__shipping-text">SHIPPING:</div>
+              <div class="products__shipping-price">50 SEK</div>
             </div>
             <div class="products__total-wrap">
               <div class="products__total-text">TOTAL:</div>

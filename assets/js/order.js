@@ -11,12 +11,28 @@ function removeItem(e) {
   HappyLib.updateLocalStorage(cart.key, renderProducts);
 }
 
+function changeQuantity(e) {
+  const val = e.target.parentElement.querySelector(".products__qty");
+  const item = e.target.parentElement.querySelector(".products__name")
+    .textContent;
+
+  const productInCart = HappyLib.findProduct(item, cart);
+  productInCart.quantity = val.value;
+  if (val.value <= 0) {
+    cart.products = cart.products.filter(function (item) {
+      return item.name !== productInCart.name;
+    });
+  }
+  HappyLib.updateLocalStorage(cart.key, renderProducts);
+}
+
 function renderProducts() {
   const items = document.querySelector(".products__container");
   const totalPrice = document.querySelector(".products__total");
   const price = HappyLib.getTotalPrice(cart.products);
 
   items.innerHTML = "";
+  renderCart();
   cart.products.forEach(function (item) {
     items.innerHTML += `<div class="products__item">
     <div class="products__img-wrap"><img class="products__img" src="./admin/images/${

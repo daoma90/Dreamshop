@@ -105,6 +105,10 @@ main {
       text-decoration: none;
       color: white;
     }
+
+    @include tablet {
+      margin-left: $spacing__s;
+    }
   }
 }
 
