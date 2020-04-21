@@ -7,18 +7,23 @@ for (var i = 0; i < localStorage.length; i++) {
   for (let i = 0; i < value.length; i++) {
     const elm = value[i];
 
+    let price = parseInt(elm.price)
+    let totalSumma = elm.quantity * price
+    arr.push(totalSumma)
+
     let wrapper = document.querySelector(".wrapper")
     wrapper.innerHTML += ` 
     <div>${elm.name}</div>
     <div>${elm.price}</div>
     <div>${elm.quantity}</div>
-    <div> <img src="../FE-Project-Shop/admin/images/${elm.image}"></div>`
-    let price = parseInt(elm.price)
-    let totalSumma = elm.quantity * price
-    arr.push(totalSumma)
+    <div> <img src="../FE-Project-Shop/admin/images/${elm.image}">
+    <div> Totalsumma: ${CountSum(arr)}</div>
+    </div>`
+
+
 
     //TOtal Summa 
-    CountSum(arr)
+
   }
 
 }
