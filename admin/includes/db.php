@@ -1,9 +1,18 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=jlwvfkou_wp888;charset=utf8";
-try {
-  $pdo = new PDO($dsn, 'jlwvfkou_wp888', 'JSU8Sp83[!');
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  echo $e->getMessage();
-}
+ // $db_server = "localhost";
+    // $db_database = "jlwvfkou_wp888";
+    // $db_username = "jlwvfkou_wp888";
+    // $db_password = 'JSU8Sp83[!';
+
+    $db_server = "localhost";
+    $db_database = "webshop_cms_sql";
+    $db_username = "root";
+    $db_password = 'root';
+    try{
+    $pdo= new PDO("mysql:host=$db_server;dbname=$db_database;charset=utf8",$db_username, $db_password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch(PDOException $e){
+    echo $e-> getMessage();
+    }
