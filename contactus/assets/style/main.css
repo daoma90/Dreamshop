@@ -155,7 +155,7 @@ body {
   height: 50%;
   resize: none;
   font-size: 20px;
-  border: solid 3px black;
+  border: solid 2px black;
 }
 
 @media screen and (min-width: 1200px) {
@@ -182,7 +182,7 @@ body {
   .contact__button {
     color: #1e68a5;
     background-color: white;
-    border: 3px solid #1e68a5;
+    border: 2px solid #1e68a5;
   }
   .contact__button:hover {
     background-color: #1e68a5;

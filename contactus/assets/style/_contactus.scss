@@ -107,7 +107,7 @@ body {
     height: 50%;
     resize: none;
     font-size: 20px;
-    border: solid 3px black;
+    border: solid 2px black;
     @media screen and (min-width: 1200px) {
       height: 50%;
     }
@@ -129,7 +129,7 @@ body {
     @media screen and (min-width: 700px) {
       color: rgb(30, 104, 165);
       background-color: white;
-      border: 3px solid rgb(30, 104, 165);
+      border: 2px solid rgb(30, 104, 165);
       &:hover {
         background-color: rgb(30, 104, 165);
         color: white;
