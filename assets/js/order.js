@@ -17,16 +17,16 @@ function clearCart() {
   const totalProductQty = document.querySelector(".cart-fixed__total-qty");
   const totalQtyIconNotif = document.querySelector(".icon-notif");
 
-  totalQtyIconNotif.addEventListener("change", function () {
-    renderProducts();
-  });
-
   items.innerHTML = "";
   totalProductQty.textContent = "0 Items";
   totalQtyIconNotif.textContent = "0";
   totalPrice.textContent = "0 SEK";
   cart.products = [];
   localStorage.clear();
+  if (document.querySelector(".products") !== "") {
+    console.log("hej");
+    HappyLib.updateLocalStorage(cart.key, renderProducts);
+  }
 }
 
 function changeQuantity(e) {
