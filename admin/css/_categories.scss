@@ -8,6 +8,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   margin-top: 72px;
   width: 100%;
+  align-self: center;
   @media screen and (min-width: 538px) {
     grid-gap: 10px;
     width: 80%;
