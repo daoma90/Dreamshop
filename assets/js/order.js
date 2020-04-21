@@ -1,11 +1,22 @@
+function removeItem(e) {
+  const item = e.target.parentElement.querySelector(".products__name")
+    .textContent;
+
+  const productInCart = HappyLib.findProduct(item, cart);
+
+  cart.products = cart.products.filter(function (item) {
+    return item.name !== productInCart.name;
+  });
+
+  HappyLib.updateLocalStorage(cart.key, renderProducts);
+}
+
 function renderProducts() {
   const items = document.querySelector(".products__container");
   const totalPrice = document.querySelector(".products__total");
-  const totalQty = document.querySelector(".products__total-qty");
-  const totalQtyIconNotif = document.querySelector(".icon-notif");
   const price = HappyLib.getTotalPrice(cart.products);
-  const qty = HappyLib.getTotalQty(cart.products);
 
+  items.innerHTML = "";
   cart.products.forEach(function (item) {
     items.innerHTML += `<div class="products__item">
     <div class="products__img-wrap"><img class="products__img" src="./admin/images/${
@@ -21,8 +32,15 @@ function renderProducts() {
     
     </div>`;
   });
+  const removeBtn = document.querySelectorAll(".products__remove-btn");
+  const qtyInput = document.querySelectorAll(".products__qty");
+
+  HappyLib.addEvents(removeBtn, removeItem, "click");
+  HappyLib.addEvents(qtyInput, changeQuantity, "change");
+  HappyLib.addEvents(qtyInput, handleCartQty, "change");
+
+  totalPrice.textContent = price + " SEK";
 }
 
 HappyLib.localStorageInit(cart.key);
 renderProducts();
-console.log(cart.products);
