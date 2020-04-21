@@ -51,17 +51,25 @@ function renderProducts() {
   });
   const removeBtn = document.querySelectorAll(".products__remove-btn");
   const qtyInput = document.querySelectorAll(".products__qty");
+  const headline = document.querySelector(".products__headline");
 
   HappyLib.addEvents(removeBtn, removeItem, "click");
   HappyLib.addEvents(qtyInput, changeQuantity, "change");
   HappyLib.addEvents(qtyInput, handleCartQty, "change");
 
-  if (price > 500) {
-    shipping.textContent = "FREE";
-    totalPrice.textContent = price + " SEK";
+  if (cart.products === undefined || cart.products.length === 0) {
+    headline.textContent = "Your cart is empty";
+    shipping.textContent = "0";
+    totalPrice.textContent = "0";
   } else {
-    shipping.textContent = "50 SEK";
-    totalPrice.textContent = price + 50 + " SEK";
+    headline.textContent = "Your Order";
+    if (price > 500) {
+      shipping.textContent = "FREE";
+      totalPrice.textContent = price + " SEK";
+    } else {
+      shipping.textContent = "50 SEK";
+      totalPrice.textContent = price + 50 + " SEK";
+    }
   }
 }
 

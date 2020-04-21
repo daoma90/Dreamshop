@@ -22,7 +22,7 @@
           <div class="products__completion-btns">
             <div class="products__total-wrap">
               <div class="products__shipping-text">SHIPPING:</div>
-              <div class="products__shipping-price">50 SEK</div>
+              <div class="products__shipping-price">0</div>
             </div>
             <div class="products__total-wrap">
               <div class="products__total-text">TOTAL:</div>
