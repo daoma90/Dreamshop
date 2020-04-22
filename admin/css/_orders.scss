@@ -39,6 +39,36 @@
   font-size: 0.75rem;
   padding: 1rem 0;
 
+  &__status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+    & > * {
+      flex-grow: 1;
+    }
+    span {
+      background: white;
+      padding: 1rem 2rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      background: rgb(124, 126, 228);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: inherit;
+      &:hover {
+        background: rgb(109, 111, 212);
+      }
+    }
+  }
+
   @include desktop {
     border-radius: 1rem;
     font-size: initial;
@@ -68,5 +98,10 @@
     @include desktop {
       padding: 1.5rem;
     }
+  }
+}
+@media (max-width: 450px) {
+  body {
+    width: 450px;
   }
 }
