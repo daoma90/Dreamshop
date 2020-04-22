@@ -11,15 +11,25 @@
     require_once "../includes/header.php";
     ?>
     <section class="order-wrap">
+
     <h1 class="order-wrap__heading">Orders:</h1>
     <div class="order-wrap__table-wrapper">
+    <div class="orders__status">
+                    <span>Filter: </span>
+                    <button onclick="showRelevantStatus(event)">All</button>
+                    <button onclick="showRelevantStatus(event)">New</button>
+                    <button onclick="showRelevantStatus(event)">Processing</button>
+                    <input placeholder="Search" onkeyup="searchFilter(event)" type="text">
+                </div>
     <table class="orders" id="order-uncomplete">
         <tr>
             <th>Order ID</th>
             <th onclick="sortTable(1, 'order-uncomplete')">Date</th>
             <th onclick="sortTable(2, 'order-uncomplete')">Total</th>
             <th>City</th>
-            <th onclick="sortTableStatus(4, 'order-uncomplete')">Status</th>
+            <th onclick="sortTableStatus(4, 'order-uncomplete')">
+            Status
+            </th>
         </tr>
         <?php
 
@@ -43,12 +53,12 @@
                          </select>";
 
             $orders .= "
-                        <tr'>
+                        <tr class='display-status status-$status'>
                             <td>$orderID</td>
                             <input type='hidden' name='id' value='$orderID'>
                             <td>$date</td>
                             <td>$total</td>
-                            <td>$city</td>
+                            <td class='city'>$city</td>
                             <td>$selected</td>
                         </tr>
                     ";
