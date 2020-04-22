@@ -38,7 +38,7 @@ function addToCart(id) {
         price: product[0].price,
         image: product[0].image,
         quantity: inputQty ? parseInt(inputQty.value) : 1,
-        stock: product[0].stock,
+        stock: parseInt(product[0].stock),
       };
 
       const productInCart = HappyLib.findProduct(tempObj.name, cart);

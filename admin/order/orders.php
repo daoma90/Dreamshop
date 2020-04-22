@@ -64,7 +64,7 @@
     <table class="orders" id="order-complete">
             <tr>
                 <th>Order ID</th>
-                <th>Date</th>
+                <th onclick="sortTable(1, 'order-complete')">Date</th>
                 <th>Customer ID</th>
                 <th onclick="sortTable(3, 'order-complete')">Total</th>
                 <th>City</th> 
