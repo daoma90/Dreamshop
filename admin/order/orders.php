@@ -19,6 +19,7 @@
                     <button onclick="showRelevantStatus(event)">All</button>
                     <button onclick="showRelevantStatus(event)">New</button>
                     <button onclick="showRelevantStatus(event)">Processing</button>
+                    <input placeholder="Search" onkeyup="searchFilter(event)" type="text">
                 </div>
     <table class="orders" id="order-uncomplete">
         <tr>
@@ -57,7 +58,7 @@
                             <input type='hidden' name='id' value='$orderID'>
                             <td>$date</td>
                             <td>$total</td>
-                            <td>$city</td>
+                            <td class='city'>$city</td>
                             <td>$selected</td>
                         </tr>
                     ";
