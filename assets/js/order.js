@@ -48,7 +48,9 @@ function renderProducts() {
   const items = document.querySelector(".products__container");
   const totalPrice = document.querySelector(".products__total");
   const shipping = document.querySelector(".products__shipping-price");
+  const priceExclShipping = document.querySelector(".products__price-price");
   const price = HappyLib.getTotalPrice(cart.products);
+  let formPrice = 0;
 
   items.innerHTML = "";
   renderCart();
@@ -75,12 +77,15 @@ function renderProducts() {
   HappyLib.addEvents(qtyInput, changeQuantity, "change");
   HappyLib.addEvents(qtyInput, handleCartQty, "change");
 
+  document.addOrder.price.value = price;
+
   if (cart.products === undefined || cart.products.length === 0) {
     headline.textContent = "Your cart is empty";
     shipping.textContent = "0";
     totalPrice.textContent = "0";
   } else {
     headline.textContent = "Your Order";
+    priceExclShipping.textContent = price + " SEK";
     if (price > 500) {
       shipping.textContent = "FREE";
       totalPrice.textContent = price + " SEK";

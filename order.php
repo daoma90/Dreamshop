@@ -21,6 +21,10 @@
           <div class="products__container"></div>
           <div class="products__completion-btns">
             <div class="products__total-wrap">
+              <div class="products__price-text">PRICE:</div>
+              <div class="products__price-price">0</div>
+            </div>
+            <div class="products__total-wrap">
               <div class="products__shipping-text">SHIPPING:</div>
               <div class="products__shipping-price">0</div>
             </div>
@@ -32,12 +36,18 @@
         </div>
         <div class="form-wrapper">
           <h2 class="form-wrapper__headline">Shipping</h2>
-          <form action="#" class="form-wrapper__form">
+          <form
+            action="./admin/order/addOrder.php"
+            name="addOrder"
+            method="POST"
+            class="form-wrapper__form"
+            enctype="multipart/form-data"
+          >
             <label for="name" class="form-wrapper__name-label">Name</label>
             <input type="text" name="name" class="form-wrapper__input" />
 
             <label for="e-mail" class="form-wrapper__name-label">E-Mail</label>
-            <input type="text" name="e-mail" class="form-wrapper__input" />
+            <input type="text" name="mail" class="form-wrapper__input" />
 
             <label for="phone" class="form-wrapper__name-label">Phone</label>
             <input type="text" name="phone" class="form-wrapper__input" />
@@ -51,7 +61,16 @@
             <label for="city" class="form-wrapper__name-label">City</label>
             <input type="text" name="city" class="form-wrapper__input" />
 
-            <a class="form-wrapper__checkout" href="confirmation.html">ORDER</a>
+            <input type="hidden" name="price" value="" class="form-wrapper__input">
+
+            <button
+              type="submit"
+              value="ORDER"
+              class="form-wrapper__checkout"
+              name="addOrder"
+            >
+              ORDER
+            </button>
           </form>
         </div>
       </div>
