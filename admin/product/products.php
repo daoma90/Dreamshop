@@ -2,7 +2,7 @@
 //session_start();
 
 include 'productGlobal.php';
-
+ini_set('error_reporting', E_ALL);
 ?>
 <!DOCTYPE html>
 <html lang="en">
