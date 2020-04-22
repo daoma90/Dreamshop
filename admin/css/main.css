@@ -1071,6 +1071,8 @@ body {
   overflow: hidden;
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .orders__status > * {
