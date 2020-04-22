@@ -28,37 +28,6 @@ const cart = {
   products: [],
 };
 
-// async function addToCart(id) {
-//   const response = await fetch(`./assets/php/addToCart.php?id=${id}`);
-//   const product = await response.json();
-
-//   let tempObj = {
-//     name: product[0].name,
-//     price: product[0].price,
-//     image: product[0].image,
-//     quantity: inputQty ? parseInt(inputQty.value) : 1,
-//     stock: 5,
-//   };
-
-//   const productInCart = HappyLib.findProduct(tempObj.name, cart);
-
-//   if (!productInCart) {
-//     cart.products.push(tempObj);
-//   } else {
-//     if (inputQty) {
-//       productInCart.quantity += parseInt(inputQty.value);
-//     } else {
-//       productInCart.quantity++;
-//     }
-//     // If quantity is raised above the current stock quantity the value will be set to the max stock quantity
-//     if (tempObj.stock < productInCart.quantity) {
-//       productInCart.quantity = tempObj.stock;
-//       alert('No more of these in stock!');
-//     }
-//   }
-//   HappyLib.updateLocalStorage(cart.key, renderCart);
-// }
-
 function addToCart(id) {
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
@@ -69,7 +38,7 @@ function addToCart(id) {
         price: product[0].price,
         image: product[0].image,
         quantity: inputQty ? parseInt(inputQty.value) : 1,
-        stock: product[0].stock,
+        stock: parseInt(product[0].stock),
       };
 
       const productInCart = HappyLib.findProduct(tempObj.name, cart);

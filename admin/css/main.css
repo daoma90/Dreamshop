@@ -13,7 +13,8 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
 }
 
 .header {
@@ -30,7 +31,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
@@ -40,6 +41,7 @@ body {
 @media (min-width: 1024px) {
   .header {
     text-align: left;
+    position: fixed;
   }
 }
 
@@ -143,7 +145,7 @@ body {
 }
 
 .header__nav::before, .header__nav::after {
-  content: "";
+  content: '';
   height: 1px;
   -webkit-transition: all 200ms;
   transition: all 200ms;
@@ -212,6 +214,18 @@ body {
 .nav-filler {
   height: 40px;
   width: 40px;
+}
+
+.burger-visible {
+  visibility: visible;
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+}
+
+.burger-hidden {
+  visibility: hidden;
+  -webkit-clip-path: circle(0% at 0 0);
+          clip-path: circle(0% at 0 0);
 }
 
 main {
@@ -459,9 +473,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .categories {
@@ -660,5 +675,107 @@ body {
 
 #delete:hover {
   background-color: #c42121;
+}
+
+.orders-bg {
+  background: url(https://source.unsplash.com/1600x900/?mountains);
+  background: -webkit-gradient(linear, left bottom, left top, from(#fad0c483), to(#ffd1ffc9)), url(https://source.unsplash.com/1600x900/?mountains);
+  background: linear-gradient(to top, #fad0c483 0%, #ffd1ffc9 100%), url(https://source.unsplash.com/1600x900/?mountains);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.order-wrap {
+  font-family: 'open_sansregular', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-width: 100%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .order-wrap {
+    min-width: 60vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.order-wrap__heading {
+  margin: 1rem 0;
+  color: white;
+  font-size: 2rem;
+  margin-left: 1rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.253);
+}
+
+.order-wrap .secondary {
+  margin-top: 30px;
+}
+
+.orders {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 0.75rem;
+  padding: 1rem 0;
+}
+
+@media (min-width: 1024px) {
+  .orders {
+    border-radius: 1rem;
+    font-size: initial;
+  }
+}
+
+.orders th {
+  text-align: left;
+}
+
+.orders tr {
+  border-bottom: 1px solid lightgray;
+}
+
+.orders tr:last-of-type {
+  border-bottom: none;
+}
+
+.orders th,
+.orders td {
+  padding: 1rem 0;
+  margin-bottom: 0.25rem;
+}
+
+.orders th:first-of-type,
+.orders td:first-of-type {
+  padding-left: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .orders th:first-of-type,
+  .orders td:first-of-type {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .orders th,
+  .orders td {
+    padding: 1.5rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

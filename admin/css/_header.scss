@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@import 'mixins';
+@import 'variables';
 
 .header {
   display: flex;
@@ -9,7 +9,7 @@
   padding: $spacing__s;
   align-items: center;
   text-align: center;
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
@@ -17,6 +17,7 @@
 
   @include desktop {
     text-align: left;
+    position: fixed;
   }
 
   &__hidden-burgernav {
@@ -98,7 +99,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       height: 1px;
       transition: all 200ms;
       width: 40px;
@@ -156,4 +157,12 @@
 .nav-filler {
   height: 40px;
   width: 40px;
+}
+.burger-visible {
+  visibility: visible;
+  clip-path: circle(100%);
+}
+.burger-hidden {
+  visibility: hidden;
+  clip-path: circle(0% at 0 0);
 }

@@ -6,7 +6,7 @@ document.addEventListener('click', function (e) {
 
     getProducts(category);
   }
-  if (e.target.className.includes('catsort-header')) {
+  if (e.target.className.includes('catsort')) {
     const category = e.target.textContent;
     console.log('hs');
     if (document.querySelector('.productpage')) {
