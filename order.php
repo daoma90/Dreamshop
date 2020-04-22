@@ -61,8 +61,6 @@
             <label for="city" class="form-wrapper__name-label">City</label>
             <input type="text" name="city" class="form-wrapper__input" />
 
-            <input type="hidden" name="price" value="" class="form-wrapper__input">
-
             <button
               type="submit"
               value="ORDER"

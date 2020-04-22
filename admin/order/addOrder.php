@@ -8,17 +8,29 @@
     $adress = trim($_POST['adress']);
     $zip = trim($_POST['zip']);
     $city = trim($_POST['city']);
-    $price = trim($_POST['price']);
+    $products = $_POST['products'];
+    $quantity = $_POST['quantity'];
     $delivery = 50;
+    $total = 0;
 
-    if ($city == 'Stockholm' || $price >= 50) {
+    $sql = "SELECT * FROM products WHERE ID IN (".implode(",", $products).")";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+    $i = 0;
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      $total += $row['price'] * $quantity[$i];
+      $i++;
+    }
+
+    if ($city == 'Stockholm' || $total >= 500) {
       $delivery = 0;
     }
 
-    $total = ($price - $delivery);
+    $total += $delivery;
 
+    $sql = "INSERT INTO orders(name,mail,phone,adress,zip,city,total,delivery_fee) VALUES(:name,:mail,:phone,:adress,:zip,:city,:total,:delivery_fee);";
 
-    $sql = "INSERT INTO orders(name,mail,phone,adress,zip,city,total,delivery_fee) VALUES(:name,:mail,:phone,:adress,:zip,:city,:total,:delivery_fee)";
     $stmt = $pdo->prepare($sql);
     try {
     $stmt->execute([
@@ -32,15 +44,27 @@
       ':delivery_fee' => $delivery
       ]);
 
-      header("Location:/confirmation.php?orderID=" . $pdo->lastInsertId());
+      //header("Location: ./confirmation.php?orderID=" . $pdo->lastInsertId());
 
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
 
     }
-      
-    };
-    
-  
 
+    $sql = "INSERT INTO ordered_products (product_id, order_id, quantity) VALUES ";
+    
+    foreach ($products as $key => $value) {
+      if ($key != count($products) - 1){
+        $sql .= "($value, LAST_INSERT_ID(), $quantity[$key]), ";
+      }
+      else {
+        $sql .= "($value, LAST_INSERT_ID(), $quantity[$key]); ";
+      }
+    }
+    echo $sql;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+      
+  };
+    
 ?>
