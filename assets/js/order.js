@@ -26,6 +26,18 @@ function changeQuantity(e) {
   HappyLib.updateLocalStorage(cart.key, renderProducts);
 }
 
+function handleProductQty(e) {
+  const clickedProduct = e.target.parentElement.querySelector(".products__name")
+    .textContent;
+  const inputQty = e.target.parentElement.querySelector(".products__qty");
+  const productInCart = HappyLib.findProduct(clickedProduct, cart);
+  if (productInCart !== undefined && inputQty.value > productInCart.stock) {
+    productInCart.quantity = productInCart.stock;
+    HappyLib.updateLocalStorage(cart.key, renderProducts);
+    alert("Stock limit reached");
+  }
+}
+
 function updatePrice(str) {
   const totalPrice = document.querySelector(".products__total");
   const shipping = document.querySelector(".products__shipping-price");
@@ -78,7 +90,7 @@ function renderProducts() {
 
   HappyLib.addEvents(removeBtn, removeItem, "click");
   HappyLib.addEvents(qtyInput, changeQuantity, "change");
-  HappyLib.addEvents(qtyInput, handleCartQty, "change");
+  HappyLib.addEvents(qtyInput, handleProductQty, "change");
 
   updatePrice();
 }
