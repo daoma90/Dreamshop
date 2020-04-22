@@ -61,7 +61,6 @@
         $sql .= "($value, LAST_INSERT_ID(), $quantity[$key]); ";
       }
     }
-    echo $sql;
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     header("Location: ./confirmation.php?orderID=" . $redirectID);
