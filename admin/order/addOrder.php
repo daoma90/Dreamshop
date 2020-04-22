@@ -32,8 +32,8 @@
       ':delivery_fee' => $delivery
       ]);
 
+      header("Location:/confirmation.php?orderID=" . $pdo->lastInsertId());
 
-      // header("Location:/confirmation.php?orderID=" . $pdo->lastInsertId());
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
 
