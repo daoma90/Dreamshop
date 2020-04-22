@@ -13,11 +13,13 @@
     <section class="order-wrap">
     <h1 class="order-wrap__heading">Orders:</h1>
     <div class="order-wrap__table-wrapper">
-    <table class="orders">
+    <table class="orders" id="order-uncomplete">
         <tr>
             <th>Order ID</th>
-            <th>Date</th>
+            <th onclick="sortTable(1, 'order-uncomplete')">Date</th>
             <th>Customer ID</th>
+            <th onclick="sortTable(3, 'order-uncomplete')">Total</th>
+            <th>City</th>
             <th>Status</th>
         </tr>
         <?php
@@ -33,6 +35,8 @@
             $status = htmlspecialchars($row["status"]);
             $date = htmlspecialchars($row['date']);
             $customer = htmlspecialchars($row['customer_id']);
+            $total = htmlspecialchars($row['total']);
+            $city = htmlspecialchars($row['city']);
 
             $selected = "<select onchange='updateOrder($orderID, event)'>
                             <option " . ($status == "new" ? "selected" : NULL) . " value='new'>New</option>
@@ -41,11 +45,13 @@
                          </select>";
 
             $orders .= "
-                        <tr>
+                        <tr'>
                             <td>$orderID</td>
                             <input type='hidden' name='id' value='$orderID'>
                             <td>$date</td>
                             <td>$customer</td>
+                            <td>$total</td>
+                            <td>$city</td>
                             <td>$selected</td>
                         </tr>
                     ";
@@ -55,11 +61,13 @@
         ?>
 
     <h2 class="order-wrap__heading secondary">Completed orders:</h2>
-    <table class="orders">
+    <table class="orders" id="order-complete">
             <tr>
                 <th>Order ID</th>
                 <th>Date</th>
                 <th>Customer ID</th>
+                <th onclick="sortTable(3, 'order-complete')">Total</th>
+                <th>City</th> 
                 <th>Status</th> 
             </tr>
             <?php
@@ -75,6 +83,8 @@
                 $status = htmlspecialchars($row["status"]);
                 $date = htmlspecialchars($row['date']);
                 $customer = htmlspecialchars($row['customer_id']);
+                $total = htmlspecialchars($row['total']);
+                $city = htmlspecialchars($row['city']);
     
                 $selected = "<select onchange='updateOrder($orderID, event)'>
                                 <option " . ($status == "new" ? "selected" : NULL) . " value='new'>New</option>
@@ -88,6 +98,8 @@
                                 <input type='hidden' name='id' value='$orderID'>
                                 <td>$date</td>
                                 <td>$customer</td>
+                                <td>$total</td>
+                                <td>$city</td>
                                 <td>$selected</td>
                             </tr>
                         ";
