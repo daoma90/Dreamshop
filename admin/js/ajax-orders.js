@@ -166,3 +166,15 @@ function sortTableStatus(n, table) {
     }
   }
 }
+function showRelevantStatus(e) {
+  const statusToShow = e.target.textContent.toLowerCase();
+  const items = document.querySelectorAll('.display-status');
+  items.forEach(function (item) {
+    item.style = 'display: table-row';
+    if (statusToShow === 'all') {
+      item.style = 'display: table-row';
+    } else if (!item.className.includes(statusToShow)) {
+      item.style = 'display: none';
+    }
+  });
+}

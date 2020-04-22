@@ -735,6 +735,48 @@ body {
   padding: 1rem 0;
 }
 
+.orders__status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.orders__status > * {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.orders__status span {
+  background: white;
+  padding: 1rem 2rem;
+}
+
+.orders__status button {
+  padding: 1rem 2rem;
+  background: #7c7ee4;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.orders__status button:hover {
+  background: #6d6fd4;
+}
+
 @media (min-width: 1024px) {
   .orders {
     border-radius: 1rem;
@@ -776,6 +818,12 @@ body {
   .orders th,
   .orders td {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    width: 450px;
   }
 }
 /*# sourceMappingURL=main.css.map */
