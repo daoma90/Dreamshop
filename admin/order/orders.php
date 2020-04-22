@@ -17,10 +17,9 @@
         <tr>
             <th>Order ID</th>
             <th onclick="sortTable(1, 'order-uncomplete')">Date</th>
-            <th>Customer ID</th>
-            <th onclick="sortTable(3, 'order-uncomplete')">Total</th>
+            <th onclick="sortTable(2, 'order-uncomplete')">Total</th>
             <th>City</th>
-            <th>Status</th>
+            <th onclick="sortTableStatus(4, 'order-uncomplete')">Status</th>
         </tr>
         <?php
 
@@ -34,7 +33,6 @@
             $orderID = htmlspecialchars($row["ID"]);
             $status = htmlspecialchars($row["status"]);
             $date = htmlspecialchars($row['date']);
-            $customer = htmlspecialchars($row['customer_id']);
             $total = htmlspecialchars($row['total']);
             $city = htmlspecialchars($row['city']);
 
@@ -49,7 +47,6 @@
                             <td>$orderID</td>
                             <input type='hidden' name='id' value='$orderID'>
                             <td>$date</td>
-                            <td>$customer</td>
                             <td>$total</td>
                             <td>$city</td>
                             <td>$selected</td>
@@ -65,8 +62,7 @@
             <tr>
                 <th>Order ID</th>
                 <th onclick="sortTable(1, 'order-complete')">Date</th>
-                <th>Customer ID</th>
-                <th onclick="sortTable(3, 'order-complete')">Total</th>
+                <th onclick="sortTable(2, 'order-complete')">Total</th>
                 <th>City</th> 
                 <th>Status</th> 
             </tr>
@@ -82,7 +78,6 @@
                 $orderID = htmlspecialchars($row["ID"]);
                 $status = htmlspecialchars($row["status"]);
                 $date = htmlspecialchars($row['date']);
-                $customer = htmlspecialchars($row['customer_id']);
                 $total = htmlspecialchars($row['total']);
                 $city = htmlspecialchars($row['city']);
     
@@ -97,7 +92,6 @@
                                 <td>$orderID</td>
                                 <input type='hidden' name='id' value='$orderID'>
                                 <td>$date</td>
-                                <td>$customer</td>
                                 <td>$total</td>
                                 <td>$city</td>
                                 <td>$selected</td>
