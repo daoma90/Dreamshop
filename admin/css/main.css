@@ -777,6 +777,14 @@ body {
   background: #6d6fd4;
 }
 
+.orders__status input {
+  width: 50%;
+  font-size: 2.7rem;
+  padding: 1rem;
+  font-size: inherit;
+  border: none;
+}
+
 @media (min-width: 1024px) {
   .orders {
     border-radius: 1rem;

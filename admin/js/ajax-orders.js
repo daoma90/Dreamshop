@@ -178,3 +178,13 @@ function showRelevantStatus(e) {
     }
   });
 }
+function searchFilter(e) {
+  const items = document.querySelectorAll('.city');
+  items.forEach(function (item) {
+    if (item.textContent.toLowerCase().includes(e.target.value.toLowerCase())) {
+      item.parentElement.style = 'display: table-row';
+    } else {
+      item.parentElement.style = 'display: none';
+    }
+  });
+}
