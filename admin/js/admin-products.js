@@ -106,70 +106,83 @@ function deleteView(id) {
   }
 }
 
-//Populate all data from DOM to form and change to updateproduct.php
-//const form = document.querySelector(".f-container__form");
+//Sets form mode (update,create)
+function prepareForm(inEdit, id = "") {
+  if (inEdit) {
+    productForm.setAttribute("action", "productUpdate.php");
+    productForm.querySelector("button").setAttribute("name", "updateProduct");
+    productForm.querySelector("h2").textContent = "Update product";
+    document.querySelector("#upID").setAttribute("value", id);
+    productForm.style.display = "flex";
+    toggle.style.display = "block";
+  } else {
+    productForm.setAttribute("action", "productCreate.php");
+    productForm.querySelector("button").setAttribute("name", "addProduct");
+    productForm.querySelector("h2").textContent = "Create product";
+    productForm.parentElement.style.display = "flex";
+    productForm.reset();
+    if (id) {
+      document.querySelector("main").appendChild(productForm);
+      productForm.style.display = "none";
+      Array.from(document.querySelectorAll(".product")).forEach(function (p) {
+          p.style.opacity = 1;
+      });
+      document.querySelector("#product_" + id).classList.add("product-state--inactive");
+    }
+  }
+}
+
+//Inserts finalized form into selected productelement
 const toggle = document.querySelector("#form-toggle");
 const productForm = document.querySelector(".product-form-main");
 
-function populateFields(id) {
-  //const form = document.querySelector(".f-container__form");
+function initEdit(id) {
   const product = document.querySelector("#product_" + id);
   const children = product.children[1].children;
   //Goes throuh DOM products, (validation needed here?)
   Array.from(productForm.elements).forEach(function (input) {
     Array.from(children).forEach(function (row) {
       if (input.name === row.className) {
-        if (input.name !== "image") {
-          input.value = row.textContent;
-        }
         if (input.name === "featured") {
-          input.selectedIndex = parseInt(row.textContent);
+          input.options.selectedIndex = parseInt(row.textContent);
+        } else {
+          input.value = row.textContent;
         }
       }
     });
     //Sets preview image
-    if (input.name = "image") {
+    if (input.name === "image") {
       document.querySelector(".product-form-main__left-img img").
-      setAttribute("src", product.firstElementChild.children[0].firstElementChild.
-      getAttribute("src"));
+      setAttribute("src", product.firstElementChild.children[0].firstElementChild.getAttribute("src"));
     }
   });
-
-  product.style.zIndex = "900";
-  product.style.display = "flex";
-  productForm.setAttribute("action", "productUpdate.php");
-  productForm.querySelector("button").setAttribute("name", "updateProduct");
-  document.querySelector("#upID").setAttribute("value", id);
-  toggle.style.display = "block";
-  product.appendChild(productForm);
-
-  //Hides all products and reset width except current one, 
+  //Hides all products and reset width except current one
   const allProducts = document.querySelectorAll(".product");
   allProducts.forEach(function (p) {
     let isCurrent = p.id == "product_" + id;
     if (!isCurrent) {
-      p.style.opacity = "0.5";
-      p.style.minwidth = "550px";
+      p.classList.add("product-state--inactive");
+      p.classList.remove("product-state--active");
     } else {
-      p.style.opacity = "1";
-      p.style.minwidth = "450px";
+      p.classList.remove("product-state--inactive");
+      p.classList.add("product-state--active");
     }
   });
+  //Overlay elements
+  product.style.zIndex = "998";
+  //Sets correct form src > backend
+  prepareForm(true, id);
+  //Inserts form to current product element
+  product.prepend(productForm);
 }
-
-//Resets form back to create mode
+//Resets form back to create mode and closes form
 toggle.addEventListener("click", function (e) {
-  toggle.style.display = "none";
-  productForm.setAttribute("action", "productCreate.php");
-  productForm.querySelector("button").setAttribute("name", "addProduct");
-  productForm.reset();
+  const id = e.target.previousElementSibling.previousElementSibling.value;
+  prepareForm(false, id);
 });
 
 //Opens create form
 const add = document.querySelector(".section-add-imgwrap");
 add.addEventListener("click", function (e) {
-  productForm.setAttribute("action", "productCreate.php");
-  productForm.querySelector("button").setAttribute("name", "addProduct");
-  productForm.querySelector("h2").textContent = "Create product";
-  productForm.parentElement.style.display = "flex";
+  prepareForm(false);
 });

@@ -11,7 +11,9 @@
 }
 body {
   font-family: "Montserrat", sans-serif;
-  background-image: url('../media/admin-bg.jpg');
+  background: url('../media/admin-bg.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   position: relative;
 }

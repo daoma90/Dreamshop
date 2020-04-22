@@ -50,16 +50,14 @@ main {
     align-content: flex-start;
     position: fixed;
     top:110px;
-    z-index: 1000;
+    z-index: 998;
     &-imgwrap {
         display: inherit;
         justify-content: center;
         width: 30px;
         height:30px;
         cursor: pointer;
-
         img { width:100%; height:100%}
-        
     }
 
 }
@@ -96,6 +94,12 @@ main {
     background: white;
     padding: 20px;
     box-shadow: 1px 2px 3px rgb(185, 185, 185);
+    z-index: 997;
+
+    @media(max-width:760px) {
+        max-width:90vw;
+        margin-left: 0;
+    }
 
     &__left-info {
         display: inherit;
@@ -105,10 +109,9 @@ main {
         width: 110px;
 
         &-image {
-            object-fit: contain;
             width: 100%;
-
             img {
+                object-fit: contain;
                 width: 100%;
                 height: 100%;
             }
@@ -133,6 +136,7 @@ main {
             font-size: 12px;
             line-height: 130%;
             color: #3c3c3c;
+            font-weight: bold;
         }
 
         @at-root .description {
@@ -140,21 +144,26 @@ main {
             font-size: 12px;
             line-height: 130%;
             color: #3c3c3c;
+            min-height: 90px;
         }
 
         h3 {
             border-top: 1px solid lightgray;
             border-bottom: 1px solid lightgray;
             font-size: 0.9rem;
+            padding-bottom: 5px;
+            padding-top:5px;
         }
 
         p {
-            font-size: 0.8rem;
+            font-size: 0.6rem;
+            line-height: 120%;
+
         }
-    }
+   }
 
     &__tag {
-        position: relative;
+       // position: relative;
         top: -15px;
         right: 0;
         font-size: 10px;
@@ -268,8 +277,9 @@ main {
     padding: 20px;
     width: 100%;
     bottom: 0px;
-    z-index: 1100;
-    order: 1;
+    z-index: 998;
+    min-height:290px;
+    //order: 1;
 
     @media(min-width:760px) {
         position: relative;
@@ -293,6 +303,7 @@ main {
         position: absolute;
         left: 0;
         top: 0;
+        z-index: 998;
 
         @media(max-width:760px) {
             min-width: 250px;
@@ -357,8 +368,9 @@ main {
             border: 0px solid lightgray;
             border-radius: 5px;
             padding: 5px;
-            background:rgb(170, 170, 170);
+            background:#cccdd0;
             margin-bottom: 10px;
+            resize: none;
         }
         input {
             width: 70%;
@@ -389,40 +401,18 @@ main {
     font-size: 30px;
 }
 
-
-
-.btn {
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    bottom: 0;
-    
-
-    &--del {
-        right: 5px;
-        background: url('../media/close_x2.png');
-        background-size: cover;
+.product-state {
+    &--active {
+        opacity: 1;
+        min-width: 450px;
+        min-height: 350px;
+        @media (max-width:768px) {
+            min-width: 90vw;
+        }
     }
-
-    &--edit {
-        left: 5px;
-        background: url('../media/edit_x2.png');
-        background-size: cover;
-    }
-
-    &--done {
-        left: 5px;
-        background: url('../media/edit_x2.png');
-        background-size: cover;
-    }
-
-    &--close {
-        top: 10px;
-        right: -15px;
-        background: url('../media/close_x2.png');
-        background-size: cover;
+    &--inactive {
+        opacity: 0.5;
+        min-width: 220px;
+        min-height: 200px;
     }
 }

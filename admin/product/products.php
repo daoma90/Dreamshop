@@ -18,8 +18,6 @@ include 'productGlobal.php';
 <body>
     <?php require_once "../includes/header.php"; ?>
     <main>
-
-
         <section class="section-add">
             <div class="section-add-imgwrap"><img src="../media/add_2x.png" alt=""></div>
             <div class="view-bar" style="display:none;">
@@ -36,14 +34,13 @@ include 'productGlobal.php';
                 </div>
             </div>
         </section>
-        <!-- Draws all products-->
+        <!-- Draws all products with form-->
         <section class="section-products">
             <div class='product-form' style="display:none;">
                 <form class='product-form-main' method='POST' action="productCreate.php" enctype='multipart/form-data'>
                     <div class='product-form-main__left'>
                         <div class="product-form-main__left-img"><img src="../media/img-placeholder.png" alt=""></div>
                         <input type='file' name='image' id='image'>
-                        </label>
                         <div class="product-form-main__left__gallery">
                             <div class="product-form-main__left__gallery-img"><img src="../images/shoe.JPG" alt=""></div>
                             <div class="product-form-main__left__gallery-img"><img src="../images/shoe.JPG" alt=""></div>
@@ -52,13 +49,13 @@ include 'productGlobal.php';
                     </div>
                     <div class='product-form-main__right'>
                         <h2 class="product-form-main__right-header">Edit product</h2>
-                        <input name='name' type='text' placeholder="name..."></label>
+                        <input name='name' type='text' placeholder="name...">
                         <textarea name='description' id='' cols='30' rows='6' placeholder="description..."></textarea>
                         <input name='price' type='text' placeholder="price..">
                         <!-- Draws all available categorys -->
                         <?php getCatList($pdo); ?>
                         <!-- Draws all available categorys -->
-                        <input name='in_stock' type='text' placeholder="quantity"></label>
+                        <input name='in_stock' type='text' placeholder="quantity">
                         <select name="featured" id="feat">
                             <option name="featured" value="0">No</option>
                             <option name="featured" value="1">Yes</option>

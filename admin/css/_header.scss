@@ -110,7 +110,7 @@
       width: 40px;
       border-radius: 2px;
       color: $color__prim;
-      background-color: $color__prim;
+      background-color: gray;
       position: absolute;
     }
 
@@ -132,7 +132,7 @@
     transition: all 200ms;
     width: 40px;
     border-radius: 1px;
-    background: $color__prim;
+    background: gray;
   }
 }
 

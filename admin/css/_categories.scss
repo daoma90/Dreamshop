@@ -155,3 +155,40 @@ body {
     background-color: rgb(196, 33, 33);
   }
 }
+
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  
+
+  &--del {
+      right: 5px;
+      background: url('../media/close_x2.png');
+      background-size: cover;
+  }
+
+  &--edit {
+      left: 5px;
+      background: url('../media/edit_x2.png');
+      background-size: cover;
+  }
+
+  &--done {
+      left: 5px;
+      background: url('../media/edit_x2.png');
+      background-size: cover;
+  }
+
+  &--close {
+      top: 10px;
+      right: -15px;
+      background: url('../media/close_x2.png');
+      background-size: cover;
+  }
+}

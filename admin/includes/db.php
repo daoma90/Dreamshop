@@ -1,6 +1,6 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=frontend_project;charset=utf8";
+$dsn = "mysql:host=localhost;dbname=frontendproject;charset=utf8";
 try {
   $pdo = new PDO($dsn, 'root', '');
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
