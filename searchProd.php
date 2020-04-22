@@ -16,29 +16,46 @@
 
   <div class="search-container">
     <?php
+
+    $words_to_filter = array("and", "not", "if", "get", "with", "keep", "that", "this", "every", "is", 'let', 'go');
+    // character 'a' is not included here it can be find in the middle 
     if (isset($_GET['submit-search'])) {
       $searchQ = htmlspecialchars($_GET['search-word']);
-      $stmt = $db->prepare('SELECT * FROM products WHERE name LIKE :keywords OR description LIKE :keywords');
-      $stmt->execute([
-        ':keywords' => '%' . $searchQ . '%'
-      ]);
-      if ($stmt->rowCount()) {
-        while ($row = $stmt->fetch()) {
-          $id = $row['ID'];
-          $image = $row["image"];
-          $name = $row["name"];
-          $price = $row["price"];
-          echo "<article >
-                <a class='searchProd'  href='./product.php?id=$id'>
-                <div class='searchProd__image'>
-                  <img src='./admin/images/$image' alt=''>
-                 </div>
-                <div class='searchProd__detail'>
-                    <h3 class='searchProd__detail-name'>$name</h3>
-                    <p class='searchProd__detail-name-price'>$price</p>
-                </div>
-                </a>
-                 </article>";
+      $res = str_ireplace($words_to_filter, "", $searchQ);
+      $res = trim($res);
+      $res = explode(' ', $res);
+      // since a can be find in middle of the word 
+      foreach ($res as &$val) {
+        if ($val == 'a' || $val == 'A') $val = '';
+      }
+      $res = trim(implode('', $res));
+      echo $res;
+      if (!empty($res)) {
+
+        $stmt = $db->prepare('SELECT * FROM products WHERE name LIKE :keywords  OR description LIKE :keywords ');
+        $stmt->execute([
+          ':keywords' => '%' . $res . '%'
+        ]);
+        if ($stmt->rowCount()) {
+          while ($row = $stmt->fetch()) {
+            $id = $row['ID'];
+            $image = $row["image"];
+            $name = $row["name"];
+            $price = $row["price"];
+            echo "<article >
+                  <a class='searchProd'  href='./product.php?id=$id'>
+                  <div class='searchProd__image'>
+                    <img src='./admin/images/$image' alt=''>
+                   </div>
+                  <div class='searchProd__detail'>
+                      <h3 class='searchProd__detail-name'>$name</h3>
+                      <p class='searchProd__detail-name-price'>$price</p>
+                  </div>
+                  </a>
+                   </article>";
+          }
+        } else {
+          echo 'Nothing found';
         }
       } else {
         echo 'Nothing found';
