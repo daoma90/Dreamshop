@@ -10,7 +10,7 @@ if (isset($_POST['updateProduct'])) {
   $featured =  trim($_POST['featured']);
   $cat_id = trim($_POST['cat_id']);
 
-  
+  var_dump($_POST);
   $imageName = $_FILES['image']['name'];
   $imageError = $_FILES['image']['error'];
   $imageTemp = $_FILES['image']['tmp_name'];
@@ -49,5 +49,5 @@ if (isset($_POST['updateProduct'])) {
       ':cat_id' => $cat_id,
     ]);  
   }
- header('Location:products.php');
+ //header('Location:products.php');
 }
