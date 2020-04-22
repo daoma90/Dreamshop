@@ -49,5 +49,5 @@ if (isset($_POST['updateProduct'])) {
       ':cat_id' => $cat_id,
     ]);  
   }
- //header('Location:products.php');
+ header('Location:products.php');
 }
