@@ -29,8 +29,8 @@
     width: 45px;
   }
 
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
     opacity: 1;
   }
 
@@ -117,7 +117,7 @@
   }
 }
 .bg-overlay {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
