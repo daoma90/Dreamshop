@@ -39,7 +39,7 @@ else {
                 <li class="header__list-item" id="products">Produkter</li>
             </a>
             <a href="<?= $orderPath ?>" class="header__item-link">
-                <li class="header__list-item">Beställningar</li>
+                <li class="header__list-item" id="order">Beställningar</li>
             </a>
             <a href="<?= $homePath ?>" class="header__item-link">
                 <li class="header__list-item">Webbshoppen</li>
