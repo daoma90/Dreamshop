@@ -3,6 +3,10 @@
     require "./includes/db.php";
     ?>
 
+    <section class="section-add">
+        <div class="section-add-imgwrap"><img src="media/add_2x.png" alt=""></div>
+    </section>
+
     <section class="categories">
 
         <?php
@@ -26,11 +30,12 @@
                         <div class='cat-container__img-container'>
                             <img src='./images/{$image}' class='cat-container__img'>
                             <h2 class='cat-container__text'>{$name}</h2>
+                            <div class='cat-container__buttons' method='POST'>
+                                <button class='btn btn--edit' onclick='populateCategoryForm({$ID})'></button>
+                                <a href='./category/categoriesDelete.php?ID={$ID}' class='btn btn--del'></a>
+                            </div>
                         </div>
-                        <div class='cat-container__buttons' method='POST'>
-                            <button class='cat-container__button' onclick='populateCategoryForm({$ID})' id='edit'>REDIGERA</button>
-                            <a href='./category/categoriesDelete.php?ID={$ID}' class='cat-container__button' id='delete'>RADERA</a>
-                        </div>
+                        
                     </div>
                     ";
         }

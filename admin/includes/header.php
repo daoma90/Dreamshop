@@ -50,4 +50,5 @@ else {
         <span class="header__nav-line"></span>
     </div>
     <h2 class="header__headline"><?php echo $header ?></h2>
+    <div class="header__headline-centering"></div>
 </header>

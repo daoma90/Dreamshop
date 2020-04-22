@@ -1,5 +1,5 @@
-@import 'mixins';
-@import 'variables';
+@import "mixins";
+@import "variables";
 
 .header {
   display: flex;
@@ -14,10 +14,11 @@
   right: 0;
   left: 0;
   z-index: 999;
+  width: 100%;
 
   &__headline {
     text-shadow: 2px 2px gray;
-    margin:auto;
+    margin: auto;
   }
 
   @include desktop {
@@ -104,7 +105,7 @@
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       height: 1px;
       transition: all 200ms;
       width: 40px;
@@ -133,6 +134,10 @@
     width: 40px;
     border-radius: 1px;
     background: gray;
+  }
+
+  &__headline-centering {
+    width: 40px;
   }
 }
 
