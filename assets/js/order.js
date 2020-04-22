@@ -11,24 +11,6 @@ function removeItem(e) {
   HappyLib.updateLocalStorage(cart.key, renderProducts);
 }
 
-function clearCart() {
-  const items = document.querySelector(".cart-fixed__cart-items");
-  const totalPrice = document.querySelector(".cart-fixed__total");
-  const totalProductQty = document.querySelector(".cart-fixed__total-qty");
-  const totalQtyIconNotif = document.querySelector(".icon-notif");
-
-  items.innerHTML = "";
-  totalProductQty.textContent = "0 Items";
-  totalQtyIconNotif.textContent = "0";
-  totalPrice.textContent = "0 SEK";
-  cart.products = [];
-  localStorage.clear();
-  if (document.querySelector(".products") !== "") {
-    console.log("hej");
-    HappyLib.updateLocalStorage(cart.key, renderProducts);
-  }
-}
-
 function changeQuantity(e) {
   const val = e.target.parentElement.querySelector(".products__qty");
   const item = e.target.parentElement.querySelector(".products__name")
@@ -44,13 +26,35 @@ function changeQuantity(e) {
   HappyLib.updateLocalStorage(cart.key, renderProducts);
 }
 
-function renderProducts() {
-  const items = document.querySelector(".products__container");
+function updatePrice(str) {
   const totalPrice = document.querySelector(".products__total");
   const shipping = document.querySelector(".products__shipping-price");
+  const headline = document.querySelector(".products__headline");
   const priceExclShipping = document.querySelector(".products__price-price");
   const price = HappyLib.getTotalPrice(cart.products);
-  let formPrice = 0;
+
+  document.addOrder.price.value = price;
+  if (str) str = str.toLowerCase();
+
+  if (cart.products === undefined || cart.products.length === 0) {
+    headline.textContent = "Your cart is empty";
+    shipping.textContent = "0";
+    totalPrice.textContent = "0";
+  } else {
+    headline.textContent = "Your Order";
+    priceExclShipping.textContent = price + " SEK";
+    if (price > 500 || str === "stockholm") {
+      shipping.textContent = "FREE";
+      totalPrice.textContent = price + " SEK";
+    } else {
+      shipping.textContent = "50 SEK";
+      totalPrice.textContent = price + 50 + " SEK";
+    }
+  }
+}
+
+function renderProducts() {
+  const items = document.querySelector(".products__container");
 
   items.innerHTML = "";
   renderCart();
@@ -71,30 +75,17 @@ function renderProducts() {
   });
   const removeBtn = document.querySelectorAll(".products__remove-btn");
   const qtyInput = document.querySelectorAll(".products__qty");
-  const headline = document.querySelector(".products__headline");
 
   HappyLib.addEvents(removeBtn, removeItem, "click");
   HappyLib.addEvents(qtyInput, changeQuantity, "change");
   HappyLib.addEvents(qtyInput, handleCartQty, "change");
 
-  document.addOrder.price.value = price;
-
-  if (cart.products === undefined || cart.products.length === 0) {
-    headline.textContent = "Your cart is empty";
-    shipping.textContent = "0";
-    totalPrice.textContent = "0";
-  } else {
-    headline.textContent = "Your Order";
-    priceExclShipping.textContent = price + " SEK";
-    if (price > 500) {
-      shipping.textContent = "FREE";
-      totalPrice.textContent = price + " SEK";
-    } else {
-      shipping.textContent = "50 SEK";
-      totalPrice.textContent = price + 50 + " SEK";
-    }
-  }
+  updatePrice();
 }
 
 HappyLib.localStorageInit(cart.key);
 renderProducts();
+const cityInput = addOrder.querySelector('input[name="city"]');
+cityInput.addEventListener("keyup", function () {
+  updatePrice(this.value);
+});
