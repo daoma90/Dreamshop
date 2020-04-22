@@ -8,37 +8,9 @@ function readAll($pdo)
     $sql = 'SELECT * FROM products';
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
+    //$stmt->fetch(PDO::FETCH_ASSOC);
     return $stmt;
 }
-
-
-// function drawProducts($pdo)
-// {
-//     $stmt = readAll($pdo);
-//     if ($stmt->rowCount() > 0) {
-//         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//             echo "<article class='product' id='product_" . $row["ID"] . "'>
-//                 <div class='product__left-info'>
-//                     <div class='product__left-info-image'><img src='../images/" . $row["image"] . "' alt=''></div>
-//                     <div class='product__btn-wrapper'>
-//                      <button class='product__btn product__btn--edit' onclick='populateFields(" . $row["ID"] .  ")'>Edit</button>
-//                      <button class='product__btn product__btn--del' onclick='deleteView(" . $row["ID"] .  ")'>Delete</button>
-//                      <label class='product__tag'>" .  getCategoryLabel($pdo, $row["cat_id"]) . "</label>
-//                     ".isFeatured($row["featured"])."
-//                     </div>
-//                 </div>
-//         <div class='product__right-info'>
-//             <h3 class='name'>" . $row["name"] . "</h3>
-//             <p class='desc' style='display:none'>" . $row["description"] . " </p>
-//             <p class='price'>" . $row["price"] . " </p>
-//             <p class='in_stock'>" . $row["in_stock"] . " </p>
-//             <p class='featured'>" . $row["featured"]. " </p>
-//             <p style='display:none;'>" . $row["cat_id"] . " '</p>
-//         </div>
-//     </article>";
-//         }
-//     }
-// }
 
 
 //Draws each product based on arr from db
