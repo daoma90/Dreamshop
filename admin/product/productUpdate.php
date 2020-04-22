@@ -22,6 +22,7 @@ if (isset($_POST['updateProduct'])) {
     $image = "";
   }
   $image = htmlspecialchars($imageName);
+
   if(!empty($imageName)) {
     $sql = 'UPDATE products SET name=:name,description=:description,price=:price,image=:image, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
     $stmt = $pdo->prepare($sql);
@@ -48,5 +49,5 @@ if (isset($_POST['updateProduct'])) {
       ':cat_id' => $cat_id,
     ]);  
   }
-  header('Location:products.php');
+ header('Location:products.php');
 }

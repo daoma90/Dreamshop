@@ -18,44 +18,57 @@ include 'productGlobal.php';
 <body>
     <?php require_once "../includes/header.php"; ?>
     <main>
-
-        <!-- Handles add and update post -->
-        <section class="f-container">
-            <form class='f-container__form' method='POST' action="productCreate.php" enctype='multipart/form-data'>
-                <h3 class="f-container__form-header">Add new product</h3>
-                <label for='image'>
-                    <img class="f-container__form-preview" src="" alt="">
-                    <span class="f-container__form-label">Choose image</span>
-                    <input type='file' name='image' id='image'>
-                </label>
-                <label for='name'>
-                    <span class="f-container__form-label">Name</span>
-                    <br><input name='name' type='text'></label>
-                <label for='description'><span class="f-container__form-label">Description:</span>
-                    <textarea name='description' id='' cols='30' rows='2'></textarea>
-                </label>
-                <label for='price'><span class="f-container__form-label">Price</span>
-                    <input name='price' type='text'></label>
-                <label for='cat_id'><span class="f-container__form-label">Category</span>
-                    <!-- Draws all available categorys -->
-                    <?php getCatList($pdo); ?></label>
-                    <!-- Draws all available categorys -->
-                <label for='in_stock'><span class="f-container__form-label">Instock</span>
-                    <input name='in_stock' type='text'></label>
-                <label for='featured'><span class="f-container__form-label">Featured</span>
-                    <input name='featured' type='text'></label>
-                <input type="hidden" id="upID" name="update-id">
-                <button class='f-container__form-submit' type='submit' name="addProduct">Save post</button>
-                <i class="fa fa-times-circle" id="form-toggle" aria-hidden="true"></i>
-            </form>
+        <section class="section-add">
+            <div class="section-add-imgwrap"><img src="../media/add_2x.png" alt=""></div>
+            <div class="view-bar" style="display:none;">
+                <div class="view-bar view-bar__search">
+                    <input id="srch" class="view-bar__search-input" type="text" value="search..." name="search">
+                </div>
+                <div class="view-bar view-bar__drop">
+                    <select name="categorydrop" id="drop">
+                        <option value="">Sort by category</option>
+                        <option value="">category 1</option>
+                        <option value="">category 1</option>
+                        <option value="">category 1</option>
+                    </select>
+                </div>
+            </div>
         </section>
-
-        <!-- Draws all products-->
+        <!-- Draws all products with form-->
         <section class="section-products">
+            <div class='product-form' style="display:none;">
+                <form class='product-form-main' method='POST' action="productCreate.php" enctype='multipart/form-data'>
+                    <div class='product-form-main__left'>
+                        <div class="product-form-main__left-img"><img src="../media/img-placeholder.png" alt=""></div>
+                        <input type='file' name='image' id='image'>
+                        <div class="product-form-main__left__gallery">
+                            <div class="product-form-main__left__gallery-img"><img src="../images/shoe.JPG" alt=""></div>
+                            <div class="product-form-main__left__gallery-img"><img src="../images/shoe.JPG" alt=""></div>
+                            <div class="product-form-main__left__gallery-img"><img src="../images/shoe.JPG" alt=""></div>
+                        </div>
+                    </div>
+                    <div class='product-form-main__right'>
+                        <h2 class="product-form-main__right-header">Edit product</h2>
+                        <input name='name' type='text' placeholder="name...">
+                        <textarea name='description' id='' cols='30' rows='6' placeholder="description..."></textarea>
+                        <input name='price' type='text' placeholder="price..">
+                        <!-- Draws all available categorys -->
+                        <?php getCatList($pdo); ?>
+                        <!-- Draws all available categorys -->
+                        <input name='in_stock' type='text' placeholder="quantity">
+                        <select name="featured" id="feat">
+                            <option name="featured" value="0">No</option>
+                            <option name="featured" value="1">Yes</option>
+                        </select>
+
+                        <input type="hidden" id="upID" name="update-id">
+                        <button class='btn btn--done' type='submit' name="addProduct"></button>
+                        <button class='btn btn--close' id="form-toggle" type="button"></button>
+                    </div>
+                </form>
+            </div>
             <?php drawProducts($pdo); ?>
         </section>
-        
-
     </main>
     <script src="../js/admin-products.js"></script>
     <script src="../js/header.js"></script>

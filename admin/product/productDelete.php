@@ -1,7 +1,7 @@
 <?php 
     require_once "../includes/db.php";
 
-    $id = $_POST['ID'];
+    $id = trim($_GET['ID']);
     $sql = 'DELETE FROM products WHERE id=:id';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([

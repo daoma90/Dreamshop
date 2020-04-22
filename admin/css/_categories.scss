@@ -8,6 +8,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   margin-top: 72px;
   width: 100%;
+  align-self: center;
   @media screen and (min-width: 538px) {
     grid-gap: 10px;
     width: 80%;
@@ -152,5 +153,42 @@ body {
   background-color: rgb(255, 70, 70);
   &:hover {
     background-color: rgb(196, 33, 33);
+  }
+}
+
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  
+
+  &--del {
+      right: 5px;
+      background: url('../media/close_x2.png');
+      background-size: cover;
+  }
+
+  &--edit {
+      left: 5px;
+      background: url('../media/edit_x2.png');
+      background-size: cover;
+  }
+
+  &--done {
+      left: 5px;
+      background: url('../media/edit_x2.png');
+      background-size: cover;
+  }
+
+  &--close {
+      top: 10px;
+      right: -15px;
+      background: url('../media/close_x2.png');
+      background-size: cover;
   }
 }
