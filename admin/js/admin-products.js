@@ -115,8 +115,10 @@ function getPictures(id) {
   req.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       let deserial_data = JSON.parse(this.responseText);
+      
       gallery.innerHTML = "";
       deserial_data.forEach(function(image) {
+        console.log(image);
          gallery.innerHTML += "<div class='product-form-main__left__gallery-img'><img src='../images/" + image["image"] + "' alt=''></div>";      
          galleryPreview.setAttribute("src", "../images/" + image["image"]);
         });

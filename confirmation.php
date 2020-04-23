@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
 <?php
 
 
@@ -12,8 +22,8 @@ if(isset($_GET["orderID"])){
     $categories = "";
 
       
-
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        
         $id = htmlspecialchars($row["ID"]);
         $name = htmlspecialchars($row["name"]);
         $mail = htmlspecialchars($row["mail"]);
@@ -23,7 +33,8 @@ if(isset($_GET["orderID"])){
         $total = htmlspecialchars($row['total']);
 
         $categories .= "<div class='container'>
-
+        <div class='wrapper'></div>
+        <div>$total</div>
         <div>ordnummer:$id</div>
         <div>$name</div>
         <div>$mail</div>
@@ -31,14 +42,15 @@ if(isset($_GET["orderID"])){
         <div>$zip</div>
         <div>$city</div>
         <div>$total</div>
-        </div>
         <a href='./'>Back to shop</a>";
         
    }
    echo $categories;
-
-
 }
 
-
 ?>
+<script src="./assets/js/confirmation.js"></script>
+<script src="./assets/js/cart.js"></script>
+
+</body>
+</html>
