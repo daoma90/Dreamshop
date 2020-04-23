@@ -35,7 +35,7 @@
       $query = $res;
       if (!empty($res)) {
 
-        $stmt = $db->prepare('SELECT * FROM products WHERE name LIKE :keywords  OR description LIKE :keywords ');
+        $stmt = $db->prepare('SELECT * FROM products WHERE name LIKE :keywords');
         $stmt->execute([
           ':keywords' => '%' . $res . '%'
         ]);

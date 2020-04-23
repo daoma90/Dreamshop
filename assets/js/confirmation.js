@@ -11,6 +11,6 @@ for (var i = 0; i < localStorage.length; i++) {
     <div>${elm.price}</div>
     <div>${elm.quantity}</div>
     <div> <img src="../FE-Project-Shop/admin/images/${elm.image}"></div>`;
-    localStorage.clear();
   }
 }
+localStorage.clear();

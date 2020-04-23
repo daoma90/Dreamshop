@@ -42,7 +42,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <div>$zip</div>
         <div>$city</div>
         <div>$total</div>
-        <a href='./'>Back to shop</a>";
+        <a href='./'>Back to shop</a></div>";
         
    }
    echo $categories;
@@ -50,7 +50,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 ?>
 <script src="./assets/js/confirmation.js"></script>
-<script src="./assets/js/cart.js"></script>
 
 </body>
 </html>
