@@ -136,6 +136,7 @@
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  max-height: 400px;
 }
 
 .feature-products__add {
@@ -492,6 +493,7 @@
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  max-height: 400px;
 }
 
 .feature-products__add {

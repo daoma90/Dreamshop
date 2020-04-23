@@ -273,7 +273,8 @@ main {
   position: absolute;
 }
 
-.view-bar input, .view-bar select {
+.view-bar input,
+.view-bar select {
   outline: none;
   border: none;
   background: transparent;
@@ -387,6 +388,7 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 110px;
+  overflow: hidden;
 }
 
 .product__left-info-image {
@@ -496,7 +498,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #FFF0CC;
+  background-color: #fff0cc;
   padding: 20px;
   width: 100%;
   bottom: 0px;
@@ -559,7 +561,7 @@ main {
 }
 
 .f-container__form-submit {
-  background: #8DB0F8;
+  background: #8db0f8;
   border: none;
   outline: none;
   color: white;
@@ -703,7 +705,8 @@ main {
 }
 
 .product-form-main input,
-.product-form-main textarea, .product-form-main select {
+.product-form-main textarea,
+.product-form-main select {
   color: white;
   outline: none;
   border: 0px solid lightgray;
@@ -719,7 +722,7 @@ main {
 }
 
 .product-form-main-submit {
-  background: #8DB0F8;
+  background: #8db0f8;
   border: none;
   outline: none;
   color: white;
