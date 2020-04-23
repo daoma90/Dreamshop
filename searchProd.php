@@ -58,20 +58,6 @@
                   </a>
                   <button class='product-container__add' data-id=$id>Add to cart</button>
                    </article>";
-
-                   echo "<article class='product-container'>
-                   <a class='searchProd'  href='./product.php?id=$id'>
-                   <div class='searchProd__image'>
-                     <img src='./admin/images/$image' alt=''>
-                    </div>
-                   <div class='searchProd__detail'>
-                       <h3 class='searchProd__detail-name'>$name</h3>
-                       <p class='searchProd__detail-price'>$price</p>
-                       <p class='searchProd__detail-stock'>IN STOCK: $stock</p>
-                   </div>
-                   </a>
-                   <button class='product-container__add' data-id=$id>Add to cart</button>
-                    </article>";
           }
           echo "</div>";
         } else {
