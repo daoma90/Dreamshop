@@ -1028,9 +1028,6 @@ body {
 @media (min-width: 1024px) {
   .order-wrap {
     min-width: 60vw;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 }
 

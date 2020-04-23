@@ -184,13 +184,12 @@ function renderCart() {
 }
 
 function clearCart() {
-  console.log('hej');
   const items = document.querySelector('.cart-fixed__cart-items');
   const totalPrice = document.querySelector('.cart-fixed__total');
   const totalProductQty = document.querySelector('.cart-fixed__total-qty');
   const totalQtyIconNotif = document.querySelector('.icon-notif');
 
-  if (document.querySelector('.products') !== '') {
+  if (document.querySelector('.products') !== undefined) {
     HappyLib.updateLocalStorage(cart.key, renderProducts);
   }
 
