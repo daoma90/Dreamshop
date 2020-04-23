@@ -26,15 +26,19 @@
     $stmt->execute([':id' => $product_id]);
 
     $printImgs = '';
+    $i = 0;
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-      $imageToShow = $row['image'];
-      $printImgs .= "<div class='productpage__img-wrap'>
-                        <img
-                          class='productpage__img'
-                          src='./admin/images/$imageToShow'
-                          alt=''
-                        />
-                      </div>";
+      if ($i > 0) {
+        $imageToShow = $row['image'];
+        $printImgs .= "<div class='productpage__img-wrap'>
+                          <img
+                            class='productpage__img'
+                            src='./admin/images/$imageToShow'
+                            alt=''
+                          />
+                        </div>";
+      }
+      $i++;
     }
 
     }
