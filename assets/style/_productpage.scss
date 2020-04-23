@@ -75,6 +75,8 @@
   }
   &__img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
     &--large {
       max-width: 500px;
     }
