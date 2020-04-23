@@ -67,6 +67,7 @@
           </div>
           <div class="productpage__image-bar">
             <?= $printImgs; ?>
+          </div>
         </div>
 
         <div class="productpage__col-right">
