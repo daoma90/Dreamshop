@@ -39,21 +39,32 @@ if (isset($_POST['updateProduct'])) {
           }
         }
         $fName = $fileName;
-      }
+      }  
 
+      $sql = 'UPDATE products SET name=:name,description=:description,price=:price, image=:image, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute([
+        ':id' => $id,
+        ':name' => $name,
+        ':description' => $description,
+        ':price' => $price,
+        ':image' => $fName,
+        ':featured' => $featured,
+        ':in_stock' => $in_stock,
+        ':cat_id' => $cat_id,
+      ]);
+    } else {
+      $sql = 'UPDATE products SET name=:name,description=:description,price=:price, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute([
+        ':id' => $id,
+        ':name' => $name,
+        ':description' => $description,
+        ':price' => $price,
+        ':featured' => $featured,
+        ':in_stock' => $in_stock,
+        ':cat_id' => $cat_id,
+      ]);
     }
-    $sql = 'UPDATE products SET name=:name,description=:description,price=:price, image=:image, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-      ':id' => $id,
-      ':name' => $name,
-      ':description' => $description,
-      ':image' => $fName,
-      ':price' => $price,
-      ':featured' => $featured,
-      ':in_stock' => $in_stock,
-      ':cat_id' => $cat_id,
-    ]);
-
-  header('Location:products.php');
+    header('Location:products.php');
 }
