@@ -13,7 +13,7 @@ if(isset($_GET["id"])){
     $categories = "";
     echo $categories;
 
-
+      
 
 //     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 //         $id = htmlspecialchars($row["id"]);
@@ -24,7 +24,7 @@ if(isset($_GET["id"])){
 //         $city = htmlspecialchars($row['city']);
 //         $total = htmlspecialchars($row['total']);
 
-//         .= `<div ="containet">
+//         .= `<div ="container">
 
 //        <div> ordnummer:$name</div>
 //         <div>$name</div>
