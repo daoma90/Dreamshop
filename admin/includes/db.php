@@ -1,8 +1,13 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=jlwvfkou_wp888;charset=utf8";
+$db_server = "localhost";
+$db_database = "jlwvfkou_wp888";
+$db_username = "jlwvfkou_wp888";
+$db_password = 'JSU8Sp83[!'; 
+
+$dsn = "mysql:host=$db_server;dbname=$db_database;charset=utf8";
 try {
-  $pdo = new PDO($dsn, 'jlwvfkou_wp888', 'JSU8Sp83[!');
+  $pdo = new PDO($dsn, $db_username, $db_password);
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo $e->getMessage();
