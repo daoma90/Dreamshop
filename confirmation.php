@@ -31,7 +31,8 @@ if(isset($_GET["orderID"])){
         <div>$zip</div>
         <div>$city</div>
         <div>$total</div>
-        </div>";
+        </div>
+        <a href='./'>Back to shop</a>";
         
    }
    echo $categories;
