@@ -7,6 +7,7 @@
     $phone = trim($_POST['phone']);
     $adress = trim($_POST['adress']);
     $zip = trim($_POST['zip']);
+    $zip = preg_replace('/\s+/', '', $zip);
     $city = trim($_POST['city']);
     $products = $_POST['products'];
     $quantity = $_POST['quantity'];
