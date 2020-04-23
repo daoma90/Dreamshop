@@ -26,9 +26,8 @@
     $stmt->execute([':id' => $product_id]);
 
     $printImgs = '';
-    $i = 0;
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-      if ($i > 0) {
+      if ($image != $row['image']){
         $imageToShow = $row['image'];
         $printImgs .= "<div class='productpage__img-wrap'>
                           <img
@@ -38,7 +37,7 @@
                           />
                         </div>";
       }
-      $i++;
+      
     }
 
     }
