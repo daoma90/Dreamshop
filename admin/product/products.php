@@ -42,10 +42,7 @@ include 'productGlobal.php';
                         <div class="product-form-main__left-img"><img src="../media/img-placeholder.png" alt=""></div>
                         <input type='file' name='image[]' id='image' multiple>
                         <div class="product-form-main__left__gallery">
-                            <div class="product-form-main__left__gallery-img"><img src="../images/shoe.JPG" alt=""></div>
-                            <div class="product-form-main__left__gallery-img"><img src="../images/shoe.JPG" alt=""></div>
-                            <div class="product-form-main__left__gallery-img"><img src="../images/shoe.JPG" alt=""></div>
-                        </div>
+                         </div>
                     </div>
                     <div class='product-form-main__right'>
                         <h2 class="product-form-main__right-header">Edit product</h2>
