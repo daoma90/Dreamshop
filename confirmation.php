@@ -31,17 +31,18 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $zip = htmlspecialchars($row['zip']);
         $city = htmlspecialchars($row['city']);
         $total = htmlspecialchars($row['total']);
+        $date = htmlspecialchars($row['date']);
 
         $categories .= "<div class='container'>
         <div class='wrapper'></div>
-        <div>$total</div>
-        <div>ordnummer:$id</div>
+        <div>Order ID:$id</div>
         <div>$name</div>
         <div>$mail</div>
         <div>$phone</div>
         <div>$zip</div>
         <div>$city</div>
-        <div>$total</div>
+        <div>TOTAL: $total</div>
+        <div>$date</div>
         <a href='./'>Back to shop</a></div>";
         
    }
