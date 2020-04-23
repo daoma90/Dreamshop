@@ -11,14 +11,13 @@ if (isset($_POST['addProduct'])) {
   $in_stock = trim($_POST['in_stock']);
   $featured = trim($_POST['featured']);
 
-  $images = [];
-
-  $sql = "INSERT INTO products(name,description,price,featured,in_stock,cat_id) VALUES(:name,:description,:price,:featured,:in_stock,:cat_id)";
+  $sql = "INSERT INTO products(name,description,price, image, featured,in_stock,cat_id) VALUES(:name,:description,:price, :image, :featured,:in_stock,:cat_id)";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([
     ':name' => $name,
     ':description' => $description,
     ':price' => $price,
+    ':image' => "",
     ':featured' => $featured,
     ':in_stock' => $in_stock,
     ':cat_id' => $cat_id,
@@ -59,6 +58,4 @@ if (isset($_POST['addProduct'])) {
   }
  header('Location:products.php');
 }
-
-
 ?>
