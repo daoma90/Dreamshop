@@ -4,10 +4,10 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db.php';
 
-$id = $_GET['id'];
+$id = $_GET['ID'];
 $imageObject = [];
 
-$sql = "SELECT * FROM images WHERE product_id=:id";
+$sql = "SELECT image FROM images WHERE product_id=:id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':id', $id);
 $stmt->execute();
