@@ -41,8 +41,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <div>$phone</div>
         <div>$zip</div>
         <div>$city</div>
-        
-        </div>";
+        <div>$total</div>
+        <a href='./'>Back to shop</a>";
         
    }
    echo $categories;
