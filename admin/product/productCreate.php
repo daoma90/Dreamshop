@@ -2,18 +2,7 @@
 
 require_once "../includes/db.php";
 
-if (isset($_POST['addProduct'])) {;
-
-  $imageName = $_FILES['image']['name'];
-  $imageError = $_FILES['image']['error'];
-  $imageTemp = $_FILES['image']['tmp_name'];
-  $imagePath = "../images/";
-
-  if (is_uploaded_file($imageTemp)) {
-    move_uploaded_file($imageTemp, $imagePath . $imageName);
-  } else {
-    $image = "";
-  }
+if (isset($_POST['addProduct'])) {
 
   $name = trim($_POST['name']);
   $description = trim($_POST['description']);
@@ -21,22 +10,54 @@ if (isset($_POST['addProduct'])) {;
   $cat_id = trim($_POST['cat_id']);
   $in_stock = trim($_POST['in_stock']);
   $featured = trim($_POST['featured']);
-  $image = htmlspecialchars($imageName);
 
-  $sql = "INSERT INTO products(name,description,price,image,featured,in_stock,cat_id) VALUES(:name,:description,:price,:fileName,:featured,:in_stock,:cat_id)";
+  $images = [];
+
+  $sql = "INSERT INTO products(name,description,price,featured,in_stock,cat_id) VALUES(:name,:description,:price,:featured,:in_stock,:cat_id)";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([
     ':name' => $name,
     ':description' => $description,
     ':price' => $price,
-    ':fileName' => $image,
     ':featured' => $featured,
     ':in_stock' => $in_stock,
     ':cat_id' => $cat_id,
-
   ]);
 
-  header('Location:products.php');
-} else {
-  echo  "Sorry, there was an error uploading your file.";
+  $ID = $pdo->lastInsertId();
+
+  $targetDir = "../images/";
+  $allowTypes = array("jpg", "png", "jpeg", "gif", "JPG", "PNG", "GIF");
+  $file = "";
+
+  $fileNames = array_filter($_FILES["image"]["tmp_name"]);
+  if (isset($ID)) {
+    if (!empty($fileNames)) {
+      foreach ($_FILES["image"]["name"] as $key => $val) {
+        $fileName = basename($_FILES["image"]["name"][$key]);
+        $name = basename($_FILES["image"]["name"]);
+        $targetDir = $targetDir . $fileName;
+        $fileType = pathinfo($targetDir, PATHINFO_EXTENSION);
+        if (in_array($fileType, $allowTypes)) {
+          if (move_uploaded_file($_FILES["image"]["tmp_name"][$key], "../images/$fileName")) {
+            $sql = "INSERT INTO images(image, product_id) VALUES (:image,:product_id)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+              ':image' => $fileName,
+              ':product_id' => $ID,
+            ]);
+            $file = $fileName;
+          }
+        }
+        setcookie("images_"[$key], $fileName); 
+      }
+      $sql = "UPDATE products SET image=:image WHERE ID=:id";
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute([
+        ':id' => $ID, 
+        ':image' => $file,
+        ]);
+    }
+    header('Location:products.php');
+  }
 }
