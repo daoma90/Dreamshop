@@ -5,7 +5,7 @@ require "../includes/db.php";
 
 function readAll($pdo)
 {
-    $sql = 'SELECT * FROM products';
+    $sql = 'SELECT * FROM products ORDER BY ID DESC';
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     //$stmt->fetch(PDO::FETCH_ASSOC);

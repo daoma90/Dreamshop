@@ -12,9 +12,6 @@ if (isset($_POST['addProduct'])) {
   $featured = trim($_POST['featured']);
 
   $images = [];
-  $targetDir = "../images/";
-  $allowTypes = array("jpg", "png", "jpeg", "gif");
-  $fileNames = array_filter($_FILES["image"]["tmp_name"]);
 
   $sql = "INSERT INTO products(name,description,price,featured,in_stock,cat_id) VALUES(:name,:description,:price,:featured,:in_stock,:cat_id)";
   $stmt = $pdo->prepare($sql);
@@ -28,11 +25,15 @@ if (isset($_POST['addProduct'])) {
   ]);
 
   $ID = $pdo->lastInsertId();
+  
+  $targetDir = "../images/";
+  $allowTypes = array("jpg", "png", "jpeg", "gif", "JPG", "PNG","GIF");
+  $fileNames = array_filter($_FILES["image"]["tmp_name"]);
   if(isset($ID)) {
   if (!empty($fileNames)) {
     foreach ($_FILES["image"]["name"] as $key => $val) {
-      $fileName = basename($_FILES["image"]["name"]);
-      echo $fileName;
+      $fileName = basename($_FILES["image"]["name"][$key]);
+      $name = basename($_FILES["image"]["name"]);
       $targetDir = $targetDir . $fileName;
       $fileType = pathinfo($targetDir, PATHINFO_EXTENSION);
       if (in_array($fileType, $allowTypes)) {
@@ -45,11 +46,11 @@ if (isset($_POST['addProduct'])) {
             ':product_id' => $ID,
           ]);
         }
-      }
+      } 
     }
   }
-  //header('Location:products.php');
+  header('Location:products.php');
 } else {
-  //go to error page?
+  //go to error
 }
 }
