@@ -11,9 +11,10 @@
     />
   </head>
   <body>
+ 
     <?php
-  require_once "./header.php"
-  ?>
+  require_once "./header.php";
+?>
     <main>
       <div class="cont">
         <div class="products">

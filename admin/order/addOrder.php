@@ -63,7 +63,9 @@
     }
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-    header("Location: ./confirmation.php?orderID=" . $redirectID);
+   
+    header("Location:../../confirmation.php?orderID=" . $redirectID);
+   
   };
     
 ?>
