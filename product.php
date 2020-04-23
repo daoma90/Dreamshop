@@ -3,6 +3,7 @@
 
 
     if (isset($_GET['id'])){
+        $product_id = $_GET['id'];
         $sql = "SELECT products.*, category.name AS category FROM products, category WHERE products.ID = :id AND category.ID = products.cat_id";
         #$sql = "SELECT * FROM products JOIN category ON (products.cat_id = category.ID) WHERE products.ID = :id";
         $stmt = $db->prepare($sql);
@@ -105,7 +106,14 @@
               />
               <button class="productpage__qty-up"><i class="fa fa-plus"></i></button>
             </div>
-            <button class="productpage__add" data-id=<?= $_GET['id'] ?>>ADD TO CART</button>
+            <?php 
+              if ($stock == 0) {
+                echo "<div>OUT OF STOCK</div>";
+              }
+              else {
+                echo "<button class='productpage__add' data-id=$product_id >ADD TO CART</button>";
+              }
+            ?>
           </div>
         </div>
       </section>
