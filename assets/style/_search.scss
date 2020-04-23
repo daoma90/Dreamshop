@@ -1,37 +1,86 @@
 .search-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 250px);
-  grid-auto-rows: 260px;
-  grid-auto-flow: dense;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   grid-gap: 60px;
   // margin-top: 30px;
-  margin-top: 100px;
+  margin-top: 60px;
   overflow: hidden;
 }
+
+.products-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 200px;
+  flex-wrap: wrap;
+}
+
+.product-container {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+
+  &:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.247);
+  }
+
+  &__add {
+    @include btn-primary;
+    align-self: center;
+    margin-top: 0.5rem;
+  }
+}
+
 .searchProd {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #7d8080;
-  width: 100%;
-  height: 100%;
+  max-width: 300px;
+  max-height: 350px;
+  text-decoration: none;
+  color: black;
+  @include desktop {
+    max-width: 500px;
+    max-height: 500px;
+  }
+
   &__image {
     width: 100%;
     height: 100%;
     img {
       width: 100%;
-      height: 200px;
+      height: 100%;
       max-height: 100%;
       max-width: 100%;
       object-fit: cover;
       display: block;
     }
   }
-  &____detail {
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100%;
+    font-family: "open_sansregular", "Open Sans", "Helvetica Neue", Helvetica,
+      Arial, sans-serif;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  &__detail-name {
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  &__detail-price {
+    text-decoration: none;
+    font-weight: 500;
   }
 }
