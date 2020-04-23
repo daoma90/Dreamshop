@@ -41,9 +41,15 @@
     text-decoration: none;
     color: black;
   }
+  &__product-title {
+    text-align: center;
+    margin: 0.75rem 0;
+    font-weight: bold;
+  }
   &__title {
     text-align: center;
     margin: 1.5rem 0;
+    font-weight: bold;
   }
   &__img-wrap {
     max-width: 500px;
