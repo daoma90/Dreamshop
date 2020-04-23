@@ -189,7 +189,7 @@ function clearCart() {
   const totalProductQty = document.querySelector('.cart-fixed__total-qty');
   const totalQtyIconNotif = document.querySelector('.icon-notif');
 
-  if (document.querySelector('.products') !== undefined) {
+  if (document.querySelector('.products')) {
     HappyLib.updateLocalStorage(cart.key, renderProducts);
   }
 
