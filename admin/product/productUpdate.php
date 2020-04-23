@@ -29,6 +29,7 @@ if (isset($_POST['updateProduct'])) {
         $targetDir = $targetDir . $fileName;
         $fileType = pathinfo($targetDir, PATHINFO_EXTENSION);
         if (in_array($fileType, $allowTypes)) {
+          //if file exists
           if (move_uploaded_file($_FILES["image"]["tmp_name"][$key], "../images/$fileName")) {
             $sql = "INSERT INTO images(image, product_id) VALUES (:image,:product_id)";
             $stmt = $pdo->prepare($sql);
