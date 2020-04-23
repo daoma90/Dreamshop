@@ -28,48 +28,18 @@ const cart = {
   products: [],
 };
 
-// async function addToCart(id) {
-//   const response = await fetch(`./assets/php/addToCart.php?id=${id}`);
-//   const product = await response.json();
-
-//   let tempObj = {
-//     name: product[0].name,
-//     price: product[0].price,
-//     image: product[0].image,
-//     quantity: inputQty ? parseInt(inputQty.value) : 1,
-//     stock: 5,
-//   };
-
-//   const productInCart = HappyLib.findProduct(tempObj.name, cart);
-
-//   if (!productInCart) {
-//     cart.products.push(tempObj);
-//   } else {
-//     if (inputQty) {
-//       productInCart.quantity += parseInt(inputQty.value);
-//     } else {
-//       productInCart.quantity++;
-//     }
-//     // If quantity is raised above the current stock quantity the value will be set to the max stock quantity
-//     if (tempObj.stock < productInCart.quantity) {
-//       productInCart.quantity = tempObj.stock;
-//       alert('No more of these in stock!');
-//     }
-//   }
-//   HappyLib.updateLocalStorage(cart.key, renderCart);
-// }
-
 function addToCart(id) {
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const product = JSON.parse(this.response);
       let tempObj = {
+        id: product[0].id,
         name: product[0].name,
         price: product[0].price,
         image: product[0].image,
         quantity: inputQty ? parseInt(inputQty.value) : 1,
-        stock: product[0].stock,
+        stock: parseInt(product[0].stock),
       };
 
       const productInCart = HappyLib.findProduct(tempObj.name, cart);
@@ -219,6 +189,10 @@ function clearCart() {
   const totalProductQty = document.querySelector('.cart-fixed__total-qty');
   const totalQtyIconNotif = document.querySelector('.icon-notif');
 
+  if (document.querySelector('.products')) {
+    HappyLib.updateLocalStorage(cart.key, renderProducts);
+  }
+
   items.innerHTML = '';
   totalProductQty.textContent = '0 Items';
   totalQtyIconNotif.textContent = '0';
@@ -227,29 +201,10 @@ function clearCart() {
   localStorage.clear();
 }
 
-function renderCheckout(e) {
-  e.preventDefault();
-  const target = e.target.href;
-  // const loadPopup = `<div class="load-popup">
-  //                         <h2 class="load-popup__headline">Your order is being processed!</h2>
-  //                         <img class="load-popup__animation" src="./images/loading.svg">
-  //                       </div>`;
-  const loadPopup =
-    '<div class="load-popup">\n<h2 class="load-popup__headline">Your order is being processed!</h2>\n<img class="load-popup__animation" src="./images/loading.svg">\n</div>';
-
-  document.body.innerHTML = loadPopup;
-  const body = document.querySelector('body');
-  body.classList.add('no-after');
-  setTimeout(function () {
-    window.location = target;
-  }, 2500);
-}
-
 HappyLib.localStorageInit(cart.key);
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.cart-fixed__clear')) {
-    const purchaseBtn = document.querySelector('.cart-fixed__checkout');
     const clearBtn = document.querySelector('.cart-fixed__clear');
     const cartToggle_header = document.querySelector('.header__cart-toggle');
     const cart = document.querySelector('.cart-fixed');
@@ -266,7 +221,6 @@ document.addEventListener('DOMContentLoaded', function () {
       qtyDown.addEventListener('click', decreaseQty);
     }
 
-    purchaseBtn.addEventListener('click', renderCheckout);
     clearBtn.addEventListener('click', clearCart);
 
     cartToggle_header.addEventListener('click', function () {

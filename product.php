@@ -15,6 +15,7 @@
         $price = $row['price'];
         $image = $row['image'];
         $category = $row['category'];
+        $stock = $row['in_stock'];
 
     endwhile;
     $product = $name;
@@ -90,6 +91,7 @@
             <h1 class="productpage__name"><?= $product ?></h1>
             <span class="productpage__price"><?= $price ?> SEK</span>
             <small class="productpage__category"><?= $category ?></small>
+            <small class="productpage__category">IN STOCK: <?= $stock ?></small>
           </div>
           <p class="productpage__desc"><?= $desc ?></p>
           <div class="productpage__input-wrap">
@@ -108,6 +110,7 @@
         </div>
       </section>
     </main>
+    <?php require_once 'footer.php'; ?>
     <script src="./assets/js/happyLib.js"></script>
     <script src="./assets/js/ajax-categories.js"></script>
     <script src="./assets/js/header.js"></script>
