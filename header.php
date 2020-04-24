@@ -17,12 +17,5 @@
   <h2 class="header__headline">
     <a href="./">Dreamshop</a>
   </h2>
-
-  <?php 
-      $orderpagePath = "";
-      $currentPath =  $_SERVER['REQUEST_URI'];
-      if (!strpos($currentPath, 'order')) {
-        require_once 'cart.php';
-      }
-  ?>
+  <?php require_once 'cart.php' ?>
 </header>
