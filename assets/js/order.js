@@ -127,9 +127,9 @@ document.addEventListener('DOMContentLoaded', function () {
     form.innerHTML += template;
   });
 
-  //Quickfix, remove shipping fee based on city
-  // const cityInput = addOrder.querySelectorAll('.form-wrapper__input')[5];
-  // cityInput.addEventListener('change', function () {
-  //   updatePrice(this.value);
-  // });
+  // Quickfix, remove shipping fee based on city
+  const cityInput = addOrder.querySelectorAll('.form-wrapper__input')[5];
+  cityInput.addEventListener('change', function () {
+    updatePrice(this.value);
+  });
 });
