@@ -115,19 +115,21 @@ renderProducts();
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.form-wrapper__form');
+  console.log(form);
   cart.products.forEach(function (product) {
     const template =
       '<input type="hidden" name="products[]" value="' +
       product.id +
-      ' /><input type="hidden" name="quantity[]" value="' +
+      '" /><input type="hidden" name="quantity[]" value="' +
       product.quantity +
-      ' />';
+      '" />';
+    console.log(template);
     form.innerHTML += template;
   });
 
   //Quickfix, remove shipping fee based on city
-  const cityInput = addOrder.querySelectorAll('.form-wrapper__input')[5];
-  cityInput.addEventListener('change', function () {
-    updatePrice(this.value);
-  });
+  // const cityInput = addOrder.querySelectorAll('.form-wrapper__input')[5];
+  // cityInput.addEventListener('change', function () {
+  //   updatePrice(this.value);
+  // });
 });
