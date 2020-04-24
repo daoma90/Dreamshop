@@ -112,6 +112,7 @@ if (!Array.from) {
   });
 })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
+
 //Deletes element in DOM and database (IE COMP)
 function deleteView(id) {
   const element = document.querySelector("#product_" + id);
@@ -121,7 +122,6 @@ function deleteView(id) {
     if (this.readyState == 4 && this.status == 200) {
       setTimeout(function () {
         document.querySelector(".section-products").removeChild(element);
-        //element.rem();
       }, 250);
     }
   };
@@ -130,7 +130,6 @@ function deleteView(id) {
     req.send();
   }
 }
-
 
 //Populates inserted images in editmode (IE COMP)
 function getPictures(id) {
@@ -154,6 +153,7 @@ function getPictures(id) {
     req.send();
   }
 
+
 //Sets form position in DOM and state (IE COMP)
 function prepareForm(inEdit, id) {
   if (inEdit) {
@@ -169,7 +169,13 @@ function prepareForm(inEdit, id) {
       productForm.querySelector("button").setAttribute("name", "addProduct");
       productForm.querySelector("h2").textContent = "Create product";
       productForm.parentElement.style.display = "flex";
-      productForm.reset();  
+      productForm.reset(); 
+      document.querySelector(".product-form-main__left-img img").src = ""; 
+      document.querySelector(".product-form-main__left__gallery").innerHTML = "";
+      // if(document.querySelector(".section-products > ")) {
+
+      // }
+      console.log(productForm);
       document.querySelector(".section-products").prepend(productForm.parentElement);
     } else {
       productForm.setAttribute("action", "productCreate.php");
@@ -179,7 +185,7 @@ function prepareForm(inEdit, id) {
       productForm.reset();  
     }
     if (id) {
-      document.querySelector("main").appendChild(productForm);
+      document.querySelector(".section-products").appendChild(productForm.parentElement);
       productForm.style.display = "none";
       Array.from(document.querySelectorAll(".product")).forEach(function (p) {
           p.style.opacity = 1;
@@ -213,7 +219,6 @@ function initEdit(id) {
       setAttribute("src", product.firstElementChild.children[0].firstElementChild.getAttribute("src"));
     }
   });
-
 //Using loop for IE COMP
 const allProducts = document.querySelectorAll(".product");
 for (let i = 0; i < allProducts.length; i++) {
@@ -242,7 +247,6 @@ toggle.addEventListener("click", function (e) {
   prepareForm(false, id);
 
 });
-
 //Opens create form
 const add = document.querySelector(".section-add-imgwrap");
 add.addEventListener("click", function (e) {
