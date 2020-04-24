@@ -89,5 +89,6 @@
     <script src="./assets/js/cart.js"></script>
     <script src="./assets/js/order.js"></script>
     <script src="./assets/js/ajax-categories.js"></script>
+    <script src="./assets/js/render.js"></script>
   </body>
 </html>

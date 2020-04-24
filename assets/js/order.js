@@ -1,4 +1,4 @@
-function removeItem(e) {
+function removeProduct(e) {
   const item = e.target.parentElement.querySelector('.products__name')
     .textContent;
 
@@ -11,7 +11,7 @@ function removeItem(e) {
   HappyLib.updateLocalStorage(cart.key, renderProducts);
 }
 
-function changeQuantity(e) {
+function changeOrderQuantity(e) {
   const val = e.target.parentElement.querySelector('.products__qty');
   const item = e.target.parentElement.querySelector('.products__name')
     .textContent;
@@ -55,7 +55,6 @@ function updatePrice(str) {
   } else {
     headline.textContent = 'Your Order';
     priceExclShipping.textContent = price + ' SEK';
-    console.log('ord:' + str);
     if (price > 500 || str === 'stockholm') {
       shipping.textContent = 'FREE';
       totalPrice.textContent = price + ' SEK';
@@ -103,8 +102,8 @@ function renderProducts() {
   const removeBtn = document.querySelectorAll('.products__remove-btn');
   const qtyInput = document.querySelectorAll('.products__qty');
 
-  HappyLib.addEvents(removeBtn, removeItem, 'click');
-  HappyLib.addEvents(qtyInput, changeQuantity, 'change');
+  HappyLib.addEvents(removeBtn, removeProduct, 'click');
+  HappyLib.addEvents(qtyInput, changeOrderQuantity, 'change');
   HappyLib.addEvents(qtyInput, handleProductQty, 'change');
 
   updatePrice();
@@ -115,7 +114,6 @@ renderProducts();
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.form-wrapper__form');
-  console.log(form);
   cart.products.forEach(function (product) {
     const template =
       '<input type="hidden" name="products[]" value="' +
@@ -123,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
       '" /><input type="hidden" name="quantity[]" value="' +
       product.quantity +
       '" />';
-    console.log(template);
     form.innerHTML += template;
   });
 

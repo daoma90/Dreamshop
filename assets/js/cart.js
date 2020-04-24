@@ -134,22 +134,19 @@ function renderCart() {
   items.innerHTML = '';
   //RUN COMMENTED CODE BELOW IN BABEL COMPILER AND REPLACE WITH THIS CODE
   cart.products.forEach(function (item) {
-    items.innerHTML += '<li class="cart-fixed__item">\n                            <div class="cart-fixed__img-wrap"><img class="cart-fixed__img" src="./admin/images/'
+    items.innerHTML += '<li class="cart-fixed__item"><div class="cart-fixed__img-wrap"><img class="cart-fixed__img" src="./admin/images/'
       .concat(
         item.image,
-        '"/></div>\n\n                            <div class="cart-fixed__text-wrap">\n                                <div class="cart-fixed__name">'
+        '"/></div><div class="cart-fixed__text-wrap"><div class="cart-fixed__name">'
       )
-      .concat(
-        item.name,
-        '</div>\n                                <div class="cart-fixed__item-total">'
-      )
+      .concat(item.name, '</div><div class="cart-fixed__item-total">')
       .concat(
         item.price * item.quantity,
-        ' SEK</div>\n                                <input type="number" value="'
+        ' SEK</div><input type="number" value="'
       )
       .concat(
         item.quantity,
-        '" class="cart-fixed__qty">\n                            </div>\n                            <span class="cart-fixed__remove-btn">-</span>\n\n                          </li>'
+        '" class="cart-fixed__qty"></div><span class="cart-fixed__remove-btn">-</span></li>'
       );
   });
   // cart.products.forEach(function (item) {
