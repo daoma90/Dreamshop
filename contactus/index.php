@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="assets/style/main.css" />
   </head>
   <body>
-    <div class="background">
-      <div class="background__image" id="image1"></div>
-      <div class="background__image" id="image2"></div>
-      <div class="background__image" id="image3"></div>
+    <div class="background-container">
+      <div class="background">
+        <div class="background__image" id="image1"></div>
+        <div class="background__image" id="image2"></div>
+        <div class="background__image" id="image3"></div>
+      </div>
     </div>
     <section class="contact">
       <form class="contact__form">
