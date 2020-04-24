@@ -7,7 +7,9 @@
 </head>
 <body>
     
+<div class="container">
 
+<div class="wrapper"></div>
 <?php
 
 
@@ -33,8 +35,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $total = htmlspecialchars($row['total']);
         $date = htmlspecialchars($row['date']);
 
-        $categories .= "<div class='container'>
-        <div class='wrapper'></div>
+        $categories .= "
         <div>Order ID:$id</div>
         <div>$name</div>
         <div>$mail</div>
@@ -43,13 +44,14 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <div>$city</div>
         <div>TOTAL: $total</div>
         <div>$date</div>
-        <a href='./'>Back to shop</a></div>";
+        <a href='./'>Back to shop</a>";
         
    }
    echo $categories;
 }
 
 ?>
+</div>
 <script src="./assets/js/confirmation.js"></script>
 
 </body>

@@ -1506,11 +1506,16 @@ main {
      object-fit: contain;
 }
 
+.products__container {
+  height: 100%;
+}
+
 .products__item {
   padding: 1rem;
   background: white;
   color: black;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   /* autoprefixer: off */
   display: grid;
@@ -1519,7 +1524,7 @@ main {
 }
 
 .products__item:after {
-  content: "";
+  content: '';
   width: 350%;
   margin-top: 20px;
   border-bottom: 1px solid gray;
@@ -1527,7 +1532,7 @@ main {
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .products__item {
-    height: 120px;
+    height: auto;
   }
 }
 

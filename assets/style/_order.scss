@@ -46,24 +46,29 @@ main {
     object-fit: contain;
   }
 
+  &__container {
+    height: 100%;
+  }
+
   &__item {
     padding: 1rem;
     background: white;
     color: black;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     /* autoprefixer: off */
     display: grid;
     grid-template-columns: 1fr 2fr 0.5fr;
     align-items: center;
     &:after {
-      content: "";
+      content: '';
       width: 350%;
       margin-top: 20px;
       border-bottom: 1px solid gray;
     }
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      height: 120px;
+      height: auto;
     }
 
     @include tablet {
