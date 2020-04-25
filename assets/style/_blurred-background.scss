@@ -2,13 +2,13 @@
 @import "variables";
 
 .background-wrap {
-  width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
   display: none;
 
   @include tablet {
     display: block;
-    width: 100%;
+    max-width: 100vw;
     min-height: 100vh;
   }
 }
