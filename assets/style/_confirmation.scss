@@ -3,31 +3,34 @@
 }
 
 .confirmation {
-  position: absolute;
-  top: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  @include tablet {
+    position: absolute;
+    top: 0;
+  }
 }
 
 .confirmation-container {
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 100%;
   width: 100%;
+  margin: 0 auto;
   @include tablet {
     display: grid;
     align-items: center;
-    width: 1000px;
-    height: 700px;
+    max-width: 1000px;
+    height: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     padding: $spacing__m;
-    margin: 0 auto;
+    margin-top: 100px;
   }
 
   .confirmation-products {
@@ -37,11 +40,12 @@
     margin: 0 auto;
     width: 100%;
     background-color: white;
+    padding: $spacing__m;
+    z-index: 3;
 
     @include tablet {
       width: 100%;
       grid-column: 2;
-      padding: $spacing__m;
       padding-left: 50px;
       margin-left: -1em;
     }
