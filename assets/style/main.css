@@ -1726,7 +1726,6 @@ main {
           transition-duration: 0.4s;
 }
 
-<<<<<<< HEAD
 .background {
   background-color: #faf0b8;
 }
@@ -1859,10 +1858,109 @@ main {
 
 .confirmation-container .confirmation-products .product__info {
   width: 100%;
-=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 10px;
+}
+
+.confirmation-container .info-box {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  padding: 30px;
+  background-color: #e9b119;
+  z-index: 2;
+}
+
+@media (min-width: 724px) {
+  .confirmation-container .info-box {
+    grid-columns: 1;
+    margin-right: -1em;
+  }
+}
+
+.confirmation-container .info-box__headline {
+  margin-bottom: 10px;
+}
+
+.confirmation-container .info-box__text {
+  font-size: 15px;
+  text-align: center;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.confirmation-container .info-box__contact {
+  text-decoration: none;
+}
+
+.confirmation-container .info-box__info {
+  width: 80%;
+  margin: 15px;
+}
+
+.confirmation-container .info-box__small-headline {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.confirmation-container .info-box__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.confirmation-container .info-box__zipcity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.confirmation-container .info-box__zip {
+  margin-right: 5px;
+}
+
+.confirmation-container .info-box__city {
+  margin-left: 5px;
+}
+
 body {
   margin: 0;
-  background-color: black;
 }
 
 .background-container {
@@ -2122,7 +2220,6 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
->>>>>>> 0b66d4f4a1f207add16eddd294b10e5ab32d3b72
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2130,16 +2227,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-<<<<<<< HEAD
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-left: 10px;
-}
-
-.confirmation-container .info-box {
-  margin: 0 auto;
-=======
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2166,7 +2253,6 @@ body {
 }
 
 .flip-card__front-form {
->>>>>>> 0b66d4f4a1f207add16eddd294b10e5ab32d3b72
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2177,49 +2263,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-<<<<<<< HEAD
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  padding: 30px;
-  background-color: #e9b119;
-  z-index: 2;
-}
-
-@media (min-width: 724px) {
-  .confirmation-container .info-box {
-    grid-columns: 1;
-    margin-right: -1em;
-  }
-}
-
-.confirmation-container .info-box__headline {
-  margin-bottom: 10px;
-}
-
-.confirmation-container .info-box__text {
-  font-size: 15px;
-  text-align: center;
-  width: 80%;
-  margin-top: 10px;
-}
-
-.confirmation-container .info-box__contact {
-  text-decoration: none;
-}
-
-.confirmation-container .info-box__info {
-  width: 80%;
-  margin: 15px;
-}
-
-.confirmation-container .info-box__small-headline {
-  margin-bottom: 5px;
-  font-size: 20px;
-}
-
-.confirmation-container .info-box__container {
-=======
   width: 100%;
 }
 
@@ -2229,7 +2272,6 @@ body {
 }
 
 .flip-card__input-group {
->>>>>>> 0b66d4f4a1f207add16eddd294b10e5ab32d3b72
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2237,34 +2279,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-<<<<<<< HEAD
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 20px;
-}
-
-.confirmation-container .info-box__zipcity {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-}
-
-.confirmation-container .info-box__zip {
-  margin-right: 5px;
-}
-
-.confirmation-container .info-box__city {
-  margin-left: 5px;
-=======
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -2325,7 +2339,6 @@ body {
   color: red;
   margin: 0;
   font-family: sans-serif;
->>>>>>> 0b66d4f4a1f207add16eddd294b10e5ab32d3b72
 }
 
 .search-container {
