@@ -14,6 +14,7 @@
  
     <?php
   require_once "./header.php";
+  require_once "./blurred-background.php"
 ?>
     <main>
       <div class="cont">

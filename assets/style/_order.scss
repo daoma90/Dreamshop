@@ -1,11 +1,21 @@
 main {
-  background-color: blanchedalmond;
+  width: 100vw;
+  min-height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  @include tablet {
+    position: absolute;
+    top: 0;
+  }
 }
 
 .cont {
   margin: 0 auto;
   display: grid;
-  margin-top: 72px;
+  width: 100%;
 
   @include tablet {
     grid-template-columns: 1fr 1fr;
@@ -30,6 +40,10 @@ main {
 
   &__headline {
     text-align: center;
+    margin-top: 80px;
+    @include tablet {
+      margin-top: 0;
+    }
   }
 
   &__img-wrap {
@@ -125,7 +139,7 @@ main {
 }
 
 .form-wrapper {
-  background-color: #f9cd74;
+  background-color: rgb(238, 183, 66);
   color: $color__white;
   //padding: $spacing__m;
   padding-top: 30px;
@@ -139,6 +153,7 @@ main {
 
   &__headline {
     text-align: center;
+    margin-bottom: 20px;
   }
 
   &__form {
