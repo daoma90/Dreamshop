@@ -2049,7 +2049,7 @@ body {
   .contact {
     width: 90%;
     height: 80%;
-    top: 10%;
+    top: 15%;
   }
 }
 
@@ -2278,6 +2278,13 @@ body {
 .flip-card__headline {
   font-size: 30px;
   width: 200px;
+  margin-top: 60px;
+}
+
+@media screen and (min-width: 700px) {
+  .flip-card__headline {
+    margin-top: 0;
+  }
 }
 
 .flip-card__input-group {
