@@ -2,20 +2,32 @@
   background-color: rgb(250, 240, 184);
 }
 
+.confirmation {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 .confirmation-container {
   display: flex;
   flex-direction: column;
   height: 500px;
   width: 100%;
-  margin: 0 auto;
   @include tablet {
     display: grid;
     align-items: center;
-    max-width: 1000px;
-    height: 100vh;
+    width: 1000px;
+    height: 700px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    padding: 2em;
+    padding: $spacing__m;
+    margin: 0 auto;
   }
 
   .confirmation-products {
@@ -29,7 +41,8 @@
     @include tablet {
       width: 100%;
       grid-column: 2;
-      padding: 30px 50px 30px 50px;
+      padding: $spacing__m;
+      padding-left: 50px;
       margin-left: -1em;
     }
 
@@ -38,7 +51,6 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: $spacing__s;
     }
     &__headline {
       margin-bottom: $spacing__s;
@@ -50,7 +62,7 @@
       justify-content: space-between;
       order: 2;
       font-size: 18px;
-      margin: $spacing__s;
+      margin-top: $spacing__s;
     }
 
     .product {
@@ -94,7 +106,7 @@
     flex-direction: column;
     align-items: center;
     order: 1;
-    padding: 30px;
+    padding: $spacing__m;
 
     background-color: rgb(233, 177, 25);
     z-index: 2;

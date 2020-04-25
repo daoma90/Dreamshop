@@ -6,17 +6,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style/main.css" />
 </head>
-<body class="background">
+<body>
 <?php
   require_once "./header.php";
+  require_once "./blurred-background.php";
 ?>
-    <div class="confirmation-container">
 
-    <div class="confirmation-products">
-        <div class="products-top">
-            <h2 class="products-headline">Order summary</h2>
+    <section class="confirmation">
+    <div class="confirmation-container">
+        <div class="confirmation-products">
+            <div class="products-top">
+                <h2 class="products-headline">Order summary</h2>
+            </div>
         </div>
-    </div>
     
 <?php
 
@@ -80,6 +82,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 ?>
 </div>
+</section>
 <?php
   require_once "./footer.php";
 ?>

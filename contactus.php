@@ -8,13 +8,7 @@
   </head>
   <body>
     <?php require_once "header.php" ?>
-    <div class="background-container">
-      <div class="background">
-        <div class="background__image" id="image1"></div>
-        <div class="background__image" id="image2"></div>
-        <div class="background__image" id="image3"></div>
-      </div>
-    </div>
+    <?php require_once "blurred-background.php" ?>
     <section class="contact">
       <form class="contact__form">
         <div class="flip-card">
