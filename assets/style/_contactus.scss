@@ -4,35 +4,38 @@ body {
 
 .contact {
   z-index: 10;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  transition-duration: 0.5s;
+  width: 100vw;
+  min-height: 100vh;
+  max-width: 100%;
+  transition-duration: 0.1s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 
-  @media screen and (min-width: 700px) {
-    width: 90%;
-    height: 80%;
-    top: 15%;
+  @include tablet {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
   }
 
   @media screen and (min-width: 1200px) {
-    width: 60%;
   }
 
   &__form {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(7, 1fr);
-    height: 120%;
-    width: 100%;
+    height: 100%;
+    min-width: 100%;
 
-    @media screen and (min-width: 700px) {
-      height: 100%;
+    @include tablet {
+      height: 60%;
+      min-width: 90%;
+      margin-top: 70px;
+    }
+    @include desktop {
+      min-width: 60%;
     }
   }
 
@@ -41,8 +44,9 @@ body {
     z-index: 1;
     grid-row: 5 / 8;
     grid-column: 1 / 7;
+    min-height: 300px;
 
-    @media screen and (min-width: 700px) {
+    @include tablet {
       grid-row: 4 / span 4;
       grid-column: 3 / 7;
     }
@@ -55,7 +59,7 @@ body {
     justify-content: center;
     height: 100%;
 
-    @media screen and (min-width: 700px) {
+    @include tablet {
       margin-left: 25%;
     }
   }
@@ -72,7 +76,7 @@ body {
     resize: none;
     font-size: 20px;
     border: solid 2px black;
-    @media screen and (min-width: 1200px) {
+    @include desktop {
       height: 50%;
     }
   }
@@ -90,7 +94,7 @@ body {
     background-color: rgb(30, 104, 165);
     cursor: pointer;
 
-    @media screen and (min-width: 700px) {
+    @include tablet {
       color: rgb(30, 104, 165);
       background-color: white;
       border: 2px solid rgb(30, 104, 165);
@@ -112,10 +116,12 @@ body {
   perspective: 1000px;
   z-index: 2;
   position: relative;
+  min-height: 600px;
 
-  @media screen and (min-width: 700px) {
+  @include tablet {
     grid-column: 1 / 4;
     grid-row: 1 / 7;
+    min-height: 600px;
   }
 
   &__inner {
@@ -125,7 +131,7 @@ body {
     text-align: center;
     transition: none;
     transform-style: preserve-3d;
-    @media screen and (min-width: 700px) {
+    @include tablet {
       transition: transform 0.8s;
       /* &:hover {
         transform: rotateY(180deg);
@@ -145,7 +151,7 @@ body {
     justify-content: space-around;
     font-family: sans-serif;
     color: white;
-    padding: 20px;
+    padding: 40px;
   }
 
   &__front {
@@ -159,8 +165,12 @@ body {
     background-size: cover;
     height: 40px;
     width: 40px;
-    top: 5px;
+    top: 80px;
     right: 5px;
+
+    @include tablet {
+      top: 5px;
+    }
   }
 
   &__front-form {
@@ -174,7 +184,8 @@ body {
     font-size: 30px;
     width: 200px;
     margin-top: 60px;
-    @media screen and (min-width: 700px) {
+    margin-bottom: 30px;
+    @include tablet {
       margin-top: 0;
     }
   }
@@ -194,7 +205,7 @@ body {
 
   &__front-input {
     box-sizing: border-box;
-    width: 60%;
+    width: 250px;
     height: 35px;
     font-size: 20px;
     border: solid 3px transparent;
@@ -204,7 +215,7 @@ body {
     font-size: 15px;
     margin: 10px;
     width: 300px;
-    @media screen and (min-width: 1200px) {
+    @include desktop {
       font-size: 20px;
       margin: 30px;
     }

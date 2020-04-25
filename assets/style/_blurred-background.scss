@@ -2,14 +2,14 @@
 @import "variables";
 
 .background-wrap {
-  width: 100%;
-  height: 100vh;
-  visibility: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  display: none;
 
   @include tablet {
-    visibility: visible;
+    display: block;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
   }
 }
 

@@ -111,7 +111,7 @@
             >
             <textarea class="contact__message" name="message"></textarea>
             <p class="form-error" id="message-error">Message required</p>
-            <input type="submit" class="contact__button" value="Skicka" />
+            <input type="submit" class="contact__button" value="Send" />
           </div>
         </div>
       </form>
