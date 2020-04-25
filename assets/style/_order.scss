@@ -20,7 +20,6 @@ main {
 .products {
   padding: $spacing__s 0;
   background-color: white;
-  min-height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -62,7 +61,7 @@ main {
     grid-template-columns: 1fr 2fr 0.5fr;
     align-items: center;
     &:after {
-      content: '';
+      content: "";
       width: 350%;
       margin-top: 20px;
       border-bottom: 1px solid gray;
