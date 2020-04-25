@@ -77,7 +77,7 @@
               </div>
             </div>
             <div class="flip-card__back">
-              <a href="../index.php" class="flip-card__close"></a>
+              <a href="index.php" class="flip-card__close"></a>
               <h3 class="flip-card__headline">
                 Tack för ditt meddelande!
               </h3>
