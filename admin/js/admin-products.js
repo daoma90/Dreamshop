@@ -88,7 +88,32 @@ if (!Array.from) {
   })();
 }
 
-//Deletes element in DOM and database
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('prepend')) {
+      return;
+    }
+    Object.defineProperty(item, 'prepend', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function prepend() {
+        var argArr = Array.prototype.slice.call(arguments),
+          docFrag = document.createDocumentFragment();
+        
+        argArr.forEach(function (argItem) {
+          var isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+        
+        this.insertBefore(docFrag, this.firstChild);
+      }
+    });
+  });
+})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
+
+
+//Deletes element in DOM and database (IE COMP)
 function deleteView(id) {
   const element = document.querySelector("#product_" + id);
   event.preventDefault();
@@ -96,7 +121,7 @@ function deleteView(id) {
   req.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       setTimeout(function () {
-        element.remove();
+        document.querySelector(".section-products").removeChild(element);
       }, 250);
     }
   };
@@ -106,9 +131,10 @@ function deleteView(id) {
   }
 }
 
+//Populates inserted images in editmode (IE COMP)
 function getPictures(id) {
-  //const element = document.querySelector("#product_" + id);
-  event.preventDefault();
+  const element = document.querySelector("#product_" + id);
+ event.preventDefault();
   let req = new XMLHttpRequest();
   const gallery = document.querySelector(".product-form-main__left__gallery");
   const galleryPreview = document.querySelector(".product-form-main__left-img img");
@@ -116,18 +142,20 @@ function getPictures(id) {
     if (this.readyState == 4 && this.status == 200) {
       let deserial_data = JSON.parse(this.responseText);
       gallery.innerHTML = "";
-      deserial_data.forEach(function(image) {
-         gallery.innerHTML += "<div class='product-form-main__left__gallery-img'><img src='../images/" + image["image"] + "' alt=''></div>";      
-         galleryPreview.setAttribute("src", "../images/" + image["image"]);
-        });
+      for (let i = 0; i < deserial_data.length; i++) {
+        const img = deserial_data[i];
+        gallery.innerHTML += "<div class='product-form-main__left__gallery-img'><img src='../images/" + img["image"] + "' alt=''></div>";      
+        galleryPreview.setAttribute("src", "../images/" + img["image"]);
+       }
     }
   };
     req.open("GET", "../includes/getImages.php?ID=" + id, true);
     req.send();
   }
 
-//Sets form mode (update,create)
-function prepareForm(inEdit, id = "") {
+
+//Sets form position in DOM and state (IE COMP)
+function prepareForm(inEdit, id) {
   if (inEdit) {
     productForm.setAttribute("action", "productUpdate.php");
     productForm.querySelector("button").setAttribute("name", "updateProduct");
@@ -136,13 +164,28 @@ function prepareForm(inEdit, id = "") {
     productForm.style.display = "flex";
     toggle.style.display = "block";
   } else {
-    productForm.setAttribute("action", "productCreate.php");
-    productForm.querySelector("button").setAttribute("name", "addProduct");
-    productForm.querySelector("h2").textContent = "Create product";
-    productForm.parentElement.style.display = "flex";
-    productForm.reset();
+    if(productForm.getAttribute("action", "productUpdate.php")){
+      productForm.setAttribute("action", "productCreate.php");
+      productForm.querySelector("button").setAttribute("name", "addProduct");
+      productForm.querySelector("h2").textContent = "Create product";
+      productForm.parentElement.style.display = "flex";
+      productForm.reset(); 
+      document.querySelector(".product-form-main__left-img img").src = ""; 
+      document.querySelector(".product-form-main__left__gallery").innerHTML = "";
+      // if(document.querySelector(".section-products > ")) {
+
+      // }
+      console.log(productForm);
+      document.querySelector(".section-products").prepend(productForm.parentElement);
+    } else {
+      productForm.setAttribute("action", "productCreate.php");
+      productForm.querySelector("button").setAttribute("name", "addProduct");
+      productForm.querySelector("h2").textContent = "Create product";
+      productForm.parentElement.style.display = "flex";
+      productForm.reset();  
+    }
     if (id) {
-      document.querySelector("main").appendChild(productForm);
+      document.querySelector(".section-products").appendChild(productForm.parentElement);
       productForm.style.display = "none";
       Array.from(document.querySelectorAll(".product")).forEach(function (p) {
           p.style.opacity = 1;
@@ -176,24 +219,25 @@ function initEdit(id) {
       setAttribute("src", product.firstElementChild.children[0].firstElementChild.getAttribute("src"));
     }
   });
-  //Hides all products and reset width except current one
-  const allProducts = document.querySelectorAll(".product");
-  allProducts.forEach(function (p) {
-    let isCurrent = p.id == "product_" + id;
-    if (!isCurrent) {
-      p.classList.add("product-state--inactive");
-      p.classList.remove("product-state--active");
-    } else {
-      p.classList.remove("product-state--inactive");
-      p.classList.add("product-state--active");
-    }
-  });
-  //Overlay elements
+//Using loop for IE COMP
+const allProducts = document.querySelectorAll(".product");
+for (let i = 0; i < allProducts.length; i++) {
+  p = allProducts[i];
+  let isCurrent = p.id == "product_" + id;
+  if (!isCurrent) {
+    p.classList.add("product-state--inactive");
+    p.classList.remove("product-state--active");
+  } else {
+    p.classList.remove("product-state--inactive");
+    p.classList.add("product-state--active");
+  }  
+}
+ //Overlay elements
   product.style.zIndex = "998";
   //Sets correct form src > backend
   prepareForm(true, id);
   //Inserts form to current product element
-  getPictures(id)
+  getPictures(id);
   product.prepend(productForm);
 }
 let resetPos = false;
@@ -203,7 +247,6 @@ toggle.addEventListener("click", function (e) {
   prepareForm(false, id);
 
 });
-
 //Opens create form
 const add = document.querySelector(".section-add-imgwrap");
 add.addEventListener("click", function (e) {

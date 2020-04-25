@@ -13,7 +13,7 @@
           <a href="#" class="footer__link">FAQ</a>
         </li>
         <li class="footer__list-item">
-          <a href="./contactus" class="footer__link">Contact Us</a>
+          <a href="/contactus.php" class="footer__link">Contact Us</a>
         </li>
         <li class="footer__list-item">
           <a href="#" class="footer__link">Returns and Exchanges</a>
