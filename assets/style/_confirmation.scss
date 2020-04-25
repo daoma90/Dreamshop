@@ -1,9 +1,5 @@
 .background {
   background-color: rgb(250, 240, 184);
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: -1;
 }
 
 .confirmation-container {
@@ -61,14 +57,14 @@
       flex-direction: row;
       position: relative;
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         border-bottom: solid 0.5px rgb(168, 168, 168);
         width: 100%;
         bottom: 0;
       }
 
-      &__img {
+      &__image {
         max-width: 100px;
         height: 100%;
         width: 100%;

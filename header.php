@@ -19,10 +19,6 @@
   </h2>
 
   <?php 
-      $orderpagePath = "";
-      $currentPath =  $_SERVER['REQUEST_URI'];
-      if (!strpos($currentPath, 'order')) {
-        require_once 'cart.php';
-      }
+      require_once 'cart.php';
   ?>
 </header>

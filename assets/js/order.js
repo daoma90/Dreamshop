@@ -55,7 +55,6 @@ function updatePrice(str) {
   } else {
     headline.textContent = 'Your Order';
     priceExclShipping.textContent = price + ' SEK';
-    console.log('ord:' + str);
     if (price > 500 || str === 'stockholm') {
       shipping.textContent = 'FREE';
       totalPrice.textContent = price + ' SEK';
@@ -115,7 +114,6 @@ renderProducts();
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.form-wrapper__form');
-  console.log(form);
   cart.products.forEach(function (product) {
     const template =
       '<input type="hidden" name="products[]" value="' +
@@ -123,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
       '" /><input type="hidden" name="quantity[]" value="' +
       product.quantity +
       '" />';
-    console.log(template);
     form.innerHTML += template;
   });
 

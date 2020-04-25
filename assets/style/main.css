@@ -1728,10 +1728,6 @@ main {
 
 .background {
   background-color: #faf0b8;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: -1;
 }
 
 .confirmation-container {
@@ -1840,20 +1836,20 @@ main {
 }
 
 .confirmation-container .confirmation-products .product:after {
-  content: "";
+  content: '';
   position: absolute;
   border-bottom: solid 0.5px #a8a8a8;
   width: 100%;
   bottom: 0;
 }
 
-.confirmation-container .confirmation-products .product__img {
+.confirmation-container .confirmation-products .product__image {
   max-width: 100px;
   height: 100%;
   width: 100%;
 }
 
-.confirmation-container .confirmation-products .product__img img {
+.confirmation-container .confirmation-products .product__image img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
