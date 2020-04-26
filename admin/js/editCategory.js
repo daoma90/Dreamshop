@@ -115,6 +115,9 @@ add.addEventListener("click", function (e) {
   catCards.forEach(function (item) {
     item.style.display = "none";
   });
+  document.querySelector(".form-container__img-container").style.display =
+    "none";
+  document.querySelector(".form-container__img-label").style.display = "none";
 });
 
 const close = document.querySelector("#close");
@@ -173,6 +176,10 @@ function editCategory(id) {
   );
   formImg = document.querySelector(".form-container__img");
   formImg.src = categoryImg;
+
+  document.querySelector(".form-container__img-container").style.display =
+    "block";
+  document.querySelector(".form-container__img-label").style.display = "block";
 }
 
 //Show edit text when hovering a category

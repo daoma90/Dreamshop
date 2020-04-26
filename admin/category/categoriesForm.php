@@ -8,7 +8,7 @@
         <input type="text" class="form-container__input" name="name">
         <label class="form-container__label" for="image">Upload image</label>
         <input type="file" name="image" accept="image/" class="form-container__input">
-        <label class="form-container__label">Current image</label>
+        <label class="form-container__label form-container__img-label">Current image</label>
         <div class="form-container__img-container">
             <img src="" class="form-container__img">
         </div>
