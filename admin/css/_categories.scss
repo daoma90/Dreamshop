@@ -1,24 +1,26 @@
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   flex-direction: column;
+  max-width: 100vw;
 }
 
 .categories {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 72px;
   width: 100%;
+  margin: 0 auto;
+  margin-top: 100px;
   @media screen and (min-width: 538px) {
     width: 80%;
-    margin-top: 15%;
+    margin-top: 100px;
     margin-bottom: 15%;
   }
 
   @include desktop {
-    margin-top: 10%;
+    margin-top: 200px;
   }
 }
 
@@ -26,6 +28,12 @@ body {
   height: 300px;
   width: 180px;
   margin: 5px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+    filter: grayscale(100%);
+  }
+
   @include desktop {
     width: 250px;
     height: 350px;
@@ -42,6 +50,15 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+  }
+
+  &__edit-text {
+    visibility: hidden;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 45%;
+    left: 35%;
   }
 
   &__text {
@@ -72,21 +89,26 @@ body {
 }
 
 .form-container {
-  height: 300px;
+  height: 100vh;
   grid-column: span 2;
-  width: 400px;
-  margin: 5px;
+  min-width: 100vw;
   display: none;
   background-color: white;
-  border-radius: 15px;
-  position: relative;
-  @include desktop {
-    width: 500px;
-    height: 350px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  @include tablet {
+    top: 200px;
+    min-width: 500px;
+    height: 700px;
+    border-radius: 15px;
+    left: auto;
+    right: auto;
   }
 
   &__headline-container {
-    height: 20%;
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,7 +123,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80%;
+    height: 90%;
     position: relative;
   }
 
@@ -111,10 +133,9 @@ body {
   }
 
   &__input {
-    width: 50%;
+    width: 300px;
     height: 30px;
     margin-left: 0 auto;
-    width: 50%;
     color: white;
     outline: none;
     border: 0px solid lightgray;
@@ -124,19 +145,35 @@ body {
     margin-bottom: 10px;
     resize: none;
     @media screen and (min-width: 719px) {
-      width: 70%;
+      width: 300px;
     }
+  }
+
+  &__img-container {
+    width: 200px;
+    height: 300px;
+    margin-top: 50px;
+    @include tablet {
+      margin-top: 10px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
   }
 
   &__submit-container {
     position: absolute;
     width: 100%;
-    height: 20%;
     bottom: 0;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: $spacing__s;
   }
 
   &__submit {
@@ -182,5 +219,28 @@ body {
     right: 15px;
     background: url("../media/close_x2.png");
     background-size: cover;
+  }
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: rgb(30, 104, 165);
+  cursor: pointer;
+
+  @include tablet {
+    color: rgb(30, 104, 165);
+    background-color: white;
+    border: 2px solid rgb(30, 104, 165);
+    &:hover {
+      background-color: rgb(30, 104, 165);
+      color: white;
+      transition-duration: 0.4s;
+    }
   }
 }
