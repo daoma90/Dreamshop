@@ -37,6 +37,15 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   font-size: 0.75rem;
   padding: 1rem 0;
+  overflow: hidden;
+
+  .order-clickable {
+    cursor: pointer;
+    text-decoration: underline;
+    &:hover {
+      background: rgba(0, 0, 0, 0.096);
+    }
+  }
 
   &__status {
     display: flex;
@@ -83,6 +92,10 @@
 
   th {
     text-align: left;
+    cursor: pointer;
+    &:hover {
+      background: rgba(0, 0, 0, 0.11);
+    }
   }
   tr {
     border-bottom: 1px solid lightgray;

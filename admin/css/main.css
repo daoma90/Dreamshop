@@ -1051,6 +1051,16 @@ body {
           box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   font-size: 0.75rem;
   padding: 1rem 0;
+  overflow: hidden;
+}
+
+.orders .order-clickable {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.orders .order-clickable:hover {
+  background: rgba(0, 0, 0, 0.096);
 }
 
 .orders__status {
@@ -1114,6 +1124,11 @@ body {
 
 .orders th {
   text-align: left;
+  cursor: pointer;
+}
+
+.orders th:hover {
+  background: rgba(0, 0, 0, 0.11);
 }
 
 .orders tr {
@@ -1158,8 +1173,8 @@ body {
 .order-card {
   background: white;
   width: 100%;
-  -webkit-transition: width 150ms;
-  transition: width 150ms;
+  -webkit-transition: width 450ms;
+  transition: width 450ms;
 }
 
 @media (min-width: 724px) {

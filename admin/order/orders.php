@@ -11,7 +11,6 @@ function drawOrders($db) {
         $total = htmlspecialchars($row['total']);
         $city = htmlspecialchars($row['city']);
         $name = htmlspecialchars($row['name']);
-        $adress = htmlspecialchars($row['adress']);
 
         $selected = "<select onchange='updateOrder($orderID, event)'>
                         <option " . ($status == "new" ? "selected" : NULL) . " value='new'>New</option>
@@ -20,11 +19,10 @@ function drawOrders($db) {
                      </select>";
 
         $orders .= "
-                    <tr onclick='test($orderID)' class='display-status status-$status'>
-                        <td>$orderID</td>
+                    <tr class='display-status status-$status'>
+                        <td class='order-clickable' onclick='test($orderID)'>$orderID</td>
                         <input type='hidden' name='id' value='$orderID'>
                         <td>$name</td>
-                        <td>$adress</td>
                         <td>$date</td>
                         <td>$total</td>
                         <td class='city'>$city</td>
@@ -65,11 +63,10 @@ function drawOrders($db) {
         <tr>
             <th>Order ID</th>
             <th>Name</th>
-            <th>Adress</th>
-            <th onclick="sortTable(3, 'order-uncomplete')">Date</th>
-            <th onclick="sortTable(4, 'order-uncomplete')">Total</th>
+            <th onclick="sortTable(2, 'order-uncomplete')">Date</th>
+            <th onclick="sortTable(3, 'order-uncomplete')">Total (kr)</th>
             <th>City</th>
-            <th onclick="sortTableStatus(6, 'order-uncomplete')">
+            <th onclick="sortTableStatus(5, 'order-uncomplete')">
             Status
             </th>
         </tr>
@@ -88,11 +85,10 @@ function drawOrders($db) {
         <tr>
             <th>Order ID</th>
             <th>Name</th>
-            <th>Adress</th>
-            <th onclick="sortTable(3, 'order-complete')">Date</th>
-            <th onclick="sortTable(4, 'order-complete')">Total</th>
+            <th onclick="sortTable(2, 'order-complete')">Date</th>
+            <th onclick="sortTable(3, 'order-complete')">Total (kr)</th>
             <th>City</th>
-            <th onclick="sortTableStatus(6, 'order-complete')">
+            <th onclick="sortTableStatus(5, 'order-complete')">
             Status
             </th>
         </tr>
