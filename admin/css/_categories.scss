@@ -15,8 +15,7 @@ body {
   margin-top: 100px;
   @media screen and (min-width: 538px) {
     width: 80%;
-    margin-top: 100px;
-    margin-bottom: 15%;
+    min-height: 50vh;
   }
 
   @include desktop {
@@ -89,22 +88,25 @@ body {
 }
 
 .form-container {
-  height: 100vh;
-  grid-column: span 2;
+  min-height: 100vh;
   min-width: 100vw;
   display: none;
   background-color: white;
   position: absolute;
   top: 0;
+
   left: 0;
+
   z-index: 1000;
   @include tablet {
-    top: 200px;
+    top: 400px;
     min-width: 500px;
-    height: 700px;
+    width: 500px;
+    min-height: 700px;
     border-radius: 15px;
-    left: auto;
-    right: auto;
+    right: 0;
+    bottom: 0;
+    margin: auto;
   }
 
   &__headline-container {
@@ -112,11 +114,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   &__headline {
     margin-top: 0 auto;
     font-family: sans-serif;
+    margin-top: 20px;
   }
 
   &__form {
@@ -128,7 +133,7 @@ body {
   }
 
   &__label {
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 5px;
   }
 
@@ -152,7 +157,7 @@ body {
   &__img-container {
     width: 200px;
     height: 300px;
-    margin-top: 50px;
+    margin-top: 10px;
     @include tablet {
       margin-top: 10px;
     }
@@ -166,7 +171,7 @@ body {
   }
 
   &__submit-container {
-    position: absolute;
+    //position: absolute;
     width: 100%;
     bottom: 0;
     left: 0;
