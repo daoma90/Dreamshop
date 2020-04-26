@@ -188,3 +188,6 @@ function searchFilter(e) {
     }
   });
 }
+function test(id) {
+  window.location = './order.php?id=' + id;
+}
