@@ -1536,6 +1536,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  padding-top: 80px;
 }
 
 @media (min-width: 724px) {
@@ -1547,8 +1548,6 @@
 
 .cont {
   margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
   width: 100%;
 }
 
