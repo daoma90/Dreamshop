@@ -7,30 +7,25 @@
     <link rel="stylesheet" href="assets/style/main.css" />
   </head>
   <body>
-    <div class="background-container">
-      <div class="background">
-        <div class="background__image" id="image1"></div>
-        <div class="background__image" id="image2"></div>
-        <div class="background__image" id="image3"></div>
-      </div>
-    </div>
+    <?php require_once "header.php" ?>
+    <?php require_once "blurred-background.php" ?>
     <section class="contact">
       <form class="contact__form">
         <div class="flip-card">
           <div class="flip-card__inner">
             <div class="flip-card__front">
               <a href="../index.php" class="flip-card__close"></a>
-              <h3 class="flip-card__headline">Kontakta oss</h3>
+              <h3 class="flip-card__headline">Contact us</h3>
               <div class="flip-card__front-form">
                 <div class="flip-card__input-group">
-                  <label class="flip-card__front-label" for="name">Namn</label>
+                  <label class="flip-card__front-label" for="name">Name</label>
                   <input
                     class="flip-card__front-input"
                     type="text"
                     name="name"
                   />
                   <p class="form-error" id="name-error">
-                    Fyll i ett namn
+                    Fill in a name
                   </p>
                 </div>
                 <label class="flip-card__front-label" for="email" required
@@ -42,7 +37,7 @@
                   name="email"
                 />
                 <p class="form-error" id="email-error">
-                  Skriv in en korrekt email adress
+                  Fill in a correct e-mail adress
                 </p>
               </div>
               <div class="flip-card__info">
@@ -79,10 +74,10 @@
             <div class="flip-card__back">
               <a href="index.php" class="flip-card__close"></a>
               <h3 class="flip-card__headline">
-                Tack för ditt meddelande!
+                Thank you for contacting us!
               </h3>
               <p class="flip-card__info-text">
-                Vi kommer att kontakta dig så snart som möjligt!
+                We will reach out to you as soon as possible.
               </p>
               <div class="flip-card__social">
                 <a href=""
@@ -112,15 +107,16 @@
         <div class="contact__message-box">
           <div class="contact__message-container">
             <label class="contact__message-label" for="message"
-              >Meddelande</label
+              >Message</label
             >
             <textarea class="contact__message" name="message"></textarea>
-            <p class="form-error" id="message-error">Skriv ett meddelande</p>
-            <input type="submit" class="contact__button" value="Skicka" />
+            <p class="form-error" id="message-error">Message required</p>
+            <input type="submit" class="contact__button" value="Send" />
           </div>
         </div>
       </form>
     </section>
+    <?php require_once "footer.php" ?>
     <script src="assets/js/contactus.js"></script>
   </body>
 </html>
