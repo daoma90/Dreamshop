@@ -1,4 +1,4 @@
-main {
+.order-main {
   width: 100vw;
   min-height: 100%;
   max-width: 100%;
@@ -77,7 +77,7 @@ main {
     align-items: center;
     position: relative;
     &:after {
-      content: "";
+      content: '';
       width: 100%;
       position: absolute;
       bottom: 0;

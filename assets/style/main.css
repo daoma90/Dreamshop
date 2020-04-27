@@ -1521,7 +1521,7 @@
   margin: 0;
 }
 
-main {
+.order-main {
   width: 100vw;
   min-height: 100%;
   max-width: 100%;
@@ -1539,7 +1539,7 @@ main {
 }
 
 @media (min-width: 724px) {
-  main {
+  .order-main {
     position: absolute;
     top: 0;
   }
@@ -1634,7 +1634,7 @@ main {
 }
 
 .products__item:after {
-  content: "";
+  content: '';
   width: 100%;
   position: absolute;
   bottom: 0;
