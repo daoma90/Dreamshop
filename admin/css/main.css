@@ -1175,6 +1175,7 @@ body {
   width: 100%;
   -webkit-transition: width 450ms;
   transition: width 450ms;
+  margin: 2rem 0;
 }
 
 @media (min-width: 724px) {
