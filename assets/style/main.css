@@ -2121,6 +2121,8 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding-top: 80px;
+  background-color: #eeb742;
 }
 
 @media (min-width: 724px) {
@@ -2133,6 +2135,7 @@
             align-items: center;
     position: absolute;
     top: 0;
+    background-color: none;
   }
 }
 
