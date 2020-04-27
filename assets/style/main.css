@@ -155,6 +155,27 @@
   background: #5f7cda;
 }
 
+.feature-products__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feature-products__price .old-price {
+  text-decoration: line-through;
+}
+
+.feature-products__price .on-sale {
+  font-weight: bold;
+}
+
 .lp-categories {
   display: flex;
   /* autoprefixer: off */
@@ -510,6 +531,27 @@
 .feature-products__add:hover {
   cursor: pointer;
   background: #5f7cda;
+}
+
+.feature-products__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feature-products__price .old-price {
+  text-decoration: line-through;
+}
+
+.feature-products__price .on-sale {
+  font-weight: bold;
 }
 
 .lp-categories {

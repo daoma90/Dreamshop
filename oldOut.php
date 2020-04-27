@@ -17,10 +17,10 @@
 <body>
 <?php require_once 'header.php'; ?>
 <section class="lp-products">
-        <h2 class="lp-products__current-category">New in</h2>
+        <h2 class="lp-products__current-category">On sale</h2>
         <div class="lp-products__wrap">
             <?php 
-                $sql = "SELECT * FROM products WHERE is_old = 1;";
+                $sql = "SELECT * FROM products WHERE is_old = 1";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
 
