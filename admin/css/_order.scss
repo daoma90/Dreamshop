@@ -2,6 +2,7 @@
   background: white;
   width: 100%;
   transition: width 450ms;
+  margin: 2rem 0;
 
   @include tablet {
     width: 60%;
