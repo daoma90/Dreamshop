@@ -44,7 +44,7 @@
         $products .= 
                     "<div class='product-wrap'>
                         <div class='product-img-wrap'>
-                            <img src='$prodImg' />
+                            <img src='../images/$prodImg' />
                         </div>
                         <div class='product-text-wrap'>
                             <div class='product-name'><span>Product:</span> <span>$prodName</span></div>
