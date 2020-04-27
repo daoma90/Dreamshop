@@ -112,7 +112,7 @@
   perspective: 1000px;
   z-index: 2;
   position: relative;
-  min-height: 600px;
+  height: 600px;
 
   @include tablet {
     grid-column: 1 / 4;
