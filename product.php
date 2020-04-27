@@ -20,7 +20,27 @@
 
     endwhile;
     $product = $name;
-}
+
+    $sql = "SELECT * FROM images WHERE product_id = :id";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([':id' => $product_id]);
+
+    $printImgs = '';
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+      if ($image != $row['image']){
+        $imageToShow = $row['image'];
+        $printImgs .= "<div class='productpage__img-wrap'>
+                          <img
+                            class='productpage__img'
+                            src='./admin/images/$imageToShow'
+                            alt=''
+                          />
+                        </div>";
+      }
+      
+    }
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -49,41 +69,7 @@
             />
           </div>
           <div class="productpage__image-bar">
-            <div class="productpage__img-wrap">
-              <img
-                class="productpage__img"
-                src="./assets/media/placeholder-shoe.jpg"
-                alt=""
-              />
-            </div>
-            <div class="productpage__img-wrap">
-              <img
-                class="productpage__img"
-                src="./assets/media/placeholder-shoe.jpg"
-                alt=""
-              />
-            </div>
-            <div class="productpage__img-wrap">
-              <img
-                class="productpage__img"
-                src="./assets/media/placeholder-shoe.jpg"
-                alt=""
-              />
-            </div>
-            <div class="productpage__img-wrap">
-              <img
-                class="productpage__img"
-                src="./assets/media/placeholder-shoe.jpg"
-                alt=""
-              />
-            </div>
-            <div class="productpage__img-wrap">
-              <img
-                class="productpage__img"
-                src="./assets/media/placeholder-shoe.jpg"
-                alt=""
-              />
-            </div>
+            <?= $printImgs; ?>
           </div>
         </div>
 

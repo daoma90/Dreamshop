@@ -29,6 +29,7 @@ if (isset($_POST['updateProduct'])) {
         $targetDir = $targetDir . $fileName;
         $fileType = pathinfo($targetDir, PATHINFO_EXTENSION);
         if (in_array($fileType, $allowTypes)) {
+          //if file exists
           if (move_uploaded_file($_FILES["image"]["tmp_name"][$key], "../images/$fileName")) {
             $sql = "INSERT INTO images(image, product_id) VALUES (:image,:product_id)";
             $stmt = $pdo->prepare($sql);
@@ -39,21 +40,32 @@ if (isset($_POST['updateProduct'])) {
           }
         }
         $fName = $fileName;
-      }
+      }  
 
+      $sql = 'UPDATE products SET name=:name,description=:description,price=:price, image=:image, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute([
+        ':id' => $id,
+        ':name' => $name,
+        ':description' => $description,
+        ':price' => $price,
+        ':image' => $fName,
+        ':featured' => $featured,
+        ':in_stock' => $in_stock,
+        ':cat_id' => $cat_id,
+      ]);
+    } else {
+      $sql = 'UPDATE products SET name=:name,description=:description,price=:price, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute([
+        ':id' => $id,
+        ':name' => $name,
+        ':description' => $description,
+        ':price' => $price,
+        ':featured' => $featured,
+        ':in_stock' => $in_stock,
+        ':cat_id' => $cat_id,
+      ]);
     }
-    $sql = 'UPDATE products SET name=:name,description=:description,price=:price, image=:image, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-      ':id' => $id,
-      ':name' => $name,
-      ':description' => $description,
-      ':image' => $fName,
-      ':price' => $price,
-      ':featured' => $featured,
-      ':in_stock' => $in_stock,
-      ':cat_id' => $cat_id,
-    ]);
-
-  header('Location:products.php');
+    header('Location:products.php');
 }

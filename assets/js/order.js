@@ -55,6 +55,7 @@ function updatePrice(str) {
   } else {
     headline.textContent = "Your Order";
     priceExclShipping.textContent = price + " SEK";
+    console.log("ord:" + str);
     if (price > 500 || str === "stockholm") {
       shipping.textContent = "FREE";
       totalPrice.textContent = price + " SEK";
@@ -97,10 +98,6 @@ function renderProducts() {
 
 HappyLib.localStorageInit(cart.key);
 renderProducts();
-const cityInput = addOrder.querySelector('input[name="city"]');
-cityInput.addEventListener("keyup", function () {
-  updatePrice(this.value);
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form-wrapper__form");
@@ -108,4 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const template = `<input type="hidden" name="products[]" value="${product.id}" /><input type="hidden" name="quantity[]" value="${product.quantity}" />`;
     form.innerHTML += template;
   });
+
+  //Quickfix, remove shipping fee based on city
+  const cityInput = addOrder.querySelectorAll('.form-wrapper__input')[5];
+  cityInput.addEventListener("change", function () {
+    updatePrice(this.value);
+  });
+
+
 });

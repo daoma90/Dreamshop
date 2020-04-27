@@ -45,22 +45,28 @@
             enctype="multipart/form-data"
           >
             <label for="name" class="form-wrapper__name-label">Name</label>
-            <input type="text" name="name" class="form-wrapper__input" />
+            <input type="text" name="name" class="form-wrapper__input" required/>
 
             <label for="e-mail" class="form-wrapper__name-label">E-Mail</label>
-            <input type="text" name="mail" class="form-wrapper__input" />
+            <input type="text" name="mail" class="form-wrapper__input" required/>
 
             <label for="phone" class="form-wrapper__name-label">Phone</label>
-            <input type="text" name="phone" class="form-wrapper__input" />
+            <input type="text" name="phone" class="form-wrapper__input" required/>
 
             <label for="adress" class="form-wrapper__name-label">Adress</label>
-            <input type="text" name="adress" class="form-wrapper__input" />
+            <input type="text" name="adress" class="form-wrapper__input" required/>
 
-            <label for="zip" class="form-wrapper__name-label">Zip</label>
-            <input type="text" name="zip" class="form-wrapper__input" />
-
-            <label for="city" class="form-wrapper__name-label">City</label>
-            <input type="text" name="city" class="form-wrapper__input" />
+            <div class="form-wrapper__zip-city">
+              <div class="form-wrapper__zip">
+                <label for="zip" class="form-wrapper__name-label">Zip</label>
+                <input type="text" name="zip" class="form-wrapper__input" required/>
+              </div>
+  
+              <div class="form-wrapper__city">
+                <label for="city" class="form-wrapper__name-label">City</label>
+                <input type="text" name="city" class="form-wrapper__input" required/>
+              </div>
+            </div>
 
             <button
               type="submit"
