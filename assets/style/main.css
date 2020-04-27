@@ -2273,7 +2273,7 @@
           perspective: 1000px;
   z-index: 2;
   position: relative;
-  min-height: 600px;
+  height: 600px;
 }
 
 @media (min-width: 724px) {
