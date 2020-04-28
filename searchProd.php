@@ -51,7 +51,7 @@
 
             $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
             if ($stock == 0) {
-                $addToCartBtn = "<div>OUT OF STOCK</div>";
+                $addToCartBtn = "<div class='feature-products__oos'>OUT OF STOCK</div>";
             }
             if ($isOld == 1) {
         
