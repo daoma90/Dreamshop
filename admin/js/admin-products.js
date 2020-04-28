@@ -183,7 +183,7 @@ function prepareForm(inEdit, id) {
       productForm.reset();
     }
     if (id) {
-      document.querySelector(".section-products").appendChild(productForm.parentElement);
+      document.querySelector(".section-products").prepend(productForm.parentElement);
       productForm.style.display = "none";
       Array.from(document.querySelectorAll(".product")).forEach(function (p) {
         p.style.opacity = 1;
@@ -201,6 +201,7 @@ function initEdit(id) {
   const product = document.querySelector("#product_" + id);
   const children = product.children[1].children;
   //Goes throuh DOM products, (validation needed here?)
+  console.log("In edit");
   Array.from(productForm.elements).forEach(function (input) {
     Array.from(children).forEach(function (row) {
       if (input.name === row.className) {
@@ -250,43 +251,3 @@ const add = document.querySelector(".section-add-imgwrap");
 add.addEventListener("click", function (e) {
   prepareForm(false);
 });
-
-
-// function confirmMessage(text, status) {
-//   const element = document.createElement("div");
-//   element.className = "response-container"
-  
-//   if(text) {
-//     element.innerHTML = "<div class='response-container__message'><h4>" + text + "</h4></div><div class='response-container__btns'><button id='ok' class'response-container__btns-ok'>OK</button><button id='cancel'class='response-container__btns-cancel'>Cancel</button></div>";
-//     document.querySelector("body").appendChild(element);
-//   }
-  
-//   let cancel = document.querySelector("#cancel");
-//   let approve = document.querySelector("#ok");
-//   let promise = new Promise(function(resolve, reject) { 
-   
-//   approve.addEventListener("click", function(e) {
-//     resolve();
-//     //confirmMessage("", "JA");
-//   })
-
-//   cancel.addEventListener("click", function(e) {
-//     reject();
-//     //confirmMessage("", "nej");
-//   });
-//   }); 
-    
-//   promise.then(function () { 
-//       confirmMessage("", "ja");      
-//     console.log('Success, You are a GEEK'); 
-//          // x =  true;
-//       }). 
-//       catch(function () { 
-//           console.log('Some error has occured'); 
-//       }); 
-
-
-// if(status) {
-//   return true;
-// }
-// }
