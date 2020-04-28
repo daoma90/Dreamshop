@@ -28,6 +28,20 @@ btn.addEventListener("click", function (e) {
     ValidateEmail(e)
 })
 
+// for (let i = 0; i < input.length; i++) {
+//     const inputs = input[i];
+
+//     inputs.addEventListener("input", function (e) {
+
+//         validname(e)
+//         validPhone(e)
+//         validateAdress(e)
+//         validateZipCode(e)
+//         validateCity(e)
+//         ValidateEmail(e)
+//     })
+// }
+
 function validname(e) {
     if (name.value.length <= 1) {
         error.textContent = "Name must contain 2 Character";
