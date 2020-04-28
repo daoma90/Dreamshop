@@ -13,7 +13,7 @@ for (var i = 0; i < localStorage.length; i++) {
   for (let i = 0; i < value.length; i++) {
     const elm = value[i];
     let wrapper = document.querySelector(".confirmation-products");
-    wrapper.innerHTML += `
+    /* wrapper.innerHTML += `
     <div class="product">
       <div class="product__image"> <img src="../FE-Project-Shop/admin/images/${elm.image}"></div>
       <div class="product__info">
@@ -21,15 +21,18 @@ for (var i = 0; i < localStorage.length; i++) {
         <div class="product__price">${elm.price}</div>
         <div class="product__quantity">Quantity: ${elm.quantity}</div>
       </div>
-    </div>`;
-    /* wrapper.innerHTML += ' \n    <div>'
-      .concat(elm.name, '</div>\n    <div>')
-      .concat(elm.price, '</div>\n    <div>')
+    </div>`; */
+    wrapper.innerHTML += '\n    <div class="product">\n      <div class="product__image"> <img src="../FE-Project-Shop/admin/images/'
       .concat(
-        elm.quantity,
-        '</div>\n    <div> <img src="../FE-Project-Shop/admin/images/'
+        elm.image,
+        '"></div>\n      <div class="product__info">\n        <div class="product__name">'
       )
-      .concat(elm.image, '"></div>'); */
+      .concat(elm.name, '</div>\n        <div class="product__price">')
+      .concat(
+        elm.price,
+        '</div>\n        <div class="product__quantity">Quantity: '
+      )
+      .concat(elm.quantity, "</div>\n      </div>\n    </div>");
   }
 }
 productsContainer.innerHTML +=
@@ -39,24 +42,3 @@ productsContainer.innerHTML +=
   " €" +
   "</p></div>";
 localStorage.clear();
-
-/* let wrapper = document.querySelector(".confirmation-products");
-wrapper.innerHTML += `
-    <div class="product">
-      <div class="product__img"> <img src="admin/images/boots.jpg"></div>
-      <div class="product__info">
-        <div class="product__name">Name</div>
-        <div class="product__price">100 EUR</div>
-        <div class="product__quantity">Quantity: 3</div>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="product__img"> <img src="admin/images/boots.jpg"></div>
-      <div class="product__info">
-        <div class="product__name">Name</div>
-        <div class="product__price">100 EUR</div>
-        <div class="product__quantity">Quantity: 3</div>
-      </div>
-    </div>`;
- */

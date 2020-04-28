@@ -62,7 +62,7 @@ function validateMessage() {
     return false;
   } else {
     messageError.style.visibility = "hidden";
-    messageField.style.border = "solid 3px black";
+    messageField.style.border = "solid 1px black";
     return true;
   }
 }
