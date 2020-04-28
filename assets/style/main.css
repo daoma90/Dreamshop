@@ -645,7 +645,7 @@
           justify-content: space-between;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.459);
-  padding: 1em;
+  padding: 0 1em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -676,7 +676,7 @@
 
 @media (min-width: 724px) {
   .header__form {
-    position: relative;
+    position: static;
     background: none;
     top: unset;
     left: unset;
@@ -703,6 +703,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .header__left-wrap {
+    margin-right: auto;
+  }
 }
 
 .header__cart-toggle {
