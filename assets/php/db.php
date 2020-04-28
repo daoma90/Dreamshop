@@ -1,4 +1,5 @@
 <?php
+
     $db_server = "localhost";
     $db_database = "jlwvfkou_wp888";
     $db_username = "jlwvfkou_wp888";
