@@ -126,6 +126,9 @@
     @include btn-primary;
     margin-top: 1rem;
   }
+  &__oos {
+    text-align: center;
+  }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
