@@ -90,20 +90,26 @@
             <small class="productpage__category">IN STOCK: <?= $stock ?></small>
           </div>
           <p class="productpage__desc"><?= $desc ?></p>
+
+
           <div class="productpage__input-wrap">
-            <div class="productpage__qty-wrap">
-              <button class="productpage__qty-down"><i class="fa fa-minus"></i></button>
-              <input
-                class="productpage__qty"
-                type="number"
-                value="1"
-                readonly
-              />
-              <button class="productpage__qty-up"><i class="fa fa-plus"></i></button>
-            </div>
-            <?php 
+          <?php 
+            if ($stock > 0){
+              echo '
+              <div class="productpage__qty-wrap">
+                <button class="productpage__qty-down"><i class="fa fa-minus"></i></button>
+                <input
+                  class="productpage__qty"
+                  type="number"
+                  value="1"
+                  readonly
+                />
+                <button class="productpage__qty-up"><i class="fa fa-plus"></i></button>
+              </div>';
+            }
+
               if ($stock == 0) {
-                echo "<div>OUT OF STOCK</div>";
+                echo "<div class='productpage__oos'>OUT OF STOCK</div>";
               }
               else {
                 echo "<button class='productpage__add' data-id=$product_id >ADD TO CART</button>";

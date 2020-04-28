@@ -6,7 +6,7 @@
   justify-content: space-between;
   color: $color__white;
   background-color: rgba(0, 0, 0, 0.459);
-  padding: $spacing__s;
+  padding: 0 $spacing__s;
   align-items: center;
   position: fixed;
   top: 0;
@@ -26,7 +26,7 @@
     display: flex;
     background: rgba(0, 0, 0, 0.459);
     @include tablet {
-      position: relative;
+      position: static;
       background: none;
       top: unset;
       left: unset;
@@ -45,6 +45,9 @@
   &__left-wrap {
     display: flex;
     align-items: center;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      margin-right: auto;
+    }
   }
   &__cart-toggle {
     cursor: pointer;

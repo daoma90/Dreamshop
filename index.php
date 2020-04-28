@@ -27,15 +27,15 @@
 
     </section>
     <section class="feature-cards">
-        <a href="newIn.php">
-            <article class="feature-cards__card feature-cards__card--first">
+        <a class="feature-cards__card feature-cards__card--first" href="newIn.php">
+            <article >
                 <div class="feature-cards__title">
                     <span class="feature-cards__text feature-cards__text--left">Check out our newest products!</span>
                 </div>
             </article>
         </a>
-        <a href="oldOut.php">
-        <article class="feature-cards__card feature-cards__card--second"><div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right">Older products need to go. 10% off!</span></div></article>
+        <a class="feature-cards__card feature-cards__card--second" href="oldOut.php">
+        <article ><div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right">Older products need to go. 10% off!</span></div></article>
         </a>
     </section>
 

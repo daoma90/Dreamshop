@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     /* autoprefixer: off */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

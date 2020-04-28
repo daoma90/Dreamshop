@@ -15,7 +15,7 @@
   &__product {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 180px;
     /* autoprefixer: off */
     display: grid;
     grid-template-rows: 1fr repeat(2, min-content);
@@ -73,6 +73,9 @@
     @include btn-primary;
     align-self: center;
     margin-top: 0.5rem;
+  }
+  &__oos {
+    text-align: center;
   }
   &__price {
     display: flex;
