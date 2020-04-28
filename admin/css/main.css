@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,600&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -19,6 +20,27 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
+}
+
+.response-container {
+  position: absolute;
+  max-width: 350px;
+  height: 150px;
+  border-radius: 5px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  z-index: 2000;
+  background: #dbdbdb;
+  padding: 10px;
 }
 
 .header {
@@ -428,10 +450,20 @@ main {
 .in_stock,
 .price {
   text-align: right;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 130%;
   color: #3c3c3c;
   font-weight: bold;
+}
+
+.price:before {
+  content: "SEK ";
+  position: relative;
+}
+
+.in_stock:before {
+  content: "QT ";
+  position: relative;
 }
 
 .description {
@@ -440,6 +472,10 @@ main {
   line-height: 130%;
   color: #3c3c3c;
   min-height: 90px;
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 5px;
 }
 
 .product__right-info h3 {
@@ -461,7 +497,7 @@ main {
   font-size: 10px;
 }
 
-.product__featured {
+.product .splash, .product .product__featured, .product .product__onsale {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -471,17 +507,26 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: red;
   color: white;
   font-size: 12px;
   width: 50px;
   height: 50px;
   border-radius: 25px;
   position: absolute;
-  left: 20px;
-  top: 20px;
   font-size: 10px;
   padding: 20px;
+}
+
+.product__featured {
+  left: 20px;
+  top: 20px;
+  background: red;
+}
+
+.product__onsale {
+  left: 80px;
+  bottom: 30px;
+  background: #5f4b4b;
 }
 
 .product:hover {
@@ -526,7 +571,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "open_sansregular", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   top: 30px;
 }
@@ -613,7 +658,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-family: "open_sansregular", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   top: 30px;
   background: white;
@@ -676,32 +721,31 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .product-form-main__right-header {
-  font-size: 18px;
-  padding: 10px;
+  font-size: 16px;
+  color: #313131;
+  padding-bottom: 10px;
+}
+
+.product-form-main__right-label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: normal;
+  margin-bottom: 5px;
+  line-height: 140%;
+  color: #585858;
+  width: 100%;
+  border-top: 1px solid #7e7e7e;
+  padding-top: 10px;
 }
 
 .product-form-main-header {
   line-height: 200%;
   text-align: center;
   margin-bottom: 20px;
-}
-
-.product-form-main label {
-  display: inherit;
-  -webkit-box-orient: inherit;
-  -webkit-box-direction: inherit;
-      -ms-flex-direction: inherit;
-          flex-direction: inherit;
-  margin-bottom: 15px;
-}
-
-.product-form-main-label {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 140%;
 }
 
 .product-form-main input,
@@ -712,7 +756,7 @@ main {
   border: 0px solid lightgray;
   border-radius: 5px;
   padding: 5px;
-  background: #cccdd0;
+  background: #606060;
   margin-bottom: 10px;
   resize: none;
 }
@@ -967,8 +1011,8 @@ body {
   cursor: pointer;
   outline: none;
   border: 0;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   position: absolute;
   bottom: 0;
 }
@@ -1011,7 +1055,7 @@ body {
 }
 
 .order-wrap {
-  font-family: 'open_sansregular', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'open_sansregular', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   min-width: 100%;
   -ms-flex-item-align: center;
       align-self: center;
