@@ -13,9 +13,6 @@ document.addEventListener('click', function (e) {
     HappyLib.updateLocalStorage(cart.key, renderProducts);
     checkEmpty();
   }
-<<<<<<< HEAD
-});
-=======
 });
 
 function checkEmpty() {
@@ -26,4 +23,3 @@ function checkEmpty() {
       '<div>Add some items to your cart first!</div><a class="err-btn" href="./">Go shopping</a>';
   }
 }
->>>>>>> 1f9695848f6af1ffc648ef655126101c5de7f171

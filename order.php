@@ -72,11 +72,11 @@
   
               <div class="form-wrapper__city">
                 <label for="city" class="form-wrapper__name-label">City</label>
-                <input type="text" name="city" class="form-wrapper__input city"   minlength="2" maxlength="15" required/>
+                <input type="text" name="city" class="form-wrapper__input city"    required/>
                 <div class="cityError"> </div>
               </div>
             </div>
-
+            <!-- minlength="2" maxlength="15" -->
             <button
               type="submit"
               value="ORDER"

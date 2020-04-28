@@ -15,32 +15,19 @@ let cityError = document.querySelector(".cityError")
 
 
 
+for (let i = 0; i < input.length; i++) {
+    const inputs = input[i];
 
-const btn = document.querySelector(".form-wrapper__checkout")
-btn.addEventListener("click", function (e) {
-    e.preventDefault();
+    inputs.addEventListener("input", function (e) {
 
-    validname(e)
-    validPhone(e)
-    validateAdress(e)
-    validateZipCode(e)
-    validateCity(e)
-    ValidateEmail(e)
-})
-
-// for (let i = 0; i < input.length; i++) {
-//     const inputs = input[i];
-
-//     inputs.addEventListener("input", function (e) {
-
-//         validname(e)
-//         validPhone(e)
-//         validateAdress(e)
-//         validateZipCode(e)
-//         validateCity(e)
-//         ValidateEmail(e)
-//     })
-// }
+        validname(e)
+        validPhone(e)
+        validateAdress(e)
+        validateZipCode(e)
+        validateCity(e)
+        ValidateEmail(e)
+    })
+}
 
 function validname(e) {
     if (name.value.length <= 1) {
@@ -68,7 +55,7 @@ function ValidateEmail(e) {
 
 function validPhone(e) {
     mobileError.style.visibility = "hidden";
-    if (mobile.value.length <= 10 || isNaN(mobile.value)) {
+    if (mobile.value.length <= 9 || isNaN(mobile.value) || mobile.value.length >= 12) {
         mobileError.textContent = "Phone Number must contain 10 Character"
         mobileError.style.visibility = "visible";
         mobileError.style.color = "red"
@@ -110,7 +97,10 @@ function validateCity(e) {
         cityError.style.visibility = "visible";
         cityError.style.color = "red"
         return (false)
+
     }
     cityError.style.visibility = "hidden";
     return (true)
+
+
 }
