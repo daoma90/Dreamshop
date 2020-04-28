@@ -80,10 +80,10 @@
               </article>";
           }
         } else {
-          echo 'Nothing found';
+          $results = "<div>Nothing found for search term '$query'</div>";
         }
       } else {
-        echo 'Nothing found';
+        $results = "<div>Nothing found for search term '$query'</div>";
       }
     }
 

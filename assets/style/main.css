@@ -2463,9 +2463,10 @@
 }
 
 .search-results {
-  padding-top: 150px;
+  padding-top: 100px;
   width: 100%;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .searchProd {
