@@ -46,19 +46,29 @@ ini_set('error_reporting', E_ALL);
                          </div>
                     </div>
                     <div class='product-form-main__right'>
-                        <h2 class="product-form-main__right-header">Edit product</h2>
-                        <input name='name' type='text' placeholder="name...">
-                        <textarea name='description' id='' cols='30' rows='6' placeholder="description..."></textarea>
-                        <input name='price' type='text' placeholder="price..">
+                        <h2 class="product-form-main__right-header">EDIT PRODUCT</h2>
+                        <label for="name" class="product-form-main__right-label">NAME:</label>
+                        <input name='name' type='text' required>
+                        <label for="name" class="product-form-main__right-label">DESCRIPTION:</label>
+                        <textarea name='description' id='' cols='30' rows='6' required></textarea>
+                        <label for="name" class="product-form-main__right-label">PRICE:</label>
+                        <input name='price' type='text' required type="number">
                         <!-- Draws all available categorys -->
+                        <label for="cat_id" class="product-form-main__right-label">CATEGORY:</label>
                         <?php getCatList($pdo); ?>
                         <!-- Draws all available categorys -->
-                        <input name='in_stock' type='text' placeholder="quantity">
+                        <label for="in_stock" class="product-form-main__right-label">QUANTITY:</label>
+                        <input name='in_stock' type='text' required type="number">
+                        <label for="featured" class="product-form-main__right-label">FEATURED:</label>
                         <select name="featured" id="feat">
                             <option name="featured" value="0">No</option>
                             <option name="featured" value="1">Yes</option>
                         </select>
-
+                        <label for="is_old" class="product-form-main__right-label">ON SALE:</label>
+                        <select name="is_old" id="is_old">
+                            <option name="is_old" value="0">No</option>
+                            <option name="is_old" value="1">Yes</option>
+                        </select>
                         <input type="hidden" id="upID" name="update-id">
                         <button class='btn btn--done' type='submit' name="addProduct"></button>
                         <button class='btn btn--close' id="form-toggle" type="button"></button>

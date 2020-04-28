@@ -11,13 +11,13 @@
         $stmt->execute();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-        $name = $row['name'];
-        $desc = $row['description'];
-        $price = $row['price'];
-        $sale_price = $row['sale_price'];
-        $image = $row['image'];
-        $category = $row['category'];
-        $stock = $row['in_stock'];
+        $name = htmlspecialchars($row['name']);
+        $desc = htmlspecialchars($row['description']);
+        $price = htmlspecialchars($row['price']);
+        $sale_price = htmlspecialchars($row["sale_price"]);
+        $image = htmlspecialchars($row['image']);
+        $category = htmlspecialchars($row['category']);
+        $stock = htmlspecialchars($row['in_stock']);
 
     endwhile;
     $product = $name;
@@ -29,7 +29,7 @@
     $printImgs = '';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
       if ($image != $row['image']){
-        $imageToShow = $row['image'];
+        $imageToShow = htmlspecialchars($row['image']);
         $printImgs .= "<div class='productpage__img-wrap'>
                           <img
                             class='productpage__img'

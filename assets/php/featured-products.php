@@ -12,21 +12,19 @@ $stmt->execute();
 
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-    $id = $row['ID'];
-    $name = $row['name'];
-    $desc = $row['description'];
-    $price = $row['price'];
-    $image = $row['image'];
-    $stock = $row['in_stock'];
-    $isOld = $row['is_old'];
+    $id = htmlspecialchars($row['ID']);
+    $name = htmlspecialchars($row['name']);
+    $desc = htmlspecialchars($row['description']);
+    $price = htmlspecialchars($row['price']);
+    $image = htmlspecialchars($row['image']);
+    $stock = htmlspecialchars($row['in_stock']);
+    $isOld = $row["is_old"];
 
     $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
     if ($stock == 0) {
         $addToCartBtn = "<div class='feature-products__oos'>OUT OF STOCK</div>";
     }
     if ($isOld == 1) {
-
-
         $sale_price = $price * $salePercentage;
         $sale = "
         <div class='feature-products__price'>
