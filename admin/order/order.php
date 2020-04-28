@@ -41,6 +41,7 @@
         $adress = htmlspecialchars($row['adress']);
         $zip = htmlspecialchars($row['zip']);
         $phone = htmlspecialchars($row['phone']);
+        $mail = htmlspecialchars($row['mail']);
         $products .= 
                     "<div class='product-wrap'>
                         <div class='product-img-wrap'>
@@ -61,6 +62,7 @@
             <div class='order-card__item'><span>Adress:      </span><span>$adress</span></div>
             <div class='order-card__item'><span>City:        </span><span>$city</span></div>
             <div class='order-card__item'><span>Zipcode:     </span><span>$zip</span></div>
+            <div class='order-card__item'><span>E-mail:     </span><span>$mail</span></div>
             <div class='order-card__item'><span>Phone number:</span><span>$phone</span></div>
         </article>
         <article class='order-card__products'>

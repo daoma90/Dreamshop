@@ -15,7 +15,7 @@
   &__product {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 180px;
     /* autoprefixer: off */
     display: grid;
     grid-template-rows: 1fr repeat(2, min-content);
@@ -74,9 +74,9 @@
     align-self: center;
     margin-top: 0.5rem;
   }
-<<<<<<< HEAD
-}
-=======
+  &__oos {
+    text-align: center;
+  }
   &__price {
     display: flex;
     flex-direction: column;
@@ -89,4 +89,3 @@
     }
   }
 }
->>>>>>> 1f9695848f6af1ffc648ef655126101c5de7f171

@@ -25,7 +25,7 @@
     // character 'a' is not included here it can be find in the middle 
     if (isset($_GET['submit-search'])) {
       $searchQ = htmlspecialchars($_GET['search-word']);
-      $res = str_ireplace($words_to_filter, "",   Q);
+      $res = str_ireplace($words_to_filter, "",   $searchQ);
       $res = trim($res);
       $res = explode(' ', $res);
       // since a can be find in middle of the word 
@@ -51,7 +51,7 @@
 
             $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
             if ($stock == 0) {
-                $addToCartBtn = "<div>OUT OF STOCK</div>";
+                $addToCartBtn = "<div class='feature-products__oos'>OUT OF STOCK</div>";
             }
             if ($isOld == 1) {
         
