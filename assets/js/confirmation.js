@@ -13,15 +13,6 @@ for (var i = 0; i < localStorage.length; i++) {
   for (let i = 0; i < value.length; i++) {
     const elm = value[i];
     let wrapper = document.querySelector(".confirmation-products");
-    /* wrapper.innerHTML += `
-    <div class="product">
-      <div class="product__image"> <img src="../FE-Project-Shop/admin/images/${elm.image}"></div>
-      <div class="product__info">
-        <div class="product__name">${elm.name}</div>
-        <div class="product__price">${elm.price}</div>
-        <div class="product__quantity">Quantity: ${elm.quantity}</div>
-      </div>
-    </div>`; */
     wrapper.innerHTML += '\n    <div class="product">\n      <div class="product__image"> <img src="../FE-Project-Shop/admin/images/'
       .concat(
         elm.image,
