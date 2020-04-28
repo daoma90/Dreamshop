@@ -251,3 +251,4 @@ const add = document.querySelector(".section-add-imgwrap");
 add.addEventListener("click", function (e) {
   prepareForm(false);
 });
+

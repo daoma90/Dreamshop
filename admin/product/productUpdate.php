@@ -16,7 +16,15 @@ if (isset($_POST['updateProduct'])) {
   $fileNames = array_filter($_FILES["image"]["tmp_name"]);
   $imagePath = "../images/";
   $fName;
-  
+
+    
+  $salePercentage = 0.9;
+  if($isOld > 0) {
+    $sql = "UPDATE products SET sale_price = price * $salePercentage WHERE is_old = 1";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+  }
+
   if (!empty($fileNames)) {
       
       $sql = "DELETE FROM images WHERE product_id=:product_id";
