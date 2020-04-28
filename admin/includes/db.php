@@ -1,9 +1,10 @@
 <?php
 
 $db_server = "localhost";
-$db_database = "frontendproject";
+$db_database = "jlwvfkou_wp888";
 $db_username = "root";
 $db_password = 'root'; 
+
 
 
 

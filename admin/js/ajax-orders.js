@@ -3,7 +3,14 @@ function updateOrder(id, event) {
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      window.location.reload();
+      if (
+        status === 'complete' ||
+        event.target.parentElement.parentElement.className.includes(
+          'status-complete'
+        )
+      ) {
+        window.location.reload();
+      }
     }
   };
   request.open(
@@ -187,4 +194,7 @@ function searchFilter(e) {
       item.parentElement.style = 'display: none';
     }
   });
+}
+function test(id) {
+  window.location = './order.php?id=' + id;
 }
