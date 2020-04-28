@@ -133,7 +133,7 @@ main {
     @at-root .in_stock,
       .price {
       text-align: right;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 130%;
       color: #3c3c3c;
       font-weight: bold;
@@ -158,6 +158,10 @@ main {
       line-height: 130%;
       color: #3c3c3c;
       min-height: 90px;
+      max-height: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 5px;
     }
 
     h3 {
@@ -356,7 +360,7 @@ main {
       flex-direction: column;
       font-family: $base__fontFamily;
       &-header {
-        font-size: 18px;
+        font-size: 16px;
         color:rgb(49, 49, 49);
         padding-bottom: 10px;
       }

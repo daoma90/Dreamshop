@@ -18,14 +18,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
     $price = htmlspecialchars($row['price']);
     $image = htmlspecialchars($row['image']);
     $stock = htmlspecialchars($row['in_stock']);
+    $isOld = $row["is_old"];
 
     $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
     if ($stock == 0) {
         $addToCartBtn = "<div>OUT OF STOCK</div>";
     }
     if ($isOld == 1) {
-
-
         $sale_price = $price * $salePercentage;
         $sale = "
         <div class='feature-products__price'>

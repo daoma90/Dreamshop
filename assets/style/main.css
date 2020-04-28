@@ -1073,9 +1073,6 @@
   display: -ms-flexbox;
   display: flex;
   margin-top: 10px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .cart-fixed__qty {

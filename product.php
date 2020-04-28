@@ -14,6 +14,7 @@
         $name = htmlspecialchars($row['name']);
         $desc = htmlspecialchars($row['description']);
         $price = htmlspecialchars($row['price']);
+        $sale_price = htmlspecialchars($row["sale_price"]);
         $image = htmlspecialchars($row['image']);
         $category = htmlspecialchars($row['category']);
         $stock = htmlspecialchars($row['in_stock']);
