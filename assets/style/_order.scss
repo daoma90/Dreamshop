@@ -12,6 +12,11 @@
     top: 0;
   }
 }
+.err-btn {
+  @include btn-primary;
+  margin-top: 2rem;
+  align-self: center;
+}
 
 .cont {
   margin: 0 auto;
@@ -25,6 +30,7 @@
     align-items: center;
     padding: $spacing__m;
     margin-top: 100px;
+    display: grid;
   }
 }
 
@@ -128,6 +134,7 @@
   &__completion-btns {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 
     & > * {
       text-align: center;
@@ -135,10 +142,6 @@
     a {
       text-decoration: none;
       color: white;
-    }
-
-    @include tablet {
-      margin-left: $spacing__s;
     }
   }
 }
