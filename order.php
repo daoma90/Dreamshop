@@ -72,19 +72,12 @@
   
               <div class="form-wrapper__city">
                 <label for="city" class="form-wrapper__name-label">City</label>
-                <input type="text" name="city" class="form-wrapper__input city"   minlength="2" maxlength="15" required/>
+                <input type="text" name="city" class="form-wrapper__input city"    required/>
                 <div class="cityError"> </div>
               </div>
             </div>
-
-            <button
-              type="submit"
-              value="ORDER"
-              class="form-wrapper__checkout"
-              name="addOrder"
-            >
-              ORDER
-            </button>
+            <!-- minlength="2" maxlength="15" -->
+            <div style="background: gray; cursor: auto" value="ORDER" class="form-wrapper__checkout" name="addOrder">ORDER</div>
           </form>
         </div>
       </div>
@@ -96,9 +89,9 @@
     <script src="./assets/js/happyLib.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/cart.js"></script>
-    <script src="./assets/js/ordervalidation.js"></script>
     <script src="./assets/js/order.js"></script>
      <script src="./assets/js/ajax-categories.js"></script>
     <script src="./assets/js/render.js"></script>
+    <script src="./assets/js/ordervalidation.js"></script>
   </body>
 </html>

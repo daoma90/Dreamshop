@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 .feature-cards {
   min-width: 100%;
   display: flex;
@@ -224,10 +226,13 @@
 
 .lp-categories__title {
   position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
+  bottom: 1rem;
+  right: 1rem;
   color: white;
   font-size: 34px;
+  padding: 0.5rem 1rem;
+  font-family: 'Lalezar', cursive;
+  background-color: #00c4ffad;
 }
 
 .lp-categories__img {
@@ -610,10 +615,13 @@
 
 .lp-categories__title {
   position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
+  bottom: 1rem;
+  right: 1rem;
   color: white;
   font-size: 34px;
+  padding: 0.5rem 1rem;
+  font-family: 'Lalezar', cursive;
+  background-color: #00c4ffad;
 }
 
 .lp-categories__img {
