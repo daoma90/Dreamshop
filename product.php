@@ -14,6 +14,7 @@
         $name = $row['name'];
         $desc = $row['description'];
         $price = $row['price'];
+        $sale_price = $row['sale_price'];
         $image = $row['image'];
         $category = $row['category'];
         $stock = $row['in_stock'];
@@ -76,7 +77,15 @@
         <div class="productpage__col-right">
           <div class="productpage__heading-wrap">
             <h1 class="productpage__name"><?= $product ?></h1>
-            <span class="productpage__price"><?= $price ?> SEK</span>
+            <?php 
+              if ($sale_price > 0) {
+                echo "<span style='text-decoration: line-through' class='productpage__price'>$price SEK</span>";
+                echo "<span style='margin-left: 0.5rem' class='productpage__price'>$sale_price SEK</span>";
+              }
+              else {
+                echo "<span class='productpage__price'>$price SEK</span>";
+              }
+            ?>
             <small class="productpage__category"><?= $category ?></small>
             <small class="productpage__category">IN STOCK: <?= $stock ?></small>
           </div>

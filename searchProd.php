@@ -14,6 +14,7 @@
   require_once './assets/php/db.php';
   $results = '';
   $query = '';
+  $salePercentage = 0.9;
   ?>
 
 
@@ -46,28 +47,43 @@
             $name = $row["name"];
             $price = $row["price"];
             $stock = $row["in_stock"];
+            $isOld = $row['is_old'];
 
             $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
             if ($stock == 0) {
                 $addToCartBtn = "<div>OUT OF STOCK</div>";
             }
+            if ($isOld == 1) {
         
         
-            $results .= "<article class='feature-products__product'>
+                $sale_price = $price * $salePercentage;
+                $sale = "
+                <div class='feature-products__price'>
+                    <span class='old-price'>$price SEK</span>
+                    <span class='on-sale'>-10%</span>
+                    <span class='new-price'>$sale_price SEK</span>
+                </div>";
+            }
+            else {
+                $sale = "<span class='old-price'>$price SEK</span>";
+            }
+        
+        
+        $results .= "<article class='feature-products__product'>
                 <a class='feature-products__link-wrap' href='./product.php?id=$id'>
                 <div class='feature-products__img-wrap'><img class='feature-products__img' src='./admin/images/$image' alt=''></div>
                 <div class='feature-products__product-title'>$name</div>
-                <div class='feature-products__price'>$price SEK</div>
+                $sale
                 <div class='feature-products__stock'>IN STOCK: $stock</div>
                 </a>
                 $addToCartBtn
               </article>";
           }
         } else {
-          echo 'Nothing found';
+          $results = "<div>Nothing found for search term '$query'</div>";
         }
       } else {
-        echo 'Nothing found';
+        $results = "<div>Nothing found for search term '$query'</div>";
       }
     }
 

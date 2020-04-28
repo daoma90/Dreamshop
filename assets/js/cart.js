@@ -33,6 +33,7 @@ function addToCart(id) {
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const product = JSON.parse(this.response);
+
       let tempObj = {
         id: product[0].id,
         name: product[0].name,

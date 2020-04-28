@@ -1,9 +1,16 @@
 <?php
 
+<<<<<<< HEAD
 $db_server = "localhost";
 $db_database = "jlwvfkou_wp888";
 $db_username = "root";
 $db_password = 'root'; 
+=======
+    $db_server = "localhost";
+    $db_database = "jlwvfkou_wp888";
+    $db_username = "jlwvfkou_wp888";
+    $db_password = 'JSU8Sp83[!';
+>>>>>>> 1f9695848f6af1ffc648ef655126101c5de7f171
 
 
 

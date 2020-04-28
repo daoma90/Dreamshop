@@ -16,7 +16,7 @@
   require_once "./header.php";
   require_once "./blurred-background.php"
 ?>
-    <main>
+    <main class="order-main">
       <div class="cont">
         <div class="products">
           <h2 class="products__headline">Your Order</h2>

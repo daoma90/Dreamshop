@@ -74,4 +74,19 @@
     align-self: center;
     margin-top: 0.5rem;
   }
+<<<<<<< HEAD
 }
+=======
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .old-price {
+      text-decoration: line-through;
+    }
+    .on-sale {
+      font-weight: bold;
+    }
+  }
+}
+>>>>>>> 1f9695848f6af1ffc648ef655126101c5de7f171
