@@ -1,4 +1,5 @@
 <?php
+
     $db_server = "localhost";
     $db_database = "jlwvfkou_wp888";
     $db_username = "root";
@@ -11,4 +12,5 @@
     catch(PDOException $e){
     echo $e-> getMessage();
     }
+
 ?>

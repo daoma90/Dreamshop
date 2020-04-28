@@ -1011,7 +1011,7 @@ body {
 }
 
 .order-wrap {
-  font-family: 'open_sansregular', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'open_sansregular', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   min-width: 100%;
   -ms-flex-item-align: center;
       align-self: center;
@@ -1051,6 +1051,16 @@ body {
           box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   font-size: 0.75rem;
   padding: 1rem 0;
+  overflow: hidden;
+}
+
+.orders .order-clickable {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.orders .order-clickable:hover {
+  background: rgba(0, 0, 0, 0.096);
 }
 
 .orders__status {
@@ -1114,6 +1124,11 @@ body {
 
 .orders th {
   text-align: left;
+  cursor: pointer;
+}
+
+.orders th:hover {
+  background: rgba(0, 0, 0, 0.11);
 }
 
 .orders tr {
@@ -1150,8 +1165,97 @@ body {
 }
 
 @media (max-width: 450px) {
-  body {
+  .orders-bg {
     width: 450px;
   }
+}
+
+.order-card {
+  background: white;
+  width: 100%;
+  -webkit-transition: width 450ms;
+  transition: width 450ms;
+  margin: 2rem 0;
+}
+
+@media (min-width: 724px) {
+  .order-card {
+    width: 60%;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .order-card {
+    width: 40%;
+  }
+}
+
+.order-card a {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  background: #738fee;
+  color: white;
+  text-decoration: none;
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+}
+
+.order-card a:hover {
+  cursor: pointer;
+  background: #5f7cda;
+}
+
+.order-card__item {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.664);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.order-card__item span:first-of-type {
+  font-weight: bold;
+}
+
+.order-card__products {
+  margin-top: 1rem;
+}
+
+.order-card__products h1 {
+  margin-left: 0.5rem;
+}
+
+.order-card__products .product-wrap {
+  padding: 1rem;
+  margin: 0.25rem;
+  background: rgba(0, 0, 0, 0.178);
+}
+
+.order-card__products .product-img-wrap {
+  margin-bottom: 1rem;
+}
+
+.order-card__products .product-img-wrap img {
+  max-height: 100px;
+}
+
+.order-card__products .product-text-wrap span:first-of-type {
+  font-weight: bold;
+}
+
+.order-card__products .product-name,
+.order-card__products .product-qty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=main.css.map */

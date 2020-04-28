@@ -6,9 +6,13 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: #e9b119;
+  padding-top: 50px;
   @include tablet {
+    background-color: unset;
     position: absolute;
     top: 0;
+    padding-top: 0;
   }
 }
 
@@ -71,7 +75,7 @@
       position: relative;
       margin-bottom: 5px;
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         border-bottom: solid 0.5px rgb(168, 168, 168);
         width: 100%;

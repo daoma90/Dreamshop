@@ -7,12 +7,15 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-top: 80px;
+  background-color: rgb(238, 183, 66);
 
   @include tablet {
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
+    background-color: unset;
   }
 
   @media screen and (min-width: 1200px) {
@@ -112,7 +115,7 @@
   perspective: 1000px;
   z-index: 2;
   position: relative;
-  min-height: 600px;
+  height: 600px;
 
   @include tablet {
     grid-column: 1 / 4;
@@ -156,7 +159,7 @@
 
   &__close {
     position: absolute;
-    background-image: url("../media/close.png");
+    background-image: url('../media/close.png');
     background-position: center;
     background-size: cover;
     height: 40px;
