@@ -77,14 +77,7 @@
               </div>
             </div>
             <!-- minlength="2" maxlength="15" -->
-            <button
-              type="submit"
-              value="ORDER"
-              class="form-wrapper__checkout"
-              name="addOrder"
-            >
-              ORDER
-            </button>
+            <div style="background: gray; cursor: auto" value="ORDER" class="form-wrapper__checkout" name="addOrder">ORDER</div>
           </form>
         </div>
       </div>
@@ -96,9 +89,9 @@
     <script src="./assets/js/happyLib.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/cart.js"></script>
-    <script src="./assets/js/ordervalidation.js"></script>
     <script src="./assets/js/order.js"></script>
      <script src="./assets/js/ajax-categories.js"></script>
     <script src="./assets/js/render.js"></script>
+    <script src="./assets/js/ordervalidation.js"></script>
   </body>
 </html>
