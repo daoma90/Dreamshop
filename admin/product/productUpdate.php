@@ -9,7 +9,7 @@ if (isset($_POST['updateProduct'])) {
   $in_stock =  trim($_POST['in_stock']);
   $featured =  trim($_POST['featured']);
   $cat_id = trim($_POST['cat_id']);
-
+  $isOld = trim($_POST['is_old']);
     
   $targetDir = "../images/";
   $allowTypes = array("jpg", "png", "jpeg", "gif", "JPG","PNG", "GIF");
@@ -42,7 +42,7 @@ if (isset($_POST['updateProduct'])) {
         $fName = $fileName;
       }  
 
-      $sql = 'UPDATE products SET name=:name,description=:description,price=:price, image=:image, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
+      $sql = 'UPDATE products SET name=:name,description=:description,price=:price, image=:image, featured=:featured,in_stock=:in_stock, cat_id=:cat_id, is_old=:is_old WHERE id=:id';
       $stmt = $pdo->prepare($sql);
       $stmt->execute([
         ':id' => $id,
@@ -53,9 +53,10 @@ if (isset($_POST['updateProduct'])) {
         ':featured' => $featured,
         ':in_stock' => $in_stock,
         ':cat_id' => $cat_id,
+        ':is_old' => $isOld,
       ]);
     } else {
-      $sql = 'UPDATE products SET name=:name,description=:description,price=:price, featured=:featured,in_stock=:in_stock, cat_id=:cat_id WHERE id=:id';
+      $sql = 'UPDATE products SET name=:name,description=:description,price=:price, featured=:featured,in_stock=:in_stock, cat_id=:cat_id, is_old=:is_old WHERE id=:id';
       $stmt = $pdo->prepare($sql);
       $stmt->execute([
         ':id' => $id,
@@ -65,6 +66,7 @@ if (isset($_POST['updateProduct'])) {
         ':featured' => $featured,
         ':in_stock' => $in_stock,
         ':cat_id' => $cat_id,
+        ':is_old' => $isOld,
       ]);
     }
     header('Location:products.php');

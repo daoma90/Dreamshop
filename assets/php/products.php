@@ -16,12 +16,12 @@ if (isset($_GET['category'])){
 
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-    $id = $row['ID'];
-    $name = $row['name'];
-    $desc = $row['description'];
-    $price = $row['price'];
-    $image = $row['image'];
-    $stock = $row['in_stock'];
+    $id = htmlspecialchars($row['ID']);
+    $name = htmlspecialchars($row['name']);
+    $desc = htmlspecialchars($row['description']);
+    $price = htmlspecialchars($row['price']);
+    $image = htmlspecialchars($row['image']);
+    $stock = htmlspecialchars($row['in_stock']);
 
     $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
     if ($stock == 0) {

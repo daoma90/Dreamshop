@@ -8,8 +8,7 @@ $stmt->execute();
 $name = '';
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-    $name = $row['name'];
-
+    $name = htmlspecialchars($row['name']);
     echo "<li class='footer__list-item catsort'><a class='footer__link' href='./category.php?category=$name'>$name</a></li>";
 
 
