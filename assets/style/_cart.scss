@@ -24,9 +24,41 @@
     padding: 0.5rem;
   }
 
+  &__qty-wrap {
+    align-self: center;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
   &__qty {
-    padding: 0.35rem;
-    width: 45px;
+    font-size: 1rem;
+    width: 40px;
+    text-align: center;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: center;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__qty-up,
+  &__qty-down {
+    background: #5f7cda;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: block;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus {
+      background: #4a61aa;
+    }
   }
 
   input[type="number"]::-webkit-inner-spin-button,
