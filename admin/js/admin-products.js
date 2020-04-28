@@ -127,7 +127,7 @@ function deleteView(id) {
       }, 250);
     }
   };
-  if (confirmMessage("Säker på att du vill ta bort?")) {
+  if (confirm("Säker på att du vill ta bort?")) {
     req.open("POST", "../product/productDelete.php?ID=" + id, true);
     req.send();
   }
@@ -161,7 +161,7 @@ function prepareForm(inEdit, id) {
   if (inEdit) {
     productForm.setAttribute("action", "productUpdate.php");
     productForm.querySelector("button").setAttribute("name", "updateProduct");
-    productForm.querySelector("h2").textContent = "Update product";
+    productForm.querySelector("h2").textContent = "UPDATE PRODUCT";
     document.querySelector("#upID").setAttribute("value", id);
     productForm.style.display = "flex";
     toggle.style.display = "block";
@@ -169,7 +169,7 @@ function prepareForm(inEdit, id) {
     if (productForm.getAttribute("action", "productUpdate.php")) {
       productForm.setAttribute("action", "productCreate.php");
       productForm.querySelector("button").setAttribute("name", "addProduct");
-      productForm.querySelector("h2").textContent = "Create product";
+      productForm.querySelector("h2").textContent = "CREATE PRODUCT";
       productForm.parentElement.style.display = "flex";
       productForm.reset();
       document.querySelector(".product-form-main__left-img img").src = "";
@@ -178,7 +178,7 @@ function prepareForm(inEdit, id) {
     } else {
       productForm.setAttribute("action", "productCreate.php");
       productForm.querySelector("button").setAttribute("name", "addProduct");
-      productForm.querySelector("h2").textContent = "Create product";
+      productForm.querySelector("h2").textContent = "CREATE PRODUCT";
       productForm.parentElement.style.display = "flex";
       productForm.reset();
     }
@@ -204,7 +204,7 @@ function initEdit(id) {
   Array.from(productForm.elements).forEach(function (input) {
     Array.from(children).forEach(function (row) {
       if (input.name === row.className) {
-        if (input.name === "featured") {
+        if (input.name === "featured" || input.name === "is_old") {
           input.options.selectedIndex = parseInt(row.textContent);
         } else {
           input.value = row.textContent;
@@ -252,41 +252,41 @@ add.addEventListener("click", function (e) {
 });
 
 
-function confirmMessage(text, status) {
-  const element = document.createElement("div");
-  element.className = "response-container"
+// function confirmMessage(text, status) {
+//   const element = document.createElement("div");
+//   element.className = "response-container"
   
-  if(text) {
-    element.innerHTML = "<div class='response-container__message'><h4>" + text + "</h4></div><div class='response-container__btns'><button id='ok' class'response-container__btns-ok'>OK</button><button id='cancel'class='response-container__btns-cancel'>Cancel</button></div>";
-    document.querySelector("body").appendChild(element);
-  }
+//   if(text) {
+//     element.innerHTML = "<div class='response-container__message'><h4>" + text + "</h4></div><div class='response-container__btns'><button id='ok' class'response-container__btns-ok'>OK</button><button id='cancel'class='response-container__btns-cancel'>Cancel</button></div>";
+//     document.querySelector("body").appendChild(element);
+//   }
   
-  let cancel = document.querySelector("#cancel");
-  let approve = document.querySelector("#ok");
-  let promise = new Promise(function(resolve, reject) { 
+//   let cancel = document.querySelector("#cancel");
+//   let approve = document.querySelector("#ok");
+//   let promise = new Promise(function(resolve, reject) { 
    
-  approve.addEventListener("click", function(e) {
-    resolve();
-    //confirmMessage("", "JA");
-  })
+//   approve.addEventListener("click", function(e) {
+//     resolve();
+//     //confirmMessage("", "JA");
+//   })
 
-  cancel.addEventListener("click", function(e) {
-    reject();
-    //confirmMessage("", "nej");
-  });
-  }); 
+//   cancel.addEventListener("click", function(e) {
+//     reject();
+//     //confirmMessage("", "nej");
+//   });
+//   }); 
     
-  promise.then(function () { 
-      confirmMessage("", "ja");      
-    console.log('Success, You are a GEEK'); 
-         // x =  true;
-      }). 
-      catch(function () { 
-          console.log('Some error has occured'); 
-      }); 
+//   promise.then(function () { 
+//       confirmMessage("", "ja");      
+//     console.log('Success, You are a GEEK'); 
+//          // x =  true;
+//       }). 
+//       catch(function () { 
+//           console.log('Some error has occured'); 
+//       }); 
 
 
-if(status) {
-  return true;
-}
-}
+// if(status) {
+//   return true;
+// }
+// }
