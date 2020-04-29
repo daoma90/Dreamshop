@@ -12,7 +12,7 @@
     **/
 
     $name = trim($_POST['name']);
-    $mail = trim($_POST['mail']);
+    $mail = trim($_POST['email']);
     $phone = trim($_POST['phone']);
     $adress = trim($_POST['adress']);
     $zip = trim($_POST['zip']);
@@ -30,7 +30,15 @@
 
       $i = 0;
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $total += $row['price'] * $quantity[$i];
+
+        if ($row['is_old'] == 1) {
+          $price = $row['sale_price'];
+        }
+        else {
+          $price = $row['price'];
+        }
+
+        $total += $price * $quantity[$i];
         $i++;
       }
 

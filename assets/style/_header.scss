@@ -1,34 +1,55 @@
-@import 'mixins';
-@import 'variables';
+@import "mixins";
+@import "variables";
 
 .header {
   display: flex;
   justify-content: space-between;
   color: $color__white;
   background-color: rgba(0, 0, 0, 0.459);
-  padding: $spacing__s;
+  padding: 0 $spacing__s;
   align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 999;
+  max-height: $header__height;
 
   &__form {
-    display: flex;
     justify-content: center;
-    width: 50%;
-  }
-
-  &__headline {
-    a {
-      color: white;
-      text-decoration: none;
+    width: 100%;
+    position: absolute;
+    top: $header__height;
+    padding: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background: rgba(0, 0, 0, 0.459);
+    @include tablet {
+      position: static;
+      background: none;
+      top: unset;
+      left: unset;
+      transform: unset;
+      width: 50%;
     }
   }
-
+  &__logo {
+    height: calc(#{$header__height} - 5px);
+  }
+  &__headline {
+    margin-right: auto;
+    color: white;
+    text-decoration: none;
+  }
+  &__left-wrap {
+    display: flex;
+    align-items: center;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      margin-right: auto;
+    }
+  }
   &__cart-toggle {
-    margin-left: auto;
     cursor: pointer;
     position: relative;
     img {
@@ -37,26 +58,25 @@
   }
 
   &__search {
-    width: 100%;
+    width: 90%;
     padding: 12px 24px;
     background-color: transparent;
     transition: transform 250ms ease-in-out;
     font-size: 14px;
     line-height: 18px;
-    color: #575756;
-    max-width: 75%;
+    color: white;
     background-color: transparent;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAyMjYgMjI2IgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDIyNnYtMjI2aDIyNnYyMjZ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTk0LjkyLDEzLjU2Yy00Mi4zOTI2NiwwIC03Ni44NCwzNC40NDczNCAtNzYuODQsNzYuODRjMCw0Mi4zOTI2NiAzNC40NDczNCw3Ni44NCA3Ni44NCw3Ni44NGMxNi43NzM0NCwwIDMyLjI3NTYzLC01LjQwMjgxIDQ0LjkxNzUsLTE0LjU0ODc1bDU5LjQ2NjI1LDU5LjMyNWwxMi43MTI1LC0xMi43MTI1bC01OC43NiwtNTguOTAxMjVjMTEuNTQ3MTksLTEzLjQ1NDA2IDE4LjUwMzc1LC0zMC45MTYwOSAxOC41MDM3NSwtNTAuMDAyNWMwLC00Mi4zOTI2NiAtMzQuNDQ3MzQsLTc2Ljg0IC03Ni44NCwtNzYuODR6TTk0LjkyLDIyLjZjMzcuNTAxODgsMCA2Ny44LDMwLjI5ODEyIDY3LjgsNjcuOGMwLDM3LjUwMTg4IC0zMC4yOTgxMiw2Ny44IC02Ny44LDY3LjhjLTM3LjUwMTg3LDAgLTY3LjgsLTMwLjI5ODEyIC02Ny44LC02Ny44YzAsLTM3LjUwMTg3IDMwLjI5ODEzLC02Ny44IDY3LjgsLTY3Ljh6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=");
     background-repeat: no-repeat;
     background-size: 18px 18px;
     background-position: 95% center;
     border-radius: 50px;
-    border: 1px solid #575756;
+    border: 1px solid white;
     transition: all 250ms ease-in-out;
     backface-visibility: hidden;
     transform-style: preserve-3d;
     &::placeholder {
-      color: color(#575756 a(0.8));
+      color: rgba(255, 255, 255, 0.685);
       text-transform: uppercase;
       letter-spacing: 1.5px;
     }
@@ -137,11 +157,11 @@
     z-index: 2;
     width: 40px;
     height: 40px;
-    margin-right: auto;
+    margin-right: 2rem;
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       height: 1px;
       transition: all 200ms;
       width: 40px;

@@ -14,71 +14,76 @@
   require_once './assets/php/db.php';
   $results = '';
   $query = '';
+  $salePercentage = 0.9;
   ?>
 
 
 
-    <?php
+  <?php
+  if (isset($_GET['submit-search'])) {
+    $searchQ = htmlspecialchars($_GET['searchWord']);
+    $res = trim($searchQ);
+    $query = $res;
+    if (!empty($res)) {
 
-    $words_to_filter = array("and", "not", "if", "get", "with", "keep", "that", "this", "every", "is", 'let', 'go');
-    // character 'a' is not included here it can be find in the middle 
-    if (isset($_GET['submit-search'])) {
-      $searchQ = htmlspecialchars($_GET['search-word']);
-      $res = str_ireplace($words_to_filter, "", $searchQ);
-      $res = trim($res);
-      $res = explode(' ', $res);
-      // since a can be find in middle of the word 
-      foreach ($res as &$val) {
-        if ($val == 'a' || $val == 'A') $val = '';
-      }
-      $res = trim(implode('', $res));
-      $query = $res;
-      if (!empty($res)) {
+      $stmt = $db->prepare('SELECT * FROM products WHERE name LIKE :keywords');
+      $stmt->execute([
+        ':keywords' => '%' . $res . '%'
+      ]);
+      if ($stmt->rowCount()) {
+        while ($row = $stmt->fetch()) {
+          $id = $row['ID'];
+          $image = $row["image"];
+          $name = $row["name"];
+          $price = $row["price"];
+          $stock = $row["in_stock"];
+          $isOld = $row['is_old'];
 
-        $stmt = $db->prepare('SELECT * FROM products WHERE name LIKE :keywords');
-        $stmt->execute([
-          ':keywords' => '%' . $res . '%'
-        ]);
-        if ($stmt->rowCount()) {
-          while ($row = $stmt->fetch()) {
-            $id = $row['ID'];
-            $image = $row["image"];
-            $name = $row["name"];
-            $price = $row["price"];
-            $stock = $row["in_stock"];
+          $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
+          if ($stock == 0) {
+            $addToCartBtn = "<div class='feature-products__oos'>OUT OF STOCK</div>";
+          }
+          if ($isOld == 1) {
 
-            $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
-            if ($stock == 0) {
-                $addToCartBtn = "<div>OUT OF STOCK</div>";
-            }
-        
-        
-            $results .= "<article class='feature-products__product'>
+
+            $sale_price = $price * $salePercentage;
+            $sale = "
+                <div class='feature-products__price'>
+                    <span class='old-price'>$price SEK</span>
+                    <span class='on-sale'>-10%</span>
+                    <span class='new-price'>$sale_price SEK</span>
+                </div>";
+          } else {
+            $sale = "<span class='old-price'>$price SEK</span>";
+          }
+
+
+          $results .= "<article class='feature-products__product'>
                 <a class='feature-products__link-wrap' href='./product.php?id=$id'>
                 <div class='feature-products__img-wrap'><img class='feature-products__img' src='./admin/images/$image' alt=''></div>
                 <div class='feature-products__product-title'>$name</div>
-                <div class='feature-products__price'>$price SEK</div>
+                $sale
                 <div class='feature-products__stock'>IN STOCK: $stock</div>
                 </a>
                 $addToCartBtn
               </article>";
-          }
-        } else {
-          echo 'Nothing found';
         }
       } else {
-        echo 'Nothing found';
+        $results = "<div>Nothing found for search term '$query'</div>";
       }
+    } else {
+      $results = "<div>Nothing found for search term '$query'</div>";
     }
+  }
 
 
 
-    ?>
+  ?>
 
 
   <div class="search-results"><?= "Searched for: " . $query ?></div>
   <div class="search-container feature-products__product-wrap">
-    <?= $results?>
+    <?= $results ?>
   </div>
 
 

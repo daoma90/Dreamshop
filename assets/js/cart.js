@@ -33,6 +33,7 @@ function addToCart(id) {
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const product = JSON.parse(this.response);
+
       let tempObj = {
         id: product[0].id,
         name: product[0].name,
@@ -65,8 +66,30 @@ function addToCart(id) {
   request.send();
 }
 
-function increaseQty() {
+function increaseCartQty(e) {
+  let input = e.target.parentElement.parentElement.querySelector(
+    '.cart-fixed__qty'
+  );
+  let qty = parseInt(input.value);
+  qty++;
+  input.value = qty;
+  changeQuantity(input);
+}
+
+function decreaseCartQty(e) {
+  let input = e.target.parentElement.parentElement.querySelector(
+    '.cart-fixed__qty'
+  );
+  let qty = parseInt(input.value);
+  qty--;
+  input.value = qty;
+
+  changeQuantity(input);
+}
+
+function increaseQty(e) {
   let realValue = parseInt(inputQty.value);
+
   realValue += 1;
   inputQty.value = realValue;
 }
@@ -100,8 +123,8 @@ function removeItem(e) {
 }
 
 function changeQuantity(e) {
-  const val = e.target.parentElement.querySelector('.cart-fixed__qty');
-  const item = e.target.parentElement.querySelector('.cart-fixed__name')
+  const val = e;
+  const item = e.parentElement.parentElement.querySelector('.cart-fixed__name')
     .textContent;
 
   const productInCart = HappyLib.findProduct(item, cart);
@@ -134,46 +157,59 @@ function renderCart() {
   items.innerHTML = '';
   //RUN COMMENTED CODE BELOW IN BABEL COMPILER AND REPLACE WITH THIS CODE
   cart.products.forEach(function (item) {
-    items.innerHTML += '<li class="cart-fixed__item"><div class="cart-fixed__img-wrap"><img class="cart-fixed__img" src="./admin/images/'
+    items.innerHTML += '<li class="cart-fixed__item">\n                            <div class="cart-fixed__img-wrap"><img class="cart-fixed__img" src="./admin/images/'
       .concat(
         item.image,
-        '"/></div><div class="cart-fixed__text-wrap"><div class="cart-fixed__name">'
+        '"/></div>\n\n                            <div class="cart-fixed__text-wrap">\n                                <div class="cart-fixed__name">'
       )
-      .concat(item.name, '</div><div class="cart-fixed__item-total">')
+      .concat(
+        item.name,
+        '</div>\n                                <div class="cart-fixed__item-total">'
+      )
       .concat(
         item.price * item.quantity,
-        ' SEK</div><input type="number" value="'
+        ' SEK</div>\n                                <div class="cart-fixed__qty-wrap">\n                                  <button class="cart-fixed__qty-down"><i class="fa fa-minus"></i></button>\n                                  <input\n                                    class="cart-fixed__qty"\n                                    type="text"\n                                    value="'
       )
       .concat(
         item.quantity,
-        '" class="cart-fixed__qty"></div><span class="cart-fixed__remove-btn">-</span></li>'
+        '"\n                                    readonly\n                                  />\n                                  <button class="cart-fixed__qty-up"><i class="fa fa-plus"></i></button>\n                                </div>\n                            </div>\n                            <span class="cart-fixed__remove-btn">-</span>\n                          </li>'
       );
   });
+
   // cart.products.forEach(function (item) {
-  //   items.innerHTML += `<li class="cart-fixed__item">
-  //                           <div class="cart-fixed__img-wrap"><img class="cart-fixed__img" src="./admin/images/${
-  //                             item.image
-  //                           }"/></div>
+  // items.innerHTML += `<li class="cart-fixed__item">
+  //                         <div class="cart-fixed__img-wrap"><img class="cart-fixed__img" src="./admin/images/${
+  //                           item.image
+  //                         }"/></div>
 
-  //                           <div class="cart-fixed__text-wrap">
-  //                               <div class="cart-fixed__name">${item.name}</div>
-  //                               <div class="cart-fixed__item-total">${
-  //                                 item.price * item.quantity
-  //                               } SEK</div>
-  //                               <input type="number" value="${
-  //                                 item.quantity
-  //                               }" class="cart-fixed__qty">
-  //                           </div>
-  //                           <span class="cart-fixed__remove-btn">-</span>
-
-  //                         </li>`;
+  //                         <div class="cart-fixed__text-wrap">
+  //                             <div class="cart-fixed__name">${item.name}</div>
+  //                             <div class="cart-fixed__item-total">${
+  //                               item.price * item.quantity
+  //                             } SEK</div>
+  //                             <div class="cart-fixed__qty-wrap">
+  //                               <button class="cart-fixed__qty-down"><i class="fa fa-minus"></i></button>
+  //                               <input
+  //                                 class="cart-fixed__qty"
+  //                                 type="text"
+  //                                 value="${item.quantity}"
+  //                                 readonly
+  //                               />
+  //                               <button class="cart-fixed__qty-up"><i class="fa fa-plus"></i></button>
+  //                             </div>
+  //                         </div>
+  //                         <span class="cart-fixed__remove-btn">-</span>
+  //                       </li>`;
   // });
 
   const removeBtn = document.querySelectorAll('.cart-fixed__remove-btn');
+  const cartQtyUp = document.querySelectorAll('.cart-fixed__qty-up');
+  const cartQtyDown = document.querySelectorAll('.cart-fixed__qty-down');
   const qtyInput = document.querySelectorAll('.cart-fixed__qty');
 
   HappyLib.addEvents(removeBtn, removeItem, 'click');
-  HappyLib.addEvents(qtyInput, changeQuantity, 'change');
+  HappyLib.addEvents(cartQtyUp, increaseCartQty, 'click');
+  HappyLib.addEvents(cartQtyDown, decreaseCartQty, 'click');
 
   totalPrice.textContent = price + ' SEK';
   totalQty.textContent = qty + ' Items';
@@ -209,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // must change in _cart.scss aswell
     const animDuration = 200;
 
-    if (document.querySelector('.productpage')) {
+    if (document.querySelector('.productpage__qty')) {
       const qtyUp = document.querySelector('.productpage__qty-up');
       const qtyDown = document.querySelector('.productpage__qty-down');
       inputQty = document.querySelector('.productpage__qty');

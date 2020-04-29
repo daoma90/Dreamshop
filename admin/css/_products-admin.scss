@@ -129,13 +129,27 @@ main {
     width: 200px;
     padding: 10px;
 
+
     @at-root .in_stock,
       .price {
       text-align: right;
-      font-size: 12px;
+      font-size: 16px;
       line-height: 130%;
       color: #3c3c3c;
       font-weight: bold;
+    }
+
+    @at-root .price {
+      &:before {
+        content:"SEK ";
+        position: relative;
+      }  
+    }
+    @at-root .in_stock {
+      &:before {
+        content:"QT ";
+        position: relative;
+      }  
     }
 
     @at-root .description {
@@ -144,6 +158,10 @@ main {
       line-height: 130%;
       color: #3c3c3c;
       min-height: 90px;
+      max-height: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 5px;
     }
 
     h3 {
@@ -167,21 +185,35 @@ main {
     font-size: 10px;
   }
 
-  &__featured {
+
+  .splash {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: red;
     color: white;
     font-size: 12px;
     width: 50px;
     height: 50px;
     border-radius: 25px;
     position: absolute;
-    left: 20px;
-    top: 20px;
     font-size: 10px;
     padding: 20px;
+
+  }
+ 
+  &__featured {
+    @extend .splash;
+    left: 20px;
+    top: 20px;
+    background: red;
+
+  }
+
+  &__onsale {
+    @extend .splash;
+    left: 80px;
+    bottom: 30px;
+    background:rgb(95, 75, 75);
   }
 
   border: 1px solid rgb(255, 255, 255);
@@ -326,9 +358,24 @@ main {
       width: 60%;
       display: inherit;
       flex-direction: column;
+      font-family: $base__fontFamily;
       &-header {
-        font-size: 18px;
-        padding: 10px;
+        font-size: 16px;
+        color:rgb(49, 49, 49);
+        padding-bottom: 10px;
+      }
+      &-label {
+        margin:0;
+        //font-family: $base__fontFamily;
+        font-size: 13px;
+        font-weight: normal;
+        margin-bottom: 5px;
+        line-height: 140%;
+        color:rgb(88, 88, 88);
+        width: 100%;
+        border-top: 1px solid rgb(126, 126, 126);
+        padding-top: 10px;
+       
       }
     }
 
@@ -338,17 +385,17 @@ main {
       margin-bottom: 20px;
     }
 
-    label {
-      display: inherit;
-      flex-direction: inherit;
-      margin-bottom: 15px;
-    }
+    // label {
+    //   display: inherit;
+    //   flex-direction: inherit;
+    //   margin-bottom: 15px;
+    // }
 
-    &-label {
-      font-size: 14px;
-      font-weight: bold;
-      line-height: 140%;
-    }
+    // &-label {
+    //   font-size: 14px;
+    //   font-weight: bold;
+    //   line-height: 140%;
+    // }
 
     input,
     textarea,
@@ -358,9 +405,10 @@ main {
       border: 0px solid lightgray;
       border-radius: 5px;
       padding: 5px;
-      background: #cccdd0;
+      background: #606060;
       margin-bottom: 10px;
       resize: none;
+      
     }
     input {
       width: 70%;

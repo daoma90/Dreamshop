@@ -15,11 +15,17 @@ $stmt->execute();
 
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
+    if ($row['is_old'] == 1) {
+        $price = $row['sale_price'];
+    }
+    else {
+        $price = $row['price'];
+    }
     $product = array(
         "id"=>$row['ID'],
         "name"=>$row['name'],
         "description"=>$row['description'],
-        "price"=>$row['price'],
+        "price"=>$price,
         "image"=>$row['image'],
         "stock"=>$row['in_stock']
     );

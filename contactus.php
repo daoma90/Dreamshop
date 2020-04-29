@@ -8,8 +8,8 @@
   </head>
   <body>
     <?php require_once "header.php" ?>
-    <?php require_once "blurred-background.php" ?>
     <section class="contact">
+      <div class="contact__background"></div>
       <form class="contact__form">
         <div class="flip-card">
           <div class="flip-card__inner">
@@ -28,7 +28,7 @@
                     Fill in a name
                   </p>
                 </div>
-                <label class="flip-card__front-label" for="email" required
+                <label class="flip-card__front-label" for="email"
                   >E-mail</label
                 >
                 <input
@@ -45,7 +45,7 @@
                   Tomtebodavägen 3A <br />
                   123 45 Stockholm
                 </p>
-                <p class="flip-card__info-text">Dreamteam@dreamteam.se</p>
+                <p class="flip-card__info-text">contactus@dreamshop.se</p>
                 <p class="flip-card__info-text">+460000000</p>
               </div>
               <div class="flip-card__social">
@@ -72,7 +72,7 @@
               </div>
             </div>
             <div class="flip-card__back">
-              <a href="index.php" class="flip-card__close"></a>
+              <a href="./index.php" class="flip-card__close"></a>
               <h3 class="flip-card__headline">
                 Thank you for contacting us!
               </h3>

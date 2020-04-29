@@ -1,23 +1,49 @@
-main {
+.order-main {
   width: 100vw;
   min-height: 100%;
   max-width: 100%;
   display: flex;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   @include tablet {
-    position: absolute;
-    top: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
+}
+
+.background {
+  display: none;
+  @include tablet {
+    display: block;
+    background-image: url("../media/background/footprints-on-beach.jpg");
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: -1;
+  }
+}
+.err-btn {
+  @include btn-primary;
+  margin-top: 2rem;
+  align-self: center;
 }
 
 .cont {
   margin: 0 auto;
-  display: grid;
   width: 100%;
 
   @include tablet {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     max-width: 1000px;
@@ -25,6 +51,8 @@ main {
     align-items: center;
     padding: $spacing__m;
     margin-top: 100px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
 }
 
@@ -128,6 +156,7 @@ main {
   &__completion-btns {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 
     & > * {
       text-align: center;
@@ -135,10 +164,6 @@ main {
     a {
       text-decoration: none;
       color: white;
-    }
-
-    @include tablet {
-      margin-left: $spacing__s;
     }
   }
 }
