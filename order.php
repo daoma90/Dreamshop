@@ -71,6 +71,7 @@
                 <div class="cityError"> </div>
               </div>
             </div>
+            <div class="products-hidden"></div>
 
             <button type="submit" value="ORDER" class="form-wrapper__checkout" name="addOrder">
               ORDER
