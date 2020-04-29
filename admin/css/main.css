@@ -108,7 +108,7 @@ body {
 
 @media (min-width: 1024px) {
   .header__hidden-burgernav {
-    width: 200px;
+    width: 250px;
     height: auto;
   }
 }
