@@ -26,18 +26,20 @@
 
     </section>
     <section class="feature-cards">
-        <a class="feature-cards__card feature-cards__card--first" href="newIn.php">
-            <article>
-                <div class="feature-cards__title">
-                    <span class="feature-cards__text feature-cards__text--left">Check out our newest products!</span>
-                </div>
+        
+            <article class="feature-cards__card feature-cards__card--first">
+                <a href="newIn.php">
+                <span class="feature-cards__abs">Check out our newest products!</span>
+                    <div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right"></span></div>
+                </a>
             </article>
-        </a>
-        <a class="feature-cards__card feature-cards__card--second" href="oldOut.php">
-            <article>
-                <div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right">Older products need to go. 10% off!</span></div>
+            <article class="feature-cards__card feature-cards__card--second">
+                <a href="oldOut.php">
+                <span class="feature-cards__abs">10% off! Older products need to go.</span>
+                    <div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right"></span></div>
+                </a>
             </article>
-        </a>
+        
     </section>
 
     <section class="feature-products">

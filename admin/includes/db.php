@@ -5,11 +5,6 @@ $db_database = "jlwvfkou_wp888";
 $db_username = "jlwvfkou_wp888";
 $db_password = 'JSU8Sp83[!';
 
-
-
-
-
-
 $dsn = "mysql:host=$db_server;dbname=$db_database;charset=utf8";
 try {
   $pdo = new PDO($dsn, $db_username, $db_password);
