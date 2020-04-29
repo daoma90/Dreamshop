@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function validName(e) {
     if (name.value.length <= 1) {
-      error.textContent = 'Name must contain 2 Character';
+      error.textContent = 'Name must contain 2 characters';
       error.style.visibility = 'visible';
       error.style.color = 'red';
       return false;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
       mailError.style.visibility = 'hidden';
       return true;
     }
-    mailError.textContent = 'Invalid email address format!';
+    mailError.textContent = 'Invalid email address format';
     mailError.style.color = 'red';
     mailError.style.visibility = 'visible';
     return false;
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function validateAdress(e) {
     if (adress.value.length <= 3) {
-      adressError.textContent = ' Address must contain 2 Character';
+      adressError.textContent = 'Invalid Address - too short';
       adressError.style.visibility = 'visible';
       adressError.style.color = 'red';
       return false;
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function validateZipCode(e) {
     if (zipCode.value.length <= 4) {
-      zipError.textContent = ' Invalid Zip';
+      zipError.textContent = 'Invalid Zip - too short';
       mailError.style.color = 'red';
       zipError.style.visibility = 'visible';
       zipError.style.color = 'red';
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function validateCity(e) {
     if (city.value.length <= 3 || city.value.length >= 20) {
-      cityError.textContent = 'Invalid city name!';
+      cityError.textContent = 'Invalid City - too short';
       mailError.style.color = 'red';
       cityError.style.visibility = 'visible';
       cityError.style.color = 'red';
