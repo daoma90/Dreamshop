@@ -109,6 +109,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateZipCode(e) {
+    if (isNaN(zipCode.value)) {
+      zipError.textContent = 'Invalid Zip - contains letters';
+      mailError.style.color = 'red';
+      zipError.style.visibility = 'visible';
+      zipError.style.color = 'red';
+      return false;
+    }
     if (zipCode.value.length <= 4) {
       zipError.textContent = 'Invalid Zip - too short';
       mailError.style.color = 'red';
