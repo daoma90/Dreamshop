@@ -1858,17 +1858,17 @@
   background: white;
   color: black;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   /* autoprefixer: off */
-  display: grid;
-  grid-template-columns: 1fr 2fr 0.5fr;
+  /* display: grid;
+    grid-template-columns: 1fr 2fr 0.5fr; */
   align-items: center;
   position: relative;
 }
 
 .products__item:after {
-  content: '';
+  content: "";
   width: 100%;
   position: absolute;
   bottom: 0;

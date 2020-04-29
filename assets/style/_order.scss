@@ -18,7 +18,7 @@
   display: none;
   @include tablet {
     display: block;
-    background-image: url('../media/background/footprints-on-beach.jpg');
+    background-image: url("../media/background/footprints-on-beach.jpg");
     width: 100%;
     min-height: 100vh;
     background-size: cover;
@@ -97,15 +97,15 @@
     background: white;
     color: black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     /* autoprefixer: off */
-    display: grid;
-    grid-template-columns: 1fr 2fr 0.5fr;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr 0.5fr; */
     align-items: center;
     position: relative;
     &:after {
-      content: '';
+      content: "";
       width: 100%;
       position: absolute;
       bottom: 0;
