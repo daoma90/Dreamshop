@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validName(e) {
-    if (name.value.length <= 1) {
-      error.textContent = 'Name must contain 2 characters';
+    if (name.value.length <= 1 && name.value.length > 20) {
+      error.textContent = 'Name must contain between 2-20 characters';
       error.style.visibility = 'visible';
       error.style.color = 'red';
       return false;

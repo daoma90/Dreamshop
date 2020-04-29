@@ -41,7 +41,7 @@
           <h2 class="form-wrapper__headline">Shipping</h2>
           <form action="./admin/order/addOrder.php" name="addOrder" method="POST" class="form-wrapper__form" enctype="multipart/form-data">
             <label for="name" class="form-wrapper__name-label">Name</label>
-            <input type="text" name="name" class="form-wrapper__input" minlength="2" minlength="20" required />
+            <input type="text" name="name" class="form-wrapper__input" minlength="2" maxlength="20" required />
             <div class="error"></div>
 
 
