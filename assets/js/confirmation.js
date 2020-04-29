@@ -21,7 +21,7 @@ for (var i = 0; i < localStorage.length; i++) {
       .concat(elm.name, '</div>\n        <div class="product__price">')
       .concat(
         elm.price,
-        '</div>\n        <div class="product__quantity">Quantity: '
+        ' EUR</div>\n        <div class="product__quantity">Quantity: '
       )
       .concat(elm.quantity, "</div>\n      </div>\n    </div>");
   }
