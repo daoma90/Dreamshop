@@ -21,15 +21,8 @@
 
   <?php
 
-  // $words_to_filter = array("and", "not", "if", "get", "with", "keep", "that", "this", "every", "is", 'let', 'go');
-  // character 'a' is not included here it can be find in the middle 
   if (isset($_GET['submit-search'])) {
     $searchQ = htmlspecialchars($_GET['searchWord']);
-    // if ($in_array($searchQ, $words_to_filter)) {
-
-    //   echo $searchQ;
-    // }
-    // $res = str_ireplace($words_to_filter, "",   $searchQ);
     $res = trim($searchQ);
     $query = $res;
     if (!empty($res)) {
