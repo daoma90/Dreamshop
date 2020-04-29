@@ -9,10 +9,10 @@
 <body>
 <?php
   require_once "./header.php";
-  require_once "./blurred-background.php";
 ?>
 
     <section class="confirmation">
+    <div class="confirmation__background"></div>
     <div class="confirmation-container">
         <div class="confirmation-products">
             <div class="products-top">

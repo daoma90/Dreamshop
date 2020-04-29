@@ -13,25 +13,27 @@
 
   <?php
   require_once "./header.php";
-  require_once "./blurred-background.php"
-  ?>
-  <main class="order-main">
-    <div class="cont">
-      <div class="products">
-        <h2 class="products__headline">Your Order</h2>
-        <div class="products__container"></div>
-        <div class="products__completion-btns">
-          <div class="products__total-wrap">
-            <div class="products__price-text">PRICE:</div>
-            <div class="products__price-price">0</div>
-          </div>
-          <div class="products__total-wrap">
-            <div class="products__shipping-text">SHIPPING:</div>
-            <div class="products__shipping-price">0</div>
-          </div>
-          <div class="products__total-wrap">
-            <div class="products__total-text">TOTAL:</div>
-            <div class="products__total">0</div>
+  
+?>
+    <main class="order-main">
+      <div class="background"></div>
+      <div class="cont">
+        <div class="products">
+          <h2 class="products__headline">Your Order</h2>
+          <div class="products__container"></div>
+          <div class="products__completion-btns">
+            <div class="products__total-wrap">
+              <div class="products__price-text">PRICE:</div>
+              <div class="products__price-price">0</div>
+            </div>
+            <div class="products__total-wrap">
+              <div class="products__shipping-text">SHIPPING:</div>
+              <div class="products__shipping-price">0</div>
+            </div>
+            <div class="products__total-wrap">
+              <div class="products__total-text">TOTAL:</div>
+              <div class="products__total">0</div>
+            </div>
           </div>
         </div>
       </div>
@@ -81,8 +83,7 @@
   require_once "./footer.php"
   ?>
 
-  <<<<<<< HEAD <script src="./assets/js/happyLib.js">
-    </script>
+    <script src="./assets/js/happyLib.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/cart.js"></script>
     <script src="./assets/js/order.js"></script>
@@ -92,15 +93,6 @@
 </body>
 
 </html>
-=======
-<script src="./assets/js/happyLib.js"></script>
-<script src="./assets/js/header.js"></script>
-<script src="./assets/js/cart.js"></script>
-<script src="./assets/js/ordervalidation.js"></script>
-<script src="./assets/js/order.js"></script>
-<script src="./assets/js/ajax-categories.js"></script>
-<script src="./assets/js/render.js"></script>
-</body>
 
-</html>
->>>>>>> searchNew
+
+

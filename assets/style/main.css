@@ -1573,6 +1573,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1581,13 +1585,41 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  padding-top: 80px;
 }
 
 @media (min-width: 724px) {
   .order-main {
-    position: absolute;
-    top: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+}
+
+.background {
+  display: none;
+}
+
+@media (min-width: 724px) {
+  .background {
+    display: block;
+    background-image: url("../media/background/footprints-on-beach.jpg");
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    position: relative;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    z-index: -1;
   }
 }
 
@@ -1614,6 +1646,8 @@
 
 @media (min-width: 724px) {
   .cont {
+    display: -ms-grid;
+    display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: 1fr;
@@ -1625,7 +1659,12 @@
             align-items: center;
     padding: 2em;
     margin-top: 100px;
-    display: -ms-grid;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
     display: grid;
   }
 }
@@ -1696,7 +1735,7 @@
 }
 
 .products__item:after {
-  content: '';
+  content: "";
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -1912,16 +1951,41 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  background-color: #e9b119;
-  padding-top: 50px;
 }
 
 @media (min-width: 724px) {
   .confirmation {
-    background-color: unset;
-    position: absolute;
-    top: 0;
-    padding-top: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+}
+
+.confirmation__background {
+  display: none;
+}
+
+@media (min-width: 724px) {
+  .confirmation__background {
+    display: block;
+    background-image: url("../media/background/blue-shoes-beach-gray.jpg");
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    position: relative;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    z-index: -1;
   }
 }
 
@@ -1952,7 +2016,13 @@
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
     padding: 2em;
-    margin-top: 100px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    padding-top: 100px;
   }
 }
 
@@ -2035,7 +2105,7 @@
 }
 
 .confirmation-container .confirmation-products .product:after {
-  content: '';
+  content: "";
   position: absolute;
   border-bottom: solid 0.5px #a8a8a8;
   width: 100%;
@@ -2171,8 +2241,6 @@
   width: 100vw;
   min-height: 100vh;
   max-width: 100%;
-  -webkit-transition-duration: 0.1s;
-          transition-duration: 0.1s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2182,21 +2250,41 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding-top: 80px;
-  background-color: #eeb742;
 }
 
 @media (min-width: 724px) {
   .contact {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: absolute;
-    top: 0;
-    background-color: unset;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+}
+
+.contact__background {
+  display: none;
+}
+
+@media (min-width: 724px) {
+  .contact__background {
+    display: block;
+    background-image: url("../media/background/shoes-over-water-gray.jpg");
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    z-index: -1;
   }
 }
 
@@ -2209,19 +2297,29 @@
       grid-template-rows: repeat(7, 1fr);
   height: 100%;
   min-width: 100%;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
 }
 
 @media (min-width: 724px) {
   .contact__form {
     height: 60%;
     min-width: 90%;
-    margin-top: 70px;
   }
 }
 
 @media (min-width: 1024px) {
   .contact__form {
-    min-width: 60%;
+    min-width: 1000px;
+    max-width: 1000px;
   }
 }
 
@@ -2234,7 +2332,7 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / 7;
-  min-height: 300px;
+  min-height: 400px;
 }
 
 @media (min-width: 724px) {
@@ -2282,7 +2380,7 @@
   height: 50%;
   resize: none;
   font-size: 20px;
-  border: solid 2px black;
+  border: solid 1px black;
 }
 
 @media (min-width: 1024px) {
@@ -2435,7 +2533,7 @@
 
 .flip-card__headline {
   font-size: 30px;
-  width: 200px;
+  width: 300px;
   margin-top: 60px;
   margin-bottom: 30px;
 }
