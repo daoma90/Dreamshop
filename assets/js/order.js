@@ -113,6 +113,13 @@ HappyLib.localStorageInit(cart.key);
 renderProducts();
 
 document.addEventListener('DOMContentLoaded', function () {
+  if (cart.products.length == 0) {
+    document.querySelector('.form-wrapper__checkout').outerHTML =
+      '<div style="background: gray; cursor: auto" value="ORDER" class="form-wrapper__checkout" name="addOrder">ORDER</div>';
+    document.querySelector('.products__completion-btns').innerHTML =
+      '<div>Add some items to your cart first!</div><a class="err-btn" href="./">Go shopping</a>';
+  }
+
   const form = document.querySelector('.form-wrapper__form');
   cart.products.forEach(function (product) {
     const template =

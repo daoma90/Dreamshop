@@ -10,8 +10,10 @@ if (isset($_POST['addProduct'])) {
   $cat_id = trim($_POST['cat_id']);
   $in_stock = trim($_POST['in_stock']);
   $featured = trim($_POST['featured']);
+  $isOld = trim($_POST['is_old']);
 
-  $sql = "INSERT INTO products(name,description,price, image, featured,in_stock,cat_id) VALUES(:name,:description,:price, :image, :featured,:in_stock,:cat_id)";
+
+  $sql = "INSERT INTO products(name,description,price, image, featured,in_stock,cat_id, is_old) VALUES(:name,:description,:price, :image, :featured,:in_stock,:cat_id, :is_old)";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([
     ':name' => $name,
@@ -21,6 +23,7 @@ if (isset($_POST['addProduct'])) {
     ':featured' => $featured,
     ':in_stock' => $in_stock,
     ':cat_id' => $cat_id,
+    ':is_old' => $isOld,
   ]);
 
   $ID = $pdo->lastInsertId();

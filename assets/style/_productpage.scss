@@ -3,10 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(https://images.unsplash.com/photo-1499321889027-736489e2f5a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   padding-bottom: 5%;
 }
 .productpage {
@@ -125,6 +121,9 @@
   &__add {
     @include btn-primary;
     margin-top: 1rem;
+  }
+  &__oos {
+    text-align: center;
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

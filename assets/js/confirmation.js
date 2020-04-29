@@ -26,6 +26,12 @@ for (var i = 0; i < localStorage.length; i++) {
       .concat(elm.quantity, "</div>\n      </div>\n    </div>");
   }
 }
+// productsContainer.innerHTML +=
+//   '<div class="confirmation-products__total"><p class="confirmation-products__total-text">TOTAL</p>' +
+//   '<p class="confirmation-products__total-number">' +
+//   total +
+//   ' €' +
+//   '</p></div>';
 productsContainer.innerHTML +=
   '<div class="confirmation-products__total"><p class="confirmation-products__total-text">TOTAL</p>' +
   '<p class="confirmation-products__total-number">' +
