@@ -14,12 +14,12 @@
     </div>
     <a class="header__headline" href="./"><img class="header__logo" src="assets/media/Logo.png" alt=""></a>
   </div>
-  <form action="searchProd.php" action="POST" class="header__form">
-      <input type="text" name="search-word" class="header__search" placeholder="Search Product" />
-      <input type="submit" name="submit-search" style="position: absolute; left: -9999px; width: 1px; height: 1px;" />
-    </form>
+  <form action="searchProd.php" action="POST" class="header__form" onsubmit="return checkForm(this);">
+    <input type=" text" name="searchWord" class="header__search" placeholder="Search Product" />
+    <input type="submit" name="submit-search" style="position: absolute; left: -9999px; width: 1px; height: 1px;" />
+  </form>
 
-  <?php 
-      require_once 'cart.php';
+  <?php
+  require_once 'cart.php';
   ?>
 </header>
