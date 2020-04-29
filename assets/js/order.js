@@ -15,7 +15,6 @@ function increaseOrderQty(e) {
   let input = e.target.parentElement.parentElement.querySelector(
     ".products__qty"
   );
-  console.log(input);
   let qty = parseInt(input.value);
   qty++;
   input.value = qty;
