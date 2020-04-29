@@ -46,7 +46,13 @@ function addToCart(id) {
       const productInCart = HappyLib.findProduct(tempObj.name, cart);
 
       if (!productInCart) {
-        cart.products.push(tempObj);
+        if (inputQty && tempObj.stock < parseInt(inputQty.value)) {
+          tempObj.quantity = tempObj.stock;
+          cart.products.push(tempObj);
+          alert('Stock limit reached! Total cart quantity is ' + tempObj.stock);
+        } else {
+          cart.products.push(tempObj);
+        }
       } else {
         if (inputQty) {
           productInCart.quantity += parseInt(inputQty.value);
@@ -54,7 +60,7 @@ function addToCart(id) {
           productInCart.quantity++;
         }
         // If quantity is raised above the current stock quantity the value will be set to the max stock quantity
-        if (tempObj.stock < productInCart.quantity) {
+        if (tempObj.stock <= productInCart.quantity) {
           productInCart.quantity = tempObj.stock;
           alert('No more of these in stock!');
         }
