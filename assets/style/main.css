@@ -1611,7 +1611,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  padding-top: 80px;
 }
 
 @media (min-width: 724px) {
@@ -1978,8 +1977,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  background-color: #e9b119;
-  padding-top: 50px;
 }
 
 @media (min-width: 724px) {

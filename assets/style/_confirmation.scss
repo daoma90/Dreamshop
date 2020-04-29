@@ -6,8 +6,6 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #e9b119;
-  padding-top: 50px;
   @include tablet {
     display: grid;
     grid-template-columns: 1fr;
