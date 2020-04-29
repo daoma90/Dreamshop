@@ -2,19 +2,10 @@
 
 .lp-categories {
   display: flex;
-  /* autoprefixer: off */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
-  @include tablet {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @include desktop {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  flex-wrap: wrap;
 
   &__item {
-    flex: 1;
+    flex: 1 1 240px;
     position: relative;
     height: calc(25vh - (#{$header__height} / 4));
     cursor: pointer;
