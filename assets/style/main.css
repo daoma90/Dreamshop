@@ -1803,6 +1803,7 @@
 
 .products {
   padding: 1em 0;
+  padding-top: 5em;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1867,7 +1868,7 @@
 }
 
 .products__item:after {
-  content: "";
+  content: '';
   width: 100%;
   position: absolute;
   bottom: 0;
