@@ -64,15 +64,10 @@
                     class="flip-card__social-icon"
                     src="assets/media/twitter.png"
                 /></a>
-                <a href=""
-                  ><img
-                    class="flip-card__social-icon"
-                    src="assets/media/linkedin.png"
-                /></a>
               </div>
             </div>
             <div class="flip-card__back">
-              <a href="./index.php" class="flip-card__close"></a>
+              <a href="index.php" class="flip-card__close"></a>
               <h3 class="flip-card__headline">
                 Thank you for contacting us!
               </h3>
@@ -94,11 +89,6 @@
                   ><img
                     class="flip-card__social-icon"
                     src="assets/media/twitter.png"
-                /></a>
-                <a href=""
-                  ><img
-                    class="flip-card__social-icon"
-                    src="assets/media/linkedin.png"
                 /></a>
               </div>
             </div>
