@@ -64,7 +64,13 @@
   justify-content: space-between;
 
   @include tablet {
+    padding-left: 2%;
+    padding-right: 2%;
     grid-column: 2;
+  }
+
+  @include desktop {
+    padding: $spacing__m;
   }
 
   &__headline {
@@ -164,8 +170,8 @@
 
   &__remove-btn {
     background: red;
-    height: 25px;
-    width: 25px;
+    min-height: 25px;
+    min-width: 25px;
     border-radius: 100px;
     color: white;
     display: flex;
@@ -192,7 +198,6 @@
   &__completion-btns {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
 
     & > * {
       text-align: center;

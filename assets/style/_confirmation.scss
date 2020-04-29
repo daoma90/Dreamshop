@@ -63,7 +63,6 @@
     @include tablet {
       width: 100%;
       grid-column: 2;
-      padding-left: 50px;
       margin-left: -1em;
     }
 
@@ -91,7 +90,7 @@
       display: flex;
       flex-direction: row;
       position: relative;
-      margin-bottom: 5px;
+      padding: 1rem;
       &:after {
         content: "";
         position: absolute;
@@ -99,7 +98,6 @@
         width: 100%;
         bottom: 0;
         left: 0;
-        margin-top: 5px;
       }
 
       &__image {
