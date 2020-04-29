@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
       mobileError.style.visibility = 'visible';
       mobileError.style.color = 'red';
       return false;
-    } else if (mobile.value.length <= 9 || mobile.value.length >= 12) {
+    } else if (mobile.value.length <= 9) {
       mobileError.textContent = 'Minimum 10 Digits';
       mobileError.style.visibility = 'visible';
       mobileError.style.color = 'red';
