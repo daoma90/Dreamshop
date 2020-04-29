@@ -19,6 +19,8 @@
     background-size: cover;
     position: relative;
     background: linear-gradient(blue, black);
+    overflow: hidden;
+
     @include desktop {
       min-height: 50vh;
       min-width: 50%;
@@ -30,21 +32,63 @@
     }
     &--second {
       background-image: url(https://images.unsplash.com/photo-1499202977705-65f436dac18a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
+      background-position: center top;
     }
   }
   &__text {
-    font-size: 1.25rem;
+    padding: 1.5rem;
+    width: 70vw;
+    height: 70vw;
+    max-width: 170px;
+    max-height: 170px;
+    text-align: center;
     position: absolute;
     background: rgba(0, 0, 0, 0.486);
-    padding: 1rem;
+    border-radius: 41rem;
+    left: 50%;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, rgb(232, 49, 49), #d67b1df0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: padding 480ms;
 
-    &--left {
-      left: 10%;
-      top: 15%;
+    @include desktop {
+      font-size: 1.5rem;
+      max-width: 280px;
+      max-height: 280px;
     }
-    &--right {
-      right: 5%;
-      bottom: 15%;
+
+    &:hover {
+      padding: 40rem;
+    }
+  }
+  &__abs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 0;
+    color: white;
+    font-family: 'Lalezar', cursive;
+    z-index: 1;
+    font-size: 1rem;
+    width: 70vw;
+    height: 70vw;
+    max-width: 170px;
+    max-height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    @include desktop {
+      font-size: 1.5rem;
+      max-width: 280px;
+      max-height: 280px;
     }
   }
 }

@@ -5,11 +5,6 @@ $db_database = "frontendproject";
 $db_username = "root";
 $db_password = 'root';
 
-
-
-
-
-
 $dsn = "mysql:host=$db_server;dbname=$db_database;charset=utf8";
 try {
   $pdo = new PDO($dsn, $db_username, $db_password);
