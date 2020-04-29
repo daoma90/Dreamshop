@@ -28,7 +28,7 @@ if (isset($_POST['updateCat'])) {
     } else if(!empty($imageName)) {
         $sql = 'UPDATE category 
         SET image=:image WHERE id=:id';
-        $stmt = $db->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':id' => $id,
             ':image' => $imageName

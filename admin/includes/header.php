@@ -35,7 +35,7 @@ else {
             <a href="<?= $catPath ?>" class="header__item-link">
                 <li class="header__list-item">Kategorier</li>
             </a>
-            <a href="<?= $prodPath ?>">
+            <a href="<?= $prodPath ?>" class="header__item-link">
                 <li class="header__list-item" id="products">Produkter</li>
             </a>
             <a href="<?= $orderPath ?>" class="header__item-link">
