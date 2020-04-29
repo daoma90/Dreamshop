@@ -863,7 +863,7 @@
 }
 
 .header__nav::before, .header__nav::after {
-  content: '';
+  content: "";
   height: 1px;
   -webkit-transition: all 200ms;
   transition: all 200ms;
@@ -1665,7 +1665,6 @@
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
-    display: grid;
   }
 }
 
