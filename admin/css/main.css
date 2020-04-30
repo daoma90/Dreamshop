@@ -1204,7 +1204,7 @@ body {
 }
 
 .orders__status button {
-  padding: 1rem 2rem;
+  padding: 1rem 0.5rem;
   background: #7c7ee4;
   border: none;
   color: white;
@@ -1267,16 +1267,17 @@ body {
   }
 }
 
+.orders th:nth-of-type(2),
+.orders td:nth-of-type(2) {
+  max-width: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @media (min-width: 1024px) {
   .orders th,
   .orders td {
     padding: 1.5rem;
-  }
-}
-
-@media (max-width: 450px) {
-  .orders-bg {
-    width: 450px;
   }
 }
 

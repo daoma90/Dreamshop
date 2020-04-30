@@ -65,7 +65,7 @@
       padding: 1rem 2rem;
     }
     button {
-      padding: 1rem 2rem;
+      padding: 1rem 0.5rem;
       background: rgb(124, 126, 228);
       border: none;
       color: white;
@@ -114,14 +114,14 @@
         padding: 1.5rem;
       }
     }
+    &:nth-of-type(2) {
+      max-width: 50px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
 
     @include desktop {
       padding: 1.5rem;
     }
-  }
-}
-@media (max-width: 450px) {
-  .orders-bg {
-    width: 450px;
   }
 }
