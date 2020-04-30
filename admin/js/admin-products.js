@@ -1,5 +1,3 @@
-
-
 // Production steps of ECMA-262, Edition 6, 22.1.2.1
 if (!Array.from) {
   Array.from = (function () {
@@ -156,9 +154,8 @@ function getPictures(id) {
 }
 
 
-//Sets form position in DOM and state (IE COMP)
-function prepareForm(inEdit, id) {
-  if (inEdit) {
+function formState(type, id) {
+  if (type === "edit") {
     productForm.setAttribute("action", "productUpdate.php");
     productForm.querySelector("button").setAttribute("name", "updateProduct");
     productForm.querySelector("h2").textContent = "UPDATE PRODUCT";
@@ -166,29 +163,32 @@ function prepareForm(inEdit, id) {
     productForm.style.display = "flex";
     toggle.style.display = "block";
   } else {
-    if (productForm.getAttribute("action", "productUpdate.php")) {
-      productForm.setAttribute("action", "productCreate.php");
-      productForm.querySelector("button").setAttribute("name", "addProduct");
-      productForm.querySelector("h2").textContent = "CREATE PRODUCT";
-      productForm.parentElement.style.display = "flex";
-      productForm.reset();
-      document.querySelector(".product-form-main__left-img img").src = "";
-      document.querySelector(".product-form-main__left__gallery").innerHTML = "";
-      document.querySelector(".section-products").prepend(productForm.parentElement);
-    } else {
-      productForm.setAttribute("action", "productCreate.php");
-      productForm.querySelector("button").setAttribute("name", "addProduct");
-      productForm.querySelector("h2").textContent = "CREATE PRODUCT";
-      productForm.parentElement.style.display = "flex";
-      productForm.reset();
-    }
+   // productForm.reset();
+    productForm.setAttribute("action", "productCreate.php");
+    productForm.querySelector("button").setAttribute("name", "addProduct");
+    productForm.querySelector("h2").textContent = "CREATE PRODUCT";
+    productForm.parentElement.style.display = "flex";
+    toggle.style.display = "block";
+  }
+}
+
+//Sets form position in DOM and state (IE COMP)
+function prepareForm(inEdit, id) {
+  if (inEdit) {
+    formState("edit", id);
+    document.querySelector(".section-add-imgwrap img").style.opacity = 0;
+    console.log("Sets edit");
+  } else {
+   
+    formState("create");
+    document.querySelector(".section-products").prepend(productForm.parentElement);
+    productForm.style.display = "flex";
+  
+    //CLOSES EDIT MODE
     if (id) {
-      document.querySelector(".section-products").prepend(productForm.parentElement);
-      productForm.style.display = "none";
-      Array.from(document.querySelectorAll(".product")).forEach(function (p) {
-        p.style.opacity = 1;
-      });
-      document.querySelector("#product_" + id).classList.add("product-state--inactive");
+      document.querySelector(".product-form").append(productForm);
+      productForm.style.display = "none"; 
+      document.querySelector(".section-add-imgwrap img").style.opacity = 1;
     }
   }
 }
@@ -239,16 +239,43 @@ function initEdit(id) {
   getPictures(id);
   product.prepend(productForm);
 }
+
+
+//SETS OPACITY STATE(IE COMP)
+function setDisplayState(state) {
+  const allProducts = document.querySelectorAll(".product");
+  for (let i = 0; i < allProducts.length; i++) {
+    p = allProducts[i];
+    p.classList.remove("product-state--active");
+    p.classList.remove("product-state--inactive");
+    if(state) {
+      p.classList.add(state);
+    }
+  }
+}
+
 let resetPos = false;
 //Resets form back to create mode and closes form
 toggle.addEventListener("click", function (e) {
-  const id = e.target.previousElementSibling.previousElementSibling.value;
-  prepareForm(false, id);
 
+  let id = e.target.previousElementSibling.previousElementSibling.value;
+  //Checks if in edit or create mode
+  if(!id) {
+    productForm.parentElement.style.display = "none";
+    setDisplayState();
+    console.log("Close!!");
+  } else {
+    prepareForm(false, id);
+    setDisplayState();
+    productForm.parentElement.style.display = "none";
+  }
 });
 //Opens create form
 const add = document.querySelector(".section-add-imgwrap");
 add.addEventListener("click", function (e) {
+  //setDisplayState();
+ // console.log(e);
   prepareForm(false);
+  productForm.reset();
+  setDisplayState("product-state--inactive");
 });
-
