@@ -1133,12 +1133,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-@media (min-width: 1024px) {
-  .order-wrap {
-    min-width: 60vw;
-  }
+  padding-top: 5%;
 }
 
 .order-wrap__heading {
@@ -1204,7 +1199,7 @@ body {
 }
 
 .orders__status button {
-  padding: 1rem 2rem;
+  padding: 1rem 0.5rem;
   background: #7c7ee4;
   border: none;
   color: white;
@@ -1251,7 +1246,7 @@ body {
 
 .orders th,
 .orders td {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   margin-bottom: 0.25rem;
 }
 
@@ -1267,16 +1262,31 @@ body {
   }
 }
 
+.orders th:nth-of-type(1),
+.orders td:nth-of-type(1) {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.orders th:nth-of-type(2),
+.orders td:nth-of-type(2) {
+  max-width: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @media (min-width: 1024px) {
-  .orders th,
-  .orders td {
-    padding: 1.5rem;
+  .orders th:nth-of-type(2),
+  .orders td:nth-of-type(2) {
+    max-width: unset;
   }
 }
 
-@media (max-width: 450px) {
-  .orders-bg {
-    width: 450px;
+@media (min-width: 1024px) {
+  .orders th,
+  .orders td {
+    padding: 0.5rem;
   }
 }
 
