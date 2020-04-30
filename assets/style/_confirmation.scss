@@ -63,7 +63,6 @@
     @include tablet {
       width: 100%;
       grid-column: 2;
-      padding-left: 50px;
       margin-left: -1em;
     }
 
@@ -91,14 +90,14 @@
       display: flex;
       flex-direction: row;
       position: relative;
-      margin-bottom: 5px;
+      padding: 1rem;
       &:after {
         content: "";
         position: absolute;
         border-bottom: solid 0.5px rgb(168, 168, 168);
         width: 100%;
         bottom: 0;
-        margin-top: 5px;
+        left: 0;
       }
 
       &__image {
@@ -140,7 +139,7 @@
 
     &__headline {
       margin-bottom: 10px;
-      margin-top: 72px;
+      margin-top: 120px;
       @include tablet {
         margin-top: 0;
       }
