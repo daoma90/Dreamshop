@@ -1,15 +1,15 @@
 <?php
 
-// $db_server = "localhost";
-// $db_database = "jlwvfkou_wp888";
-// $db_username = "jlwvfkou_wp888";
-// $db_password = 'JSU8Sp83[!'; 
-
-
 $db_server = "localhost";
 $db_database = "jlwvfkou_wp888";
-$db_username = "root";
-$db_password = ''; 
+$db_username = "jlwvfkou_wp888";
+$db_password = 'JSU8Sp83[!'; 
+
+
+// $db_server = "localhost";
+// $db_database = "jlwvfkou_wp888";
+// $db_username = "root";
+// $db_password = ''; 
 
 
 

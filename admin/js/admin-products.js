@@ -273,9 +273,8 @@ toggle.addEventListener("click", function (e) {
 //Opens create form
 const add = document.querySelector(".section-add-imgwrap");
 add.addEventListener("click", function (e) {
-  //setDisplayState();
- // console.log(e);
   prepareForm(false);
   productForm.reset();
   setDisplayState("product-state--inactive");
 });
+
