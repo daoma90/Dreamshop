@@ -37,6 +37,7 @@
 
   &__form {
     min-width: 110px;
+    width: 90%;
     @include tablet {
       position: static;
       background: none;
@@ -49,6 +50,7 @@
   &__logo {
     height: calc(#{$header__height} - 5px);
     margin-right: 20px;
+    transition: 1s;
   }
   &__headline {
     margin-right: auto;
@@ -93,7 +95,6 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
     }
-    &:hover,
     &:focus {
       padding: 12px 0;
       outline: 0;
@@ -101,6 +102,16 @@
       border-bottom: 1px solid #575756;
       border-radius: 0;
       background-position: 100% center;
+    }
+    @include tablet {
+      &:hover {
+        padding: 12px 0;
+        outline: 0;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #575756;
+        border-radius: 0;
+        background-position: 100% center;
+      }
     }
   }
 
