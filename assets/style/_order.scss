@@ -110,6 +110,7 @@
     grid-template-columns: 1fr 2fr 0.5fr; */
     align-items: center;
     position: relative;
+    margin-bottom: 1px;
     &:after {
       content: "";
       width: 100%;
@@ -253,13 +254,19 @@
   }
 
   &__input {
-    margin-bottom: $spacing__s;
     border: none;
     height: 30px;
     font-size: 18px;
   }
 
+  &__validation-text {
+    height: 20px;
+    content: "";
+    margin-bottom: 5px;
+  }
+
   &__checkout {
+    margin-top: 20px;
     padding: 1rem;
     background: #78b9fb;
     text-align: center;

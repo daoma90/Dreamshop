@@ -42,33 +42,33 @@
           <form action="./admin/order/addOrder.php" name="addOrder" method="POST" class="form-wrapper__form" enctype="multipart/form-data">
             <label for="name" class="form-wrapper__name-label">Name</label>
             <input type="text" name="name" class="form-wrapper__input" minlength="2" maxlength="20" required />
-            <div class="error"></div>
+            <div class="error form-wrapper__validation-text"></div>
 
 
 
             <label for="e-mail" class="form-wrapper__name-label">E-Mail</label>
             <input type="text" name="email" class="form-wrapper__input mail" required />
-            <div class="error1"></div>
+            <div class="error1 form-wrapper__validation-text"></div>
 
             <label for="phone" class="form-wrapper__name-label">Phone</label>
             <input type="text" name="phone" class="form-wrapper__input  mobile" minlength="10" maxlength="12" required />
-            <div class="mobileError"></div>
+            <div class="mobileError form-wrapper__validation-text"></div>
 
             <label for="adress" class="form-wrapper__name-label">Adress</label>
             <input type="text" name="adress" class="form-wrapper__input adress" minlength="5" maxlength="20" required />
-            <div class="adressError"></div>
+            <div class="adressError form-wrapper__validation-text"></div>
 
             <div class="form-wrapper__zip-city">
               <div class="form-wrapper__zip">
                 <label for="zip" class="form-wrapper__name-label">Zip</label>
                 <input type="text" name="zip" class="form-wrapper__input  zip" minlength="5" maxlength="5" required />
-                <div class="zipError"></div>
+                <div class="zipError form-wrapper__validation-text"></div>
               </div>
 
               <div class="form-wrapper__city">
                 <label for="city" class="form-wrapper__name-label">City</label>
                 <input type="text" name="city" class="form-wrapper__input city" minlength="2" maxlength="15" required />
-                <div class="cityError"> </div>
+                <div class="cityError form-wrapper__validation-text"> </div>
               </div>
             </div>
             <div class="products-hidden"></div>

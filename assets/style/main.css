@@ -1873,6 +1873,7 @@
     grid-template-columns: 1fr 2fr 0.5fr; */
   align-items: center;
   position: relative;
+  margin-bottom: 1px;
 }
 
 .products__item:after {
@@ -2102,13 +2103,19 @@
 }
 
 .form-wrapper__input {
-  margin-bottom: 1em;
   border: none;
   height: 30px;
   font-size: 18px;
 }
 
+.form-wrapper__validation-text {
+  height: 20px;
+  content: "";
+  margin-bottom: 5px;
+}
+
 .form-wrapper__checkout {
+  margin-top: 20px;
   padding: 1rem;
   background: #78b9fb;
   text-align: center;
