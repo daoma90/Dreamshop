@@ -80,6 +80,7 @@ ini_set('error_reporting', E_ALL);
     </main>
     <script src="../js/admin-products.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/alert.js"></script>
 </body>
 
 </html>

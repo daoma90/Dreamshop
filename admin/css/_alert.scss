@@ -1,14 +1,13 @@
-.response-container {
-    position: absolute;
-    max-width: 350px;
-    height: 150px;
-    border-radius: 5px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    z-index: 2000;
-    background:rgb(219, 219, 219);
-    padding: 10px;
+.alert {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  border-radius: 5px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 2000;
+  background: rgb(219, 219, 219);
+  padding: 10px;
 }
-

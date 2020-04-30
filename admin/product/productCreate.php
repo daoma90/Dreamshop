@@ -28,6 +28,14 @@ if (isset($_POST['addProduct'])) {
 
   $ID = $pdo->lastInsertId();
 
+  
+  $salePercentage = 0.9;
+  if($isOld > 0) {
+    $sql = "UPDATE products SET sale_price = price * $salePercentage WHERE is_old = 1 AND sale_price = 0";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+  }
+
   $targetDir = "../images/";
   $allowTypes = array("jpg", "png", "jpeg", "gif", "JPG", "PNG", "GIF");
   $file;
@@ -61,4 +69,3 @@ if (isset($_POST['addProduct'])) {
   }
  header('Location:products.php');
 }
-?>
