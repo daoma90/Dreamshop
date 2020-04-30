@@ -1873,6 +1873,7 @@
     grid-template-columns: 1fr 2fr 0.5fr; */
   align-items: center;
   position: relative;
+  margin-bottom: 1px;
 }
 
 .products__item:after {

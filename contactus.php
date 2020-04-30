@@ -74,6 +74,10 @@
               <p class="flip-card__info-text">
                 We will reach out to you as soon as possible.
               </p>
+              <p class="flip-card__info-text">
+                In the meantime you can check out our <span class="flip-card__faq">FAQ</span> for answers to your question.
+              </p>
+              <p class="flip-card__info-text">Or reach out to us on our social media.</p>
               <div class="flip-card__social">
                 <a href=""
                   ><img
