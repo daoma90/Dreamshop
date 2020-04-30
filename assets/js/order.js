@@ -11,9 +11,30 @@ function removeProduct(e) {
   HappyLib.updateLocalStorage(cart.key, renderProducts);
 }
 
+function increaseOrderQty(e) {
+  let input = e.target.parentElement.parentElement.querySelector(
+    '.products__qty'
+  );
+  let qty = parseInt(input.value);
+  qty++;
+  input.value = qty;
+  changeOrderQuantity(input);
+}
+
+function decreaseOrderQty(e) {
+  let input = e.target.parentElement.parentElement.querySelector(
+    '.products__qty'
+  );
+  let qty = parseInt(input.value);
+  qty--;
+  input.value = qty;
+
+  changeOrderQuantity(input);
+}
+
 function changeOrderQuantity(e) {
-  const val = e.target.parentElement.querySelector('.products__qty');
-  const item = e.target.parentElement.querySelector('.products__name')
+  const val = e;
+  const item = e.parentElement.parentElement.querySelector('.products__name')
     .textContent;
 
   const productInCart = HappyLib.findProduct(item, cart);
@@ -23,19 +44,16 @@ function changeOrderQuantity(e) {
       return item.name !== productInCart.name;
     });
   }
-  HappyLib.updateLocalStorage(cart.key, renderProducts);
-}
-
-function handleProductQty(e) {
-  const clickedProduct = e.target.parentElement.querySelector('.products__name')
-    .textContent;
-  const inputQty = e.target.parentElement.querySelector('.products__qty');
-  const productInCart = HappyLib.findProduct(clickedProduct, cart);
-  if (productInCart !== undefined && inputQty.value > productInCart.stock) {
+  if (
+    productInCart !== undefined &&
+    parseInt(val.value) > productInCart.stock
+  ) {
     productInCart.quantity = productInCart.stock;
     HappyLib.updateLocalStorage(cart.key, renderProducts);
     alert('Stock limit reached');
   }
+
+  HappyLib.updateLocalStorage(cart.key, renderProducts);
 }
 
 function updatePrice(str) {
@@ -79,32 +97,43 @@ function renderProducts() {
     // <div class="products__text-wrap">
     // <div class="products__name">${item.name}</div>
     // <div class="products__item-total">${item.price * item.quantity} SEK</div>
-    // <input type="number" value="${item.quantity}" class="products__qty">
+    // <div class="products__qty-wrap">
+    //   <button class="products__qty-down"><i class="fa fa-minus"></i></button>
+    //   <input
+    //     class="products__qty"
+    //     type="text"
+    //     value="${item.quantity}"
+    //     readonly
+    //   />
+    //   <button class="products__qty-up"><i class="fa fa-plus"></i></button>
+    // </div>
     // </div>
     // <span class="products__remove-btn">-</span>
-
     // </div>`;
-    items.innerHTML += '<div class="products__item"><div class="products__img-wrap"><img class="products__img" src="./admin/images/'
+    items.innerHTML += '<div class="products__item">\n    <div class="products__img-wrap"><img class="products__img" src="./admin/images/'
       .concat(
         item.image,
-        '"/></div><div class="products__text-wrap"><div class="products__name">'
+        '"/></div>\n\n    <div class="products__text-wrap">\n    <div class="products__name">'
       )
-      .concat(item.name, '</div><div class="products__item-total">')
+      .concat(item.name, '</div>\n    <div class="products__item-total">')
       .concat(
         item.price * item.quantity,
-        ' SEK</div><input type="number" value="'
+        ' SEK</div>\n    <div class="products__qty-wrap">\n      <button class="products__qty-down"><i class="fa fa-minus __qty"></i></button>\n      <input\n        class="products__qty"\n        type="text"\n        value="'
       )
       .concat(
         item.quantity,
-        '" class="products__qty"></div><span class="products__remove-btn">-</span></div>'
+        '"\n        readonly\n      />\n      <button class="products__qty-up"><i class="fa fa-plus __qty"></i></button>\n    </div>\n    </div>\n    <span class="products__remove-btn">-</span>\n    </div>'
       );
   });
   const removeBtn = document.querySelectorAll('.products__remove-btn');
   const qtyInput = document.querySelectorAll('.products__qty');
+  const orderQtyUp = document.querySelectorAll('.products__qty-up');
+  const orderQtyDown = document.querySelectorAll('.products__qty-down');
 
   HappyLib.addEvents(removeBtn, removeProduct, 'click');
-  HappyLib.addEvents(qtyInput, changeOrderQuantity, 'change');
-  HappyLib.addEvents(qtyInput, handleProductQty, 'change');
+  HappyLib.addEvents(orderQtyUp, increaseOrderQty, 'click');
+  HappyLib.addEvents(orderQtyDown, decreaseOrderQty, 'click');
+  // HappyLib.addEvents(qtyInput, changeOrderQuantity, "change");
 
   updatePrice();
 }
@@ -119,17 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.products__completion-btns').innerHTML =
       '<div>Add some items to your cart first!</div><a class="err-btn" href="./">Go shopping</a>';
   }
-
-  const form = document.querySelector('.form-wrapper__form');
-  cart.products.forEach(function (product) {
-    const template =
-      '<input type="hidden" name="products[]" value="' +
-      product.id +
-      '" /><input type="hidden" name="quantity[]" value="' +
-      product.quantity +
-      '" />';
-    form.innerHTML += template;
-  });
 
   // Quickfix, remove shipping fee based on city
   const cityInput = addOrder.querySelectorAll('.form-wrapper__input')[5];

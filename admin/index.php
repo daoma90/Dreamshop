@@ -14,6 +14,6 @@
 
 require_once './includes/header.php';
 require_once './category/categoriesRead.php';
-require_once './category/categoriesForm.php';
+/* require_once './category/categoriesForm.php'; */
 require_once './includes/footer.php';
 ?>

@@ -8,8 +8,8 @@
   </head>
   <body>
     <?php require_once "header.php" ?>
-    <?php require_once "blurred-background.php" ?>
     <section class="contact">
+      <div class="contact__background"></div>
       <form class="contact__form">
         <div class="flip-card">
           <div class="flip-card__inner">
@@ -28,7 +28,7 @@
                     Fill in a name
                   </p>
                 </div>
-                <label class="flip-card__front-label" for="email" required
+                <label class="flip-card__front-label" for="email"
                   >E-mail</label
                 >
                 <input
@@ -45,7 +45,7 @@
                   Tomtebodavägen 3A <br />
                   123 45 Stockholm
                 </p>
-                <p class="flip-card__info-text">Dreamteam@dreamteam.se</p>
+                <p class="flip-card__info-text">contactus@dreamshop.se</p>
                 <p class="flip-card__info-text">+460000000</p>
               </div>
               <div class="flip-card__social">
@@ -64,21 +64,20 @@
                     class="flip-card__social-icon"
                     src="assets/media/twitter.png"
                 /></a>
-                <a href=""
-                  ><img
-                    class="flip-card__social-icon"
-                    src="assets/media/linkedin.png"
-                /></a>
               </div>
             </div>
             <div class="flip-card__back">
-              <a href="./index.php" class="flip-card__close"></a>
+              <a href="index.php" class="flip-card__close"></a>
               <h3 class="flip-card__headline">
                 Thank you for contacting us!
               </h3>
               <p class="flip-card__info-text">
                 We will reach out to you as soon as possible.
               </p>
+              <p class="flip-card__info-text">
+                In the meantime you can check out our <span class="flip-card__faq">FAQ</span> for answers to your question.
+              </p>
+              <p class="flip-card__info-text">Or reach out to us on our social media.</p>
               <div class="flip-card__social">
                 <a href=""
                   ><img
@@ -94,11 +93,6 @@
                   ><img
                     class="flip-card__social-icon"
                     src="assets/media/twitter.png"
-                /></a>
-                <a href=""
-                  ><img
-                    class="flip-card__social-icon"
-                    src="assets/media/linkedin.png"
                 /></a>
               </div>
             </div>
@@ -118,5 +112,6 @@
     </section>
     <?php require_once "footer.php" ?>
     <script src="assets/js/contactus.js"></script>
+    <script src="assets/js/header.js"></script>
   </body>
 </html>

@@ -33,16 +33,16 @@ else {
     <nav class="header__hidden-burgernav">
         <ul class="header__list">
             <a href="<?= $catPath ?>" class="header__item-link">
-                <li class="header__list-item">Kategorier</li>
+                <li class="header__list-item">Categories</li>
             </a>
-            <a href="<?= $prodPath ?>">
-                <li class="header__list-item" id="products">Produkter</li>
+            <a href="<?= $prodPath ?>" class="header__item-link">
+                <li class="header__list-item" id="products">Products</li>
             </a>
             <a href="<?= $orderPath ?>" class="header__item-link">
-                <li class="header__list-item" id="order">Beställningar</li>
+                <li class="header__list-item" id="order">Orders</li>
             </a>
             <a href="<?= $homePath ?>" class="header__item-link">
-                <li class="header__list-item">Webbshoppen</li>
+                <li class="header__list-item">Back to shop</li>
             </a>
         </ul>
     </nav>

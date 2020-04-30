@@ -46,7 +46,13 @@ function addToCart(id) {
       const productInCart = HappyLib.findProduct(tempObj.name, cart);
 
       if (!productInCart) {
-        cart.products.push(tempObj);
+        if (inputQty && tempObj.stock < parseInt(inputQty.value)) {
+          tempObj.quantity = tempObj.stock;
+          cart.products.push(tempObj);
+          alert('Stock limit reached! Total cart quantity is ' + tempObj.stock);
+        } else {
+          cart.products.push(tempObj);
+        }
       } else {
         if (inputQty) {
           productInCart.quantity += parseInt(inputQty.value);
@@ -54,7 +60,7 @@ function addToCart(id) {
           productInCart.quantity++;
         }
         // If quantity is raised above the current stock quantity the value will be set to the max stock quantity
-        if (tempObj.stock < productInCart.quantity) {
+        if (tempObj.stock <= productInCart.quantity) {
           productInCart.quantity = tempObj.stock;
           alert('No more of these in stock!');
         }
@@ -168,11 +174,11 @@ function renderCart() {
       )
       .concat(
         item.price * item.quantity,
-        ' SEK</div>\n                                <div class="cart-fixed__qty-wrap">\n                                  <button class="cart-fixed__qty-down"><i class="fa fa-minus"></i></button>\n                                  <input\n                                    class="cart-fixed__qty"\n                                    type="text"\n                                    value="'
+        ' SEK</div>\n                                <div class="cart-fixed__qty-wrap">\n                                  <button class="cart-fixed__qty-down"><i class="fa fa-minus __qty"></i></button>\n                                  <input\n                                    class="cart-fixed__qty"\n                                    type="text"\n                                    value="'
       )
       .concat(
         item.quantity,
-        '"\n                                    readonly\n                                  />\n                                  <button class="cart-fixed__qty-up"><i class="fa fa-plus"></i></button>\n                                </div>\n                            </div>\n                            <span class="cart-fixed__remove-btn">-</span>\n                          </li>'
+        '"\n                                    readonly\n                                  />\n                                  <button class="cart-fixed__qty-up"><i class="fa fa-plus __qty"></i></button>\n                                </div>\n                            </div>\n                            <span class="cart-fixed__remove-btn">-</span>\n                          </li>'
       );
   });
 
@@ -187,16 +193,16 @@ function renderCart() {
   //                             <div class="cart-fixed__item-total">${
   //                               item.price * item.quantity
   //                             } SEK</div>
-  //                             <div class="cart-fixed__qty-wrap">
-  //                               <button class="cart-fixed__qty-down"><i class="fa fa-minus"></i></button>
-  //                               <input
-  //                                 class="cart-fixed__qty"
-  //                                 type="text"
-  //                                 value="${item.quantity}"
-  //                                 readonly
-  //                               />
-  //                               <button class="cart-fixed__qty-up"><i class="fa fa-plus"></i></button>
-  //                             </div>
+  // <div class="cart-fixed__qty-wrap">
+  //   <button class="cart-fixed__qty-down"><i class="fa fa-minus"></i></button>
+  //   <input
+  //     class="cart-fixed__qty"
+  //     type="text"
+  //     value="${item.quantity}"
+  //     readonly
+  //   />
+  //   <button class="cart-fixed__qty-up"><i class="fa fa-plus"></i></button>
+  // </div>
   //                         </div>
   //                         <span class="cart-fixed__remove-btn">-</span>
   //                       </li>`;

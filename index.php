@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontendprojekt</title>
+    <title>DreamShop</title>
     <link rel="stylesheet" href="./assets/style/main.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
+
 <body>
-    <?php require_once 'header.php';?>
+    <?php require_once 'header.php'; ?>
     <section class="lp-hero">
         <div class="scroller">
             <div class="lp-hero__img-wrap"><img class="lp-hero__img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""></div>
@@ -27,39 +26,45 @@
 
     </section>
     <section class="feature-cards">
-        <a class="feature-cards__card feature-cards__card--first" href="newIn.php">
-            <article >
-                <div class="feature-cards__title">
-                    <span class="feature-cards__text feature-cards__text--left">Check out our newest products!</span>
-                </div>
+        
+            <article class="feature-cards__card feature-cards__card--first">
+                <a href="newIn.php">
+                <span class="feature-cards__abs">Check out our newest products!</span>
+                    <div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right"></span></div>
+                </a>
             </article>
-        </a>
-        <a class="feature-cards__card feature-cards__card--second" href="oldOut.php">
-        <article ><div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right">Older products need to go. 10% off!</span></div></article>
-        </a>
+            <article class="feature-cards__card feature-cards__card--second">
+                <a href="oldOut.php">
+                <span class="feature-cards__abs">10% off! Older products need to go.</span>
+                    <div class="feature-cards__title"><span class="feature-cards__text feature-cards__text--right"></span></div>
+                </a>
+            </article>
+        
     </section>
 
     <section class="feature-products">
         <h2 class="feature-products__title">Featured</h2>
         <div class="feature-products__product-wrap">
-        <?php 
-        require './assets/php/featured-products.php'; 
-        ?>
+            <?php
+            require './assets/php/featured-products.php';
+            ?>
         </div>
     </section>
 
     <section class="lp-categories">
-        <?php 
+        <?php
         require './assets/php/categories.php';
         ?>
     </section>
 
 
-    <?php require_once 'footer.php';?>
+    <?php require_once 'footer.php'; ?>
 
     <script src="./assets/js/happyLib.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/cart.js"></script>
     <script src="./assets/js/hero-scroller.js"></script>
+    <script src="./assets/js/search.js"></script>
 </body>
+
 </html>
