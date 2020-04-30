@@ -100,7 +100,13 @@
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
+    if (isset($redirectID)){
+
+      header("Location:../../confirmation.php?orderID=" . $redirectID); 
+    }
+    else {
+      echo 'reedirect is undefined';
+    }
   }
    
-    header("Location:../../confirmation.php?orderID=" . $redirectID); 
 ?>
