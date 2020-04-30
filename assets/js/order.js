@@ -50,7 +50,7 @@ function changeOrderQuantity(e) {
   ) {
     productInCart.quantity = productInCart.stock;
     HappyLib.updateLocalStorage(cart.key, renderProducts);
-    alert('Stock limit reached');
+    customAlert('Stock limit reached', 'alert');
   }
 
   HappyLib.updateLocalStorage(cart.key, renderProducts);

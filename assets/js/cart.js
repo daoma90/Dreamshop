@@ -49,7 +49,11 @@ function addToCart(id) {
         if (inputQty && tempObj.stock < parseInt(inputQty.value)) {
           tempObj.quantity = tempObj.stock;
           cart.products.push(tempObj);
-          alert('Stock limit reached! Total cart quantity is ' + tempObj.stock);
+          customAlert(
+            'Stock limit reached! Total cart quantity is ' + tempObj.stock,
+            'alert'
+          );
+          //alert('Stock limit reached! Total cart quantity is ' + tempObj.stock);
         } else {
           cart.products.push(tempObj);
         }
@@ -62,7 +66,8 @@ function addToCart(id) {
         // If quantity is raised above the current stock quantity the value will be set to the max stock quantity
         if (tempObj.stock <= productInCart.quantity) {
           productInCart.quantity = tempObj.stock;
-          alert('No more of these in stock!');
+          //alert('No more of these in stock!');
+          customAlert('No more of these in stock!', 'alert');
         }
       }
       HappyLib.updateLocalStorage(cart.key, renderCart);
@@ -146,7 +151,8 @@ function changeQuantity(e) {
   ) {
     productInCart.quantity = productInCart.stock;
     HappyLib.updateLocalStorage(cart.key, renderCart);
-    alert('Stock limit reached');
+    //alert('Stock limit reached');
+    customAlert('Stock limit reached!', 'alert');
   }
 
   HappyLib.updateLocalStorage(cart.key, renderCart);
