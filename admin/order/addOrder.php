@@ -100,7 +100,7 @@
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
+    header("Location:../../confirmation.php?orderID=" . $redirectID); 
   }
    
-    header("Location:../../confirmation.php?orderID=" . $redirectID); 
 ?>
