@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontendprojekt</title>
+  <title>Order</title>
   <link rel="stylesheet" href="./assets/style/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
@@ -61,7 +61,7 @@
             <div class="form-wrapper__zip-city">
               <div class="form-wrapper__zip">
                 <label for="zip" class="form-wrapper__name-label">Zip</label>
-                <input type="text" name="zip" class="form-wrapper__input  zip" minlength="5" maxlength="10" required />
+                <input type="text" name="zip" class="form-wrapper__input  zip" minlength="5" maxlength="5" required />
                 <div class="zipError"></div>
               </div>
 
