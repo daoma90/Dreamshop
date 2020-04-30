@@ -2103,13 +2103,19 @@
 }
 
 .form-wrapper__input {
-  margin-bottom: 1em;
   border: none;
   height: 30px;
   font-size: 18px;
 }
 
+.form-wrapper__validation-text {
+  height: 20px;
+  content: "";
+  margin-bottom: 5px;
+}
+
 .form-wrapper__checkout {
+  margin-top: 20px;
   padding: 1rem;
   background: #78b9fb;
   text-align: center;
