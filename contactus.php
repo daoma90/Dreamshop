@@ -113,5 +113,6 @@
     <?php require_once "footer.php" ?>
     <script src="assets/js/contactus.js"></script>
     <script src="assets/js/header.js"></script>
+    <script src="assets/js/search.js"></script>
   </body>
 </html>

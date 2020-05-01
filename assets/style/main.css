@@ -807,8 +807,10 @@
 }
 
 .header__form {
-  min-width: 110px;
+  min-width: 50px;
   width: 90%;
+  -webkit-transition: width 1s ease-in;
+  transition: width 1s ease-in;
 }
 
 @media (min-width: 724px) {
@@ -826,14 +828,15 @@
 .header__logo {
   height: calc(72px - 5px);
   margin-right: 20px;
-  -webkit-transition: 1s;
-  transition: 1s;
 }
 
 .header__headline {
   margin-right: auto;
   color: white;
   text-decoration: none;
+  width: 110px;
+  -webkit-transition: width 250ms;
+  transition: width 250ms;
 }
 
 .header__left-wrap {
@@ -878,8 +881,8 @@
   background-position: 95% center;
   border-radius: 50px;
   border: 1px solid white;
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;

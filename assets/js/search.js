@@ -25,7 +25,7 @@ function checkForm(form) {
 }
 
 const searchInput = document.querySelector(".header__search");
-const logo = document.querySelector(".header__headline");
+const logoWrap = document.querySelector(".header__headline");
 let screenWidth = screen.width;
 
 window.addEventListener("resize", function () {
@@ -33,19 +33,23 @@ window.addEventListener("resize", function () {
 });
 
 searchInput.addEventListener("click", function (e) {
-  const logo = document.querySelector(".header__headline");
+  const logoWrap = document.querySelector(".header__headline");
 
   if (screenWidth < 724) {
     if (e.target === searchInput) {
-      logo.style.display = "none";
-      console.log("Test");
+      logoWrap.style.visibility = "hidden";
+      logoWrap.style.width = "0px";
     }
   }
 });
 
 searchInput.addEventListener("focusout", function () {
   if (screenWidth < 724) {
-    logo.style.display = "inline-block";
-    console.log("focus off");
+    setTimeout(function () {
+      logoWrap.style.width = "110px";
+    }, 250);
+    setTimeout(function () {
+      logoWrap.style.visibility = "visible";
+    }, 500);
   }
 });

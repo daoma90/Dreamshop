@@ -88,6 +88,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 ?>
 <script src="./assets/js/header.js"></script>
 <script src="./assets/js/confirmation.js"></script>
-
+<script src="./assets/js/search.js"></script>
 </body>
 </html>
