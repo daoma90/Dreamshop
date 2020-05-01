@@ -45,11 +45,9 @@ searchInput.addEventListener("click", function (e) {
 
 searchInput.addEventListener("focusout", function () {
   if (screenWidth < 724) {
-    setTimeout(function () {
-      logoWrap.style.width = "110px";
-    }, 250);
+    logoWrap.style.width = "110px";
     setTimeout(function () {
       logoWrap.style.visibility = "visible";
-    }, 500);
+    }, 250);
   }
 });

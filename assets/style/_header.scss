@@ -89,7 +89,7 @@
     background-position: 95% center;
     border-radius: 50px;
     border: 1px solid white;
-    transition: all 500ms ease-in-out;
+    transition: all 250ms ease-in-out;
     backface-visibility: hidden;
     transform-style: preserve-3d;
     &::placeholder {
@@ -106,6 +106,7 @@
       background-position: 100% center;
     }
     @include tablet {
+      transition: all 500ms ease-in-out;
       &:hover {
         padding: 12px 0;
         outline: 0;

@@ -881,8 +881,8 @@
   background-position: 95% center;
   border-radius: 50px;
   border: 1px solid white;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
@@ -923,6 +923,10 @@
 }
 
 @media (min-width: 724px) {
+  .header__search {
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+  }
   .header__search:hover {
     padding: 12px 0;
     outline: 0;
