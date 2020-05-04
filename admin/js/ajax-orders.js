@@ -10,6 +10,9 @@ function updateOrder(id, event) {
         )
       ) {
         window.location.reload();
+      } else {
+        event.target.parentElement.parentElement.className =
+          'display-status status-' + status.toLowerCase();
       }
     }
   };
