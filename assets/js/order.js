@@ -155,3 +155,9 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePrice(this.value);
   });
 });
+
+const submitBtn = document.querySelector(".form-wrapper__checkout");
+
+submitBtn.addEventListener("click", function () {
+  submitBtn.disabled = true;
+});
