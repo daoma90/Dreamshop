@@ -807,10 +807,12 @@
 }
 
 .header__form {
-  min-width: 50px;
-  width: 90%;
-  -webkit-transition: width 1s ease-in;
-  transition: width 1s ease-in;
+  /* min-width: 50px; */
+  width: 45px;
+  -webkit-transition: width 250ms ease-in;
+  transition: width 250ms ease-in;
+  position: absolute;
+  right: 60px;
 }
 
 @media (min-width: 724px) {
@@ -821,6 +823,7 @@
     left: unset;
     -webkit-transform: unset;
             transform: unset;
+    min-width: 50px;
     width: 50%;
   }
 }
@@ -864,7 +867,7 @@
 }
 
 .header__search {
-  width: 90%;
+  width: 100%;
   padding: 12px;
   background-color: transparent;
   -webkit-transition: -webkit-transform 250ms ease-in-out;
@@ -878,7 +881,7 @@
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAyMjYgMjI2IgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDIyNnYtMjI2aDIyNnYyMjZ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTk0LjkyLDEzLjU2Yy00Mi4zOTI2NiwwIC03Ni44NCwzNC40NDczNCAtNzYuODQsNzYuODRjMCw0Mi4zOTI2NiAzNC40NDczNCw3Ni44NCA3Ni44NCw3Ni44NGMxNi43NzM0NCwwIDMyLjI3NTYzLC01LjQwMjgxIDQ0LjkxNzUsLTE0LjU0ODc1bDU5LjQ2NjI1LDU5LjMyNWwxMi43MTI1LC0xMi43MTI1bC01OC43NiwtNTguOTAxMjVjMTEuNTQ3MTksLTEzLjQ1NDA2IDE4LjUwMzc1LC0zMC45MTYwOSAxOC41MDM3NSwtNTAuMDAyNWMwLC00Mi4zOTI2NiAtMzQuNDQ3MzQsLTc2Ljg0IC03Ni44NCwtNzYuODR6TTk0LjkyLDIyLjZjMzcuNTAxODgsMCA2Ny44LDMwLjI5ODEyIDY3LjgsNjcuOGMwLDM3LjUwMTg4IC0zMC4yOTgxMiw2Ny44IC02Ny44LDY3LjhjLTM3LjUwMTg3LDAgLTY3LjgsLTMwLjI5ODEyIC02Ny44LC02Ny44YzAsLTM3LjUwMTg3IDMwLjI5ODEzLC02Ny44IDY3LjgsLTY3Ljh6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=");
   background-repeat: no-repeat;
   background-size: 18px 18px;
-  background-position: 95% center;
+  background-position: center;
   border-radius: 50px;
   border: 1px solid white;
   -webkit-transition: all 250ms ease-in-out;
@@ -926,6 +929,7 @@
   .header__search {
     -webkit-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
+    background-position: 95% center;
   }
   .header__search:hover {
     padding: 12px 0;
@@ -1866,7 +1870,7 @@
 
 .products__headline {
   text-align: center;
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 @media (min-width: 724px) {
@@ -2401,7 +2405,7 @@
 
 .confirmation-container .info-box__headline {
   margin-bottom: 10px;
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 @media (min-width: 724px) {
@@ -2748,7 +2752,7 @@
   background-size: cover;
   height: 40px;
   width: 40px;
-  top: 140px;
+  top: 80px;
   right: 5px;
 }
 
@@ -2775,14 +2779,7 @@
 .flip-card__headline {
   font-size: 30px;
   width: 300px;
-  margin-top: 60px;
   margin-bottom: 30px;
-}
-
-@media (min-width: 724px) {
-  .flip-card__headline {
-    margin-top: 0;
-  }
 }
 
 .flip-card__input-group {

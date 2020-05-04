@@ -15,7 +15,7 @@
     <a class="header__headline" href="./"><img class="header__logo" src="assets/media/Logo.png" alt=""></a>
   </div>
   <form action="searchProd.php" action="POST" class="header__form" onsubmit="return checkForm(this);">
-    <input type=" text" name="searchWord" class="header__search" placeholder="Search" />
+    <input type=" text" name="searchWord" class="header__search" placeholder="" />
     <input type="submit" name="submit-search" style="position: absolute; left: -9999px; width: 1px; height: 1px;" />
   </form>
 

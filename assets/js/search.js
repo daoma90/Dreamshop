@@ -26,10 +26,18 @@ function checkForm(form) {
 
 const searchInput = document.querySelector(".header__search");
 const logoWrap = document.querySelector(".header__headline");
+const searchWrap = document.querySelector(".header__form");
 let screenWidth = screen.width;
 
 window.addEventListener("resize", function () {
   screenWidth = screen.width;
+  if (screenWidth > 724) {
+    searchWrap.style.width = "50%";
+    searchInput.placeholder = "Search";
+  } else if (screenWidth < 724) {
+    searchWrap.style.width = "45px";
+    searchInput.placeholder = "";
+  }
 });
 
 searchInput.addEventListener("click", function (e) {
@@ -39,6 +47,8 @@ searchInput.addEventListener("click", function (e) {
     if (e.target === searchInput) {
       logoWrap.style.visibility = "hidden";
       logoWrap.style.width = "0px";
+      searchWrap.style.width = "60%";
+      searchInput.placeholder = "Search";
     }
   }
 });
@@ -46,6 +56,8 @@ searchInput.addEventListener("click", function (e) {
 searchInput.addEventListener("focusout", function () {
   if (screenWidth < 724) {
     logoWrap.style.width = "110px";
+    searchWrap.style.width = "45px";
+    searchInput.placeholder = "";
     setTimeout(function () {
       logoWrap.style.visibility = "visible";
     }, 250);
