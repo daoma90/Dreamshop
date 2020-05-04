@@ -26,7 +26,7 @@
     $query = $res;
     if (!empty($res)) {
 
-      $stmt = $db->prepare('SELECT * FROM products WHERE name LIKE :keywords');
+      $stmt = $db->prepare('SELECT * FROM products WHERE in_stock > 0 AND name LIKE :keywords');
       $stmt->execute([
         ':keywords' => '%' . $res . '%'
       ]);
@@ -40,21 +40,19 @@
           $isOld = $row['is_old'];
 
           $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
-          if ($stock == 0) {
-            $addToCartBtn = "<div class='feature-products__oos'>OUT OF STOCK</div>";
-          }
+
           if ($isOld == 1) {
 
 
             $sale_price = $price * $salePercentage;
             $sale = "
                 <div class='feature-products__price'>
-                    <span class='old-price'>$price SEK</span>
+                    <span class='old-price'>$price €</span>
                     <span class='on-sale'>-10%</span>
-                    <span class='new-price'>$sale_price SEK</span>
+                    <span class='new-price'>$sale_price €</span>
                 </div>";
           } else {
-            $sale = "<span class='old-price'>$price SEK</span>";
+            $sale = "<span class='old-price'>$price €</span>";
           }
 
 

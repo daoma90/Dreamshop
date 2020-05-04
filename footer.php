@@ -25,7 +25,7 @@
           <a href="#" class="footer__link">Terms and Conditions</a>
         </li>
         <li class="footer__list-item">
-          <a href="./admin" class="footer__link">Admin login</a>
+          <a href="./admin/order/orders.php" class="footer__link">Admin login</a>
         </li>
       </ul>
     </div>
