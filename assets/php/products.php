@@ -10,13 +10,11 @@ if (!isset($sql)) {
     $stmt->execute();
 }
 if (isset($_GET['category'])){
-    $sql = "SELECT * FROM category, products WHERE category.ID = products.cat_id AND category.name = :catName";
+    $sql = "SELECT * FROM category, products WHERE category.ID = products.cat_id AND category.name = :catName AND products.in_stock > 0";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':catName', $_GET['category']);
     $stmt->execute();
 }
-
-
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
     $id = htmlspecialchars($row['ID']);
@@ -28,9 +26,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
     $isOld = $row["is_old"];
 
     $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
-    if ($stock == 0) {
-        $addToCartBtn = "<div class='feature-products__oos'>OUT OF STOCK</div>";
-    }
+
     if ($isOld == 1) {
         $sale_price = $price * $salePercentage;
         $sale = "
