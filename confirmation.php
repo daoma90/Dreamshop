@@ -64,7 +64,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             </div>
             <div class='info-box__container'>
                 <p class='info-box__small-headline'>Contact info</p>
-                <p class='info-box__info-text'>0$phone</p>
+                <p class='info-box__info-text'>$phone</p>
                 <p class='info-box__info-text'>$mail</p>
             </div>
             <div class='info-box__container'>
@@ -88,6 +88,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 ?>
 <script src="./assets/js/header.js"></script>
 <script src="./assets/js/confirmation.js"></script>
+<script src="./assets/js/search.js"></script>
 
 </body>
 </html>
