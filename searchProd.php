@@ -26,7 +26,7 @@
     $query = $res;
     if (!empty($res)) {
 
-      $stmt = $db->prepare('SELECT * FROM products WHERE name LIKE :keywords');
+      $stmt = $db->prepare('SELECT * FROM products WHERE in_stock > 0 AND name LIKE :keywords');
       $stmt->execute([
         ':keywords' => '%' . $res . '%'
       ]);
@@ -40,9 +40,7 @@
           $isOld = $row['is_old'];
 
           $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
-          if ($stock == 0) {
-            $addToCartBtn = "<div class='feature-products__oos'>OUT OF STOCK</div>";
-          }
+
           if ($isOld == 1) {
 
 
