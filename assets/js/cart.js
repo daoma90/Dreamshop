@@ -221,13 +221,13 @@ function renderCart() {
   const removeBtn = document.querySelectorAll('.cart-fixed__remove-btn');
   const cartQtyUp = document.querySelectorAll('.cart-fixed__qty-up');
   const cartQtyDown = document.querySelectorAll('.cart-fixed__qty-down');
-  const qtyInput = document.querySelectorAll('.cart-fixed__qty');
+  const discounted_price = HappyLib.getDiscount(cart.products);
 
   HappyLib.addEvents(removeBtn, removeItem, 'click');
   HappyLib.addEvents(cartQtyUp, increaseCartQty, 'click');
   HappyLib.addEvents(cartQtyDown, decreaseCartQty, 'click');
 
-  totalPrice.textContent = price + ' €';
+  totalPrice.textContent = price - discounted_price + ' €';
   totalQty.textContent = qty + ' Items';
   totalQtyIconNotif.textContent = qty;
 }
