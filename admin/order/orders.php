@@ -58,7 +58,7 @@ function drawOrders($db) {
                     <button onclick="showRelevantStatus(event)">New</button>
                     <button onclick="showRelevantStatus(event)">Processing</button>
                     <button onclick="showRelevantStatus(event)">Complete</button>
-                    <input placeholder="Search" onkeyup="searchFilter(event)" type="text">
+                    <input placeholder="Search city" onkeyup="searchFilter(event)" type="text">
                 </div>
     <table class="orders" id="order-uncomplete">
         <tr>
