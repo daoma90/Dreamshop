@@ -126,10 +126,6 @@ function deleteView(id) {
       }, 250);
     }
   };
-  // if (confirm('Säker på att du vill ta bort?')) {
-  //   req.open('POST', '../product/productDelete.php?ID=' + id, true);
-  //   req.send();
-  // }
   customAlert(
     'Säker på att du vill ta bort?',
     'confirm',
@@ -254,10 +250,10 @@ function initEdit(id) {
   }
   //Overlay elements
   product.style.zIndex = '998';
+  getPictures(id);
   //Sets correct form src > backend
   prepareForm(true, id);
   //Inserts form to current product element
-  getPictures(id);
   product.prepend(productForm);
 }
 

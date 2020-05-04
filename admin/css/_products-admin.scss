@@ -334,6 +334,7 @@ main {
     left: 0;
     top: 0;
     z-index: 998;
+    transition: all 250ms ease-in;
 
     @media (max-width: 760px) {
       min-width: 250px;
@@ -450,6 +451,7 @@ main {
     opacity: 1;
     min-width: 450px;
     min-height: 350px;
+    transition: all 250ms ease-in;
     @media (max-width: 768px) {
       min-width: 90vw;
     }
@@ -458,5 +460,12 @@ main {
     opacity: 0.5;
     min-width: 220px;
     min-height: 200px;
+    transition: all 250ms ease-in;
   }
+}
+
+
+
+.ani-grow {
+  
 }

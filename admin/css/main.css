@@ -732,6 +732,8 @@ main {
   left: 0;
   top: 0;
   z-index: 998;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
 }
 
 @media (max-width: 760px) {
@@ -851,6 +853,8 @@ main {
   opacity: 1;
   min-width: 450px;
   min-height: 350px;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
 }
 
 @media (max-width: 768px) {
@@ -863,6 +867,8 @@ main {
   opacity: 0.5;
   min-width: 220px;
   min-height: 200px;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
 }
 
 body {
