@@ -33,5 +33,7 @@
     <script src="./assets/js/happyLib.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/search.js"></script>
+
 </body>
 </html>
