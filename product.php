@@ -79,11 +79,11 @@
             <h1 class="productpage__name"><?= $product ?></h1>
             <?php 
               if ($sale_price > 0) {
-                echo "<span style='text-decoration: line-through' class='productpage__price'>$price SEK</span>";
-                echo "<span style='margin-left: 0.5rem' class='productpage__price'>$sale_price SEK</span>";
+                echo "<span style='text-decoration: line-through' class='productpage__price'>$price €</span>";
+                echo "<span style='margin-left: 0.5rem' class='productpage__price'>$sale_price €</span>";
               }
               else {
-                echo "<span class='productpage__price'>$price SEK</span>";
+                echo "<span class='productpage__price'>$price €</span>";
               }
             ?>
             <small class="productpage__category"><?= $category ?></small>
