@@ -48,6 +48,15 @@ HappyLib = (function () {
       });
       return price;
     },
+    getDiscount: function (items) {
+      let discount = 0;
+      items.forEach(function (item) {
+        if (item.sale_price > 0) {
+          discount += (item.price - item.sale_price) * item.quantity;
+        }
+      });
+      return discount;
+    },
 
     getTotalQty: function (items) {
       let total = 0;
