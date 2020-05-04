@@ -28,13 +28,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
         $sale_price = $price * $salePercentage;
         $sale = "
         <div class='feature-products__price'>
-            <span class='old-price'>$price SEK</span>
+            <span class='old-price'>$price €</span>
             <span class='on-sale'>-10%</span>
-            <span class='new-price'>$sale_price SEK</span>
+            <span class='new-price'>$sale_price €</span>
         </div>";
     }
     else {
-        $sale = "<span class='old-price'>$price SEK</span>";
+        $sale = "<span class='old-price'>$price €</span>";
     }
 
 
