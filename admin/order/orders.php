@@ -87,7 +87,7 @@ function drawOrders($db) {
             <th>Order ID</th>
             <th>Name</th>
             <th onclick="sortTable(2, 'order-complete')">Date</th>
-            <th onclick="sortTable(3, 'order-complete')">Total (kr)</th>
+            <th onclick="sortTable(3, 'order-complete')">Total (€)</th>
             <th>City</th>
             <th onclick="sortTableStatus(5, 'order-complete')">
             Status
