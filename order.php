@@ -92,7 +92,7 @@
     <script src="./assets/js/ajax-categories.js"></script>
     <script src="./assets/js/render.js"></script>
     <script src="./assets/js/ordervalidation.js"></script>
-    <script src="assets/js/search.js"></script>
+    <script src="./assets/js/search.js"></script>
 </body>
 
 </html>
