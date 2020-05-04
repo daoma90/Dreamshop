@@ -6,7 +6,7 @@ $salePercentage = 0.9;
 
 require 'db.php';
 
-$sql = "SELECT * FROM products WHERE featured = 1";
+$sql = "SELECT * FROM products WHERE featured = 1 AND in_stock > 0";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
@@ -21,9 +21,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
     $isOld = $row["is_old"];
 
     $addToCartBtn = "<button class='feature-products__add' data-id=$id>ADD TO CART</button>";
-    if ($stock == 0) {
-        $addToCartBtn = "<div class='feature-products__oos'>OUT OF STOCK</div>";
-    }
+
     if ($isOld == 1) {
         $sale_price = $price * $salePercentage;
         $sale = "
