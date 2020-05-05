@@ -28,7 +28,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
         "price"=>$row['price'],
         "image"=>$row['image'],
         "stock"=>$row['in_stock'],
-        "sale_price"=>$row['sale_price']
+        "sale_price"=>$row['sale_price'],
+        "has_discount"=>$row['is_old']
     );
 
     $productObj[] = $product;

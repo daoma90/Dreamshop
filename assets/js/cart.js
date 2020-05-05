@@ -42,6 +42,7 @@ function addToCart(id) {
         quantity: inputQty ? parseInt(inputQty.value) : 1,
         stock: parseInt(product[0].stock),
         sale_price: product[0].sale_price,
+        has_discount: product[0].has_discount,
       };
 
       const productInCart = HappyLib.findProduct(tempObj.name, cart);
@@ -191,7 +192,7 @@ function renderCart() {
 
   cart.products.forEach(function (item) {
     let price = `<div class="cart-fixed__item-total">${item.price} €</div>`;
-    if (item.sale_price !== '0') {
+    if (item.has_discount !== '0') {
       price = `
       <div class="cart-fixed__item-total cart-fixed__item-total--old">${item.price} €</div>
       <div class="cart-fixed__item-total">${item.sale_price} €</div>`;
