@@ -87,6 +87,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   require_once "./footer.php";
 ?>
 <script src="./assets/js/header.js"></script>
+<script src="./assets/js/happyLib.js"></script>
 <script src="./assets/js/confirmation.js"></script>
 <script src="./assets/js/search.js"></script>
 

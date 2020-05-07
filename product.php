@@ -101,7 +101,7 @@
                 <button class="productpage__qty-down"><i class="fa fa-minus"></i></button>
                 <input
                   class="productpage__qty"
-                  type="number"
+                  type="text"
                   value="1"
                   readonly
                 />
