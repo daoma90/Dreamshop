@@ -57,7 +57,7 @@
         <article class='order-card__customer'>
             <div class='order-card__item'><span>Order ID:    </span><span>$orderID</span></div>
             <div class='order-card__item'><span>Date:        </span><span>$date</span></div>
-            <div class='order-card__item'><span>Total:       </span><span>$total kr</span></div>
+            <div class='order-card__item'><span>Total:       </span><span>$total €</span></div>
             <div class='order-card__item'><span>Name:        </span><span>$name</span></div>
             <div class='order-card__item'><span>Adress:      </span><span>$adress</span></div>
             <div class='order-card__item'><span>City:        </span><span>$city</span></div>
