@@ -57,14 +57,15 @@ function drawOrders($db) {
                     <button onclick="showRelevantStatus(event)">All</button>
                     <button onclick="showRelevantStatus(event)">New</button>
                     <button onclick="showRelevantStatus(event)">Processing</button>
-                    <input placeholder="Search" onkeyup="searchFilter(event)" type="text">
+                    <button onclick="showRelevantStatus(event)">Complete</button>
+                    <input placeholder="Search city" onkeyup="searchFilter(event)" type="text">
                 </div>
     <table class="orders" id="order-uncomplete">
         <tr>
             <th>Order ID</th>
             <th>Name</th>
             <th onclick="sortTable(2, 'order-uncomplete')">Date</th>
-            <th onclick="sortTable(3, 'order-uncomplete')">Total (kr)</th>
+            <th onclick="sortTable(3, 'order-uncomplete')">Total (€)</th>
             <th>City</th>
             <th onclick="sortTableStatus(5, 'order-uncomplete')">
             Status
@@ -86,7 +87,7 @@ function drawOrders($db) {
             <th>Order ID</th>
             <th>Name</th>
             <th onclick="sortTable(2, 'order-complete')">Date</th>
-            <th onclick="sortTable(3, 'order-complete')">Total (kr)</th>
+            <th onclick="sortTable(3, 'order-complete')">Total (€)</th>
             <th>City</th>
             <th onclick="sortTableStatus(5, 'order-complete')">
             Status

@@ -15,6 +15,7 @@
         $desc = htmlspecialchars($row['description']);
         $price = htmlspecialchars($row['price']);
         $sale_price = htmlspecialchars($row["sale_price"]);
+        $is_old = htmlspecialchars($row['is_old']);
         $image = htmlspecialchars($row['image']);
         $category = htmlspecialchars($row['category']);
         $stock = htmlspecialchars($row['in_stock']);
@@ -78,7 +79,7 @@
           <div class="productpage__heading-wrap">
             <h1 class="productpage__name"><?= $product ?></h1>
             <?php 
-              if ($sale_price > 0) {
+              if ($is_old == 1) {
                 echo "<span style='text-decoration: line-through' class='productpage__price'>$price €</span>";
                 echo "<span style='margin-left: 0.5rem' class='productpage__price'>$sale_price €</span>";
               }
@@ -100,7 +101,7 @@
                 <button class="productpage__qty-down"><i class="fa fa-minus"></i></button>
                 <input
                   class="productpage__qty"
-                  type="number"
+                  type="text"
                   value="1"
                   readonly
                 />
@@ -125,5 +126,6 @@
     <script src="./assets/js/header.js"></script>
     <script src="./admin/js/alert.js"></script>
     <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/search.js"></script>
   </body>
 </html>

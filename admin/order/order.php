@@ -35,13 +35,13 @@
         $total = htmlspecialchars($row['total']);
         $city = htmlspecialchars($row['city']);
         $name = htmlspecialchars($row['order_name']);
-        $prodName = htmlspecialchars($row['prod_name']);
-        $prodImg = htmlspecialchars($row['image']);
-        $prodQty = htmlspecialchars($row['quantity']);
         $adress = htmlspecialchars($row['adress']);
         $zip = htmlspecialchars($row['zip']);
         $phone = htmlspecialchars($row['phone']);
         $mail = htmlspecialchars($row['mail']);
+        $prodName = htmlspecialchars($row['prod_name']);
+        $prodImg = htmlspecialchars($row['image']);
+        $prodQty = htmlspecialchars($row['quantity']);
         $products .= 
                     "<div class='product-wrap'>
                         <div class='product-img-wrap'>
@@ -57,7 +57,7 @@
         <article class='order-card__customer'>
             <div class='order-card__item'><span>Order ID:    </span><span>$orderID</span></div>
             <div class='order-card__item'><span>Date:        </span><span>$date</span></div>
-            <div class='order-card__item'><span>Total:       </span><span>$total kr</span></div>
+            <div class='order-card__item'><span>Total:       </span><span>$total €</span></div>
             <div class='order-card__item'><span>Name:        </span><span>$name</span></div>
             <div class='order-card__item'><span>Adress:      </span><span>$adress</span></div>
             <div class='order-card__item'><span>City:        </span><span>$city</span></div>

@@ -14,7 +14,6 @@
         <div class="flip-card">
           <div class="flip-card__inner">
             <div class="flip-card__front">
-              <a href="../index.php" class="flip-card__close"></a>
               <h3 class="flip-card__headline">Contact us</h3>
               <div class="flip-card__front-form">
                 <div class="flip-card__input-group">

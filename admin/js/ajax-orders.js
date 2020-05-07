@@ -10,6 +10,9 @@ function updateOrder(id, event) {
         )
       ) {
         window.location.reload();
+      } else {
+        event.target.parentElement.parentElement.className =
+          'display-status status-' + status.toLowerCase();
       }
     }
   };
@@ -36,7 +39,7 @@ if (!String.prototype.includes) {
 function convertDate(d) {
   if (d.includes('-')) {
     var p = d.split('-');
-    return +(p[2] + p[1] + p[0]);
+    return +(p[0] + p[1] + p[2]);
   } else {
     return d;
   }
@@ -176,6 +179,15 @@ function sortTableStatus(n, table) {
 function showRelevantStatus(e) {
   const statusToShow = e.target.textContent.toLowerCase();
   const items = document.querySelectorAll('.display-status');
+  const btns = document.querySelectorAll('.orders__status button');
+  btns.forEach((item) => {
+    item.style = '';
+  });
+  if (e.target.textContent.toLowerCase().includes('all')) {
+    e.target.style = '';
+  } else {
+    e.target.style = 'background: white; color: black;';
+  }
   items.forEach(function (item) {
     item.style = 'display: table-row';
     if (statusToShow === 'all') {
