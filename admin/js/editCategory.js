@@ -181,3 +181,19 @@ for (let i = 0; i < catHover.length; i++) {
     this.childNodes[1].childNodes[3].style.visibility = "hidden";
   });
 }
+
+createCategory = document.querySelector(".form-container__input-name");
+createCategoryError = document.querySelector(".form-container__input-error");
+createBtn = document.querySelector(".form-container__submit-container")
+  .firstElementChild;
+
+createCategory.addEventListener("keyup", function () {
+  createCategoryInput = createCategory.value.trim();
+  if (createCategoryInput == "") {
+    createCategoryError.style.visibility = "visible";
+    createBtn.disabled = true;
+  } else {
+    createCategoryError.style.visibility = "hidden";
+    createBtn.disabled = false;
+  }
+});

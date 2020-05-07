@@ -147,11 +147,17 @@ body {
     border-radius: 5px;
     padding: 5px;
     background: #cccdd0;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     resize: none;
     @media screen and (min-width: 719px) {
       width: 300px;
     }
+  }
+
+  &__input-error {
+    font-size: 15px;
+    color: red;
+    visibility: hidden;
   }
 
   &__img-container {

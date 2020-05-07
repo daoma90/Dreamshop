@@ -1052,7 +1052,7 @@ body {
   border-radius: 5px;
   padding: 5px;
   background: #cccdd0;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   resize: none;
 }
 
@@ -1060,6 +1060,12 @@ body {
   .form-container__input {
     width: 300px;
   }
+}
+
+.form-container__input-error {
+  font-size: 15px;
+  color: red;
+  visibility: hidden;
 }
 
 .form-container__img-container {

@@ -5,7 +5,8 @@
     </div>
     <form method="POST" enctype="multipart/form-data" class="form-container__form">
         <label class="form-container__label" for="name">Title</label>
-        <input type="text" class="form-container__input" name="name" required>
+        <input type="text" class="form-container__input form-container__input-name" name="name" required>
+        <p class="form-container__input-error">Title requires atleast 1 character</p>
         <label class="form-container__label" for="image">Upload image</label>
         <input type="file" name="image" accept="image/" class="form-container__input">
         <label class="form-container__label form-container__img-label">Current image</label>
