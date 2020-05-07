@@ -35,13 +35,13 @@
         $total = htmlspecialchars($row['total']);
         $city = htmlspecialchars($row['city']);
         $name = htmlspecialchars($row['order_name']);
-        $prodName = htmlspecialchars($row['prod_name']);
-        $prodImg = htmlspecialchars($row['image']);
-        $prodQty = htmlspecialchars($row['quantity']);
         $adress = htmlspecialchars($row['adress']);
         $zip = htmlspecialchars($row['zip']);
         $phone = htmlspecialchars($row['phone']);
         $mail = htmlspecialchars($row['mail']);
+        $prodName = htmlspecialchars($row['prod_name']);
+        $prodImg = htmlspecialchars($row['image']);
+        $prodQty = htmlspecialchars($row['quantity']);
         $products .= 
                     "<div class='product-wrap'>
                         <div class='product-img-wrap'>

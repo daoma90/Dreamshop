@@ -124,7 +124,6 @@ function deleteView(id) {
       document.querySelector('.section-products').removeChild(element);
     } else if (this.responseText && this.readyState == 4) {
       customAlert(this.responseText, 'alert');
-      console.log(1);
     }
   };
   customAlert(

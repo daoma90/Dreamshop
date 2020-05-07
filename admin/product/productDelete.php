@@ -9,7 +9,7 @@
       $stmt->execute([
         ':product_id' => $id
       ]);
-  
+
       $sql = 'DELETE FROM products WHERE id=:id';
       $stmt = $pdo->prepare($sql);
       $stmt->execute([

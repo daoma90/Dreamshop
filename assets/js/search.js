@@ -15,8 +15,8 @@ const words_to_filter = [
   'go',
 ];
 function checkForm(form) {
-  let search = form.searchWord.value;
-  if (search.length <= 1 || words_to_filter.includes(search.trim())) {
+  let search = form.searchWord.value.trim();
+  if (search.length <= 1 || words_to_filter.includes(search)) {
     form.reset();
     form.searchWord.placeholder = 'Must have atleast 2 characters';
     return false;
