@@ -2757,23 +2757,6 @@
   background-color: #eeb742;
 }
 
-.flip-card__close {
-  position: absolute;
-  background-image: url("../media/close.png");
-  background-position: center;
-  background-size: cover;
-  height: 40px;
-  width: 40px;
-  top: 80px;
-  right: 5px;
-}
-
-@media (min-width: 724px) {
-  .flip-card__close {
-    top: 5px;
-  }
-}
-
 .flip-card__front-form {
   display: -webkit-box;
   display: -ms-flexbox;
