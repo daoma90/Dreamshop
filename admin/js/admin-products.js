@@ -120,16 +120,13 @@ function deleteView(id) {
   event.preventDefault();
   let req = new XMLHttpRequest();
   req.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      setTimeout(function () {
-        document.querySelector('.section-products').removeChild(element);
-      }, 250);
+    if (this.readyState == 4 && this.status == 200 && this.responseText == '') {
+      document.querySelector('.section-products').removeChild(element);
+    } else if (this.responseText && this.readyState == 4) {
+      customAlert(this.responseText, 'alert');
+      console.log(1);
     }
   };
-  // if (confirm('Säker på att du vill ta bort?')) {
-  //   req.open('POST', '../product/productDelete.php?ID=' + id, true);
-  //   req.send();
-  // }
   customAlert(
     'Säker på att du vill ta bort?',
     'confirm',
