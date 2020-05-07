@@ -27,14 +27,14 @@
             $name = strtoupper($name);
 
             $categories .= "
-                    <div class='cat-container' onclick='editCategory($ID)' id='cat-{$ID}'>
-                        <div class='cat-container__img-container'>
+                    <div class='cat-container' id='cat-{$ID}'>
+                        <div class='cat-container__img-container' onclick='editCategory($ID)'>
                             <img src='./images/{$image}' class='cat-container__img'>
                             <p class='cat-container__edit-text'>EDIT</p>
                             <h2 class='cat-container__text'>{$name}</h2>
-                            <div class='cat-container__buttons' method='POST'>
-                                <button onclick='deleteCategory($ID)' class='btn btn--del'></button>
-                            </div>
+                        </div>
+                        <div class='cat-container__buttons' method='POST'>
+                            <button onclick='deleteCategory($ID)' class='btn btn--del'></button>
                         </div>
                         
                     </div>

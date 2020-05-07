@@ -201,15 +201,10 @@ createCategory.addEventListener("keyup", function () {
 function deleteCategory(id) {
   let req = new XMLHttpRequest();
   req.onreadystatechange = function () {
-    if (
-      this.readyState == 4 &&
-      this.status == 200 &&
-      this.responseText == null
-    ) {
+    if (this.readyState == 4 && this.status == 200 && this.responseText == "") {
       location.reload();
     } else if (this.responseText && this.readyState == 4) {
-      console.log(this.response);
-      customAlert("error", "alert");
+      customAlert(this.responseText, "alert");
     }
   };
   customAlert(

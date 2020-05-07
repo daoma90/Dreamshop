@@ -913,12 +913,6 @@ body {
   position: relative;
 }
 
-.cat-container:hover {
-  cursor: pointer;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
 @media (min-width: 1024px) {
   .cat-container {
     width: 250px;
@@ -930,6 +924,12 @@ body {
   height: 100%;
   position: relative;
   border-radius: 50px;
+}
+
+.cat-container__img-container:hover {
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 .cat-container__img {

@@ -28,10 +28,6 @@ body {
   width: 180px;
   margin: 5px;
   position: relative;
-  &:hover {
-    cursor: pointer;
-    filter: grayscale(100%);
-  }
 
   @include desktop {
     width: 250px;
@@ -42,6 +38,10 @@ body {
     height: 100%;
     position: relative;
     border-radius: 50px;
+    &:hover {
+      cursor: pointer;
+      filter: grayscale(100%);
+    }
   }
 
   &__img {

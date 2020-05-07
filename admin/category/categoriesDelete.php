@@ -8,7 +8,6 @@ try {
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':ID', $ID);
     $stmt->execute();
-    header('Location:../index.php');
   }
 } catch(PDOException $e) {
   echo $e->getMessage();
