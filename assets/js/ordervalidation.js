@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validName(e) {
-    if (name.value.length <= 1 || name.value.length > 20) {
+    if (name.value.trim().length <= 1 || name.value.trim().length > 20) {
       error.textContent = 'Name must contain between 2-20 characters';
       error.style.visibility = 'visible';
       error.style.color = 'red';
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateAdress(e) {
-    if (adress.value.length <= 3) {
+    if (adress.value.trim().length <= 3) {
       adressError.textContent = 'Invalid address - too short';
       adressError.style.visibility = 'visible';
       adressError.style.color = 'red';
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateCity(e) {
-    if (city.value.length <= 3 || city.value.length >= 20) {
+    if (city.value.trim().length <= 3 || city.value.trim().length >= 20) {
       cityError.textContent = 'Invalid city - too short';
       cityError.style.visibility = 'visible';
       cityError.style.color = 'red';
