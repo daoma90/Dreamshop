@@ -33,7 +33,7 @@
                             <p class='cat-container__edit-text'>EDIT</p>
                             <h2 class='cat-container__text'>{$name}</h2>
                             <div class='cat-container__buttons' method='POST'>
-                                <a href='./category/categoriesDelete.php?ID={$ID}' class='btn btn--del'></a>
+                                <button onclick='deleteCategory($ID)' class='btn btn--del'></button>
                             </div>
                         </div>
                         

@@ -197,3 +197,28 @@ createCategory.addEventListener("keyup", function () {
     createBtn.disabled = false;
   }
 });
+
+function deleteCategory(id) {
+  let req = new XMLHttpRequest();
+  req.onreadystatechange = function () {
+    if (
+      this.readyState == 4 &&
+      this.status == 200 &&
+      this.responseText == null
+    ) {
+      location.reload();
+    } else if (this.responseText && this.readyState == 4) {
+      console.log(this.response);
+      customAlert("error", "alert");
+    }
+  };
+  customAlert(
+    "Säker på att du vill ta bort?",
+    "confirm",
+    function () {},
+    function () {
+      req.open("POST", "./category/categoriesDelete.php?ID=" + id, true);
+      req.send();
+    }
+  );
+}
