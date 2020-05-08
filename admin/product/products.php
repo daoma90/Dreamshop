@@ -44,6 +44,7 @@ ini_set('error_reporting', E_ALL);
                         <input type='file' name='image[]' id='image' multiple>
                         <div class="product-form-main__left__gallery">
                          </div>
+                         <p class="product-form-main__left-response" style="display:none"></p>
                     </div>
                     <div class='product-form-main__right'>
                         <h2 class="product-form-main__right-header">EDIT PRODUCT</h2>

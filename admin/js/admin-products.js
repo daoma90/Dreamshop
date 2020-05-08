@@ -278,13 +278,15 @@ toggle.addEventListener('click', function (e) {
   if (!id) {
     productForm.parentElement.style.display = 'none';
     setDisplayState();
-    console.log('Close!!');
   } else {
     prepareForm(false, id);
     setDisplayState();
     productForm.parentElement.style.display = 'none';
   }
+  document.querySelector(".product-form-main__left-response").style.display = "none";
 });
+
+
 //Opens create form
 const add = document.querySelector('.section-add-imgwrap');
 add.addEventListener('click', function (e) {
@@ -292,3 +294,21 @@ add.addEventListener('click', function (e) {
   productForm.reset();
   setDisplayState('product-state--inactive');
 });
+
+
+document.addEventListener("submit", function(e) {
+  checkFileLimit(e);
+});
+
+function checkFileLimit(e) {
+  const file = document.querySelector("input[name='image[]']");
+  const fileCount = file.files.length;
+  const response = document.querySelector(".product-form-main__left-response");
+    if(fileCount > 5) {
+      e.preventDefault();
+      response.style.display = "block";
+      response.innerText = "Maximum of 5 images reached, please select new images! ";
+  } else {
+    response.style.display = "none";
+  }
+}

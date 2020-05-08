@@ -777,6 +777,21 @@ main {
   width: 100%;
 }
 
+.product-form-main__left-response {
+  position: absolute;
+  top: 15px;
+  width: 150px;
+  height: 160px;
+  font-family: inherit;
+  font-weight: bold;
+  color: white;
+  background: #b18c8c;
+  border-radius: 5px;
+  padding: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+
 .product-form-main__right {
   width: 60%;
   display: inherit;
