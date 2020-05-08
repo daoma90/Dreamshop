@@ -181,3 +181,39 @@ for (let i = 0; i < catHover.length; i++) {
     this.childNodes[1].childNodes[3].style.visibility = "hidden";
   });
 }
+
+createCategory = document.querySelector(".form-container__input-name");
+createCategoryError = document.querySelector(".form-container__input-error");
+createBtn = document.querySelector(".form-container__submit-container")
+  .firstElementChild;
+
+createCategory.addEventListener("keyup", function () {
+  createCategoryInput = createCategory.value.trim();
+  if (createCategoryInput == "") {
+    createCategoryError.style.visibility = "visible";
+    createBtn.disabled = true;
+  } else {
+    createCategoryError.style.visibility = "hidden";
+    createBtn.disabled = false;
+  }
+});
+
+function deleteCategory(id) {
+  let req = new XMLHttpRequest();
+  req.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200 && this.responseText == "") {
+      location.reload();
+    } else if (this.responseText && this.readyState == 4) {
+      customAlert(this.responseText, "alert");
+    }
+  };
+  customAlert(
+    "Säker på att du vill ta bort?",
+    "confirm",
+    function () {},
+    function () {
+      req.open("POST", "./category/categoriesDelete.php?ID=" + id, true);
+      req.send();
+    }
+  );
+}

@@ -934,12 +934,6 @@ body {
   position: relative;
 }
 
-.cat-container:hover {
-  cursor: pointer;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
 @media (min-width: 1024px) {
   .cat-container {
     width: 250px;
@@ -951,6 +945,12 @@ body {
   height: 100%;
   position: relative;
   border-radius: 50px;
+}
+
+.cat-container__img-container:hover {
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 .cat-container__img {
@@ -1073,7 +1073,7 @@ body {
   border-radius: 5px;
   padding: 5px;
   background: #cccdd0;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   resize: none;
 }
 
@@ -1081,6 +1081,12 @@ body {
   .form-container__input {
     width: 300px;
   }
+}
+
+.form-container__input-error {
+  font-size: 15px;
+  color: red;
+  visibility: hidden;
 }
 
 .form-container__img-container {

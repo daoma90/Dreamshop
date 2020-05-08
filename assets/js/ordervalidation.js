@@ -59,7 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validName(e) {
-    if (name.value.trim().length <= 1 || name.value.trim().length > 20) {
+    if (/[^a-zA-Z åäöÅÄÖ]/.test(name.value)) {
+      error.textContent = 'Invalid characters';
+      error.style.visibility = 'visible';
+      error.style.color = 'red';
+      return false;
+    } else if (name.value.trim().length <= 1 || name.value.trim().length > 20) {
       error.textContent = 'Name must contain between 2-20 characters';
       error.style.visibility = 'visible';
       error.style.color = 'red';
@@ -83,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function validPhone(e) {
     mobileError.style.visibility = 'hidden';
     if (isNaN(mobile.value)) {
-      mobileError.textContent = 'Letters not allowed';
+      mobileError.textContent = 'Only digits allowed';
       mobileError.style.visibility = 'visible';
       mobileError.style.color = 'red';
       return false;
@@ -98,8 +103,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateAdress(e) {
-    if (adress.value.trim().length <= 3) {
+    if (/[^a-zA-Z0-9 åäöÅÄÖ]/.test(adress.value)) {
+      adressError.textContent = 'Invalid characters';
+      adressError.style.visibility = 'visible';
+      adressError.style.color = 'red';
+      return false;
+    } else if (adress.value.trim().length <= 3) {
       adressError.textContent = 'Invalid address - too short';
+      adressError.style.visibility = 'visible';
+      adressError.style.color = 'red';
+      return false;
+    } else if (!/\d/.test(adress.value)) {
+      adressError.textContent = 'Must have at least one digit';
+      adressError.style.visibility = 'visible';
+      adressError.style.color = 'red';
+      return false;
+    } else if (!/\D[^\s]/.test(adress.value)) {
+      adressError.textContent = 'Must have at least one letter';
       adressError.style.visibility = 'visible';
       adressError.style.color = 'red';
       return false;
@@ -109,13 +129,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateZipCode(e) {
-    if (isNaN(zipCode.value) || zipCode.value.includes(' ')) {
-      zipError.textContent = 'Invalid zip - contains letters';
+    if (
+      isNaN(zipCode.value) ||
+      zipCode.value.includes(' ') ||
+      !/^[0-9]*$/.test(zipCode.value)
+    ) {
+      zipError.textContent = 'Invalid characters';
       zipError.style.visibility = 'visible';
       zipError.style.color = 'red';
       return false;
-    }
-    if (zipCode.value.length <= 4) {
+    } else if (zipCode.value.length <= 4) {
       zipError.textContent = 'Invalid zip - too short';
       zipError.style.visibility = 'visible';
       zipError.style.color = 'red';
@@ -126,7 +149,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateCity(e) {
-    if (city.value.trim().length <= 3 || city.value.trim().length >= 20) {
+    if (/[^a-zA-Z åäöÅÄÖ]/.test(city.value)) {
+      cityError.textContent = 'Invalid characters';
+      cityError.style.visibility = 'visible';
+      cityError.style.color = 'red';
+      return false;
+    } else if (
+      city.value.trim().length <= 3 ||
+      city.value.trim().length >= 20
+    ) {
       cityError.textContent = 'Invalid city - too short';
       cityError.style.visibility = 'visible';
       cityError.style.color = 'red';
