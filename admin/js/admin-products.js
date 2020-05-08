@@ -307,7 +307,9 @@ function checkFileLimit(e) {
     if(fileCount > 5) {
       e.preventDefault();
       response.style.display = "block";
-      response.innerText = "Maximum of 5 images reached, please select new images! ";
+      response.innerText = "Maximum of 5 images reached, please select new images!";
+      file.value = "";
+      
   } else {
     response.style.display = "none";
   }
