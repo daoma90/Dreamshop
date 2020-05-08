@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validName(e) {
-    if (/[^a-zA-Z åäöÅÄÖ]/u.test(name.value)) {
+    if (/[^a-zA-Z åäöÅÄÖ]/.test(name.value)) {
       error.textContent = 'Invalid characters';
       error.style.visibility = 'visible';
       error.style.color = 'red';
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateAdress(e) {
-    if (/[^a-zA-Z0-9 åäöÅÄÖ]/u.test(adress.value)) {
+    if (/[^a-zA-Z0-9 åäöÅÄÖ]/.test(adress.value)) {
       adressError.textContent = 'Invalid characters';
       adressError.style.visibility = 'visible';
       adressError.style.color = 'red';
@@ -113,19 +113,32 @@ document.addEventListener('DOMContentLoaded', function () {
       adressError.style.visibility = 'visible';
       adressError.style.color = 'red';
       return false;
+    } else if (!/\d/.test(adress.value)) {
+      adressError.textContent = 'Must have at least one digit';
+      adressError.style.visibility = 'visible';
+      adressError.style.color = 'red';
+      return false;
+    } else if (!/\D[^\s]/.test(adress.value)) {
+      adressError.textContent = 'Must have at least one letter';
+      adressError.style.visibility = 'visible';
+      adressError.style.color = 'red';
+      return false;
     }
     adressError.style.visibility = 'hidden';
     return true;
   }
 
   function validateZipCode(e) {
-    if (isNaN(zipCode.value) || zipCode.value.includes(' ')) {
-      zipError.textContent = 'Invalid zip - contains letters';
+    if (
+      isNaN(zipCode.value) ||
+      zipCode.value.includes(' ') ||
+      !/^[0-9]*$/.test(zipCode.value)
+    ) {
+      zipError.textContent = 'Invalid characters';
       zipError.style.visibility = 'visible';
       zipError.style.color = 'red';
       return false;
-    }
-    if (zipCode.value.length <= 4) {
+    } else if (zipCode.value.length <= 4) {
       zipError.textContent = 'Invalid zip - too short';
       zipError.style.visibility = 'visible';
       zipError.style.color = 'red';
@@ -136,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateCity(e) {
-    if (/[^a-zA-Z åäöÅÄÖ]/u.test(city.value)) {
+    if (/[^a-zA-Z åäöÅÄÖ]/.test(city.value)) {
       cityError.textContent = 'Invalid characters';
       cityError.style.visibility = 'visible';
       cityError.style.color = 'red';
