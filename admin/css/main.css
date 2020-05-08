@@ -747,6 +747,10 @@ main {
   width: 40%;
 }
 
+.product-form-main__left input {
+  width: 91% !important;
+}
+
 .product-form-main__left-img {
   width: 80%;
 }
