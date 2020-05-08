@@ -53,13 +53,13 @@ ini_set('error_reporting', E_ALL);
                         <label for="name" class="product-form-main__right-label">DESCRIPTION:</label>
                         <textarea name='description' id='' cols='30' rows='6' required></textarea>
                         <label for="name" class="product-form-main__right-label">PRICE:</label>
-                        <input name='price' type='text' required type="number">
+                        <input name='price' type='number' required>
                         <!-- Draws all available categorys -->
                         <label for="cat_id" class="product-form-main__right-label">CATEGORY:</label>
                         <?php getCatList($pdo); ?>
                         <!-- Draws all available categorys -->
                         <label for="in_stock" class="product-form-main__right-label">QUANTITY:</label>
-                        <input name='in_stock' type='text' required type="number">
+                        <input name='in_stock' type='number' required>
                         <label for="featured" class="product-form-main__right-label">FEATURED:</label>
                         <select name="featured" id="feat">
                             <option name="featured" value="0">No</option>

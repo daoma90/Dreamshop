@@ -783,15 +783,15 @@ main {
 
 .product-form-main__left-response {
   position: absolute;
-  top: 15px;
+  top: 10px;
   width: 150px;
-  height: 150px;
+  height: 140px;
   font-family: inherit;
   font-weight: bold;
   color: white;
   background: #b18c8c;
   border-radius: 5px;
-  padding: 30px;
+  padding: 25px;
   text-align: center;
   font-size: 14px;
 }
