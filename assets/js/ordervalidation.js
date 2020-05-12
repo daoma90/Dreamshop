@@ -131,8 +131,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function validateZipCode(e) {
     if (
       isNaN(zipCode.value) ||
-      zipCode.value.includes(' ') ||
-      !/^[0-9]*$/.test(zipCode.value)
+      zipCode.val!/^[0-9]*$/.test(zipCode.value)ue.includes(' ') ||
+      
     ) {
       zipError.textContent = 'Invalid characters';
       zipError.style.visibility = 'visible';

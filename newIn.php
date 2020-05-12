@@ -20,7 +20,7 @@
         <h2 class="lp-products__current-category">New in</h2>
         <div class="lp-products__wrap">
             <?php 
-                $sql = "SELECT * FROM products WHERE created_at > (NOW() - INTERVAL 2 DAY)";
+                $sql = "SELECT * FROM products WHERE created_at > (NOW() - INTERVAL 2 DAY) AND in_stock > 0";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
 

@@ -20,7 +20,7 @@
         <h2 class="lp-products__current-category">On sale</h2>
         <div class="lp-products__wrap">
             <?php 
-                $sql = "SELECT * FROM products WHERE is_old = 1";
+                $sql = "SELECT * FROM products WHERE is_old = 1 AND in_stock > 0";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
 
