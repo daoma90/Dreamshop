@@ -129,10 +129,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validateZipCode(e) {
+
+    //If we want to accept space
+    // if(zipCode.value.includes(" ")) {
+    //   zipCode.setAttribute("maxlength", "6");
+    // } else {
+    //   zipCode.setAttribute("maxlength", "5");
+    // }
+
     if (
       isNaN(zipCode.value) ||
-      zipCode.val!/^[0-9]*$/.test(zipCode.value)ue.includes(' ') ||
-      
+      zipCode.value.includes(' ') ||
+      !/^[0-9]*$/.test(zipCode.value)
     ) {
       zipError.textContent = 'Invalid characters';
       zipError.style.visibility = 'visible';
