@@ -1,0 +1,248 @@
+.contact {
+  z-index: 10;
+  width: 100vw;
+  min-height: 100vh;
+  max-width: 100%;
+  //transition-duration: 0.1s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  &__background {
+    display: none;
+    @include tablet {
+      display: block;
+      background-image: url("../media/background/shoes-over-water-gray.jpg");
+      width: 100%;
+      min-height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      position: relative;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      z-index: -1;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    min-width: 100%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    @include tablet {
+      min-height: 40vh;
+      min-width: 90%;
+      justify-self: center;
+      align-self: center;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    @include desktop {
+      min-width: 1000px;
+      max-width: 1000px;
+    }
+  }
+
+  &__message-box {
+    background-color: white;
+    z-index: 1;
+    grid-row: 5 / 8;
+    grid-column: 1 / 7;
+    height: 100%;
+
+    @include tablet {
+      grid-row: 4 / span 4;
+      grid-column: 3 / 7;
+      height: 400px;
+    }
+  }
+
+  &__message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    @include tablet {
+      margin-left: 25%;
+    }
+  }
+
+  &__message-label {
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+  }
+
+  &__message {
+    width: 80%;
+    height: 50%;
+    resize: none;
+    font-size: 20px;
+    border: solid 1px black;
+    @include desktop {
+      height: 50%;
+    }
+  }
+
+  &__button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 15px;
+    background-color: rgb(30, 104, 165);
+    cursor: pointer;
+
+    @include tablet {
+      color: rgb(30, 104, 165);
+      background-color: white;
+      border: 2px solid rgb(30, 104, 165);
+      &:hover {
+        background-color: rgb(30, 104, 165);
+        color: white;
+        transition-duration: 0.4s;
+      }
+    }
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  grid-column: 1 / 4;
+  grid-row: 1 / 7;
+  grid-row: 1 / 5;
+  grid-column: 1 / 7;
+  perspective: 1000px;
+  z-index: 2;
+  position: relative;
+  height: 600px;
+
+  @include tablet {
+    grid-column: 1 / 4;
+    grid-row: 1 / 7;
+    min-height: 600px;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: none;
+    transform-style: preserve-3d;
+    @include tablet {
+      transition: transform 0.8s;
+      /* &:hover {
+        transform: rotateY(180deg);
+      } */
+    }
+  }
+
+  &__front,
+  &__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: sans-serif;
+    color: white;
+    padding: 40px;
+    padding-top: 100px;
+    @include tablet {
+      padding-top: 40px;
+    }
+  }
+
+  &__front {
+    background-color: rgb(238, 183, 66);
+  }
+
+  &__front-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__headline {
+    font-size: 30px;
+    width: 300px;
+    margin-bottom: 30px;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__front-label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__front-input {
+    box-sizing: border-box;
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+    border: solid 3px transparent;
+  }
+
+  &__info-text {
+    font-size: 15px;
+    margin: 10px;
+    width: 300px;
+    @include desktop {
+      font-size: 20px;
+      margin: 30px;
+    }
+  }
+
+  &__social {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+  }
+
+  &__social-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  &__back {
+    background-color: rgb(238, 183, 66);
+    transform: rotateY(180deg);
+  }
+}
+
+.form-error {
+  visibility: hidden;
+  color: red;
+  margin: 0;
+  font-family: sans-serif;
+}

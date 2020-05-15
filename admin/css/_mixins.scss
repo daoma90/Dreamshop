@@ -1,0 +1,25 @@
+$desktop-width: 1024px;
+$tablet-width: 724px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin btn-primary {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  background: rgb(115, 143, 238);
+  color: white;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    background: rgb(95, 124, 218);
+  }
+}

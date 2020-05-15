@@ -1,0 +1,257 @@
+body {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  flex-direction: column;
+  max-width: 100vw;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 100px;
+  @media screen and (min-width: 538px) {
+    width: 80%;
+    min-height: 50vh;
+  }
+
+  @include desktop {
+    margin-top: 200px;
+  }
+}
+
+.cat-container {
+  height: 300px;
+  width: 180px;
+  margin: 5px;
+  position: relative;
+
+  @include desktop {
+    width: 250px;
+    height: 350px;
+  }
+
+  &__img-container {
+    height: 100%;
+    position: relative;
+    border-radius: 50px;
+    &:hover {
+      cursor: pointer;
+      filter: grayscale(100%);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  &__edit-text {
+    visibility: hidden;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 45%;
+    left: 35%;
+  }
+
+  &__text {
+    position: relative;
+    bottom: 70px;
+    text-align: center;
+    color: white;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__button {
+    width: 50%;
+    border: none;
+    display: block;
+    height: 50px;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
+
+.form-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: none;
+  background-color: white;
+  position: absolute;
+  top: 0;
+
+  left: 0;
+
+  z-index: 1000;
+  @include tablet {
+    top: 400px;
+    min-width: 500px;
+    width: 500px;
+    min-height: 700px;
+    border-radius: 15px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__headline-container {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__headline {
+    margin-top: 0 auto;
+    font-family: sans-serif;
+    margin-top: 20px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90%;
+    position: relative;
+  }
+
+  &__label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    width: 300px;
+    height: 30px;
+    margin-left: 0 auto;
+    color: white;
+    outline: none;
+    border: 0px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    background: #cccdd0;
+    /* margin-bottom: 10px; */
+    resize: none;
+    @media screen and (min-width: 719px) {
+      width: 300px;
+    }
+  }
+
+  &__input-error {
+    font-size: 15px;
+    color: red;
+    visibility: hidden;
+  }
+
+  &__img-container {
+    width: 200px;
+    height: 300px;
+    margin-top: 10px;
+    @include tablet {
+      margin-top: 10px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  &__submit-container {
+    //position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing__s;
+  }
+
+  &__submit {
+    width: 50%;
+    height: 70%;
+    border: none;
+    background-color: blue;
+    font-size: 15px;
+    color: white;
+    font-family: sans-serif;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  bottom: 0;
+
+  &--del {
+    right: 5px;
+    background: url("../media/close_x2.png");
+    background-size: cover;
+  }
+
+  &--edit {
+    left: 5px;
+    background: url("../media/edit_x2.png");
+    background-size: cover;
+  }
+
+  &--done {
+    left: 5px;
+    background: url("../media/edit_x2.png");
+    background-size: cover;
+  }
+
+  &--close {
+    top: 10px;
+    right: 15px;
+    background: url("../media/close_x2.png");
+    background-size: cover;
+  }
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: rgb(30, 104, 165);
+  cursor: pointer;
+
+  @include tablet {
+    color: rgb(30, 104, 165);
+    background-color: white;
+    border: 2px solid rgb(30, 104, 165);
+    &:hover {
+      background-color: rgb(30, 104, 165);
+      color: white;
+      transition-duration: 0.4s;
+    }
+  }
+}

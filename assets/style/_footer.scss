@@ -1,0 +1,54 @@
+.footer {
+  background-color: rgb(30, 30, 30);
+  color: $color__white;
+  padding: $spacing__m;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__list-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color__white;
+  }
+
+  &__list-item {
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  &__headline {
+    margin-bottom: 15px;
+    font-weight: 300;
+    font-size: 24px;
+  }
+
+  &__container {
+    align-items: center;
+    margin: $spacing__m;
+  }
+
+  &__social {
+    font-size: 20px;
+    display: flex;
+  }
+
+  &__icon {
+    margin: 10px;
+    cursor: pointer;
+  }
+}

@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+
 // SPACINGS
 $spacing__s: 1em;
 $spacing__m: 2em;
@@ -5,15 +10,22 @@ $spacing__l: 2.5em;
 $spacing__xl: 3em;
 
 // FONT
-$base__fontFamily: "open_sansregular", "Open Sans", "Helvetica Neue", Helvetica,
-  Arial, sans-serif;
+$base__fontFamily: 'open_sansregular',
+'Open Sans',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
 $base__fontSize: 14px;
 $base__lineHeight: 1.6;
 $headline__fontSize: 2rem;
 
 //COLORS
-$color__prim: red;
-$color__sec: blue;
-$color__accent: green;
+$color__prim: rgb(211, 116, 116);
+$color__sec: rgb(116, 116, 214);
+$color__accent: rgb(130, 207, 130);
 $color__black: #000000;
 $color__white: #ffffff;
+$color__product: #f9cd74;
+
+$header__height: 72px;
